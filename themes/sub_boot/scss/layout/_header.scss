@@ -1,0 +1,91 @@
+// Branding and header styling
+
+// branding
+.brand-bar {
+  background-color: #BF5700;
+  height: 30;
+  padding: 0;
+  width: 100%;
+  margin-bottom: 1em;
+
+  h2.UT-core-logo {
+    display: inline-block;
+    float: right;
+    margin: 5px 0;
+
+    a:hover,
+    a:focus {
+      text-decoration: none;
+    }
+
+    .knockout_logo {
+        height: 24px;
+        width: 110px;
+        background: url(../images/knockout_university_informal_horizontal_padded.svg);
+        background-size: cover;
+        margin-top: 0;
+    }
+
+  }
+
+}
+
+// header including main menu
+header.navbar {
+  background-color: #fff;
+  border: none;
+  padding: 0;
+
+  .logo-header {
+    margin-bottom: 2em;
+
+    h1.logo {
+      background-image: url(../images/logo.svg);
+      width: 230px;
+      height: 70px;
+      background-size: 100% 100%;
+      margin-top: 10px;
+
+      a {
+        display: block;
+        text-indent: -10000px;
+      }
+
+    }
+
+  }
+
+
+  .navbar-collapse {
+    padding: 0;
+
+    #block-sub-boot-main-menu {
+
+      ul {
+
+        li {
+          margin-right: 5px;
+
+          a {
+            border: 1px solid #ece9e2;
+            font-weight: bold;
+            font-size: 1.25em;
+            color: $darkbrown;
+
+            &:hover,
+            &:focus,
+            &.is-active {
+              background-color: $lighttan;
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}

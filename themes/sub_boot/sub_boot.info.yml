@@ -1,0 +1,25 @@
+core: 8.x
+type: theme
+base theme: bootstrap
+
+name: Bootstrap subtheme
+description: Uses the Bootstrap framework Sass source files and must be compiled (not for beginners).
+package: Bootstrap
+
+regions:
+  navigation: Navigation
+  navigation_collapsible: Navigation (Collapsible)
+  header: Top Bar
+  highlighted: Highlighted
+  help: Help
+  content: Content
+  sidebar_first: Primary
+  sidebar_second: Secondary
+  footer_left: Footer Left
+  footer_right: Footer Right
+  page_top: Page top
+  page_bottom: Page bottom
+
+libraries:
+  - sub_boot/global-styling
+  - sub_boot/bootstrap-scripts
