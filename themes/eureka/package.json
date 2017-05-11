@@ -1,5 +1,5 @@
 {
-  "name": "sub_boot",
+  "name": "eureka",
   "version": "1.0.0",
   "description": "Bootstrap subtheme",
   "main": "gulpfile.js",
@@ -10,11 +10,14 @@
   "license": "ISC",
   "devDependencies": {
     "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-copy": "^1.0.0",
     "gulp-jshint": "^2.0.4",
+    "gulp-run-seq": "^1.2.4",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^2.1.2",
+    "gulp-watch": "^4.3.11",
     "jshint": "^2.9.4"
   }
 }

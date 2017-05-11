@@ -6371,14 +6371,14 @@ header.navbar {
         text-indent: -10000px; }
   header.navbar .navbar-collapse {
     padding: 0; }
-    header.navbar .navbar-collapse #block-sub-boot-main-menu ul li {
+    header.navbar .navbar-collapse #block-eureka-main-menu ul li {
       margin-right: 5px; }
-      header.navbar .navbar-collapse #block-sub-boot-main-menu ul li a {
+      header.navbar .navbar-collapse #block-eureka-main-menu ul li a {
         border: 1px solid #ece9e2;
         font-weight: bold;
         font-size: 1.25em;
         color: #382F2D; }
-        header.navbar .navbar-collapse #block-sub-boot-main-menu ul li a:hover, header.navbar .navbar-collapse #block-sub-boot-main-menu ul li a:focus, header.navbar .navbar-collapse #block-sub-boot-main-menu ul li a.is-active {
+        header.navbar .navbar-collapse #block-eureka-main-menu ul li a:hover, header.navbar .navbar-collapse #block-eureka-main-menu ul li a:focus, header.navbar .navbar-collapse #block-eureka-main-menu ul li a.is-active {
           background-color: #f5f4f0; }
 
 .footer-wrapper {
@@ -6399,6 +6399,10 @@ header.navbar {
       display: inline-block; }
       .footer-wrapper footer.footer .footer-right ul li a {
         padding-top: 0; }
+
+.region-content p {
+  font-size: 1.2em;
+  line-height: 1.8em; }
 
 body {
   background-color: transparent;

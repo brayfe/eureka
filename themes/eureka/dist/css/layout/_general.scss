@@ -1,0 +1,20 @@
+// general styling
+body {
+  background-color: white;
+  margin-top: 0;
+  color: $darkbrown;
+
+  .main-container {
+    min-height: 275px;
+
+    .name.navbar-brand {
+      display: none;
+    }
+
+  }
+
+  a {
+    color: $darkblue;
+  }
+
+}
