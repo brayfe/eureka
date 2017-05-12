@@ -2,7 +2,7 @@ core: 8.x
 type: theme
 base theme: bootstrap
 
-name: Eureka subtheme
+name: Eureka subtheme based of Bootstrap theme
 description: Uses the Bootstrap framework Sass source files and must be compiled (not for beginners).
 package: Bootstrap
 
@@ -21,5 +21,5 @@ regions:
   page_bottom: Page bottom
 
 libraries:
-  - eureka/global-styling
-  - eureka/bootstrap-scripts
+  - eurekatheme/global-styling
+  - eurekatheme/bootstrap-scripts
