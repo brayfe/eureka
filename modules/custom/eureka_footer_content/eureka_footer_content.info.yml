@@ -1,0 +1,5 @@
+name: Eureka Footer Content
+type: module
+description: Module for defining block content in footer blocks
+core: 8.x
+package: custom

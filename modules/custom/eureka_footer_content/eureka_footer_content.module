@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * Contains eureka_footer_content.module..
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+
+function eureka_footer_content_theme() {
+  $theme['footer_content_left'] = [
+    'variables' => ['name' => NULL, 'year' => NULL],
+    'template' => 'footer-content-left'
+  ];
+  $theme['footer_content_right'] = [
+    'variables' => ['name' => NULL, 'year' => NULL],
+    'template' => 'footer-content-right'
+  ];
+
+  return $theme;
+}
