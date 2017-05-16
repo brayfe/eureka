@@ -2,80 +2,108 @@
 
 // branding
 .brand-bar {
-  background-color: #BF5700;
-  height: 30;
+  background-color: transparent;
+  height: 30px;
   padding: 0;
   width: 100%;
-  margin-bottom: 1em;
+  margin-bottom: 2px;
 
-  h2.UT-core-logo {
-    display: inline-block;
-    float: right;
-    margin: 5px 0;
+  .container {
 
-    a:hover,
-    a:focus {
-      text-decoration: none;
+    .ugs-brand {
+      display: inline-block;
+      font-size: 20px;
+      margin: 5px 0;
+
+      a {
+        color: $burnt;
+
+        &:hover,
+        &:focus {
+          text-decoration: none;
+        }
+      }
     }
 
-    .knockout_logo {
-        height: 24px;
-        width: 110px;
-        background: url(../images/knockout_university_informal_horizontal_padded.svg);
-        background-size: cover;
-        margin-top: 0;
-    }
+    h2.UT-core-logo {
+      display: inline-block;
+      float: right;
+      margin: 5px 0;
 
+      a:hover,
+      a:focus {
+        text-decoration: none;
+      }
+
+      .knockout_logo {
+          height: 24px;
+          width: 110px;
+          background: url(../images/ut.png);
+          background-size: cover;
+          margin-top: 0;
+      }
+    }
   }
-
 }
 
 // header including main menu
-header.navbar {
-  background-color: #fff;
+header.full-width {
+  background-color: #382f2d;
   border: none;
-  padding: 0;
+  padding: 1em 0;
+  margin-bottom: 2em;
 
-  .logo-header {
-    margin-bottom: 2em;
+  .container {
 
-    h1.logo {
-      background-image: url(../images/logo.svg);
-      width: 230px;
-      height: 70px;
-      background-size: 100% 100%;
-      margin-top: 10px;
+    .logo-header.col-md-3 {
+      margin-bottom: 0;
+      padding-left: 0;
 
-      a {
-        display: block;
-        text-indent: -10000px;
+      .logo-text {
+        font-size: 40px;
+        letter-spacing: 5px;
+        color: #fff;
+
+        a {
+          text-decoration: none;
+          color: #fff;
+
+          &:hover,
+          &:focus {
+            text-decoration: none;
+          }
+        }
       }
-
     }
 
-  }
+    .navbar-collapse {
+      padding: 0;
+      width: 75%;
 
+      a.logo.navbar-btn,
+      a.navbar-brand {
+        display: none;
+      }
 
-  .navbar-collapse {
-    padding: 0;
+      #block-eurekatheme-main-menu {
 
-    #block-eureka-main-menu {
+        ul.navbar-nav {
+          float: right;
 
-      ul {
+          li {
+            // margin-right: 5px;
 
-        li {
-          margin-right: 5px;
+            a {
+              font-size: 1.25em;
+              color: #fff;
+              line-height: 27px;
 
-          a {
-            border: 1px solid #ece9e2;
-            font-weight: bold;
-            font-size: 1.25em;
-            color: $darkbrown;
+              &:hover,
+              &:focus {
+                background-color: transparent;
+                text-decoration: underline;
+              }
 
-            &:hover,
-            &:focus,
-            &.is-active {
-              background-color: $lighttan;
             }
 
           }

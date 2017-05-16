@@ -67,16 +67,15 @@
         theme.settings.navbar_position ? 'navbar-' ~ theme.settings.navbar_position|clean_class : container,
       ]
     %}
-    <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner">
+    <header class="full-width" id="navbar" role="banner">
+      {# <div class="container"> #}
       {% if not navbar_attributes.hasClass('container') %}
         <div class="{{ container }}">
       {% endif %}
 
-        <div class="logo-header">
-          <h1 class="logo">
-            <a href="/" class="UT-logo-link">The University of Texas at Austin</a>
-          </h1>
-        </div>
+      <div class="logo-header col-md-3">
+        <div class="logo-text"><a href="/">Eureka</a></div>
+      </div>
 
       <div class="navbar-header">
         {{ page.navigation }}
@@ -93,13 +92,14 @@
 
       {# Navigation (collapsible) #}
       {% if page.navigation_collapsible %}
-        <div id="navbar-collapse" class="navbar-collapse collapse">
+        <div id="navbar-collapse" class="navbar-collapse col-md-9 collapse">
           {{ page.navigation_collapsible }}
         </div>
       {% endif %}
       {% if not navbar_attributes.hasClass('container') %}
         </div>
       {% endif %}
+      {# </div> #}
     </header>
   {% endblock %}
 {% endif %}

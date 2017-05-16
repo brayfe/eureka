@@ -10,45 +10,22 @@ var watch = require('gulp-watch');
 const autoprefixer = require('gulp-autoprefixer');
 require('gulp-run-seq');
 
+// task functions
+gulp.task('clean', function () {
+    return gulp.src('dist/*')
+        .pipe(clean({force: true}))
+});
+
 gulp.task('sass', function () {
-  return gulp.src('./scss/**/*.scss')
+  return gulp.src('scss/**/*.scss')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('dist/css'));
+    .pipe(gulp.dest('dist/css/'));
 });
 
-// gulp.task('sass:watch', function () {
-//   gulp.watch('./scss/**/*.scss', ['sass']);
-// });
-gulp.task('watch', function(end) {
-  end.wait('key1', 'key2', 'key3');
-
-  gulp.src('./scss/**/*.scss')
-    .pipe(gulp.dest('dist/css'))
-    .on('end', function(){
-      end.notify('key1', function() {
-        console.log('sass end.'); });
-    });
-
-  gulp.src('dist/css/*')
-    .pipe(gulp.dest('css'))
-    .on('end', end.notifier('key2',
-      function() { console.log('copycss end.'); }
-    ));
-
-  gulp.src('css/*')
-    .pipe(gulp.dest('css'))
-    .on('end', end.notifier('key3',
-      function() { console.log('autoprefixer end.'); }
-    ));
-
+gulp.task('copycss', function() {
+  return gulp.src('dist/css/*.css')
+        .pipe(gulp.dest('css/'));
 });
-
-// gulp.task('sass', function (end) {
-//   gulp.src('./scss/**/*.scss')
-//     .pipe(gulp.dest('dist/css'))
-//     .on('end',end);
-
-// });
 
 gulp.task('autoprefixer', () =>
     gulp.src('css')
@@ -59,15 +36,56 @@ gulp.task('autoprefixer', () =>
         //.pipe(gulp.dest(''))
 );
 
-gulp.task('copycss', function() {
-  return gulp
-        .src('dist/css/*')
-        .pipe(gulp.dest('css'));
+
+gulp.task('watch', function() {
+  gulp.watch(['scss/**/*.scss'], ['sass', 'copycss']);
 });
 
-gulp.task('watch', function(){
-  gulp.watch('./scss/**/*.scss', ['sass','copycss']);
-});
+
+
+
+// gulp.task('watch', function(end) {
+//   end.wait('key1', 'key2', 'key3');
+
+//   gulp.src('./scss/**/*.scss')
+//     .pipe(gulp.dest('dist/css'))
+//     .on('end', function(){
+//       end.notify('key1', function() {
+//         console.log('sass end.'); });
+//     });
+
+//   gulp.src('dist/css/*')
+//     .pipe(gulp.dest('css'))
+//     .on('end', end.notifier('key2',
+//       function() { console.log('copycss end.'); }
+//     ));
+
+//   gulp.src('css/*')
+//     .pipe(gulp.dest('css'))
+//     .on('end', end.notifier('key3',
+//       function() { console.log('autoprefixer end.'); }
+//     ));
+
+// });
+
+// gulp.task('sass', function (end) {
+//   gulp.src('./scss/**/*.scss')
+//     .pipe(gulp.dest('dist/css'))
+//     .on('end',end);
+
+// });
+
+
+
+
+
+// gulp.task('watch', function(){
+//   gulp.watch('./scss/**/*.scss', ['sass','copycss']);
+// });
+
+// gulp.task('sass:watch', function () {
+//   gulp.watch('./scss/**/*.scss', ['sass']);
+// });
 
 gulp.task('scripts', function() {
   return gulp.src('bower_components/bootstrap-sass/assets/javascripts/**/*js')

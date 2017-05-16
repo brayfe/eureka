@@ -6335,51 +6335,65 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
       color: #fff; }
 
 .brand-bar {
-  background-color: #BF5700;
-  height: 30;
+  background-color: transparent;
+  height: 30px;
   padding: 0;
   width: 100%;
-  margin-bottom: 1em; }
-  .brand-bar h2.UT-core-logo {
+  margin-bottom: 2px; }
+  .brand-bar .container .ugs-brand {
+    display: inline-block;
+    font-size: 20px;
+    margin: 5px 0; }
+    .brand-bar .container .ugs-brand a {
+      color: #BF5700; }
+      .brand-bar .container .ugs-brand a:hover, .brand-bar .container .ugs-brand a:focus {
+        text-decoration: none; }
+  .brand-bar .container h2.UT-core-logo {
     display: inline-block;
     float: right;
     margin: 5px 0; }
-    .brand-bar h2.UT-core-logo a:hover,
-    .brand-bar h2.UT-core-logo a:focus {
+    .brand-bar .container h2.UT-core-logo a:hover,
+    .brand-bar .container h2.UT-core-logo a:focus {
       text-decoration: none; }
-    .brand-bar h2.UT-core-logo .knockout_logo {
+    .brand-bar .container h2.UT-core-logo .knockout_logo {
       height: 24px;
       width: 110px;
-      background: url(../images/knockout_university_informal_horizontal_padded.svg);
+      background: url(../images/ut.png);
       background-size: cover;
       margin-top: 0; }
 
-header.navbar {
-  background-color: #fff;
+header.full-width {
+  background-color: #382f2d;
   border: none;
-  padding: 0; }
-  header.navbar .logo-header {
-    margin-bottom: 2em; }
-    header.navbar .logo-header h1.logo {
-      background-image: url(../images/logo.svg);
-      width: 230px;
-      height: 70px;
-      background-size: 100% 100%;
-      margin-top: 10px; }
-      header.navbar .logo-header h1.logo a {
-        display: block;
-        text-indent: -10000px; }
-  header.navbar .navbar-collapse {
-    padding: 0; }
-    header.navbar .navbar-collapse #block-eureka-main-menu ul li {
-      margin-right: 5px; }
-      header.navbar .navbar-collapse #block-eureka-main-menu ul li a {
-        border: 1px solid #ece9e2;
-        font-weight: bold;
+  padding: 1em 0;
+  margin-bottom: 2em; }
+  header.full-width .container .logo-header.col-md-3 {
+    margin-bottom: 0;
+    padding-left: 0; }
+    header.full-width .container .logo-header.col-md-3 .logo-text {
+      font-size: 40px;
+      letter-spacing: 5px;
+      color: #fff; }
+      header.full-width .container .logo-header.col-md-3 .logo-text a {
+        text-decoration: none;
+        color: #fff; }
+        header.full-width .container .logo-header.col-md-3 .logo-text a:hover, header.full-width .container .logo-header.col-md-3 .logo-text a:focus {
+          text-decoration: none; }
+  header.full-width .container .navbar-collapse {
+    padding: 0;
+    width: 75%; }
+    header.full-width .container .navbar-collapse a.logo.navbar-btn,
+    header.full-width .container .navbar-collapse a.navbar-brand {
+      display: none; }
+    header.full-width .container .navbar-collapse #block-eurekatheme-main-menu ul.navbar-nav {
+      float: right; }
+      header.full-width .container .navbar-collapse #block-eurekatheme-main-menu ul.navbar-nav li a {
         font-size: 1.25em;
-        color: #382F2D; }
-        header.navbar .navbar-collapse #block-eureka-main-menu ul li a:hover, header.navbar .navbar-collapse #block-eureka-main-menu ul li a:focus, header.navbar .navbar-collapse #block-eureka-main-menu ul li a.is-active {
-          background-color: #f5f4f0; }
+        color: #fff;
+        line-height: 27px; }
+        header.full-width .container .navbar-collapse #block-eurekatheme-main-menu ul.navbar-nav li a:hover, header.full-width .container .navbar-collapse #block-eurekatheme-main-menu ul.navbar-nav li a:focus {
+          background-color: transparent;
+          text-decoration: underline; }
 
 .footer-wrapper {
   background-color: #f5f4f0;
