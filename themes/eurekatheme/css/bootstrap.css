@@ -6345,7 +6345,10 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
     font-size: 20px;
     margin: 5px 0; }
     .brand-bar .container .ugs-brand a {
-      color: #BF5700; }
+      color: #BF5700;
+      font-family: CharisSIL, serif;
+      font-weight: normal;
+      font-size: .8em; }
       .brand-bar .container .ugs-brand a:hover, .brand-bar .container .ugs-brand a:focus {
         text-decoration: none; }
   .brand-bar .container h2.UT-core-logo {
@@ -6372,11 +6375,12 @@ header.full-width {
     padding-left: 0; }
     header.full-width .container .logo-header.col-md-3 .logo-text {
       font-size: 40px;
-      letter-spacing: 5px;
+      letter-spacing: 2px;
       color: #fff; }
       header.full-width .container .logo-header.col-md-3 .logo-text a {
         text-decoration: none;
-        color: #fff; }
+        color: #fff;
+        font-family: "GT-Sectra-Regular-Web"; }
         header.full-width .container .logo-header.col-md-3 .logo-text a:hover, header.full-width .container .logo-header.col-md-3 .logo-text a:focus {
           text-decoration: none; }
   header.full-width .container .navbar-collapse {
@@ -6395,39 +6399,111 @@ header.full-width {
           background-color: transparent;
           text-decoration: underline; }
 
+.footer-upper {
+  text-align: center; }
+  .footer-upper #block-eurekawordmark {
+    color: #fff;
+    margin-top: 1em; }
+    .footer-upper #block-eurekawordmark p {
+      font-size: 40px;
+      font-family: "GT-Sectra-Regular-Web";
+      letter-spacing: 2px; }
+  .footer-upper #block-mainnavigation ul {
+    width: 90%;
+    text-align: center;
+    float: none;
+    margin: 0 auto; }
+    .footer-upper #block-mainnavigation ul li {
+      float: none;
+      display: inline-block; }
+      .footer-upper #block-mainnavigation ul li a {
+        color: #fff; }
+        .footer-upper #block-mainnavigation ul li a:hover, .footer-upper #block-mainnavigation ul li a:focus {
+          background-color: transparent;
+          text-decoration: underline; }
+
 .footer-wrapper {
-  background-color: #f5f4f0;
+  background-color: #333f48;
   margin-top: 3em; }
   .footer-wrapper footer.footer {
-    border: none;
-    margin-top: 0; }
+    border-top: 1px solid #999;
+    margin-top: 1.5em; }
     .footer-wrapper footer.footer .footer-left {
       width: 49%;
       display: inline-block; }
-      .footer-wrapper footer.footer .footer-left ul li a {
-        padding-top: 0; }
+      .footer-wrapper footer.footer .footer-left #block-footerugslogo img {
+        max-width: 60%; }
     .footer-wrapper footer.footer .footer-right {
       width: 49%;
       float: right;
       text-align: right !important;
       display: inline-block; }
-      .footer-wrapper footer.footer .footer-right ul li a {
-        padding-top: 0; }
+      .footer-wrapper footer.footer .footer-right #block-footercreditsandlinks p {
+        color: #999;
+        margin-top: 10px; }
+        .footer-wrapper footer.footer .footer-right #block-footercreditsandlinks p a {
+          color: #fff; }
+          .footer-wrapper footer.footer .footer-right #block-footercreditsandlinks p a:hover, .footer-wrapper footer.footer .footer-right #block-footercreditsandlinks p a:focus {
+            text-decoration: underline; }
+
+.region-breadcrumbs {
+  display: inline-block; }
 
 .region-content p {
   font-size: 1.2em;
   line-height: 1.8em; }
 
+@font-face {
+  font-family: 'CharisSIL';
+  src: url("../fonts/CharisSIL/webfont.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/CharisSIL/webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/CharisSIL/webfont.woff2") format("woff2"), url("../fonts/CharisSIL/webfont.woff") format("woff"), url("../fonts/CharisSIL/webfont.ttf") format("truetype"), url("../fonts/CharisSIL/webfont.svg#svgFontName") format("svg");
+  /* Legacy iOS */ }
+
+@font-face {
+  font-family: 'GT-Sectra-Regular-Web';
+  src: url("../fonts/GT-Sectra-Regular-Web/webfont.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/GT-Sectra-Regular-Web/webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/GT-Sectra-Regular-Web/webfont.woff2") format("woff2"), url("../fonts/GT-Sectra-Regular-Web/webfont.woff") format("woff"), url("../fonts/GT-Sectra-Regular-Web/webfont.ttf") format("truetype"), url("../fonts/GT-Sectra-Regular-Web/webfont.svg#svgFontName") format("svg");
+  /* Legacy iOS */ }
+
+@font-face {
+  font-family: 'GT-Sectra-Regular-Italic-Web';
+  src: url("../fonts/GT-Sectra-Regular-Italic-Web/webfont.eot");
+  /* IE9 Compat Modes */
+  src: url("../fonts/GT-Sectra-Regular-Italic-Web/webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/GT-Sectra-Regular-Italic-Web/webfont.woff2") format("woff2"), url("../fonts/GT-Sectra-Regular-Italic-Web/webfont.woff") format("woff"), url("../fonts/GT-Sectra-Regular-Italic-Web/webfont.ttf") format("truetype"), url("../fonts/GT-Sectra-Regular-Italic-Web/webfont.svg#svgFontName") format("svg");
+  /* Legacy iOS */ }
+
 body {
   background-color: transparent;
   margin-top: 0;
-  color: #382F2D; }
+  color: #382F2D;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
   body .main-container {
     min-height: 275px; }
     body .main-container .name.navbar-brand {
       display: none; }
-  body a {
-    color: #005F86; }
+
+p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+h1, h2, h3, h4, h5 {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+ul li {
+  font-family: "Open Sans", sans-serif; }
+
+a {
+  color: #005F86; }
 
 ol, ul {
   padding-left: 1.5em; }

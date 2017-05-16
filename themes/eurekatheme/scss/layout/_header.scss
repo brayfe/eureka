@@ -17,6 +17,9 @@
 
       a {
         color: $burnt;
+        font-family: $charis;
+        font-weight: normal;
+        font-size: .8em;
 
         &:hover,
         &:focus {
@@ -61,12 +64,13 @@ header.full-width {
 
       .logo-text {
         font-size: 40px;
-        letter-spacing: 5px;
+        letter-spacing: 2px;
         color: #fff;
 
         a {
           text-decoration: none;
           color: #fff;
+          font-family: $gtspectra;
 
           &:hover,
           &:focus {

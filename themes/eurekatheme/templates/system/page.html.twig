@@ -104,6 +104,17 @@
   {% endblock %}
 {% endif %}
 
+{# Breadcrumbs #}
+{# {% if breadcrumb %} #}
+  {% block breadcrumb %}
+    <div class="breadcrumbs">
+      <div class="container">
+        {{ page.breadcrumbs }}
+      </div>
+    </div>
+  {% endblock %}
+{# {% endif %} #}
+
 {# Main #}
 {% block main %}
   <div role="main" class="main-container {{ container }} js-quickedit-main-content">
@@ -145,12 +156,7 @@
           {% endblock %}
         {% endif %}
 
-        {# Breadcrumbs #}
-        {% if breadcrumb %}
-          {% block breadcrumb %}
-            {{ breadcrumb }}
-          {% endblock %}
-        {% endif %}
+
 
         {# Action Links #}
         {% if action_links %}
@@ -187,6 +193,11 @@
 
 
 <div class="footer-wrapper container-fluid">
+  <section class="footer-upper">
+    <div class="container">
+      f{{ page.footer_upper }}
+    </div>
+  </section>
   <footer class="footer {{ container }}" role="contentinfo">
      {% if page.footer_left %}
        {% block footer_left %}

@@ -1,8 +1,41 @@
-// general styling
+// general styling and fonts
+@font-face {
+  font-family: 'CharisSIL';
+  src: url('../fonts/CharisSIL/webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/CharisSIL/webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/CharisSIL/webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/CharisSIL/webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/CharisSIL/webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/CharisSIL/webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'GT-Sectra-Regular-Web';
+  src: url('../fonts/GT-Sectra-Regular-Web/webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/GT-Sectra-Regular-Web/webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/GT-Sectra-Regular-Web/webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/GT-Sectra-Regular-Web/webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/GT-Sectra-Regular-Web/webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/GT-Sectra-Regular-Web/webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'GT-Sectra-Regular-Italic-Web';
+  src: url('../fonts/GT-Sectra-Regular-Italic-Web/webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/GT-Sectra-Regular-Italic-Web/webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/GT-Sectra-Regular-Italic-Web/webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/GT-Sectra-Regular-Italic-Web/webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/GT-Sectra-Regular-Italic-Web/webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/GT-Sectra-Regular-Italic-Web/webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+
 body {
   background-color: transparent;
   margin-top: 0;
   color: $darkbrown;
+  font-family: $opensans;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 
   .main-container {
     min-height: 275px;
@@ -10,11 +43,28 @@ body {
     .name.navbar-brand {
       display: none;
     }
-
   }
-
-  a {
-    color: $darkblue;
-  }
-
 }
+
+p {
+  font-family: $opensans;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,h2,h3,h4,h5 {
+  font-family: $opensans;
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul li {
+  font-family: $opensans;
+}
+
+a {
+  color: $darkblue;
+}
+

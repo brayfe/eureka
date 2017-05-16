@@ -1,28 +1,64 @@
+// footer upper and footer left and footer right styles
 
+.footer-upper {
+  text-align: center;
+
+  #block-eurekawordmark {
+    color: #fff;
+    margin-top: 1em;
+
+    p {
+      font-size: 40px;
+      font-family: $gtspectra;
+      letter-spacing: 2px;
+    }
+  }
+
+  #block-mainnavigation {
+
+    ul {
+      width: 90%;
+      text-align: center;
+      float: none;
+      margin: 0 auto;
+
+      li {
+        float: none;
+        display: inline-block;
+
+        a {
+          color: #fff;
+
+          &:hover,
+          &:focus {
+            background-color: transparent;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}
+
+// for footer left and footer right
 .footer-wrapper {
-  background-color: $lighttan;
+  background-color: $gray;
   margin-top: 3em;
 
   footer.footer {
-    border: none;
-    margin-top: 0;
+    border-top: 1px solid #999;
+    margin-top: 1.5em;
 
     .footer-left {
       width: 49%;
       display: inline-block;
 
-      ul {
+      #block-footerugslogo {
 
-        li {
-
-          a {
-            padding-top: 0;
-          }
-
+        img {
+          max-width: 60%;
         }
-
       }
-
     }
 
     .footer-right {
@@ -31,20 +67,22 @@
       text-align: right !important;
       display: inline-block;
 
-      ul {
+      #block-footercreditsandlinks {
 
-        li {
+        p {
+          color:#999;
+          margin-top: 10px;
 
           a {
-            padding-top: 0;
+            color: #fff;
+
+            &:hover,
+            &:focus {
+              text-decoration: underline;
+            }
           }
-
         }
-
       }
-
     }
-
   }
-
 }
