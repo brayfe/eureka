@@ -6512,6 +6512,10 @@ a {
 .logo-header {
   display: inline-block; }
 
+@media only screen and (max-width: 991px) {
+  header.full-width .container .navbar-collapse {
+    width: 100%; } }
+
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
   background-color: transparent; }
@@ -6523,7 +6527,8 @@ a {
   font-weight: bold; }
 
 .navbar-default .navbar-header {
-  float: right; }
+  float: right;
+  display: inline-block; }
   .navbar-default .navbar-header .navbar-toggle {
     padding: 0;
     border: none; }

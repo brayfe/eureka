@@ -4,6 +4,11 @@
   display: inline-block;
 }
 
+@media only screen and (max-width: 991px)  {
+  header.full-width .container .navbar-collapse {
+    width: 100%;
+  }
+}
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
     background-color: transparent;
@@ -20,6 +25,7 @@
 
   .navbar-header {
     float: right;
+    display: inline-block;
 
     .navbar-toggle {
       padding: 0;
