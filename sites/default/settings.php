@@ -28,8 +28,8 @@ $local_settings = __DIR__ . "/settings.local.php";
 if (file_exists($local_settings)) {
   include $local_settings;
 }
+
 /**
  * Specify which install profile to use.
  */
 $settings['install_profile'] = 'eureka';
-
