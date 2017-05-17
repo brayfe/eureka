@@ -6346,7 +6346,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
     margin: 5px 0; }
     .brand-bar .container .ugs-brand a {
       color: #BF5700;
-      font-family: CharisSIL, serif;
+      font-family: CharisSIL-r, serif;
       font-weight: normal;
       font-size: .8em; }
       .brand-bar .container .ugs-brand a:hover, .brand-bar .container .ugs-brand a:focus {
@@ -6380,7 +6380,7 @@ header.full-width {
       header.full-width .container .logo-header.col-md-3 .logo-text a {
         text-decoration: none;
         color: #fff;
-        font-family: "GT-Sectra-Regular-Web"; }
+        font-family: "GT-Sectra-Regular"; }
         header.full-width .container .logo-header.col-md-3 .logo-text a:hover, header.full-width .container .logo-header.col-md-3 .logo-text a:focus {
           text-decoration: none; }
   header.full-width .container .navbar-collapse {
@@ -6406,7 +6406,7 @@ header.full-width {
     margin-top: 1em; }
     .footer-upper #block-eurekawordmark p {
       font-size: 40px;
-      font-family: "GT-Sectra-Regular-Web";
+      font-family: "GT-Sectra-Regular";
       letter-spacing: 2px; }
   .footer-upper #block-mainnavigation ul {
     width: 90%;
@@ -6455,23 +6455,23 @@ header.full-width {
 
 @font-face {
   font-family: 'CharisSIL';
-  src: url("../fonts/CharisSIL/webfont.eot");
+  src: url("../fonts/CharisSIL-R/webfont.eot");
   /* IE9 Compat Modes */
-  src: url("../fonts/CharisSIL/webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/CharisSIL/webfont.woff2") format("woff2"), url("../fonts/CharisSIL/webfont.woff") format("woff"), url("../fonts/CharisSIL/webfont.ttf") format("truetype"), url("../fonts/CharisSIL/webfont.svg#svgFontName") format("svg");
+  src: url("../fonts/CharisSIL-R/webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/CharisSIL-R/webfont.woff") format("woff"), url("../fonts/CharisSIL-R/webfont.ttf") format("truetype"), url("../fonts/CharisSIL-R/webfont.svg#svgFontName") format("svg");
   /* Legacy iOS */ }
 
 @font-face {
   font-family: 'GT-Sectra-Regular-Web';
-  src: url("../fonts/GT-Sectra-Regular-Web/webfont.eot");
+  src: url("../fonts/GT-Sectra-Regular/webfont.eot");
   /* IE9 Compat Modes */
-  src: url("../fonts/GT-Sectra-Regular-Web/webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/GT-Sectra-Regular-Web/webfont.woff2") format("woff2"), url("../fonts/GT-Sectra-Regular-Web/webfont.woff") format("woff"), url("../fonts/GT-Sectra-Regular-Web/webfont.ttf") format("truetype"), url("../fonts/GT-Sectra-Regular-Web/webfont.svg#svgFontName") format("svg");
+  src: url("../fonts/GT-Sectra-Regular/webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/GT-Sectra-Regular/webfont.woff") format("woff"), url("../fonts/GT-Sectra-Regular/webfont.ttf") format("truetype"), url("../fonts/GT-Sectra-Regular/webfont.svg#svgFontName") format("svg");
   /* Legacy iOS */ }
 
 @font-face {
-  font-family: 'GT-Sectra-Regular-Italic-Web';
-  src: url("../fonts/GT-Sectra-Regular-Italic-Web/webfont.eot");
+  font-family: 'GT-Sectra-Regular-Italic';
+  src: url("../fonts/GT-Sectra-Regular-Italic/webfont.eot");
   /* IE9 Compat Modes */
-  src: url("../fonts/GT-Sectra-Regular-Italic-Web/webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/GT-Sectra-Regular-Italic-Web/webfont.woff2") format("woff2"), url("../fonts/GT-Sectra-Regular-Italic-Web/webfont.woff") format("woff"), url("../fonts/GT-Sectra-Regular-Italic-Web/webfont.ttf") format("truetype"), url("../fonts/GT-Sectra-Regular-Italic-Web/webfont.svg#svgFontName") format("svg");
+  src: url("../fonts/GT-Sectra-Regular-Italic/webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/GT-Sectra-Regular-Italic/webfont.woff2") format("woff2"), url("../fonts/GT-Sectra-Regular-Italic/webfont.woff") format("woff"), url("../fonts/GT-Sectra-Regular-Italic/webfont.ttf") format("truetype"), url("../fonts/GT-Sectra-Regular-Italic/webfont.svg#svgFontName") format("svg");
   /* Legacy iOS */ }
 
 body {
@@ -6504,6 +6504,31 @@ ul li {
 
 a {
   color: #005F86; }
+
+.logo-header {
+  display: inline-block; }
+
+.navbar-header {
+  float: right; }
+  .navbar-header .navbar-toggle {
+    padding: 0; }
+    .navbar-header .navbar-toggle .sr-only {
+      position: relative;
+      color: #fff;
+      font-size: 1.2em;
+      width: auto;
+      height: auto;
+      margin: auto;
+      padding: 0;
+      overflow: visible;
+      clip: auto;
+      border: 0; }
+    .navbar-header .navbar-toggle .icon-bar {
+      display: block;
+      background: #fff;
+      width: 45px;
+      height: 2px;
+      margin-bottom: 9px; }
 
 ol, ul {
   padding-left: 1.5em; }

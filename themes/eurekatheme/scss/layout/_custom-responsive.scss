@@ -1,1 +1,36 @@
 // custom responsive styling
+
+.logo-header {
+  display: inline-block;
+}
+
+.navbar-header {
+  float: right;
+
+  .navbar-toggle {
+    padding: 0;
+
+    .sr-only {
+      position: relative;
+      color: #fff;
+      font-size: 1.2em;
+      width: auto;
+      height: auto;
+      margin: auto;
+      padding: 0;
+      overflow: visible;
+      clip: auto;
+      border: 0;
+    }
+
+
+    .icon-bar {
+      display: block;
+      background: #fff;
+      width: 45px;
+      height: 2px;
+      margin-bottom: 9px;
+    }
+  }
+}
+

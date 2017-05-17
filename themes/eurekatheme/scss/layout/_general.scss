@@ -1,30 +1,30 @@
 // general styling and fonts
 @font-face {
   font-family: 'CharisSIL';
-  src: url('../fonts/CharisSIL/webfont.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/CharisSIL/webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/CharisSIL/webfont.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/CharisSIL/webfont.woff') format('woff'), /* Pretty Modern Browsers */
-       url('../fonts/CharisSIL/webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/CharisSIL/webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+  src: url('../fonts/CharisSIL-R/webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/CharisSIL-R/webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       // url('../fonts/CharisSIL-R/webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/CharisSIL-R/webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/CharisSIL-R/webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/CharisSIL-R/webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 @font-face {
   font-family: 'GT-Sectra-Regular-Web';
-  src: url('../fonts/GT-Sectra-Regular-Web/webfont.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/GT-Sectra-Regular-Web/webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/GT-Sectra-Regular-Web/webfont.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/GT-Sectra-Regular-Web/webfont.woff') format('woff'), /* Pretty Modern Browsers */
-       url('../fonts/GT-Sectra-Regular-Web/webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/GT-Sectra-Regular-Web/webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+  src: url('../fonts/GT-Sectra-Regular/webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/GT-Sectra-Regular/webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       // url('../fonts/GT-Sectra-Regular-Web/webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/GT-Sectra-Regular/webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/GT-Sectra-Regular/webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/GT-Sectra-Regular/webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 @font-face {
-  font-family: 'GT-Sectra-Regular-Italic-Web';
-  src: url('../fonts/GT-Sectra-Regular-Italic-Web/webfont.eot'); /* IE9 Compat Modes */
-  src: url('../fonts/GT-Sectra-Regular-Italic-Web/webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../fonts/GT-Sectra-Regular-Italic-Web/webfont.woff2') format('woff2'), /* Super Modern Browsers */
-       url('../fonts/GT-Sectra-Regular-Italic-Web/webfont.woff') format('woff'), /* Pretty Modern Browsers */
-       url('../fonts/GT-Sectra-Regular-Italic-Web/webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
-       url('../fonts/GT-Sectra-Regular-Italic-Web/webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
+  font-family: 'GT-Sectra-Regular-Italic';
+  src: url('../fonts/GT-Sectra-Regular-Italic/webfont.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/GT-Sectra-Regular-Italic/webfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/GT-Sectra-Regular-Italic/webfont.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/GT-Sectra-Regular-Italic/webfont.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/GT-Sectra-Regular-Italic/webfont.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/GT-Sectra-Regular-Italic/webfont.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
 
