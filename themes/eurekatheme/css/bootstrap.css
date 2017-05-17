@@ -6368,6 +6368,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
 header.full-width {
   background-color: #382f2d;
   border: none;
+  border-radius: 0;
   padding: 1em 0;
   margin-bottom: 2em; }
   header.full-width .container .logo-header.col-md-3 {
@@ -6385,7 +6386,10 @@ header.full-width {
           text-decoration: none; }
   header.full-width .container .navbar-collapse {
     padding: 0;
-    width: 75%; }
+    box-shadow: none;
+    width: 75%;
+    overflow: hidden;
+    border: none; }
     header.full-width .container .navbar-collapse a.logo.navbar-btn,
     header.full-width .container .navbar-collapse a.navbar-brand {
       display: none; }
@@ -6508,11 +6512,24 @@ a {
 .logo-header {
   display: inline-block; }
 
-.navbar-header {
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: transparent; }
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  background-color: transparent;
+  font-weight: bold; }
+
+.navbar-default .navbar-header {
   float: right; }
-  .navbar-header .navbar-toggle {
-    padding: 0; }
-    .navbar-header .navbar-toggle .sr-only {
+  .navbar-default .navbar-header .navbar-toggle {
+    padding: 0;
+    border: none; }
+    .navbar-default .navbar-header .navbar-toggle:hover, .navbar-default .navbar-header .navbar-toggle:focus {
+      background: transparent; }
+    .navbar-default .navbar-header .navbar-toggle .sr-only {
       position: relative;
       color: #fff;
       font-size: 1.2em;
@@ -6523,7 +6540,7 @@ a {
       overflow: visible;
       clip: auto;
       border: 0; }
-    .navbar-header .navbar-toggle .icon-bar {
+    .navbar-default .navbar-header .navbar-toggle .icon-bar {
       display: block;
       background: #fff;
       width: 45px;

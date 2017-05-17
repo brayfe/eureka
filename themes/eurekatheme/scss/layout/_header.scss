@@ -53,6 +53,7 @@
 header.full-width {
   background-color: #382f2d;
   border: none;
+  border-radius: 0;
   padding: 1em 0;
   margin-bottom: 2em;
 
@@ -82,7 +83,11 @@ header.full-width {
 
     .navbar-collapse {
       padding: 0;
+      box-shadow: none;
+      // width: auto;
       width: 75%;
+      overflow: hidden;
+      border: none;
 
       a.logo.navbar-btn,
       a.navbar-brand {

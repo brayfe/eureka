@@ -63,11 +63,12 @@
     {%
       set navbar_classes = [
         'navbar',
+        'full-width',
         theme.settings.navbar_inverse ? 'navbar-inverse' : 'navbar-default',
-        theme.settings.navbar_position ? 'navbar-' ~ theme.settings.navbar_position|clean_class : container,
+        theme.settings.navbar_position ? 'navbar-' ~ theme.settings.navbar_position|clean_class : '',
       ]
     %}
-    <header class="full-width" id="navbar" role="banner">
+    <header{{ navbar_attributes.addClass(navbar_classes) }} id="navbar" role="banner">
       {# <div class="container"> #}
       {% if not navbar_attributes.hasClass('container') %}
         <div class="{{ container }}">
@@ -92,7 +93,7 @@
 
       {# Navigation (collapsible) #}
       {% if page.navigation_collapsible %}
-        <div id="navbar-collapse" class="navbar-collapse col-md-9 collapse">
+        <div id="navbar-collapse" class="navbar-collapse collapse col-md-9">
           {{ page.navigation_collapsible }}
         </div>
       {% endif %}
