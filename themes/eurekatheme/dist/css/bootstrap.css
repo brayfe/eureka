@@ -6393,13 +6393,17 @@ header.full-width {
     header.full-width .container .navbar-collapse a.logo.navbar-btn,
     header.full-width .container .navbar-collapse a.navbar-brand {
       display: none; }
-    header.full-width .container .navbar-collapse #block-eurekatheme-main-menu ul.navbar-nav {
+    header.full-width .container .navbar-collapse #block-eurekatheme-main-menu ul.navbar-nav,
+    header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav {
       float: right; }
-      header.full-width .container .navbar-collapse #block-eurekatheme-main-menu ul.navbar-nav li a {
+      header.full-width .container .navbar-collapse #block-eurekatheme-main-menu ul.navbar-nav li a,
+      header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav li a {
         font-size: 1.25em;
         color: #fff;
         line-height: 27px; }
-        header.full-width .container .navbar-collapse #block-eurekatheme-main-menu ul.navbar-nav li a:hover, header.full-width .container .navbar-collapse #block-eurekatheme-main-menu ul.navbar-nav li a:focus {
+        header.full-width .container .navbar-collapse #block-eurekatheme-main-menu ul.navbar-nav li a:hover, header.full-width .container .navbar-collapse #block-eurekatheme-main-menu ul.navbar-nav li a:focus,
+        header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav li a:hover,
+        header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav li a:focus {
           background-color: transparent;
           text-decoration: underline; }
 
@@ -6412,17 +6416,23 @@ header.full-width {
       font-size: 40px;
       font-family: "GT-Sectra-Regular";
       letter-spacing: 2px; }
-  .footer-upper #block-mainnavigation ul {
+  .footer-upper #block-mainnavigation ul,
+  .footer-upper #block-mainnavigation-2 ul {
     width: 90%;
     text-align: center;
     float: none;
     margin: 0 auto; }
-    .footer-upper #block-mainnavigation ul li {
+    .footer-upper #block-mainnavigation ul li,
+    .footer-upper #block-mainnavigation-2 ul li {
       float: none;
-      display: inline-block; }
-      .footer-upper #block-mainnavigation ul li a {
+      display: inline-block;
+      text-align: center; }
+      .footer-upper #block-mainnavigation ul li a,
+      .footer-upper #block-mainnavigation-2 ul li a {
         color: #fff; }
-        .footer-upper #block-mainnavigation ul li a:hover, .footer-upper #block-mainnavigation ul li a:focus {
+        .footer-upper #block-mainnavigation ul li a:hover, .footer-upper #block-mainnavigation ul li a:focus,
+        .footer-upper #block-mainnavigation-2 ul li a:hover,
+        .footer-upper #block-mainnavigation-2 ul li a:focus {
           background-color: transparent;
           text-decoration: underline; }
 

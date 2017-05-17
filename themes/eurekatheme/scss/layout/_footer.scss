@@ -14,7 +14,8 @@
     }
   }
 
-  #block-mainnavigation {
+  #block-mainnavigation,
+  #block-mainnavigation-2 {
 
     ul {
       width: 90%;
@@ -25,6 +26,7 @@
       li {
         float: none;
         display: inline-block;
+        text-align: center;
 
         a {
           color: #fff;
