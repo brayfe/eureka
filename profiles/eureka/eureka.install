@@ -20,6 +20,8 @@ function eureka_install() {
   $user->roles[] = 'administrator';
   $user->save();
 
+  \Drupal::service('theme_installer')->install(['bootstrap', 'eurekatheme']);
+
   // Set the default and admin theme.
   \Drupal::configFactory()
     ->getEditable('system.theme')
