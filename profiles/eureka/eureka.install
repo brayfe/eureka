@@ -23,7 +23,7 @@ function eureka_install() {
   // Set the default and admin theme.
   \Drupal::configFactory()
     ->getEditable('system.theme')
-    ->set('default', 'bartik')
+    ->set('default', 'eurekatheme')
     ->set('admin', 'adminimal_theme')
     ->save(TRUE);
 
