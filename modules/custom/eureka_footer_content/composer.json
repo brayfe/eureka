@@ -1,0 +1,14 @@
+{
+  "name": "drupal/eureka_footer_content",
+  "type": "drupal-module",
+  "description": "Module for defining block content in footer blocks",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/eureka_footer_content",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "http://drupal.org/project/issues/eureka_footer_content",
+    "source": "http://cgit.drupalcode.org/eureka_footer_content"
+  },
+  "require": { }
+}

@@ -1,0 +1,129 @@
+// Branding and header styling
+
+// branding
+.brand-bar {
+  background-color: transparent;
+  height: 30px;
+  padding: 0;
+  width: 100%;
+  margin-bottom: 2px;
+
+  .container {
+
+    .ugs-brand {
+      display: inline-block;
+      font-size: 20px;
+      margin: 5px 0;
+
+      a {
+        color: $burnt;
+        font-family: $charis;
+        font-weight: normal;
+        font-size: .8em;
+
+        &:hover,
+        &:focus {
+          text-decoration: none;
+        }
+      }
+    }
+
+    h2.UT-core-logo {
+      display: inline-block;
+      float: right;
+      margin: 5px 0;
+
+      a:hover,
+      a:focus {
+        text-decoration: none;
+      }
+
+      .knockout_logo {
+          height: 24px;
+          width: 110px;
+          background: url(../images/ut.png);
+          background-size: cover;
+          margin-top: 0;
+      }
+    }
+  }
+}
+
+// header including main menu
+header.full-width {
+  background-color: #382f2d;
+  border: none;
+  border-radius: 0;
+  padding: 1em 0;
+  margin-bottom: 2em;
+
+  .container {
+
+    .logo-header.col-md-3 {
+      margin-bottom: 0;
+      padding-left: 0;
+
+      .logo-text {
+        font-size: 40px;
+        letter-spacing: 2px;
+        color: #fff;
+
+        a {
+          text-decoration: none;
+          color: #fff;
+          font-family: $gtspectra;
+
+          &:hover,
+          &:focus {
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .navbar-collapse {
+      padding: 0;
+      box-shadow: none;
+      // width: auto;
+      width: 75%;
+      overflow: hidden;
+      border: none;
+
+      a.logo.navbar-btn,
+      a.navbar-brand {
+        display: none;
+      }
+
+      #block-eurekatheme-main-menu,
+      #block-mainnavigation {
+
+        ul.navbar-nav {
+          float: right;
+
+          li {
+            // margin-right: 5px;
+
+            a {
+              font-size: 1.25em;
+              color: #fff;
+              line-height: 27px;
+
+              &:hover,
+              &:focus {
+                background-color: transparent;
+                text-decoration: underline;
+              }
+
+            }
+
+          }
+
+        }
+
+      }
+
+    }
+
+  }
+
+}
