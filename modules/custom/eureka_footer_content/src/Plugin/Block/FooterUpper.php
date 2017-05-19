@@ -8,19 +8,19 @@ use Drupal\Core\Block\BlockBase;
  * Provides a Footer Block.
  *
  * @Block(
- *   id = "footer_left_block",
- *   admin_label = @Translation("Footer Left Block"),
+ *   id = "footer_upper_block",
+ *   admin_label = @Translation("Footer Upper Block"),
  * )
  */
-class FooterLeft extends BlockBase {
+class FooterUpper extends BlockBase {
 
   /**
    * {@inheritdoc}
    */
   public function build() {
 return [
-      '#theme' => 'footer_left',
-      '#name' => 'Tyler',
+      '#theme' => 'footer_upper',
+      '#name' => '',
       '#year' => date('Y'),
       // '#attached' => [
       //   'css' => [

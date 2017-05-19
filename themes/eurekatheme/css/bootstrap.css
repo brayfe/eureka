@@ -6445,19 +6445,19 @@ header.full-width {
     .footer-wrapper footer.footer .footer-left {
       width: 49%;
       display: inline-block; }
-      .footer-wrapper footer.footer .footer-left #block-footerugslogo img {
+      .footer-wrapper footer.footer .footer-left img {
         max-width: 60%; }
     .footer-wrapper footer.footer .footer-right {
       width: 49%;
       float: right;
       text-align: right !important;
       display: inline-block; }
-      .footer-wrapper footer.footer .footer-right #block-footercreditsandlinks p {
+      .footer-wrapper footer.footer .footer-right p {
         color: #999;
         margin-top: 10px; }
-        .footer-wrapper footer.footer .footer-right #block-footercreditsandlinks p a {
+        .footer-wrapper footer.footer .footer-right p a {
           color: #fff; }
-          .footer-wrapper footer.footer .footer-right #block-footercreditsandlinks p a:hover, .footer-wrapper footer.footer .footer-right #block-footercreditsandlinks p a:focus {
+          .footer-wrapper footer.footer .footer-right p a:hover, .footer-wrapper footer.footer .footer-right p a:focus {
             text-decoration: underline; }
 
 .region-breadcrumbs {

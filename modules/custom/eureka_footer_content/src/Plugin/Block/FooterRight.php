@@ -19,7 +19,7 @@ class FooterRight extends BlockBase {
    */
   public function build() {
 return [
-      '#theme' => 'footer_content_right',
+      '#theme' => 'footer_right',
       '#name' => 'Mark Fullmer',
       '#year' => date('Y'),
       // '#attached' => [
