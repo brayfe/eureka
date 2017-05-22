@@ -20,13 +20,6 @@ class FooterUpper extends BlockBase {
   public function build() {
 return [
       '#theme' => 'footer_upper',
-      '#name' => '',
-      '#year' => date('Y'),
-      // '#attached' => [
-      //   'css' => [
-      //     drupal_get_path('module', 'acme') . '/assets/css/acme.css'
-      //   ]
-      // ]
     ];
   }
 

@@ -20,13 +20,6 @@ class FooterLeft extends BlockBase {
   public function build() {
 return [
       '#theme' => 'footer_left',
-      '#name' => 'Tyler',
-      '#year' => date('Y'),
-      // '#attached' => [
-      //   'css' => [
-      //     drupal_get_path('module', 'acme') . '/assets/css/acme.css'
-      //   ]
-      // ]
     ];
   }
 
