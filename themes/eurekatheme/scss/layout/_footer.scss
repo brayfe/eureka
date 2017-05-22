@@ -55,12 +55,12 @@
       width: 49%;
       display: inline-block;
 
-      #block-footerugslogo {
+      // #block-footerugslogo {
 
         img {
           max-width: 60%;
         }
-      }
+      //}
     }
 
     .footer-right {
@@ -69,7 +69,7 @@
       text-align: right !important;
       display: inline-block;
 
-      #block-footercreditsandlinks {
+      //#block-footercreditsandlinks {
 
         p {
           color:#999;
@@ -84,7 +84,7 @@
             }
           }
         }
-      }
+      //}
     }
   }
 }

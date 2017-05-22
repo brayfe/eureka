@@ -9,13 +9,17 @@ use Drupal\Core\Routing\RouteMatchInterface;
 
 
 function eureka_footer_content_theme() {
-  $theme['footer_content_left'] = [
+  $theme['footer_left'] = [
     'variables' => ['name' => NULL, 'year' => NULL],
-    'template' => 'footer-content-left'
+    'template' => 'footer-left'
   ];
-  $theme['footer_content_right'] = [
+  $theme['footer_right'] = [
     'variables' => ['name' => NULL, 'year' => NULL],
-    'template' => 'footer-content-right'
+    'template' => 'footer-right'
+  ];
+  $theme['footer_upper'] = [
+    'variables' => ['name' => NULL, 'year' => NULL],
+    'template' => 'footer-upper'
   ];
 
   return $theme;

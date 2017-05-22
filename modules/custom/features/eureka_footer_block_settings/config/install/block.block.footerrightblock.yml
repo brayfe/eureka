@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - eureka_footer_content
+  theme:
+    - eurekatheme
+id: footerrightblock
+theme: eurekatheme
+region: footer_right
+weight: -2
+provider: null
+plugin: footer_right_block
+settings:
+  id: footer_right_block
+  label: 'Footer Right Block'
+  provider: eureka_footer_content
+  label_display: '0'
+visibility: {  }
