@@ -1,0 +1,8 @@
+name: 'Eureka Footer Block Settings'
+description: 'Puts Eureka wordmark in footer upper region; also puts UT UGS logo in footer left region, and boilerplate links in footer right region.'
+type: module
+core: 8.x
+dependencies:
+  - block
+  - eureka_footer_content
+version: 8.x-1.0

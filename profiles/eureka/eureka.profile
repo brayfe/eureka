@@ -36,7 +36,7 @@ function eureka_install_tasks_alter(array &$tasks, array $install_state) {
  */
 function eureka_install_extensions(array &$install_state) {
   $batch = [];
-  $modules = ['features', 'config_update', 'settings_eurekatheme', 'eureka_footer_content'];
+  $modules = ['features', 'config_update', 'settings_eurekatheme', 'eureka_footer_content', 'eureka_footer_block_settings'];
   foreach ($modules as $module) {
     $batch['operations'][] = ['eureka_install_module', (array) $module];
   }
