@@ -6524,7 +6524,23 @@ a {
 
 @media only screen and (max-width: 991px) {
   header.full-width .container .navbar-collapse {
-    width: 100%; } }
+    width: 100%; }
+    header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav {
+      text-align: center;
+      float: none; }
+      header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav li {
+        float: none;
+        display: inline-block; } }
+
+@media only screen and (max-width: 767px) {
+  header.full-width .container .navbar-collapse {
+    width: 100%; }
+    header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav {
+      text-align: center;
+      float: none; }
+      header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav li {
+        float: none;
+        display: block; } }
 
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
@@ -6533,34 +6549,46 @@ a {
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-  background-color: transparent;
-  font-weight: bold; }
+  background-color: transparent; }
 
 .navbar-default .navbar-header {
   float: right;
   display: inline-block; }
   .navbar-default .navbar-header .navbar-toggle {
-    padding: 0;
-    border: none; }
+    padding: 5px;
+    border: 1px solid #fff; }
     .navbar-default .navbar-header .navbar-toggle:hover, .navbar-default .navbar-header .navbar-toggle:focus {
       background: transparent; }
     .navbar-default .navbar-header .navbar-toggle .sr-only {
       position: relative;
       color: #fff;
-      font-size: 1.2em;
+      font-size: 1em;
+      line-height: 12px;
+      display: block;
       width: auto;
       height: auto;
       margin: auto;
-      padding: 0;
+      padding: 0 0 8px 0;
       overflow: visible;
       clip: auto;
       border: 0; }
     .navbar-default .navbar-header .navbar-toggle .icon-bar {
       display: block;
       background: #fff;
-      width: 45px;
+      width: 40px;
       height: 2px;
-      margin-bottom: 9px; }
+      margin-bottom: 7px; }
+      .navbar-default .navbar-header .navbar-toggle .icon-bar:last-child {
+        margin-bottom: 4px; }
+
+@media only screen and (max-width: 991px) {
+  .footer-wrapper footer.footer .footer-left {
+    width: 100%;
+    text-align: center; }
+  .footer-wrapper footer.footer .footer-right {
+    width: 100%;
+    text-align: center !important;
+    margin-top: 1em; } }
 
 ol, ul {
   padding-left: 1.5em; }

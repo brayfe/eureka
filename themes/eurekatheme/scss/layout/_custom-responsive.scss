@@ -4,11 +4,41 @@
   display: inline-block;
 }
 
+// responsive header
 @media only screen and (max-width: 991px)  {
   header.full-width .container .navbar-collapse {
     width: 100%;
+
+    #block-mainnavigation ul.navbar-nav {
+      text-align: center;
+      float: none;
+
+      li {
+        float: none;
+        display: inline-block;
+      }
+    }
   }
 }
+
+// for small up to medium
+// responsive header
+@media only screen and (max-width: 767px)  {
+  header.full-width .container .navbar-collapse {
+    width: 100%;
+
+    #block-mainnavigation ul.navbar-nav {
+      text-align: center;
+      float: none;
+
+      li {
+        float: none;
+        display: block;
+      }
+    }
+  }
+}
+
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
     background-color: transparent;
@@ -18,7 +48,6 @@
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
     background-color: transparent;
-    font-weight: bold;
 }
 
 .navbar-default {
@@ -28,8 +57,8 @@
     display: inline-block;
 
     .navbar-toggle {
-      padding: 0;
-      border: none;
+      padding: 5px;
+      border: 1px solid #fff;
 
       &:hover,
       &:focus {
@@ -39,11 +68,13 @@
       .sr-only {
         position: relative;
         color: #fff;
-        font-size: 1.2em;
+        font-size: 1em;
+        line-height: 12px;
+        display: block;
         width: auto;
         height: auto;
         margin: auto;
-        padding: 0;
+        padding: 0 0 8px 0;
         overflow: visible;
         clip: auto;
         border: 0;
@@ -53,12 +84,32 @@
       .icon-bar {
         display: block;
         background: #fff;
-        width: 45px;
+        width: 40px;
         height: 2px;
-        margin-bottom: 9px;
+        margin-bottom: 7px;
+
+        &:last-child {
+          margin-bottom: 4px;
+        }
       }
     }
   }
+}
+
+// responsive footer
+@media only screen and (max-width: 991px)  {
+
+  .footer-wrapper footer.footer .footer-left {
+    width: 100%;
+    text-align: center;
+  }
+
+  .footer-wrapper footer.footer .footer-right {
+    width: 100%;
+    text-align: center !important;
+    margin-top: 1em;
+  }
+
 }
 
 
