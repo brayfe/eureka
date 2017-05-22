@@ -1,0 +1,8 @@
+name: 'Eureka Main Nav Menu Settings'
+description: 'Place the main navigation menu blocks into header and footer upper'
+type: module
+core: 8.x
+dependencies:
+  - block
+  - system
+version: 8.x-1.0
