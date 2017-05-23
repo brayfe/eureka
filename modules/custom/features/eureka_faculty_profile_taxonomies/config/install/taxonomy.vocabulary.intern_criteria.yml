@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Intern Criteria'
+vid: intern_criteria
+description: ''
+hierarchy: 0
+weight: 0

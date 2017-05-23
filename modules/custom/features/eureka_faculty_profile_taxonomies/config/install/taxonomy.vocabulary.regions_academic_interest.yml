@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Regions of Academic Interest'
+vid: regions_academic_interest
+description: ''
+hierarchy: 0
+weight: 0
