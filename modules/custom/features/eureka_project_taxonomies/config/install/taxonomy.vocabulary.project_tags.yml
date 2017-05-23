@@ -1,7 +1,7 @@
 langcode: en
 status: true
 dependencies: {  }
-name: 'Project Related Tags'
+name: 'Project-related Tags'
 vid: project_tags
 description: ''
 hierarchy: 0

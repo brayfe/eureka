@@ -1,8 +1,8 @@
 langcode: en
 status: true
 dependencies: {  }
-name: Tags
-vid: tags
+name: 'Profile-related Tags'
+vid: profile_tags
 description: ''
 hierarchy: 0
 weight: 0
