@@ -20,6 +20,10 @@ class FooterRight extends BlockBase {
   public function build() {
 return [
       '#theme' => 'footer_right',
+      '#year' => date('Y'),
+      '#policy_link' => t('<a href="/basic-page">Site Polices</a>'),
+      '#accessibility_link' => t('<a href="https://cio.utexas.edu/policies/web-accessibility">Web Accessibility</a>'),
+      '#privacy_link' => t('<a href="https://cio.utexas.edu/policies/web-privacy">Web Privacy Policy</a>'),
     ];
   }
 

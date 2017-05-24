@@ -19,6 +19,7 @@ class FooterLeft extends BlockBase {
    */
   public function build() {
 return [
+      '#ugslogo' => t('<a href="https://ugs.utexas.edu/"><img alt="The University of Texas School of Undergraduate Studies" src="/themes/eurekatheme/images/knockout_formal_Undergraduate_Studies.png" /></a>'),
       '#theme' => 'footer_left',
     ];
   }
