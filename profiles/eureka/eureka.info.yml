@@ -36,5 +36,4 @@ dependencies:
   - views
 
 themes:
-  - bartik
   - adminimal_theme
