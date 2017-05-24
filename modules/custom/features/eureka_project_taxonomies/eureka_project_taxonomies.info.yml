@@ -1,0 +1,7 @@
+name: 'Eureka Project Taxonomies'
+description: 'The vocabularies used for the Project entity.'
+type: module
+core: 8.x
+dependencies:
+  - taxonomy
+version: 8.x-1.0

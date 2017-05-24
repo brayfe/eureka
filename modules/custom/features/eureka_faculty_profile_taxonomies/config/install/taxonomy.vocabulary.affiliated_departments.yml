@@ -1,0 +1,8 @@
+langcode: en
+status: true
+dependencies: {  }
+name: 'Affiliated Departments'
+vid: affiliated_departments
+description: ''
+hierarchy: 0
+weight: 0
