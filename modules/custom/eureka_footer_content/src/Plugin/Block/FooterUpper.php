@@ -18,7 +18,8 @@ class FooterUpper extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-return [
+
+    return [
       '#theme' => 'footer_upper',
     ];
   }

@@ -21,19 +21,15 @@ class FooterRight extends BlockBase {
    */
   public function build() {
 
-    //$policy_url = Url::fromRoute('policy-page');
-    //$policy_link = Link::fromTextAndUrl('Site Polices', $policy_url);
-
     $access_url = Url::fromUri('https://cio.utexas.edu/policies/web-accessibility');
     $access_link = Link::fromTextAndUrl('Web Accessibility', $access_url);
 
     $privacy_url = Url::fromUri('https://cio.utexas.edu/policies/web-privacy');
     $privacy_link = Link::fromTextAndUrl('Web Privacy Policy', $privacy_url);
 
-return [
+    return [
       '#theme' => 'footer_right',
       '#year' => date('Y'),
-      //'#policy_link' => $policy_link,
       '#accessibility_link' => $access_link,
       '#privacy_link' => $privacy_link,
     ];

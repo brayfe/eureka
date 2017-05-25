@@ -3,7 +3,6 @@
 namespace Drupal\eureka_footer_content\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Link;
 use Drupal\Core\Url;
 
 /**
@@ -21,14 +20,12 @@ class FooterLeft extends BlockBase {
    */
   public function build() {
 
-    //$ugslogosrc = Url::fromRoute('themes.eurekatheme.images.knockout_formal_Undergraduate_Studies.png');
-    $ugslogourl = Url::fromUri('https://ugs.utexas.edu/');
-
     return [
-          '#ugslogourl' => $ugslogourl,
-          //'#ugslogosrc' => $ugslogosrc,
-          '#theme' => 'footer_left',
-        ];
+      '#ugslogourl' => Url::fromUri('https://ugs.utexas.edu/'),
+      '#ugslogosrc' => '/themes/eurekatheme/images/knockout_formal_Undergraduate_Studies.png',
+      '#ugslogoalt' => t('University of Texas School of Undergraduate Studies'),
+      '#theme' => 'footer_left',
+    ];
   }
 
 }
