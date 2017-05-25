@@ -1,0 +1,18 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_time_commitment
+    - node.type.project
+id: node.project.field_time_commitment
+field_name: field_time_commitment
+entity_type: node
+bundle: project
+label: 'Typical Time Commitment'
+description: (hours/week)
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

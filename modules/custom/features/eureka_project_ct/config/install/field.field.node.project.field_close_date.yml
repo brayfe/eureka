@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_close_date
+    - node.type.project
+  module:
+    - datetime
+id: node.project.field_close_date
+field_name: field_close_date
+entity_type: node
+bundle: project
+label: 'Close Date'
+description: 'Please indicate if you have a set end date for the project; otherwise, the project will remain listed as ongoing.'
+required: false
+translatable: false
+default_value:
+  -
+    default_date_type: now
+    default_date: now
+default_value_callback: ''
+settings: {  }
+field_type: datetime

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_qualifications
+    - node.type.project
+  module:
+    - text
+id: node.project.field_qualifications
+field_name: field_qualifications
+entity_type: node
+bundle: project
+label: Qualifications
+description: 'Use this space to describe what you are looking for in an undergraduate researcher. If there are any course prerequisites or if you prefer a student with research experience, include those requirements here.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
