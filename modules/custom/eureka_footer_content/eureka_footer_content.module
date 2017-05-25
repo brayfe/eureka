@@ -10,7 +10,7 @@ use Drupal\Core\Routing\RouteMatchInterface;
 
 function eureka_footer_content_theme() {
   $theme['footer_left'] = [
-    'variables' => ['ugslogo' => NULL],
+    'variables' => ['ugslogourl' => NULL, 'ugslogosrc' => NULL],
     'template' => 'footer-left'
   ];
   $theme['footer_right'] = [

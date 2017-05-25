@@ -3,6 +3,8 @@
 namespace Drupal\eureka_footer_content\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
 
 /**
  * Provides a Footer Block.
@@ -18,10 +20,15 @@ class FooterLeft extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-return [
-      '#ugslogo' => t('<a href="https://ugs.utexas.edu/"><img alt="The University of Texas School of Undergraduate Studies" src="/themes/eurekatheme/images/knockout_formal_Undergraduate_Studies.png" /></a>'),
-      '#theme' => 'footer_left',
-    ];
+
+    //$ugslogosrc = Url::fromRoute('themes.eurekatheme.images.knockout_formal_Undergraduate_Studies.png');
+    $ugslogourl = Url::fromUri('https://ugs.utexas.edu/');
+
+    return [
+          '#ugslogourl' => $ugslogourl,
+          //'#ugslogosrc' => $ugslogosrc,
+          '#theme' => 'footer_left',
+        ];
   }
 
 }
