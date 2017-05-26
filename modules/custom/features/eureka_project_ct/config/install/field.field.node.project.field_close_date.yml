@@ -14,10 +14,7 @@ label: 'Close Date'
 description: 'Please indicate if you have a set end date for the project; otherwise, the project will remain listed as ongoing.'
 required: false
 translatable: false
-default_value:
-  -
-    default_date_type: now
-    default_date: now
+default_value: {  }
 default_value_callback: ''
 settings: {  }
 field_type: datetime
