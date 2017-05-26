@@ -72,7 +72,7 @@
       //#block-footercreditsandlinks {
 
         p {
-          color:#999;
+          color:#fff;
           margin-top: 10px;
 
           a {
@@ -87,4 +87,8 @@
       //}
     }
   }
+}
+
+.mydiv {
+  column-count: 3;
 }

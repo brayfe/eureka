@@ -249,8 +249,8 @@ th {
 
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url("../bootstrap/assets/fonts/bootstrap/glyphicons-halflings-regular.eot");
-  src: url("../bootstrap/assets/fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../bootstrap/assets/fonts/bootstrap/glyphicons-halflings-regular.woff2") format("woff2"), url("../bootstrap/assets/fonts/bootstrap/glyphicons-halflings-regular.woff") format("woff"), url("../bootstrap/assets/fonts/bootstrap/glyphicons-halflings-regular.ttf") format("truetype"), url("../bootstrap/assets/fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
+  src: url("../fonts/icons/glyphicons-halflings-regular.eot");
+  src: url("../fonts/icons/glyphicons-halflings-regular.eot?#iefix") format("embedded-opentype"), url("../fonts/icons/glyphicons-halflings-regular.woff2") format("woff2"), url("../fonts/icons/glyphicons-halflings-regular.woff") format("woff"), url("../fonts/icons/glyphicons-halflings-regular.ttf") format("truetype"), url("../fonts/icons/glyphicons-halflings-regular.svg#glyphicons_halflingsregular") format("svg"); }
 
 .glyphicon {
   position: relative;
@@ -6363,7 +6363,8 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
       width: 110px;
       background: url(../images/ut.png);
       background-size: cover;
-      margin-top: 0; }
+      margin-top: 0;
+      text-indent: -10000px; }
 
 header.full-width {
   background-color: #382f2d;
@@ -6453,12 +6454,15 @@ header.full-width {
       text-align: right !important;
       display: inline-block; }
       .footer-wrapper footer.footer .footer-right p {
-        color: #999;
+        color: #fff;
         margin-top: 10px; }
         .footer-wrapper footer.footer .footer-right p a {
           color: #fff; }
           .footer-wrapper footer.footer .footer-right p a:hover, .footer-wrapper footer.footer .footer-right p a:focus {
             text-decoration: underline; }
+
+.mydiv {
+  column-count: 3; }
 
 .region-breadcrumbs {
   display: inline-block; }

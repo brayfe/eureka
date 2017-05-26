@@ -3,6 +3,8 @@
 namespace Drupal\eureka_footer_content\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Link;
+use Drupal\Core\Url;
 
 /**
  * Provides a Footer Block.
@@ -18,8 +20,18 @@ class FooterRight extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-return [
+
+    $access_url = Url::fromUri('https://cio.utexas.edu/policies/web-accessibility');
+    $access_link = Link::fromTextAndUrl('Web Accessibility', $access_url);
+
+    $privacy_url = Url::fromUri('https://cio.utexas.edu/policies/web-privacy');
+    $privacy_link = Link::fromTextAndUrl('Web Privacy Policy', $privacy_url);
+
+    return [
       '#theme' => 'footer_right',
+      '#year' => date('Y'),
+      '#accessibility_link' => $access_link,
+      '#privacy_link' => $privacy_link,
     ];
   }
 

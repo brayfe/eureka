@@ -5,21 +5,30 @@
  * Contains eureka_footer_content.module..
  */
 
-use Drupal\Core\Routing\RouteMatchInterface;
-
-
+/**
+ * Implements hook_theme().
+ */
 function eureka_footer_content_theme() {
   $theme['footer_left'] = [
-    'variables' => ['name' => NULL, 'year' => NULL],
-    'template' => 'footer-left'
+    'variables' => [
+      'ugslogourl' => NULL,
+      'ugslogosrc' => NULL,
+      'ugslogoalt' => NULL,
+    ],
+    'template' => 'footer-left',
   ];
   $theme['footer_right'] = [
-    'variables' => ['name' => NULL, 'year' => NULL],
-    'template' => 'footer-right'
+    'variables' => [
+      'year' => NULL,
+      'policy_link' => NULL,
+      'accessibility_link' => NULL,
+      'privacy_link' => NULL,
+    ],
+    'template' => 'footer-right',
   ];
   $theme['footer_upper'] = [
     'variables' => ['name' => NULL, 'year' => NULL],
-    'template' => 'footer-upper'
+    'template' => 'footer-upper',
   ];
 
   return $theme;
