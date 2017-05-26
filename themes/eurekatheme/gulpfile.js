@@ -2,13 +2,15 @@
 
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var clean = require('gulp-clean');
 var copycss = require('gulp-copy');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var jshist = require('gulp-jshint');
+var gulpSequence = require('gulp-sequence')
 var watch = require('gulp-watch');
 const autoprefixer = require('gulp-autoprefixer');
-require('gulp-run-seq');
+//require('gulp-run-seq');
 
 // task functions
 gulp.task('clean', function () {
@@ -27,65 +29,23 @@ gulp.task('copycss', function() {
         .pipe(gulp.dest('css/'));
 });
 
+gulp.task('copyfonts', function() {
+  return gulp
+    .src('bower_components/bootstrap-sass/assets/fonts/bootstrap/*')
+    .pipe(gulp.dest('fonts/icons'));
+});
+
 gulp.task('autoprefixer', () =>
     gulp.src('css')
         .pipe(autoprefixer({
             browsers: ['last 2 versions'],
             cascade: false
         }))
-        //.pipe(gulp.dest(''))
 );
 
-
 gulp.task('watch', function() {
-  gulp.watch(['scss/**/*.scss'], ['sass', 'copycss']);
+  gulp.watch(['scss/**/*.scss'], ['sass', 'copycss', 'autoprefixer']);
 });
-
-
-
-
-// gulp.task('watch', function(end) {
-//   end.wait('key1', 'key2', 'key3');
-
-//   gulp.src('./scss/**/*.scss')
-//     .pipe(gulp.dest('dist/css'))
-//     .on('end', function(){
-//       end.notify('key1', function() {
-//         console.log('sass end.'); });
-//     });
-
-//   gulp.src('dist/css/*')
-//     .pipe(gulp.dest('css'))
-//     .on('end', end.notifier('key2',
-//       function() { console.log('copycss end.'); }
-//     ));
-
-//   gulp.src('css/*')
-//     .pipe(gulp.dest('css'))
-//     .on('end', end.notifier('key3',
-//       function() { console.log('autoprefixer end.'); }
-//     ));
-
-// });
-
-// gulp.task('sass', function (end) {
-//   gulp.src('./scss/**/*.scss')
-//     .pipe(gulp.dest('dist/css'))
-//     .on('end',end);
-
-// });
-
-
-
-
-
-// gulp.task('watch', function(){
-//   gulp.watch('./scss/**/*.scss', ['sass','copycss']);
-// });
-
-// gulp.task('sass:watch', function () {
-//   gulp.watch('./scss/**/*.scss', ['sass']);
-// });
 
 gulp.task('scripts', function() {
   return gulp.src('bower_components/bootstrap-sass/assets/javascripts/**/*js')
@@ -99,4 +59,9 @@ gulp.task('copyjs', function() {
         .pipe(gulp.dest('js'));
 });
 
-gulp.task('default', ['sass', 'copycss', 'scripts', 'copyjs'], function() {});
+
+gulp.task('default', gulpSequence('clean', 'copyfonts', 'scripts', 'copyjs'));
+
+// gulp.task('default', ['clean', 'copyfonts', 'scripts', 'copyjs'], function() {
+
+// });

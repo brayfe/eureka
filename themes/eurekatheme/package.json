@@ -17,6 +17,7 @@
     "gulp-jshint": "^2.0.4",
     "gulp-run-seq": "^1.2.4",
     "gulp-sass": "^3.1.0",
+    "gulp-sequence": "^0.4.6",
     "gulp-uglify": "^2.1.2",
     "gulp-watch": "^4.3.11",
     "jshint": "^2.9.4"
