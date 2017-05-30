@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_student_assistant
+  module:
+    - text
+    - user
+id: user.user.field_student_assistant
+field_name: field_student_assistant
+entity_type: user
+bundle: user
+label: 'Current/Former Student Assistant'
+description: 'If you''d like, you can provide the contact information of a current or former student assistant who might be willing to field questions about their experience from interested students.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

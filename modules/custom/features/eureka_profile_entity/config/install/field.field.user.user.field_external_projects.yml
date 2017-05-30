@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_external_projects
+  module:
+    - link
+    - user
+id: user.user.field_external_projects
+field_name: field_external_projects
+entity_type: user
+bundle: user
+label: 'External Projects'
+description: 'Links to research projects listed on other sites (e.g. COLA URAP or UROP site).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 0
+field_type: link

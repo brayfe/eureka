@@ -1,0 +1,12 @@
+name: 'Eureka Profile Entity'
+description: 'The fields and definitions added to the built-in user entity.'
+type: module
+core: 8.x
+dependencies:
+  - eureka_faculty_profile_taxonomies
+  - field
+  - link
+  - taxonomy
+  - text
+  - user
+version: 8.x-1.0

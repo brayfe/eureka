@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_research_website
+  module:
+    - link
+    - user
+id: user.user.field_research_website
+field_name: field_research_website
+entity_type: user
+bundle: user
+label: 'Research Website'
+description: 'Links to websites hosting your research (e.g. ResearchGate, Academia.edu, Google Scholar).'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

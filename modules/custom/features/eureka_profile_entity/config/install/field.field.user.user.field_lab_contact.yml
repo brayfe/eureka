@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_lab_contact
+  module:
+    - text
+    - user
+id: user.user.field_lab_contact
+field_name: field_lab_contact
+entity_type: user
+bundle: user
+label: 'Lab Contact'
+description: 'Please provide contact information for the main contact for interested students. This could be yourself, another faculty member working on the project, or a graduate student or administrative assistant.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

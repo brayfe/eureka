@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_tags
+    - taxonomy.vocabulary.profile_tags
+  module:
+    - user
+id: user.user.field_tags
+field_name: field_tags
+entity_type: user
+bundle: user
+label: Tags
+description: 'Begin typing keywords related to your research. If a keyword already exists, it will pop up as a tag and allow you to select it. Click the red X on a tag to delete an unwanted keyword. Changes to tags will not be applied until the form has been submitted. Added tags will appear above the "Tag text" field. Remember that the form must be submitted in order to save changes to tags.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      profile_tags: profile_tags
+    sort:
+      field: _none
+    auto_create: true
+    auto_create_bundle: ''
+field_type: entity_reference

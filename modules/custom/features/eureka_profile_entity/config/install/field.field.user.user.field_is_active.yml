@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_is_active
+  module:
+    - user
+id: user.user.field_is_active
+field_name: field_is_active
+entity_type: user
+bundle: user
+label: Active
+description: 'This is used for display purposes, rather than login status.  This value will be used to filter out records in search results.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  on_label: Active
+  off_label: Inactive
+field_type: boolean
