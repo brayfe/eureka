@@ -4,6 +4,17 @@ dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.project.body
+    - field.field.node.project.field_close_date
+    - field.field.node.project.field_contact_email
+    - field.field.node.project.field_contact_name
+    - field.field.node.project.field_contact_phone
+    - field.field.node.project.field_duties
+    - field.field.node.project.field_length_commitment
+    - field.field.node.project.field_project_tags
+    - field.field.node.project.field_project_timeline
+    - field.field.node.project.field_project_website
+    - field.field.node.project.field_qualifications
+    - field.field.node.project.field_time_commitment
     - node.type.project
   module:
     - text
@@ -24,4 +35,15 @@ content:
   links:
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_close_date: true
+  field_contact_email: true
+  field_contact_name: true
+  field_contact_phone: true
+  field_duties: true
+  field_length_commitment: true
+  field_project_tags: true
+  field_project_timeline: true
+  field_project_website: true
+  field_qualifications: true
+  field_time_commitment: true

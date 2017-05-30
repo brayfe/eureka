@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.project.field_contact_name
     - field.field.node.project.field_contact_phone
     - field.field.node.project.field_duties
+    - field.field.node.project.field_faculty_collaborators
     - field.field.node.project.field_length_commitment
     - field.field.node.project.field_project_tags
     - field.field.node.project.field_project_timeline
@@ -27,7 +28,7 @@ mode: default
 content:
   body:
     type: text_textarea_with_summary
-    weight: 31
+    weight: 11
     settings:
       rows: 9
       summary_rows: 3
@@ -36,18 +37,18 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 10
+    weight: 2
     region: content
     settings: {  }
     third_party_settings: {  }
   field_close_date:
-    weight: 41
+    weight: 17
     settings: {  }
     third_party_settings: {  }
     type: datetime_default
     region: content
   field_contact_email:
-    weight: 34
+    weight: 9
     settings:
       size: 60
       placeholder: ''
@@ -55,7 +56,7 @@ content:
     type: email_default
     region: content
   field_contact_name:
-    weight: 33
+    weight: 8
     settings:
       size: 60
       placeholder: ''
@@ -63,7 +64,7 @@ content:
     type: string_textfield
     region: content
   field_contact_phone:
-    weight: 35
+    weight: 10
     settings:
       size: 60
       placeholder: ''
@@ -71,15 +72,24 @@ content:
     type: string_textfield
     region: content
   field_duties:
-    weight: 38
+    weight: 14
     settings:
       rows: 5
       placeholder: ''
     third_party_settings: {  }
     type: text_textarea
     region: content
+  field_faculty_collaborators:
+    weight: 7
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_length_commitment:
-    weight: 40
+    weight: 16
     settings:
       size: 60
       placeholder: ''
@@ -87,7 +97,7 @@ content:
     type: string_textfield
     region: content
   field_project_tags:
-    weight: 42
+    weight: 18
     settings:
       match_operator: CONTAINS
       size: 60
@@ -96,7 +106,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_project_timeline:
-    weight: 37
+    weight: 13
     settings:
       rows: 5
       placeholder: ''
@@ -104,7 +114,7 @@ content:
     type: text_textarea
     region: content
   field_project_website:
-    weight: 32
+    weight: 6
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -112,7 +122,7 @@ content:
     type: link_default
     region: content
   field_qualifications:
-    weight: 36
+    weight: 12
     settings:
       rows: 5
       placeholder: ''
@@ -120,7 +130,7 @@ content:
     type: text_textarea
     region: content
   field_time_commitment:
-    weight: 39
+    weight: 15
     settings:
       size: 60
       placeholder: ''
@@ -129,7 +139,7 @@ content:
     region: content
   path:
     type: path
-    weight: 30
+    weight: 5
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -137,19 +147,19 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 15
+    weight: 3
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 16
+    weight: 4
     region: content
     third_party_settings: {  }
   title:
     type: string_textfield
-    weight: -5
+    weight: 0
     region: content
     settings:
       size: 60
@@ -157,7 +167,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 5
+    weight: 1
     settings:
       match_operator: CONTAINS
       size: 60
