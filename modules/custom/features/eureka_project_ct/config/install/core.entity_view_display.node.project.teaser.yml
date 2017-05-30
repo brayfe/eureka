@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.project.field_contact_name
     - field.field.node.project.field_contact_phone
     - field.field.node.project.field_duties
+    - field.field.node.project.field_faculty_collaborators
     - field.field.node.project.field_length_commitment
     - field.field.node.project.field_project_tags
     - field.field.node.project.field_project_timeline
@@ -41,6 +42,7 @@ hidden:
   field_contact_name: true
   field_contact_phone: true
   field_duties: true
+  field_faculty_collaborators: true
   field_length_commitment: true
   field_project_tags: true
   field_project_timeline: true
