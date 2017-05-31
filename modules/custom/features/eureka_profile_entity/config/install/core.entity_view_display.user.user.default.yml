@@ -15,6 +15,7 @@ dependencies:
     - field.field.user.user.field_lab_website
     - field.field.user.user.field_last_name
     - field.field.user.user.field_open_to_work_with
+    - field.field.user.user.field_projects
     - field.field.user.user.field_research_interests
     - field.field.user.user.field_research_units
     - field.field.user.user.field_research_website
@@ -32,7 +33,7 @@ bundle: user
 mode: default
 content:
   field_academic_interest:
-    weight: 19
+    weight: 15
     label: above
     settings:
       link: true
@@ -40,7 +41,7 @@ content:
     type: entity_reference_label
     region: content
   field_affiliated_departments:
-    weight: 11
+    weight: 6
     label: above
     settings:
       link: true
@@ -48,7 +49,7 @@ content:
     type: entity_reference_label
     region: content
   field_authorized_users:
-    weight: 12
+    weight: 7
     label: above
     settings:
       link: true
@@ -56,7 +57,7 @@ content:
     type: entity_reference_label
     region: content
   field_countries_acad_interest:
-    weight: 20
+    weight: 16
     label: above
     settings:
       link: true
@@ -64,7 +65,7 @@ content:
     type: entity_reference_label
     region: content
   field_display_name:
-    weight: 6
+    weight: 1
     label: above
     settings:
       link_to_entity: false
@@ -72,7 +73,7 @@ content:
     type: string
     region: content
   field_external_projects:
-    weight: 13
+    weight: 9
     label: above
     settings:
       trim_length: 80
@@ -84,7 +85,7 @@ content:
     type: link
     region: content
   field_first_name:
-    weight: 7
+    weight: 2
     label: above
     settings:
       link_to_entity: false
@@ -92,7 +93,7 @@ content:
     type: string
     region: content
   field_is_active:
-    weight: 23
+    weight: 19
     label: above
     settings:
       format: default
@@ -102,7 +103,7 @@ content:
     type: boolean
     region: content
   field_job_title:
-    weight: 9
+    weight: 4
     label: above
     settings:
       link: true
@@ -110,14 +111,14 @@ content:
     type: entity_reference_label
     region: content
   field_lab_contact:
-    weight: 16
+    weight: 12
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_lab_website:
-    weight: 14
+    weight: 10
     label: above
     settings:
       trim_length: 80
@@ -129,7 +130,7 @@ content:
     type: link
     region: content
   field_last_name:
-    weight: 8
+    weight: 3
     label: above
     settings:
       link_to_entity: false
@@ -137,21 +138,6 @@ content:
     type: string
     region: content
   field_open_to_work_with:
-    weight: 25
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_research_interests:
-    weight: 10
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_research_units:
     weight: 21
     label: above
     settings:
@@ -159,8 +145,31 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
+  field_projects:
+    weight: 8
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_research_interests:
+    weight: 5
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: content
+  field_research_units:
+    weight: 17
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
   field_research_website:
-    weight: 22
+    weight: 18
     label: above
     settings:
       trim_length: 80
@@ -172,7 +181,7 @@ content:
     type: link
     region: content
   field_responsibilities:
-    weight: 15
+    weight: 11
     label: above
     settings:
       link: true
@@ -180,21 +189,21 @@ content:
     type: entity_reference_label
     region: content
   field_sa_notes:
-    weight: 18
+    weight: 14
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_student_assistant:
-    weight: 17
+    weight: 13
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_tags:
-    weight: 24
+    weight: 20
     label: above
     settings:
       link: true
@@ -202,6 +211,8 @@ content:
     type: entity_reference_label
     region: content
   member_for:
-    weight: 5
+    weight: 0
     region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }
