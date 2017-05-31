@@ -1,0 +1,16 @@
+name: 'Project Content Type'
+description: 'The Project content type and field definitions.'
+type: module
+core: 8.x
+dependencies:
+  - datetime
+  - eureka_project_taxonomies
+  - field
+  - link
+  - menu_ui
+  - node
+  - path
+  - taxonomy
+  - text
+  - user
+version: 8.x-1.0
