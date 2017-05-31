@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.project
+  module:
+    - text
+id: node.project.body
+field_name: body
+entity_type: node
+bundle: project
+label: Description
+description: 'Use this space to provide interested students a brief description of your project. Include information about other faculty members working on the project or affiliated programs and departments.'
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: false
+field_type: text_with_summary

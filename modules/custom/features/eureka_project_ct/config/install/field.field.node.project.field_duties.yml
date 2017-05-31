@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_duties
+    - node.type.project
+  module:
+    - text
+id: node.project.field_duties
+field_name: field_duties
+entity_type: node
+bundle: project
+label: Duties
+description: 'Use this space to give interested students a sense of how they might participate in your project.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
