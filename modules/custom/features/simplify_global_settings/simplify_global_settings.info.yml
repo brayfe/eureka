@@ -1,0 +1,5 @@
+name: 'Simplify Global Settings'
+description: 'Nodes and User form fields to hide.'
+type: module
+core: 8.x
+version: 8.x-1.0
