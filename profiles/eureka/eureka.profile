@@ -45,6 +45,7 @@ function eureka_install_extensions(array &$install_state) {
     'eureka_main_nav_menu_settings',
     'eureka_faculty_profile_taxonomies',
     'eureka_project_taxonomies',
+    'eureka_profile_entity',
     'eureka_project_ct',
   ];
   foreach ($modules as $module) {

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_research_interests
+  module:
+    - text
+    - user
+id: user.user.field_research_interests
+field_name: field_research_interests
+entity_type: user
+bundle: user
+label: 'Research Interests'
+description: 'Please provide a brief listing of your research interests.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long
