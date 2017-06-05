@@ -3,12 +3,14 @@
 /*
  * This file is part of Twig.
  *
- * (c) 2009 Fabien Potencier
- * (c) 2009 Armin Ronacher
+ * (c) Fabien Potencier
+ * (c) Armin Ronacher
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
+require_once __DIR__.'/Compiler.php';
 
 /**
  * Represents a node in the AST.
@@ -22,7 +24,7 @@ class Twig_Node implements Twig_NodeInterface
     protected $lineno;
     protected $tag;
 
-    private $filename;
+    private $name;
 
     /**
      * Constructor.
@@ -118,8 +120,18 @@ class Twig_Node implements Twig_NodeInterface
         }
     }
 
+    public function getTemplateLine()
+    {
+        return $this->lineno;
+    }
+
+    /**
+     * @deprecated since 1.27 (to be removed in 2.0)
+     */
     public function getLine()
     {
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 1.27 and will be removed in 2.0. Use getTemplateLine() instead.', E_USER_DEPRECATED);
+
         return $this->lineno;
     }
 
@@ -129,11 +141,7 @@ class Twig_Node implements Twig_NodeInterface
     }
 
     /**
-     * Returns true if the attribute is defined.
-     *
-     * @param string $name The attribute name
-     *
-     * @return bool true if the attribute is defined, false otherwise
+     * @return bool
      */
     public function hasAttribute($name)
     {
@@ -141,10 +149,6 @@ class Twig_Node implements Twig_NodeInterface
     }
 
     /**
-     * Gets an attribute value by name.
-     *
-     * @param string $name
-     *
      * @return mixed
      */
     public function getAttribute($name)
@@ -157,8 +161,6 @@ class Twig_Node implements Twig_NodeInterface
     }
 
     /**
-     * Sets an attribute by name to a value.
-     *
      * @param string $name
      * @param mixed  $value
      */
@@ -167,21 +169,12 @@ class Twig_Node implements Twig_NodeInterface
         $this->attributes[$name] = $value;
     }
 
-    /**
-     * Removes an attribute by name.
-     *
-     * @param string $name
-     */
     public function removeAttribute($name)
     {
         unset($this->attributes[$name]);
     }
 
     /**
-     * Returns true if the node with the given name exists.
-     *
-     * @param string $name
-     *
      * @return bool
      */
     public function hasNode($name)
@@ -190,10 +183,6 @@ class Twig_Node implements Twig_NodeInterface
     }
 
     /**
-     * Gets a node by name.
-     *
-     * @param string $name
-     *
      * @return Twig_Node
      */
     public function getNode($name)
@@ -205,22 +194,15 @@ class Twig_Node implements Twig_NodeInterface
         return $this->nodes[$name];
     }
 
-    /**
-     * Sets a node.
-     *
-     * @param string    $name
-     * @param Twig_Node $node
-     */
     public function setNode($name, $node = null)
     {
+        if (!$node instanceof Twig_NodeInterface) {
+            @trigger_error(sprintf('Using "%s" for the value of node "%s" of "%s" is deprecated since version 1.25 and will be removed in 2.0.', is_object($node) ? get_class($node) : null === $node ? 'null' : gettype($node), $name, get_class($this)), E_USER_DEPRECATED);
+        }
+
         $this->nodes[$name] = $node;
     }
 
-    /**
-     * Removes a node by name.
-     *
-     * @param string $name
-     */
     public function removeNode($name)
     {
         unset($this->nodes[$name]);
@@ -236,18 +218,40 @@ class Twig_Node implements Twig_NodeInterface
         return new ArrayIterator($this->nodes);
     }
 
-    public function setFilename($filename)
+    public function setTemplateName($name)
     {
-        $this->filename = $filename;
+        $this->name = $name;
         foreach ($this->nodes as $node) {
             if (null !== $node) {
-                $node->setFilename($filename);
+                $node->setTemplateName($name);
             }
         }
     }
 
+    public function getTemplateName()
+    {
+        return $this->name;
+    }
+
+    /**
+     * @deprecated since 1.27 (to be removed in 2.0)
+     */
+    public function setFilename($name)
+    {
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 1.27 and will be removed in 2.0. Use setTemplateName() instead.', E_USER_DEPRECATED);
+
+        $this->setTemplateName($name);
+    }
+
+    /**
+     * @deprecated since 1.27 (to be removed in 2.0)
+     */
     public function getFilename()
     {
-        return $this->filename;
+        @trigger_error('The '.__METHOD__.' method is deprecated since version 1.27 and will be removed in 2.0. Use getTemplateName() instead.', E_USER_DEPRECATED);
+
+        return $this->name;
     }
 }
+
+class_alias('Twig_Node', 'Twig\Node\Node', false);
