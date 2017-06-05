@@ -39,6 +39,7 @@ function eureka_install_extensions(array &$install_state) {
   $modules = [
     'features',
     'config_update',
+    'simplify',
     'settings_eurekatheme',
     'eureka_footer_content',
     'eureka_footer_block_settings',
@@ -48,7 +49,6 @@ function eureka_install_extensions(array &$install_state) {
     'eureka_profile_entity',
     'eureka_project_ct',
     'simplify_global_settings',
-    'simplify',
   ];
   foreach ($modules as $module) {
     $batch['operations'][] = ['eureka_install_module', (array) $module];
