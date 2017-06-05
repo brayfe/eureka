@@ -26,6 +26,7 @@ dependencies:
   - options
   - path
   - page_cache
+  - simplify
   - taxonomy
   - text
   - dblog
