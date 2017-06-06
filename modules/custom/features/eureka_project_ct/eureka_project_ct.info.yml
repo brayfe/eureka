@@ -6,6 +6,7 @@ dependencies:
   - datetime
   - eureka_project_taxonomies
   - field
+  - field_group
   - link
   - menu_ui
   - node
