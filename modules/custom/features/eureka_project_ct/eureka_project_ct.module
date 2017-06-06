@@ -1,0 +1,48 @@
+<?php
+
+/**
+ * @file
+ * Contains eureka_project_ct.module..
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function eureka_project_ct_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  if (in_array($form_id, array('node_project_edit_form', 'node_project_form'))) {
+
+    $form['contact_info'] = [
+      '#type' => 'details',
+      '#title' => 'Contact Information',
+      '#group' => 'advanced',
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
+    ];
+    $fields = array(
+      'field_contact_name',
+      'field_contact_email',
+      'field_contact_phone',
+    );
+
+    foreach ($fields as $machine_name) {
+      $form['contact_info'][$machine_name] = $form[$machine_name];
+      unset($form[$machine_name]);
+    }
+
+    $form['faculty_info'] = [
+      '#type' => 'details',
+      '#title' => 'Faculty Collaborators',
+      '#group' => 'advanced',
+      '#collapsible' => TRUE,
+      '#collapsed' => TRUE,
+    ];
+    $form['faculty_info']['field_faculty_collaborators'] = $form['field_faculty_collaborators'];
+    unset($form['field_faculty_collaborators']);
+    $form['faculty_info']['field_faculty_collaborators']['#title_display'] = 'invisible';
+
+
+  }
+}
