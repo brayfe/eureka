@@ -8,7 +8,13 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
-abstract class Twig_Test_NodeTestCase extends PHPUnit_Framework_TestCase
+
+require_once __DIR__.'/../Environment.php';
+require_once __DIR__.'/../Node.php';
+
+use PHPUnit\Framework\TestCase;
+
+abstract class Twig_Test_NodeTestCase extends TestCase
 {
     abstract public function getTests();
 
@@ -46,6 +52,10 @@ abstract class Twig_Test_NodeTestCase extends PHPUnit_Framework_TestCase
     {
         $line = $line > 0 ? "// line {$line}\n" : '';
 
+        if (PHP_VERSION_ID >= 70000) {
+            return sprintf('%s($context["%s"] ?? null)', $line, $name, $name);
+        }
+
         if (PHP_VERSION_ID >= 50400) {
             return sprintf('%s(isset($context["%s"]) ? $context["%s"] : null)', $line, $name, $name);
         }
@@ -62,3 +72,5 @@ abstract class Twig_Test_NodeTestCase extends PHPUnit_Framework_TestCase
         return '$this->getAttribute(';
     }
 }
+
+class_alias('Twig_Test_NodeTestCase', 'Twig\Test\NodeTestCase', false);

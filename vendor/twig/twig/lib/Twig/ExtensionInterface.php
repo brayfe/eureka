@@ -3,11 +3,13 @@
 /*
  * This file is part of Twig.
  *
- * (c) 2009 Fabien Potencier
+ * (c) Fabien Potencier
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
+require_once __DIR__.'/Environment.php';
 
 /**
  * Interface implemented by extension classes.
@@ -20,8 +22,6 @@ interface Twig_ExtensionInterface
      * Initializes the runtime environment.
      *
      * This is where you can load some file that contains filter functions for instance.
-     *
-     * @param Twig_Environment $environment The current Twig_Environment instance
      *
      * @deprecated since 1.23 (to be removed in 2.0), implement Twig_Extension_InitRuntimeInterface instead
      */
@@ -37,7 +37,7 @@ interface Twig_ExtensionInterface
     /**
      * Returns the node visitor instances to add to the existing list.
      *
-     * @return Twig_NodeVisitorInterface[] An array of Twig_NodeVisitorInterface instances
+     * @return Twig_NodeVisitorInterface[]
      */
     public function getNodeVisitors();
 
@@ -65,7 +65,7 @@ interface Twig_ExtensionInterface
     /**
      * Returns a list of operators to add to the existing list.
      *
-     * @return array An array of operators
+     * @return array<array> First array of unary operators, second array of binary operators
      */
     public function getOperators();
 
@@ -82,6 +82,10 @@ interface Twig_ExtensionInterface
      * Returns the name of the extension.
      *
      * @return string The extension name
+     *
+     * @deprecated since 1.26 (to be removed in 2.0), not used anymore internally
      */
     public function getName();
 }
+
+class_alias('Twig_ExtensionInterface', 'Twig\Extension\ExtensionInterface', false);
