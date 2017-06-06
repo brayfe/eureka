@@ -6,6 +6,7 @@ dependencies:
   - eureka_faculty_profile_taxonomies
   - eureka_project_ct
   - field
+  - field_group
   - inline_entity_form
   - link
   - node

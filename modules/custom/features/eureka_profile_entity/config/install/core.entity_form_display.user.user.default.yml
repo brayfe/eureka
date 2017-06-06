@@ -24,10 +24,68 @@ dependencies:
     - field.field.user.user.field_student_assistant
     - field.field.user.user.field_tags
   module:
+    - field_group
     - inline_entity_form
     - link
     - text
     - user
+third_party_settings:
+  field_group:
+    group_faculty_user_form:
+      children:
+        - group_account
+        - group_faculty_information
+      parent_name: ''
+      weight: 0
+      format_type: tabs
+      format_settings:
+        id: ''
+        classes: ''
+        direction: horizontal
+      label: 'Faculty User Form'
+    group_account:
+      children:
+        - account
+      parent_name: group_faculty_user_form
+      weight: 4
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: open
+        description: ''
+        required_fields: true
+      label: Account
+    group_faculty_information:
+      children:
+        - field_display_name
+        - field_first_name
+        - field_last_name
+        - field_job_title
+        - field_student_assistant
+        - field_sa_notes
+        - field_affiliated_departments
+        - field_research_interests
+        - field_projects
+        - field_external_projects
+        - field_lab_contact
+        - field_lab_website
+        - field_responsibilities
+        - field_academic_interest
+        - field_countries_acad_interest
+        - field_research_units
+        - field_research_website
+        - field_open_to_work_with
+      parent_name: group_faculty_user_form
+      weight: 5
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: true
+      label: 'Faculty Information'
 id: user.user.default
 targetEntityType: user
 bundle: user
