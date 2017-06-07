@@ -3,5 +3,9 @@ description: 'The vocabularies used for the Faculty Profile entity.'
 type: module
 core: 8.x
 dependencies:
+  - field
+  - link
+  - path
   - taxonomy
+  - text
 version: 8.x-1.0
