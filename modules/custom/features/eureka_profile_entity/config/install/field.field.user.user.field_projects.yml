@@ -10,7 +10,7 @@ id: user.user.field_projects
 field_name: field_projects
 entity_type: user
 bundle: user
-label: Projects
+label: 'Eureka Projects'
 description: ''
 required: false
 translatable: false

@@ -33,8 +33,8 @@ third_party_settings:
   field_group:
     group_faculty_user_form:
       children:
-        - group_account
         - group_faculty_information
+        - group_account
       parent_name: ''
       weight: 0
       format_type: tabs
@@ -49,7 +49,7 @@ third_party_settings:
         - field_is_active
         - field_authorized_users
       parent_name: group_faculty_user_form
-      weight: 4
+      weight: 6
       format_type: tab
       format_settings:
         id: ''
@@ -64,15 +64,13 @@ third_party_settings:
         - field_first_name
         - field_last_name
         - field_job_title
-        - field_research_website
         - field_research_interests
+        - field_research_website
         - field_affiliated_departments
         - field_research_units
         - group_research_location_informat
         - group_project_information
         - group_lab_information
-        - field_responsibilities
-        - field_open_to_work_with
         - field_tags
       parent_name: group_faculty_user_form
       weight: 5
@@ -90,6 +88,8 @@ third_party_settings:
         - field_lab_website
         - field_student_assistant
         - field_sa_notes
+        - field_responsibilities
+        - field_open_to_work_with
       parent_name: group_faculty_information
       weight: 13
       format_type: details
@@ -107,11 +107,12 @@ third_party_settings:
       weight: 12
       format_type: details
       format_settings:
+        label: Eureka Projects
+        required_fields: true
         id: ''
         classes: ''
         open: false
-        required_fields: true
-      label: 'Project Information'
+      label: Projects
     group_research_location_informat:
       children:
         - field_academic_interest
@@ -227,7 +228,7 @@ content:
     type: string_textfield
     region: content
   field_open_to_work_with:
-    weight: 15
+    weight: 18
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
@@ -246,7 +247,7 @@ content:
     type: inline_entity_form_complex
     region: content
   field_research_interests:
-    weight: 8
+    weight: 7
     settings:
       rows: 5
       placeholder: ''
@@ -263,7 +264,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_research_website:
-    weight: 7
+    weight: 8
     settings:
       placeholder_url: ''
       placeholder_title: ''
@@ -271,7 +272,7 @@ content:
     type: link_default
     region: content
   field_responsibilities:
-    weight: 14
+    weight: 17
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
