@@ -1,0 +1,4 @@
+user_form:
+  css:
+    theme:
+      css/user_form.css: {}

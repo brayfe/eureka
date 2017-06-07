@@ -1,0 +1,6 @@
+#field-research-website-values tr.odd .form-item, tr.even .form-item {
+  display:inline-table;
+}
+#edit-field-lab-website-0 .form-item {
+  display:inline-table;
+}

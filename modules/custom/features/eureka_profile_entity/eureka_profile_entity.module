@@ -11,12 +11,8 @@ use Drupal\Core\Form\FormStateInterface;
  * Implements hook_form_alter().
  */
 function eureka_profile_entity_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if (in_array($form_id, array('user_register_form', 'user_form'))) {
-    $form['field_research_website']['#attached']['html_head'][] = [[
-      '#value' => '#field-research-website-values tr.odd .form-item, tr.even .form-item { display:inline-table; } #edit-field-lab-website-0 .form-item { display:inline-grid; }',
-      '#tag' => 'style',
-    ],
-    ];
+  if (in_array($form_id, array('user_form', 'user_register_form'))) {
+    $form['#attached']['library'][] = 'eureka_profile_entity/user_form';
   }
   $form['account']['name']['#weight'] = -10;
   $form['account']['mail']['#weight'] = -9;
