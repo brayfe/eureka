@@ -1,4 +1,4 @@
-name: 'Eureka Faculty Profile Taxonomies'
+name: 'Faculty Profile Taxonomies'
 description: 'The vocabularies used for the Faculty Profile entity.'
 type: module
 core: 8.x

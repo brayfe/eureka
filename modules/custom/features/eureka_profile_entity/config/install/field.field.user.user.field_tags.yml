@@ -3,7 +3,7 @@ status: true
 dependencies:
   config:
     - field.storage.user.field_tags
-    - taxonomy.vocabulary.profile_tags
+    - taxonomy.vocabulary.tags
   module:
     - user
 id: user.user.field_tags
@@ -20,7 +20,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      profile_tags: profile_tags
+      tags: tags
     sort:
       field: _none
     auto_create: true

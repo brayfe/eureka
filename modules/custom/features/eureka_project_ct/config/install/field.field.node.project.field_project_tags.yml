@@ -4,7 +4,7 @@ dependencies:
   config:
     - field.storage.node.field_project_tags
     - node.type.project
-    - taxonomy.vocabulary.project_tags
+    - taxonomy.vocabulary.tags
 id: node.project.field_project_tags
 field_name: field_project_tags
 entity_type: node
@@ -19,7 +19,7 @@ settings:
   handler: 'default:taxonomy_term'
   handler_settings:
     target_bundles:
-      project_tags: project_tags
+      tags: tags
     sort:
       field: _none
     auto_create: true
