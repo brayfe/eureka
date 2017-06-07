@@ -14,12 +14,21 @@ function eureka_project_ct_form_alter(&$form, FormStateInterface $form_state, $f
 
   if (in_array($form_id, array('node_project_edit_form', 'node_project_form'))) {
 
-    $form['contact_info'] = [
+    $form['faculty_info'] = [
       '#type' => 'details',
-      '#title' => 'Contact Information',
+      '#title' => 'Faculty Collaborators',
       '#group' => 'advanced',
       '#collapsible' => TRUE,
       '#collapsed' => TRUE,
+    ];
+    $form['faculty_info']['field_faculty_collaborators'] = $form['field_faculty_collaborators'];
+    unset($form['field_faculty_collaborators']);
+
+    $form['contact_info'] = [
+      '#type' => 'details',
+      '#title' => 'Contact Information *',
+      '#group' => 'advanced',
+      '#open' => TRUE,
     ];
     $fields = array(
       'field_contact_name',
@@ -32,17 +41,15 @@ function eureka_project_ct_form_alter(&$form, FormStateInterface $form_state, $f
       unset($form[$machine_name]);
     }
 
-    $form['faculty_info'] = [
-      '#type' => 'details',
-      '#title' => 'Faculty Collaborators',
-      '#group' => 'advanced',
-      '#collapsible' => TRUE,
-      '#collapsed' => TRUE,
-    ];
-    $form['faculty_info']['field_faculty_collaborators'] = $form['field_faculty_collaborators'];
-    unset($form['field_faculty_collaborators']);
-    $form['faculty_info']['field_faculty_collaborators']['#title_display'] = 'invisible';
-
+    $form['author']['#weight'] = -10;
+    $form['author']['#title'] = 'Project Lead *';
+    $form['created']['#access'] = FALSE;
+    $form['faculty_info']['#attached']['html_head'][] = array(
+      array(
+        '#value' => '#field-faculty-collaborators-values thead { display:none; }',
+        '#tag' => 'style',
+      ),
+    );
 
   }
 }
