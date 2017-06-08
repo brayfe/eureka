@@ -13,8 +13,8 @@ use Drupal\Core\Form\FormStateInterface;
 function eureka_profile_entity_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if (in_array($form_id, array('user_form', 'user_register_form'))) {
     $form['#attached']['library'][] = 'eureka_profile_entity/user_form';
+    $form['account']['name']['#weight'] = -10;
+    $form['account']['mail']['#weight'] = -9;
+    $form['account']['pass']['#weight'] = -8;
   }
-  $form['account']['name']['#weight'] = -10;
-  $form['account']['mail']['#weight'] = -9;
-  $form['account']['pass']['#weight'] = -8;
 }
