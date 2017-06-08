@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: intern_criteria
+label: 'Intern Criteria'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:vocabulary:name]/[term:name]'
+selection_criteria:
+  fdb351ca-0e3f-4fc2-afec-d91fdd4d0519:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      intern_criteria: intern_criteria
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: fdb351ca-0e3f-4fc2-afec-d91fdd4d0519
+selection_logic: and
+weight: -5
+relationships: {  }

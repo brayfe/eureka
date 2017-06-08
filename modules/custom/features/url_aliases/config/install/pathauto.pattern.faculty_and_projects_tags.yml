@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: faculty_and_projects_tags
+label: 'Faculty and Projects Tags'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:parent:name]/[term:name]'
+selection_criteria:
+  fe51eb46-284a-48ff-8f5d-784ed2f8e8c8:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      tags: tags
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: fe51eb46-284a-48ff-8f5d-784ed2f8e8c8
+selection_logic: and
+weight: -5
+relationships: {  }

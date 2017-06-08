@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: job_titles
+label: 'Job Titles'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:vocabulary:name]/[term:name]'
+selection_criteria:
+  1decf09f-ec6d-4251-938a-eb57cf51a142:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      job_titles: job_titles
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 1decf09f-ec6d-4251-938a-eb57cf51a142
+selection_logic: and
+weight: -5
+relationships: {  }

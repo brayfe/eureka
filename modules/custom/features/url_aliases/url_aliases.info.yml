@@ -1,0 +1,10 @@
+name: 'URL Aliases'
+description: 'Define the URL alias patterns for taxonomy categories, basic (simple) pages, and Project content type'
+type: module
+core: 8.x
+dependencies:
+  - ctools
+  - node
+  - pathauto
+  - taxonomy
+version: 8.x-1.0

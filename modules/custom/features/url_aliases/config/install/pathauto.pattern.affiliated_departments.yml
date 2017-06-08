@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: affiliated_departments
+label: 'Affiliated Departments'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:vocabulary:name]/[term:name]'
+selection_criteria:
+  4de7bc80-d515-4e2c-80ed-bae81ddf72d0:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      affiliated_departments: affiliated_departments
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 4de7bc80-d515-4e2c-80ed-bae81ddf72d0
+selection_logic: and
+weight: -5
+relationships: {  }

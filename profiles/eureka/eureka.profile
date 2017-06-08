@@ -47,6 +47,7 @@ function eureka_install_extensions(array &$install_state) {
     'eureka_profile_entity',
     'eureka_project_ct',
     'simplify_global_settings',
+    'url_aliases',
   ];
   foreach ($modules as $module) {
     $batch['operations'][] = ['eureka_install_module', (array) $module];
