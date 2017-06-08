@@ -7,16 +7,16 @@ dependencies:
 id: faculty_and_projects_tags
 label: 'Faculty and Projects Tags'
 type: 'canonical_entities:taxonomy_term'
-pattern: '[term:parent:name]/[term:name]'
+pattern: 'tags/[term:name]'
 selection_criteria:
-  fe51eb46-284a-48ff-8f5d-784ed2f8e8c8:
+  a97bb4b0-447a-4fa3-8815-4778e16959f4:
     id: 'entity_bundle:taxonomy_term'
     bundles:
       tags: tags
     negate: false
     context_mapping:
       taxonomy_term: taxonomy_term
-    uuid: fe51eb46-284a-48ff-8f5d-784ed2f8e8c8
+    uuid: a97bb4b0-447a-4fa3-8815-4778e16959f4
 selection_logic: and
 weight: -5
 relationships: {  }
