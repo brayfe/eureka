@@ -7,4 +7,5 @@ dependencies:
   - node
   - pathauto
   - taxonomy
+  - user
 version: 8.x-1.0
