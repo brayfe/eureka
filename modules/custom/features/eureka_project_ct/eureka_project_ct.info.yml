@@ -4,7 +4,7 @@ type: module
 core: 8.x
 dependencies:
   - datetime
-  - eureka_project_taxonomies
+  - eureka_profile_entity
   - field
   - link
   - menu_ui
