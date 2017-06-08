@@ -44,12 +44,7 @@ function eureka_project_ct_form_alter(&$form, FormStateInterface $form_state, $f
     $form['author']['#weight'] = -10;
     $form['author']['#title'] = 'Project Lead *';
     $form['created']['#access'] = FALSE;
-    $form['faculty_info']['#attached']['html_head'][] = array(
-      array(
-        '#value' => '#field-faculty-collaborators-values thead { display:none; }',
-        '#tag' => 'style',
-      ),
-    );
+    $form['#attached']['library'][] = 'eureka_project_ct/project_form';
 
   }
 }
