@@ -1,0 +1,14 @@
+table[id*="field-research-website-values"] tr .form-item {
+  display:inline-table;
+}
+input[id^="edit-field-research-website"][id*="title"] {
+  width: 300px;
+}
+
+#edit-field-lab-website-0 .form-item {
+  display:inline-table;
+}
+#edit-field-lab-website-0-title {
+  width: 300px;
+}
+

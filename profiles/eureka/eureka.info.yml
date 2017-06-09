@@ -14,25 +14,26 @@ dependencies:
   - ckeditor
   - config
   - contextual
-  - menu_link_content
   - datetime
-  - quickedit
+  - dblog
   - editor
   - entity_reference
+  - field_group
+  - file
   - history
   - image
+  - menu_link_content
   - menu_ui
   - node
   - options
-  - path
   - page_cache
+  - path
+  - quickedit
+  - rdf
+  - shortcut
   - taxonomy
   - text
-  - dblog
-  - shortcut
   - toolbar
-  - file
-  - rdf
   - views
 
 themes:
