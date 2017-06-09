@@ -1,0 +1,4 @@
+project_form:
+  css:
+    theme:
+      css/project_form.css: {}
