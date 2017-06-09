@@ -92,12 +92,12 @@ third_party_settings:
       weight: 13
       format_type: details
       format_settings:
-        label: 'Lab Intership and Details'
+        label: 'Lab and Internship Details'
         required_fields: true
         id: ''
         classes: ''
         open: false
-      label: 'Lab Intership and Details'
+      label: 'Lab and Internship Details'
     group_project_information:
       children:
         - field_projects
