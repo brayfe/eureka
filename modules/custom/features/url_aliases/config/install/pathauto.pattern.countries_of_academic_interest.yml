@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: countries_of_academic_interest
+label: 'Countries of Academic Interest'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:vocabulary:name]/[term:name]'
+selection_criteria:
+  5d9a3f8a-bcaf-466b-b5ff-021667b725c9:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      countries_academic_interest: countries_academic_interest
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 5d9a3f8a-bcaf-466b-b5ff-021667b725c9
+selection_logic: and
+weight: -5
+relationships: {  }

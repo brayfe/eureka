@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - ctools
+    - taxonomy
+id: research_units
+label: 'Research Units'
+type: 'canonical_entities:taxonomy_term'
+pattern: '[term:vocabulary:name]/[term:name]'
+selection_criteria:
+  832bbe3e-e36f-4bfd-a298-87075977b470:
+    id: 'entity_bundle:taxonomy_term'
+    bundles:
+      research_units: research_units
+    negate: false
+    context_mapping:
+      taxonomy_term: taxonomy_term
+    uuid: 832bbe3e-e36f-4bfd-a298-87075977b470
+selection_logic: and
+weight: -5
+relationships: {  }
