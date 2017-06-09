@@ -65,9 +65,7 @@ third_party_settings:
         - field_last_name
         - field_job_title
         - field_research_interests
-        - field_research_website
         - field_affiliated_departments
-        - field_research_units
         - group_research_location_informat
         - group_project_information
         - group_lab_information
@@ -94,11 +92,12 @@ third_party_settings:
       weight: 13
       format_type: details
       format_settings:
+        label: 'Lab Intership and Details'
+        required_fields: true
         id: ''
         classes: ''
         open: false
-        required_fields: true
-      label: 'Lab Information'
+      label: 'Lab Intership and Details'
     group_project_information:
       children:
         - field_projects
@@ -107,7 +106,7 @@ third_party_settings:
       weight: 12
       format_type: details
       format_settings:
-        label: Eureka Projects
+        label: 'Eureka Projects'
         required_fields: true
         id: ''
         classes: ''
@@ -117,15 +116,18 @@ third_party_settings:
       children:
         - field_academic_interest
         - field_countries_acad_interest
+        - field_research_units
+        - field_research_website
       parent_name: group_faculty_information
       weight: 11
       format_type: details
       format_settings:
+        label: 'Research Details'
+        required_fields: true
         id: ''
         classes: ''
         open: false
-        required_fields: true
-      label: 'Research Location Information'
+      label: 'Research Details'
 id: user.user.default
 targetEntityType: user
 bundle: user
@@ -255,7 +257,7 @@ content:
     type: text_textarea
     region: content
   field_research_units:
-    weight: 10
+    weight: 17
     settings:
       match_operator: CONTAINS
       size: 60
@@ -264,7 +266,7 @@ content:
     type: entity_reference_autocomplete
     region: content
   field_research_website:
-    weight: 8
+    weight: 18
     settings:
       placeholder_url: ''
       placeholder_title: ''
