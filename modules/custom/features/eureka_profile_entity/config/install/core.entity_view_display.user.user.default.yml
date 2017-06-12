@@ -181,12 +181,12 @@ content:
     type: link
     region: content
   field_responsibilities:
-    weight: 11
+    weight: 22
     label: above
     settings:
-      link: true
+      link_to_entity: false
     third_party_settings: {  }
-    type: entity_reference_label
+    type: string
     region: content
   field_sa_notes:
     weight: 14

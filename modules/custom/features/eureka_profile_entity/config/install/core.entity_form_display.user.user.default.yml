@@ -27,6 +27,7 @@ dependencies:
     - field_group
     - inline_entity_form
     - link
+    - path
     - text
     - user
 third_party_settings:
@@ -274,10 +275,12 @@ content:
     type: link_default
     region: content
   field_responsibilities:
-    weight: 17
-    settings: {  }
+    weight: 31
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
-    type: options_buttons
+    type: string_textfield
     region: content
   field_sa_notes:
     weight: 16
@@ -306,6 +309,12 @@ content:
     region: content
   language:
     weight: 1
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 30
     region: content
     settings: {  }
     third_party_settings: {  }
