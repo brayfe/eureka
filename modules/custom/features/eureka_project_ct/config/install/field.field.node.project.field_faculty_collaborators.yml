@@ -9,7 +9,7 @@ field_name: field_faculty_collaborators
 entity_type: node
 bundle: project
 label: 'Faculty Collaborators'
-description: ''
+description: 'Please indicate any other UT faculty members or Eureka users who are collaborators on this project.'
 required: false
 translatable: false
 default_value: {  }
