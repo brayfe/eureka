@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.project.field_duties
     - field.field.node.project.field_faculty_collaborators
     - field.field.node.project.field_length_commitment
+    - field.field.node.project.field_project_lead
     - field.field.node.project.field_project_tags
     - field.field.node.project.field_project_timeline
     - field.field.node.project.field_project_website
@@ -26,16 +27,16 @@ third_party_settings:
   field_group:
     group_optional_fields:
       children:
+        - field_project_website
+        - field_qualifications
+        - field_project_timeline
+        - field_duties
         - field_time_commitment
         - field_length_commitment
         - field_close_date
-        - field_qualifications
-        - field_duties
-        - field_project_timeline
-        - field_project_website
         - field_project_tags
       parent_name: ''
-      weight: 11
+      weight: 12
       format_type: details
       format_settings:
         id: ''
@@ -59,7 +60,7 @@ content:
     region: content
   created:
     type: datetime_timestamp
-    weight: 2
+    weight: 3
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -118,6 +119,15 @@ content:
     third_party_settings: {  }
     type: string_textfield
     region: content
+  field_project_lead:
+    weight: 1
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
   field_project_tags:
     weight: 18
     settings:
@@ -161,7 +171,7 @@ content:
     region: content
   path:
     type: path
-    weight: 5
+    weight: 6
     region: content
     settings: {  }
     third_party_settings: {  }
@@ -169,14 +179,14 @@ content:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 3
+    weight: 4
     region: content
     third_party_settings: {  }
   sticky:
     type: boolean_checkbox
     settings:
       display_label: true
-    weight: 4
+    weight: 5
     region: content
     third_party_settings: {  }
   title:
@@ -189,7 +199,7 @@ content:
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
-    weight: 1
+    weight: 2
     settings:
       match_operator: CONTAINS
       size: 60

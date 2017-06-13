@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.project.field_duties
     - field.field.node.project.field_faculty_collaborators
     - field.field.node.project.field_length_commitment
+    - field.field.node.project.field_project_lead
     - field.field.node.project.field_project_tags
     - field.field.node.project.field_project_timeline
     - field.field.node.project.field_project_website
@@ -29,12 +30,12 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 1
+    weight: 2
     settings: {  }
     third_party_settings: {  }
     region: content
   field_close_date:
-    weight: 12
+    weight: 13
     label: above
     settings:
       format_type: medium
@@ -43,14 +44,14 @@ content:
     type: datetime_default
     region: content
   field_contact_email:
-    weight: 5
+    weight: 6
     label: above
     settings: {  }
     third_party_settings: {  }
     type: basic_string
     region: content
   field_contact_name:
-    weight: 4
+    weight: 5
     label: above
     settings:
       link_to_entity: false
@@ -58,7 +59,7 @@ content:
     type: string
     region: content
   field_contact_phone:
-    weight: 6
+    weight: 7
     label: above
     settings:
       link_to_entity: false
@@ -66,14 +67,14 @@ content:
     type: string
     region: content
   field_duties:
-    weight: 9
+    weight: 10
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_faculty_collaborators:
-    weight: 3
+    weight: 4
     label: above
     settings:
       link: true
@@ -81,15 +82,23 @@ content:
     type: entity_reference_label
     region: content
   field_length_commitment:
-    weight: 11
+    weight: 12
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
     region: content
+  field_project_lead:
+    weight: 1
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
   field_project_tags:
-    weight: 13
+    weight: 14
     label: above
     settings:
       link: true
@@ -97,14 +106,14 @@ content:
     type: entity_reference_label
     region: content
   field_project_timeline:
-    weight: 8
+    weight: 9
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_project_website:
-    weight: 2
+    weight: 3
     label: above
     settings:
       trim_length: 80
@@ -116,14 +125,14 @@ content:
     type: link
     region: content
   field_qualifications:
-    weight: 7
+    weight: 8
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: content
   field_time_commitment:
-    weight: 10
+    weight: 11
     label: above
     settings:
       link_to_entity: false
