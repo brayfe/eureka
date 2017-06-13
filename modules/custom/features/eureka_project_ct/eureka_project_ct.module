@@ -12,7 +12,7 @@ use Drupal\Core\Form\FormStateInterface;
  */
 function eureka_project_ct_form_alter(&$form, FormStateInterface $form_state, $form_id) {
 
-  if (in_array($form_id, array('node_project_edit_form', 'node_project_form'))) {
+  if (in_array($form_id, ['node_project_edit_form', 'node_project_form'])) {
 
     $form['faculty_info'] = [
       '#type' => 'details',
@@ -30,20 +30,17 @@ function eureka_project_ct_form_alter(&$form, FormStateInterface $form_state, $f
       '#group' => 'advanced',
       '#open' => TRUE,
     ];
-    $fields = array(
+    $fields = [
       'field_contact_name',
       'field_contact_email',
       'field_contact_phone',
-    );
+    ];
 
     foreach ($fields as $machine_name) {
       $form['contact_info'][$machine_name] = $form[$machine_name];
       unset($form[$machine_name]);
     }
 
-    $form['author']['#weight'] = -10;
-    $form['author']['#title'] = 'Project Lead *';
-    $form['created']['#access'] = FALSE;
     $form['#attached']['library'][] = 'eureka_project_ct/project_form';
 
   }

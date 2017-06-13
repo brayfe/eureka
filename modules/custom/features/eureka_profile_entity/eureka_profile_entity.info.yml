@@ -10,6 +10,7 @@ dependencies:
   - inline_entity_form
   - link
   - node
+  - path
   - taxonomy
   - text
   - user
