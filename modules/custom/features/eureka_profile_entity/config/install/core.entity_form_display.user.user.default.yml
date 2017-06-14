@@ -27,6 +27,7 @@ dependencies:
     - field_group
     - inline_entity_form
     - link
+    - multiselect
     - path
     - text
     - user
@@ -35,6 +36,8 @@ third_party_settings:
     group_faculty_user_form:
       children:
         - group_faculty_information
+        - group_projects
+        - group_authorized
         - group_account
       parent_name: ''
       weight: 0
@@ -48,16 +51,16 @@ third_party_settings:
       children:
         - account
         - field_is_active
-        - field_authorized_users
       parent_name: group_faculty_user_form
-      weight: 6
+      weight: 8
       format_type: tab
       format_settings:
-        id: ''
-        classes: ''
+        label: Account
         formatter: open
         description: ''
-        required_fields: true
+        id: ''
+        classes: ''
+        required_fields: false
       label: Account
     group_faculty_information:
       children:
@@ -68,18 +71,18 @@ third_party_settings:
         - field_research_interests
         - field_affiliated_departments
         - group_research_location_informat
-        - group_project_information
         - group_lab_information
         - field_tags
       parent_name: group_faculty_user_form
       weight: 5
       format_type: tab
       format_settings:
-        id: ''
-        classes: ''
+        label: 'Faculty Information'
         formatter: closed
         description: ''
-        required_fields: true
+        id: ''
+        classes: ''
+        required_fields: false
       label: 'Faculty Information'
     group_lab_information:
       children:
@@ -87,8 +90,8 @@ third_party_settings:
         - field_lab_website
         - field_student_assistant
         - field_sa_notes
-        - field_responsibilities
         - field_open_to_work_with
+        - field_responsibilities
       parent_name: group_faculty_information
       weight: 13
       format_type: details
@@ -99,20 +102,6 @@ third_party_settings:
         classes: ''
         open: false
       label: 'Lab and Internship Details'
-    group_project_information:
-      children:
-        - field_projects
-        - field_external_projects
-      parent_name: group_faculty_information
-      weight: 12
-      format_type: details
-      format_settings:
-        label: 'Eureka Projects'
-        required_fields: true
-        id: ''
-        classes: ''
-        open: false
-      label: Projects
     group_research_location_informat:
       children:
         - field_academic_interest
@@ -129,6 +118,34 @@ third_party_settings:
         classes: ''
         open: false
       label: 'Research Details'
+    group_authorized:
+      children:
+        - field_authorized_users
+      parent_name: group_faculty_user_form
+      weight: 7
+      format_type: tab
+      format_settings:
+        label: 'Authorized Users'
+        formatter: closed
+        description: 'If you''d like to allow other users (e.g. lab manager, postdoc, grad student) to edit and save info on Eureka on your behalf, enter their EIDs.'
+        required_fields: true
+        id: ''
+        classes: ''
+      label: 'Authorized Users'
+    group_projects:
+      children:
+        - field_projects
+        - field_external_projects
+      parent_name: group_faculty_user_form
+      weight: 6
+      format_type: tab
+      format_settings:
+        id: ''
+        classes: ''
+        formatter: closed
+        description: ''
+        required_fields: false
+      label: Projects
 id: user.user.default
 targetEntityType: user
 bundle: user
@@ -143,13 +160,13 @@ content:
     weight: 15
     settings: {  }
     third_party_settings: {  }
-    type: options_buttons
+    type: multiselect
     region: content
   field_affiliated_departments:
     weight: 9
     settings: {  }
     third_party_settings: {  }
-    type: options_buttons
+    type: multiselect
     region: content
   field_authorized_users:
     weight: 2
@@ -164,7 +181,7 @@ content:
     weight: 16
     settings: {  }
     third_party_settings: {  }
-    type: options_buttons
+    type: multiselect
     region: content
   field_display_name:
     weight: 3
@@ -240,12 +257,12 @@ content:
     weight: 16
     settings:
       form_mode: default
-      label_singular: ''
-      label_plural: ''
+      override_labels: true
+      label_singular: project
+      label_plural: projects
       allow_new: true
       allow_existing: true
       match_operator: CONTAINS
-      override_labels: false
     third_party_settings: {  }
     type: inline_entity_form_complex
     region: content

@@ -9,9 +9,11 @@ dependencies:
   - field_group
   - inline_entity_form
   - link
+  - multiselect
   - node
   - path
   - taxonomy
   - text
   - user
+  - views
 version: 8.x-1.0
