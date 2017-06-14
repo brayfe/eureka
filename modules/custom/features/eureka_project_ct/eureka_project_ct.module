@@ -5,7 +5,9 @@
  * Contains eureka_project_ct.module..
  */
 
+use Drupal\Core\Render\Element;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Field\FieldStorageDefinitionInterface;
 
 /**
  * Implements hook_form_alter().
@@ -14,13 +16,17 @@ function eureka_project_ct_form_alter(&$form, FormStateInterface $form_state, $f
 
   if (in_array($form_id, ['node_project_edit_form', 'node_project_form'])) {
 
+    // Suppress display of path setting for user accounts.
+    $form['path']['#access'] = FALSE;
+
     $form['faculty_info'] = [
       '#type' => 'details',
-      '#title' => 'Faculty Collaborators',
+      '#title' => 'Faculty',
       '#group' => 'advanced',
-      '#collapsible' => TRUE,
-      '#collapsed' => TRUE,
+      '#open' => TRUE,
     ];
+    $form['faculty_info']['field_project_lead'] = $form['field_project_lead'];
+    unset($form['field_project_lead']);
     $form['faculty_info']['field_faculty_collaborators'] = $form['field_faculty_collaborators'];
     unset($form['field_faculty_collaborators']);
 
@@ -43,5 +49,51 @@ function eureka_project_ct_form_alter(&$form, FormStateInterface $form_state, $f
 
     $form['#attached']['library'][] = 'eureka_project_ct/project_form';
 
+  }
+}
+
+/**
+ * Implements hook_field_widget_form_alter().
+ */
+function eureka_project_ct_field_widget_form_alter(&$element, FormStateInterface $form_state, $context) {
+  $changes = [
+    'field_faculty_collaborators' => 'Add another faculty',
+    'field_project_tags' => 'Add another tag',
+    'field_tags' => 'Add another tag',
+    'field_external_projects' => 'Add another project URL',
+  ];
+
+  $field = $context['items']->getFieldDefinition();
+
+  $field_storage = $field->getFieldStorageDefinition();
+  if ($field_storage->getCardinality() == FieldStorageDefinitionInterface::CARDINALITY_UNLIMITED) {
+    $name = $field->getName();
+    if (in_array($name, array_keys($changes))) {
+      $element['#custom_add_another_value'] = $changes[$name];
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_field_multiple_value_form().
+ *
+ * We look for a value that was placed there earlier by
+ * custom_add_another_field_widget_form_alter() and change the add_more button
+ * to use that.
+ */
+function eureka_project_ct_preprocess_field_multiple_value_form(&$variables) {
+  foreach (Element::children($variables['element']) as $child) {
+    $child_element = &$variables['element'][$child];
+    if (isset($child_element['#custom_add_another_value']) || isset($child_element['#custom_remove'])) {
+      if (isset($child_element['#custom_add_another_value']) && isset($variables['element']['add_more']['#value']) && $variables['element']['add_more']['#value'] != $child_element['#custom_add_another_value']) {
+        $variables['element']['add_more']['#value'] = $child_element['#custom_add_another_value'];
+      }
+      if (isset($child_element['#custom_add_another_value']) && isset($variables['button']['#value']) && $variables['button']['#value'] != $child_element['#custom_add_another_value']) {
+        $variables['button']['#value'] = $child_element['#custom_add_another_value'];
+      }
+      if (isset($child_element['#custom_remove']) && isset($child_element['remove_button']['#value'])) {
+        $child_element['remove_button']['#value'] = $child_element['#custom_remove'];
+      }
+    }
   }
 }
