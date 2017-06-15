@@ -1,0 +1,23 @@
+id: tags
+
+label: Migrate Tags terms from the source database to Tags
+migration_group: taxonomies
+
+source:
+  plugin: tags
+
+destination:
+  plugin: entity:taxonomy_term
+
+process:
+  name: name
+  vid:
+    plugin: default_value
+    default_value: tags
+
+migration_dependencies: {}
+
+dependencies:
+  enforced:
+    module:
+      - eureka_migration

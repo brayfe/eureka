@@ -1,0 +1,20 @@
+name: Eureka Migration
+type: module
+description: Migration from Eureka legacy site into Drupal.
+core: 8.x
+package: Migrate
+dependencies:
+  - migrate
+  - migrate_plus
+  - eureka_faculty_profile_taxonomies
+
+config_devel:
+  - migrate_plus.migration_group.taxonomies
+  - migrate_plus.migration.departments
+  - migrate_plus.migration.countries
+  - migrate_plus.migration.colleges
+  - migrate_plus.migration.projects
+  - migrate_plus.migration.regions
+  - migrate_plus.migration.units
+  - migrate_plus.migration.users
+  - migrate_plus.migration.tags

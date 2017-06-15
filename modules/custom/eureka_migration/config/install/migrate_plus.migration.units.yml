@@ -1,0 +1,25 @@
+id: units
+
+label: Migrate Institutions terms from the source database to Research Units
+migration_group: taxonomies
+
+source:
+  plugin: units
+
+destination:
+  plugin: entity:taxonomy_term
+
+process:
+  name: name
+  description: description
+  field_website: website
+  vid:
+    plugin: default_value
+    default_value: research_units
+
+migration_dependencies: {}
+
+dependencies:
+  enforced:
+    module:
+      - eureka_migration

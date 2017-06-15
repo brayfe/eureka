@@ -1,0 +1,33 @@
+# The machine name for a migration, used to uniquely identify it.
+id: colleges
+
+# A human-friendly description of the migration.
+label: Migrate Colleges terms from the source database to Affiliated Departments
+migration_group: taxonomies
+
+# Every migration must have a source plugin, which controls the delivery of our
+# source data. In this case, our source plugin has the name "beer_term", which
+# Drupal resolves to the PHP class defined in
+# src/Plugin/migrate/source/BeerTerm.php.
+source:
+  plugin: colleges
+
+destination:
+  plugin: entity:taxonomy_term
+
+process:
+  name: name
+  vid:
+    plugin: default_value
+    default_value: affiliated_departments
+
+migration_dependencies: {}
+
+# By default, configuration entities (like this migration) are not automatically
+# removed when the migration which installed them is uninstalled. To have your
+# migrations uninstalled with your migration module, add an enforced dependency
+# on your module.
+dependencies:
+  enforced:
+    module:
+      - eureka_migration
