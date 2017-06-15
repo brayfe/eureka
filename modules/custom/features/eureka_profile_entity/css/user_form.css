@@ -12,3 +12,7 @@ input[id^="edit-field-research-website"][id*="title"] {
   width: 300px;
 }
 
+
+.multiselect-wrapper {
+  display:flow-root;
+}

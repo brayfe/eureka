@@ -10,20 +10,16 @@ field_name: field_authorized_users
 entity_type: user
 bundle: user
 label: 'Authorized Users'
-description: 'If you''d like to allow other users (e.g. lab manager, postdoc, grad student) to edit and save info on Eureka on your behalf, enter their EIDs.'
+description: 'Start typing a person''s surname or UT EID.'
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: 'default:user'
+  handler: views
   handler_settings:
-    include_anonymous: false
-    filter:
-      type: _none
-    target_bundles: null
-    sort:
-      field: name
-      direction: ASC
-    auto_create: false
+    view:
+      view_name: users_entity_reference
+      display_name: entity_reference_1
+      arguments: {  }
 field_type: entity_reference

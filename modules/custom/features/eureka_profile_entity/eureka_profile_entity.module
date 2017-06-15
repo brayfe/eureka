@@ -16,5 +16,8 @@ function eureka_profile_entity_form_alter(&$form, FormStateInterface $form_state
     $form['account']['name']['#weight'] = -10;
     $form['account']['mail']['#weight'] = -9;
     $form['account']['pass']['#weight'] = -8;
+
+    // Suppress display of path setting for user accounts.
+    $form['path']['#access'] = FALSE;
   }
 }
