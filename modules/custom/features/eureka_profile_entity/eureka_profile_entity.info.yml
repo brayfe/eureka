@@ -13,6 +13,7 @@ dependencies:
   - node
   - path
   - taxonomy
+  - term_reference_tree
   - text
   - user
   - views
