@@ -1,0 +1,66 @@
+diff --git a/core/modules/migrate/src/Plugin/migrate/source/SqlBase.php b/core/modules/migrate/src/Plugin/migrate/source/SqlBase.php
+index 2e85c63..3c6d4c4 100644
+--- a/core/modules/migrate/src/Plugin/migrate/source/SqlBase.php
++++ b/core/modules/migrate/src/Plugin/migrate/source/SqlBase.php
+@@ -234,6 +234,7 @@ protected function initializeIterator() {
+       //      OR above high water).
+       $conditions = $this->query->orConditionGroup();
+       $condition_added = FALSE;
++      $added_fields = [];
+       if (empty($this->configuration['ignore_map']) && $this->mapJoinable()) {
+         // Build the join to the map table. Because the source key could have
+         // multiple fields, we need to build things up.
+@@ -259,14 +260,17 @@ protected function initializeIterator() {
+         for ($count = 1; $count <= $n; $count++) {
+           $map_key = 'sourceid' . $count;
+           $this->query->addField($alias, $map_key, "migrate_map_$map_key");
++          $added_fields[] = "$alias.$map_key";
+         }
+         if ($n = count($this->migration->getDestinationIds())) {
+           for ($count = 1; $count <= $n; $count++) {
+             $map_key = 'destid' . $count++;
+             $this->query->addField($alias, $map_key, "migrate_map_$map_key");
++            $added_fields[] = "$alias.$map_key";
+           }
+         }
+         $this->query->addField($alias, 'source_row_status', 'migrate_map_source_row_status');
++        $added_fields[] = "$alias.source_row_status";
+       }
+       // 2. If we are using high water marks, also include rows above the mark.
+       //    But, include all rows if the high water mark is not set.
+@@ -279,6 +283,15 @@ protected function initializeIterator() {
+       if ($condition_added) {
+         $this->query->condition($conditions);
+       }
++      // If the query has a group by, our added fields need it too, to keep the
++      // query valid.
++      // @see https://dev.mysql.com/doc/refman/5.7/en/group-by-handling.html
++      $group_by = $this->query->getGroupBy();
++      if ($group_by && $added_fields) {
++        foreach ($added_fields as $added_field) {
++          $this->query->groupBy($added_field);
++        }
++      }
+     }
+ 
+     // Download data in batches for performance.
+diff --git a/core/modules/migrate/tests/modules/migrate_high_water_test/src/Plugin/migrate/source/HighWaterTest.php b/core/modules/migrate/tests/modules/migrate_high_water_test/src/Plugin/migrate/source/HighWaterTest.php
+index 8376721..601bbd9 100644
+--- a/core/modules/migrate/tests/modules/migrate_high_water_test/src/Plugin/migrate/source/HighWaterTest.php
++++ b/core/modules/migrate/tests/modules/migrate_high_water_test/src/Plugin/migrate/source/HighWaterTest.php
+@@ -17,9 +17,13 @@ class HighWaterTest extends SqlBase {
+    * {@inheritdoc}
+    */
+   public function query() {
++    $field_names = array_keys($this->fields());
+     $query = $this
+       ->select('high_water_node', 'm')
+-      ->fields('m', array_keys($this->fields()));
++      ->fields('m', $field_names);
++    foreach ($field_names as $field_name) {
++      $query->groupBy($field_name);
++    }
+     return $query;
+   }
+ 
+
