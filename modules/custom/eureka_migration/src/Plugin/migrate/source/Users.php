@@ -47,6 +47,8 @@ class Users extends SqlBase {
     $query = $this->select('users', 'u');
     $query->leftJoin('faculty', 'f', 'u.user_id = f.user_id');
     $query->leftJoin('faculty_tags', 'ft', 'ft.faculty_id = f.faculty_id');
+    $query->leftJoin('user_roles', 'ur', 'u.user_id = ur.user_id');
+    $query->condition('ur.role_id', 7, '!=');
     $query->fields('u', ['user_id', 'username']);
     $query->fields('f', [
       'faculty_id',
@@ -246,6 +248,7 @@ class Users extends SqlBase {
     $query = $this->select('faculty_institutions', 'fi');
     $query->fields('fi', ['faculty_id'])
       ->condition('faculty_id', $faculty_id)
+      ->condition('institution_id', [36, 125], 'NOT IN')
       ->addExpression('GROUP_CONCAT(DISTINCT fi.institution_id)', 'units');
     $query->groupBy('faculty_id');
 

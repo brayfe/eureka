@@ -3,7 +3,6 @@
 namespace Drupal\eureka_migration\Plugin\migrate\source;
 
 use Drupal\migrate\Plugin\migrate\source\SqlBase;
-use Drupal\migrate\Row;
 
 /**
  * Defines migration for Countries Terms.
@@ -20,6 +19,7 @@ class Countries extends SqlBase {
   public function query() {
     $query = $this->select('alpha_countries', 'ac');
     $query->fields('ac', ['country_id', 'country_name', 'code']);
+    $query->condition('country_id', [11, 33], 'NOT IN');
 
     return $query;
   }
@@ -47,18 +47,6 @@ class Countries extends SqlBase {
         'alias' => 'ac',
       ],
     ];
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function prepareRow(Row $row) {
-    $cid = $row->getSourceProperty('country_id');
-    if ($cid == 33 || $cid == 11) {
-      return FALSE;
-    }
-
-    return parent::prepareRow($row);
   }
 
 }
