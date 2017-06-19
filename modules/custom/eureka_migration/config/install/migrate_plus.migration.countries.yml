@@ -1,0 +1,24 @@
+id: countries
+
+label: Migrate Countries terms from the source database to Countries of Academic Interest
+migration_group: taxonomies
+
+source:
+  plugin: countries
+
+destination:
+  plugin: entity:taxonomy_term
+
+process:
+  name: code
+  description: country_name
+  vid:
+    plugin: default_value
+    default_value: countries_academic_interest
+
+migration_dependencies: {}
+
+dependencies:
+  enforced:
+    module:
+      - eureka_migration

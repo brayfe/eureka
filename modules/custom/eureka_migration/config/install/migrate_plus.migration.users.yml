@@ -1,0 +1,107 @@
+id: users
+
+label: Migrate Users from the source database.
+migration_group: content
+
+source:
+  plugin: users
+
+destination:
+  plugin: entity:user
+
+process:
+  name: username
+  status: is_active
+  mail:
+    plugin: concat
+    source:
+      - username
+      - email_host
+  field_first_name: first_name
+  field_last_name: last_name
+  field_research_interests: research_interests
+  field_lab_website: website
+  field_is_active: is_active
+  field_display_name:
+    plugin: concat
+    source:
+      - first_name
+      - last_name
+    delimiter: ' '
+  field_affiliated_departments:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: department_id
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: migration
+      migration: departments
+  field_projects:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: project_id
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: migration
+      migration: projects
+  field_academic_interest:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: region_id
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: migration
+      migration: regions
+  field_research_units:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: institution_id
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: migration
+      migration: units
+  field_tags:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: tag_list
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: migration
+      migration: tags
+  created:
+    -
+      plugin: callback
+      callable: strtotime
+      source: created
+    -
+      plugin: default_value
+      default_value: 1497555243
+  changed:
+    plugin: callback
+    callable: strtotime
+    source: modified
+
+
+migration_dependencies:
+  required:
+      - tags
+
+dependencies:
+  enforced:
+    module:
+      - eureka_migration

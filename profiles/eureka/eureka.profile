@@ -5,6 +5,8 @@
  * Defines the Eureka Profile install screen by modifying the install form.
  */
 
+use Drupal\taxonomy\Entity\Term;
+
 /**
  * Implements hook_install_tasks().
  */
@@ -15,6 +17,10 @@ function eureka_install_tasks() {
       'display' => TRUE,
       'type' => 'batch',
     ],
+    'eureka_install_terms' => [
+      'display_name' => t('Install Terms'),
+      'type' => 'normal',
+    ],
   ];
 }
 
@@ -23,6 +29,41 @@ function eureka_install_tasks() {
  */
 function eureka_install_tasks_alter(array &$tasks, array $install_state) {
   $tasks['install_finished']['function'] = 'eureka_post_install_redirect';
+}
+
+/**
+ * Install task callback; Adds defualt terms to taxonomy.
+ *
+ * @param array $install_state
+ *   The current install state.
+ */
+function eureka_install_terms(array &$install_state) {
+  $vid = 'intern_criteria';
+  $terms = [
+    'Student research assistants',
+    'Students conducting independent research or a thesis',
+    'Majors from their affiliated departments',
+    'Any interested and motivated student, regardless of academic background',
+    'Freshmen',
+    'Sophomores',
+    'Juniors',
+    'Seniors',
+    'Students who have already taken classes with this professor',
+    'Students in the Freshman Research Initiative program',
+    'Students in the McNair Scholars program',
+    'Students in the Bridging Disciplines Programs',
+    'Students in the Discovery Scholars program',
+    'Students in the Presidential Scholars program',
+    'Students in the University Leadership Network',
+  ];
+
+  foreach ($terms as $weight => $term) {
+    $tid = Term::create([
+      'name' => $term,
+      'vid' => $vid,
+      'weight' => $weight,
+    ])->save();
+  }
 }
 
 /**

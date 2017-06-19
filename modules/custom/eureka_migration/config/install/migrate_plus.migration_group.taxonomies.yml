@@ -1,0 +1,19 @@
+id: taxonomies
+
+# A human-friendly label for the group.
+label: Taxonomies
+
+# More information about the group.
+description: The taxonomies associated with the new Eureka site.
+
+# Short description of the type of source, e.g. "Drupal 6" or "WordPress".
+source_type: Custom tables
+
+shared_configuration:
+  source:
+    key: legacy
+
+dependencies:
+  enforced:
+    module:
+      - eureka_migration

@@ -1,0 +1,71 @@
+id: projects
+
+label: Migrate Projects from the source database.
+migration_group: content
+
+source:
+  plugin: projects
+
+destination:
+  plugin: entity:node
+
+process:
+  type:
+    plugin: default_value
+    default_value: project
+  sticky:
+    plugin: default_value
+    default_value: 0
+  status:
+    plugin: default_value
+    default_value: 1
+  uid:
+    plugin: migration
+    migration: users
+    source: creator_id
+  title: name
+  field_project_lead:
+    plugin: migration
+    migration: users
+    source: project_lead
+  field_close_date:
+    plugin: format_date
+    from_format: 'Y-m-d H:i:s'
+    to_format: 'Y-m-d'
+    source: close_date
+  body: description
+  field_qualifications: qualifications
+  field_project_timeline: timeline
+  field_duties: duties
+  field_project_website: website
+  field_contact_name: contact_name
+  field_contact_email: contact_email
+  field_contact_phone: contact_phone
+  field_project_tags:
+    -
+      plugin: skip_on_empty
+      method: process
+      source: tag_list
+    -
+      plugin: explode
+      delimiter: ','
+    -
+      plugin: migration
+      migration: tags
+  created:
+    plugin: callback
+    callable: strtotime
+    source: created
+  changed:
+    plugin: callback
+    callable: strtotime
+    source: modified
+
+migration_dependencies:
+  required:
+      - tags
+
+dependencies:
+  enforced:
+    module:
+      - eureka_migration

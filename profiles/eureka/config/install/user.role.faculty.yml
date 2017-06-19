@@ -1,0 +1,15 @@
+langcode: en
+status: true
+dependencies: {  }
+id: faculty
+label: Faculty
+weight: 3
+is_admin: false
+permissions:
+  - 'access in-place editing'
+  - 'access user profiles'
+  - 'create project content'
+  - 'delete own project content'
+  - 'edit own project content'
+  - 'view own unpublished content'
+  - 'view the administration theme'

@@ -1,0 +1,23 @@
+id: regions
+
+label: Migrate Regions terms from the source database to Regions of Academic Interest
+migration_group: taxonomies
+
+source:
+  plugin: regions
+
+destination:
+  plugin: entity:taxonomy_term
+
+process:
+  name: name
+  vid:
+    plugin: default_value
+    default_value: regions_academic_interest
+
+migration_dependencies: {}
+
+dependencies:
+  enforced:
+    module:
+      - eureka_migration
