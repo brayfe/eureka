@@ -1,0 +1,240 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_academic_interest
+    - field.storage.user.field_affiliated_departments
+    - field.storage.user.field_countries_acad_interest
+    - field.storage.user.field_display_name
+    - field.storage.user.field_first_name
+    - field.storage.user.field_job_title
+    - field.storage.user.field_last_name
+    - field.storage.user.field_research_interests
+    - field.storage.user.field_research_units
+    - field.storage.user.field_responsibilities
+    - field.storage.user.field_tags
+    - search_api.server.eureka_search_server
+  module:
+    - taxonomy
+    - search_api
+    - user
+id: faculty_index
+name: Faculty
+description: ''
+read_only: false
+field_settings:
+  username:
+    label: Username
+    datasource_id: 'entity:user'
+    property_path: name
+    type: string
+  field_academic_interest:
+    label: 'Regions of Academic Interest'
+    datasource_id: 'entity:user'
+    property_path: field_academic_interest
+    type: integer
+    dependencies:
+      config:
+        - field.storage.user.field_academic_interest
+  field_affiliated_departments:
+    label: 'Affiliated Departments'
+    datasource_id: 'entity:user'
+    property_path: field_affiliated_departments
+    type: integer
+    dependencies:
+      config:
+        - field.storage.user.field_affiliated_departments
+  field_countries_acad_interest:
+    label: 'Countries of Academic Interest'
+    datasource_id: 'entity:user'
+    property_path: field_countries_acad_interest
+    type: integer
+    dependencies:
+      config:
+        - field.storage.user.field_countries_acad_interest
+  field_display_name:
+    label: 'Display Name'
+    datasource_id: 'entity:user'
+    property_path: field_display_name
+    type: text
+    boost: !!float 2
+    dependencies:
+      config:
+        - field.storage.user.field_display_name
+  field_first_name:
+    label: 'First Name'
+    datasource_id: 'entity:user'
+    property_path: field_first_name
+    type: text
+    boost: !!float 2
+    dependencies:
+      config:
+        - field.storage.user.field_first_name
+  name:
+    label: 'Job Title » Name'
+    datasource_id: 'entity:user'
+    property_path: 'field_job_title:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.user.field_job_title
+      module:
+        - taxonomy
+  field_last_name:
+    label: 'Last Name'
+    datasource_id: 'entity:user'
+    property_path: field_last_name
+    type: text
+    boost: !!float 2
+    dependencies:
+      config:
+        - field.storage.user.field_last_name
+  field_research_interests:
+    label: 'Research Interests'
+    datasource_id: 'entity:user'
+    property_path: field_research_interests
+    type: text
+    dependencies:
+      config:
+        - field.storage.user.field_research_interests
+  field_research_units:
+    label: 'Research Units'
+    datasource_id: 'entity:user'
+    property_path: field_research_units
+    type: integer
+    dependencies:
+      config:
+        - field.storage.user.field_research_units
+  field_responsibilities:
+    label: 'Typical Responsibilities'
+    datasource_id: 'entity:user'
+    property_path: field_responsibilities
+    type: text
+    dependencies:
+      config:
+        - field.storage.user.field_responsibilities
+  field_tags:
+    label: 'Faculty Profile Tags'
+    datasource_id: 'entity:user'
+    property_path: field_tags
+    type: integer
+    dependencies:
+      config:
+        - field.storage.user.field_tags
+datasource_settings:
+  'entity:user':
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  rendered_item: {  }
+  entity_status: {  }
+  highlight:
+    highlight: always
+    highlight_partial: false
+    excerpt: true
+    excerpt_length: 256
+    exclude_fields: {  }
+    prefix: '<strong>'
+    suffix: '</strong>'
+    weights:
+      postprocess_query: 0
+  ignorecase:
+    fields:
+      - username
+      - field_display_name
+      - field_first_name
+      - name
+      - field_last_name
+      - field_research_interests
+      - field_responsibilities
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+  role_filter:
+    default: false
+    roles:
+      - faculty
+  stemmer:
+    fields:
+      - field_display_name
+      - field_first_name
+      - name
+      - field_last_name
+      - field_research_interests
+      - field_responsibilities
+    exceptions:
+      texan: texa
+      mexican: mexic
+    weights:
+      preprocess_index: 0
+      preprocess_query: 0
+  stopwords:
+    fields:
+      - field_display_name
+      - field_first_name
+      - name
+      - field_last_name
+      - field_research_interests
+      - field_responsibilities
+    stopwords:
+      - a
+      - an
+      - and
+      - are
+      - as
+      - at
+      - be
+      - but
+      - by
+      - for
+      - if
+      - in
+      - into
+      - is
+      - it
+      - 'no'
+      - not
+      - of
+      - 'on'
+      - or
+      - s
+      - such
+      - t
+      - that
+      - the
+      - their
+      - then
+      - there
+      - these
+      - they
+      - this
+      - to
+      - was
+      - will
+      - with
+    weights:
+      preprocess_index: -5
+      preprocess_query: -2
+  tokenizer:
+    fields:
+      - field_display_name
+      - field_first_name
+      - name
+      - field_last_name
+      - field_research_interests
+      - field_responsibilities
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '3'
+    weights:
+      preprocess_index: -6
+      preprocess_query: -6
+tracker_settings:
+  default: {  }
+options:
+  index_directly: false
+  cron_limit: 100
+server: eureka_search_server

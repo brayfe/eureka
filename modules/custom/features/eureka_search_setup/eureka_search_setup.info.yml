@@ -1,0 +1,8 @@
+name: 'Search Setup'
+description: 'The search server and search index for Eureka.'
+type: module
+core: 8.x
+dependencies:
+  - search_api
+  - search_api_db
+version: 8.x-1.0

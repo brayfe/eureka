@@ -1,0 +1,258 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_close_date
+    - field.storage.node.field_duties
+    - field.storage.node.field_project_lead
+    - field.storage.user.field_display_name
+    - field.storage.node.field_qualifications
+    - field.storage.node.field_project_timeline
+    - field.storage.node.field_faculty_collaborators
+    - field.storage.node.body
+    - field.storage.node.field_project_tags
+    - field.storage.user.field_academic_interest
+    - field.storage.user.field_countries_acad_interest
+    - search_api.server.eureka_search_server
+  module:
+    - user
+    - taxonomy
+    - search_api
+    - node
+id: project_index
+name: 'Project'
+description: ''
+read_only: false
+field_settings:
+  title:
+    label: Title
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+    boost: !!float 2
+  changed:
+    label: Changed
+    datasource_id: 'entity:node'
+    property_path: changed
+    type: date
+  field_close_date:
+    label: 'Close Date'
+    datasource_id: 'entity:node'
+    property_path: field_close_date
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_close_date
+  field_duties:
+    label: Duties
+    datasource_id: 'entity:node'
+    property_path: field_duties
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_duties
+  field_proj_lead_display_name:
+    label: 'Project Lead » Display Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_project_lead:entity:field_display_name'
+    type: text
+    boost: 0.5
+    dependencies:
+      config:
+        - field.storage.node.field_project_lead
+        - field.storage.user.field_display_name
+      module:
+        - user
+  field_qualifications:
+    label: Qualifications
+    datasource_id: 'entity:node'
+    property_path: field_qualifications
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_qualifications
+  field_project_timeline:
+    label: 'Project Timeline'
+    datasource_id: 'entity:node'
+    property_path: field_project_timeline
+    type: text
+    dependencies:
+      config:
+        - field.storage.node.field_project_timeline
+  field_collab_display_name:
+    label: 'Faculty Collaborators » User » Display Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_faculty_collaborators:entity:field_display_name'
+    type: text
+    boost: 0.5
+    dependencies:
+      config:
+        - field.storage.node.field_faculty_collaborators
+        - field.storage.user.field_display_name
+      module:
+        - user
+  body:
+    label: Description
+    datasource_id: 'entity:node'
+    property_path: body
+    type: text
+    boost: !!float 2
+    dependencies:
+      config:
+        - field.storage.node.body
+  field_project_tags_name:
+    label: 'Project Tags Name'
+    datasource_id: 'entity:node'
+    property_path: 'field_project_tags:entity:name'
+    type: text
+    boost: !!float 5
+    dependencies:
+      config:
+        - field.storage.node.field_project_tags
+      module:
+        - taxonomy
+  field_project_tags:
+    label: 'Project Tags'
+    datasource_id: 'entity:node'
+    property_path: field_project_tags
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_project_tags
+  field_academic_interest:
+    label: 'Project Lead » User » Regions of Academic Interest'
+    datasource_id: 'entity:node'
+    property_path: 'field_project_lead:entity:field_academic_interest'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_project_lead
+        - field.storage.user.field_academic_interest
+      module:
+        - user
+  field_countries_acad_interest:
+    label: 'Project Lead » User » Countries of Academic Interest'
+    datasource_id: 'entity:node'
+    property_path: 'field_project_lead:entity:field_countries_acad_interest'
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_project_lead
+        - field.storage.user.field_countries_acad_interest
+      module:
+        - user
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  entity_status: {  }
+  highlight:
+    highlight: always
+    highlight_partial: true
+    excerpt: true
+    excerpt_length: 256
+    exclude_fields: {  }
+    prefix: '<strong>'
+    suffix: '</strong>'
+    weights:
+      postprocess_query: 0
+  ignorecase:
+    fields:
+      - title
+      - field_duties
+      - field_proj_lead_display_name
+      - field_qualifications
+      - field_project_timeline
+      - field_collab_display_name
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+  rendered_item: {  }
+  stemmer:
+    fields:
+      - title
+      - field_duties
+      - field_proj_lead_display_name
+      - field_qualifications
+      - field_project_timeline
+      - field_collab_display_name
+    exceptions:
+      texan: texa
+      mexican: mexic
+    weights:
+      preprocess_index: 0
+      preprocess_query: 0
+  stopwords:
+    fields:
+      - title
+      - field_duties
+      - field_proj_lead_display_name
+      - field_qualifications
+      - field_project_timeline
+      - field_collab_display_name
+    stopwords:
+      - a
+      - an
+      - and
+      - are
+      - as
+      - at
+      - be
+      - but
+      - by
+      - for
+      - if
+      - in
+      - into
+      - is
+      - it
+      - 'no'
+      - not
+      - of
+      - 'on'
+      - or
+      - s
+      - such
+      - t
+      - that
+      - the
+      - their
+      - then
+      - there
+      - these
+      - they
+      - this
+      - to
+      - was
+      - will
+      - with
+    weights:
+      preprocess_index: -5
+      preprocess_query: -2
+  tokenizer:
+    fields:
+      - title
+      - field_duties
+      - field_proj_lead_display_name
+      - field_qualifications
+      - field_project_timeline
+      - field_collab_display_name
+    spaces: ''
+    overlap_cjk: 1
+    minimum_word_size: '3'
+    weights:
+      preprocess_index: -6
+      preprocess_query: -6
+tracker_settings:
+  default: {  }
+options:
+  index_directly: false
+  cron_limit: 100
+server: eureka_search_server
