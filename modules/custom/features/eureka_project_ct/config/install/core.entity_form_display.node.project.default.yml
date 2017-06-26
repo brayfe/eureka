@@ -6,7 +6,6 @@ dependencies:
     - field.field.node.project.field_close_date
     - field.field.node.project.field_contact_email
     - field.field.node.project.field_contact_name
-    - field.field.node.project.field_contact_phone
     - field.field.node.project.field_duties
     - field.field.node.project.field_faculty_collaborators
     - field.field.node.project.field_length_commitment
@@ -80,14 +79,6 @@ content:
     region: content
   field_contact_name:
     weight: 8
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_contact_phone:
-    weight: 10
     settings:
       size: 60
       placeholder: ''
