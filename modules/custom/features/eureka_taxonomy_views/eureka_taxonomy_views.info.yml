@@ -1,0 +1,10 @@
+name: 'Eureka Taxonomy Views'
+description: 'Set display of taxonomy listings for faculty & projects'
+type: module
+core: 8.x
+dependencies:
+  - eureka_profile_entity
+  - eureka_project_ct
+  - views
+  - user
+version: 8.x-1.0

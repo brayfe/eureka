@@ -1,0 +1,31 @@
+uuid: a841d179-90c6-451b-a9ae-dfa5a4be1345
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.faculty_taxonomies
+  module:
+    - system
+    - views
+  theme:
+    - eurekatheme
+id: views_block__faculty_taxonomies_block_4
+theme: eurekatheme
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:faculty_taxonomies-block_4'
+settings:
+  id: 'views_block:faculty_taxonomies-block_4'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '/taxonomy/term/*'
+    negate: false
+    context_mapping: {  }
