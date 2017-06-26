@@ -1,0 +1,25 @@
+uuid: ee155032-3905-45d5-a4a2-1e1c9df8ee10
+langcode: en
+status: true
+dependencies:
+  config:
+    - views.view.faculty_taxonomies
+  module:
+    - views
+  theme:
+    - eurekatheme
+id: views_block__faculty_taxonomies_block_5
+theme: eurekatheme
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:faculty_taxonomies-block_5'
+settings:
+  id: 'views_block:faculty_taxonomies-block_5'
+  label: ''
+  provider: views
+  label_display: visible
+  views_label: ''
+  items_per_page: none
+  context_mapping: {  }
+visibility: {  }
