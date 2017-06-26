@@ -26,12 +26,28 @@ h3.faculty-title {
     border-bottom:1px solid #000;
   }
 
-  a.views-more-link {
-    color: #382F2D;
-    font-style: italic;
+  .views-field-body {
 
-    &:after {
-      content: ' \00bb';
+    a {
+      display: inline-block;
+      text-decoration: none;
+
+      .views-more-link {
+        color: #382F2D;
+        font-style: italic;
+        text-decoration: none;
+        display: inline-block;
+
+        &:hover,
+        &:focus {
+          text-decoration: underline;
+        }
+      }
+
+      &:after {
+        content: ' \00bb';
+        color: #382F2D;
+      }
     }
   }
 }

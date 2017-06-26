@@ -6704,11 +6704,19 @@ h3.faculty-title {
   padding-bottom: 10px;
   border-bottom: 1px solid #000; }
 
-.view-eureka-taxonomy-term a.views-more-link {
-  color: #382F2D;
-  font-style: italic; }
-  .view-eureka-taxonomy-term a.views-more-link:after {
-    content: ' \00bb'; }
+.view-eureka-taxonomy-term .views-field-body a {
+  display: inline-block;
+  text-decoration: none; }
+  .view-eureka-taxonomy-term .views-field-body a .views-more-link {
+    color: #382F2D;
+    font-style: italic;
+    text-decoration: none;
+    display: inline-block; }
+    .view-eureka-taxonomy-term .views-field-body a .views-more-link:hover, .view-eureka-taxonomy-term .views-field-body a .views-more-link:focus {
+      text-decoration: underline; }
+  .view-eureka-taxonomy-term .views-field-body a:after {
+    content: ' \00bb';
+    color: #382F2D; }
 
 ol, ul {
   padding-left: 1.5em; }
