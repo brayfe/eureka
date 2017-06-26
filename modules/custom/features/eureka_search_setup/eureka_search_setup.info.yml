@@ -3,6 +3,11 @@ description: 'The search server and search index for Eureka.'
 type: module
 core: 8.x
 dependencies:
+  - eureka_profile_entity
+  - eureka_project_ct
+  - node
   - search_api
   - search_api_db
+  - taxonomy
+  - user
 version: 8.x-1.0

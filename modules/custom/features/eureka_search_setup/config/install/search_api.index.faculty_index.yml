@@ -141,6 +141,25 @@ processor_settings:
     suffix: '</strong>'
     weights:
       postprocess_query: 0
+  html_filter:
+    fields:
+      - field_display_name
+      - field_first_name
+      - name
+      - field_last_name
+      - field_research_interests
+      - field_responsibilities
+    title: true
+    alt: true
+    tags:
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+      b: 2
+    weights:
+      preprocess_index: -15
+      preprocess_query: -15
   ignorecase:
     fields:
       - username

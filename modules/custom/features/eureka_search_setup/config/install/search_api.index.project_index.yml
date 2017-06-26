@@ -163,6 +163,27 @@ processor_settings:
     suffix: '</strong>'
     weights:
       postprocess_query: 0
+  html_filter:
+    fields:
+      - title
+      - field_duties
+      - field_proj_lead_display_name
+      - field_qualifications
+      - field_project_timeline
+      - field_collab_display_name
+      - body
+      - field_project_tags_name
+    title: true
+    alt: true
+    tags:
+      h1: 5
+      h2: 3
+      h3: 2
+      strong: 2
+      b: 2
+    weights:
+      preprocess_index: -15
+      preprocess_query: -15
   ignorecase:
     fields:
       - title
