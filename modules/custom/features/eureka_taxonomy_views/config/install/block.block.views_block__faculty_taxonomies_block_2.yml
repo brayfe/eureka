@@ -1,4 +1,3 @@
-uuid: 711ab81b-1ce1-4e54-8754-d71e23452f2a
 langcode: en
 status: true
 dependencies:
@@ -12,7 +11,7 @@ dependencies:
 id: views_block__faculty_taxonomies_block_2
 theme: eurekatheme
 region: content
-weight: -2
+weight: -4
 provider: null
 plugin: 'views_block:faculty_taxonomies-block_2'
 settings:

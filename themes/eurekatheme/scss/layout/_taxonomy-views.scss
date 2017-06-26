@@ -1,0 +1,37 @@
+// taxonomy-views pages
+
+section.block-views {
+
+  h2.block-title {
+    padding-bottom: 10px;
+    border-bottom:1px solid #000;
+  }
+
+}
+
+
+h3.views-field-title,
+h3.faculty-title {
+  font-size: 1.6em;
+
+  a {
+    color: #bf5700;
+  }
+}
+
+.view-eureka-taxonomy-term {
+
+  .projects-taxonomy-page-title {
+    padding-bottom: 10px;
+    border-bottom:1px solid #000;
+  }
+
+  a.views-more-link {
+    color: #382F2D;
+    font-style: italic;
+
+    &:after {
+      content: ' \00bb';
+    }
+  }
+}

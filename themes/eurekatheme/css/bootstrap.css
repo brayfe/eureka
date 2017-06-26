@@ -6517,11 +6517,106 @@ h1, h2, h3, h4, h5 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+h1.page-header {
+  border: none; }
+
 ul li {
   font-family: "Open Sans", sans-serif; }
 
 a {
   color: #005F86; }
+
+.page-node-type-project .region-content article .right-sidebar {
+  background-color: #efefef;
+  padding: 1em 1em 0 1em; }
+
+.page-node-type-project .region-content article div.field {
+  margin-bottom: 2em; }
+
+.page-node-type-project .region-content article .field--label {
+  font-weight: bold;
+  font-size: 1.25em;
+  border-bottom: 1px solid #000;
+  margin-bottom: 10px; }
+
+.page-node-type-project .region-content article a {
+  font-size: 1em; }
+
+.page-node-type-project .region-content article time {
+  font-size: 1em; }
+
+.page-node-type-project .region-content article p {
+  font-size: 1em; }
+
+.page-node-type-project .region-content article .field--name-field-close-date {
+  padding: 1em;
+  background: #efefef;
+  margin-left: -1em; }
+  .page-node-type-project .region-content article .field--name-field-close-date .field--label {
+    border: none;
+    line-height: 1em; }
+
+.page-node-type-project .region-content article .field--name-field-contact-email .field--item a {
+  overflow-wrap: break-word;
+  word-wrap: break-word; }
+
+.page-node-type-project .region-content article .field--name-field-project-tags .field--item {
+  padding: 4px 8px;
+  background-color: #efefef;
+  display: inline-block;
+  margin-right: .5em; }
+  .page-node-type-project .region-content article .field--name-field-project-tags .field--item:hover, .page-node-type-project .region-content article .field--name-field-project-tags .field--item:focus {
+    background-color: #efefef; }
+
+.path-user .region-content article .col-sm-9 {
+  padding-left: 0; }
+
+.path-user .region-content article .right-sidebar {
+  background-color: #efefef;
+  padding: 1em 1em 0 1em; }
+
+.path-user .region-content article div.field {
+  margin-bottom: 2em; }
+
+.path-user .region-content article .field--label {
+  font-weight: bold;
+  font-size: 1.25em;
+  border-bottom: 1px solid #000;
+  margin-bottom: 10px; }
+
+.path-user .region-content article a {
+  font-size: 1em;
+  overflow-wrap: break-word;
+  word-wrap: break-word; }
+
+.path-user .region-content article div.field.field--name-field-display-name {
+  margin-bottom: 20px; }
+
+.path-user .region-content article .field--name-field-display-name {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+  margin-top: 0;
+  font-size: 36px; }
+
+.path-user .region-content article p {
+  font-size: 1em; }
+
+.path-user .region-content article .field--name-field-tags .field--item,
+.path-user .region-content article .field--name-field-academic-interest .field--item,
+.path-user .region-content article .field--name-field-countries-acad-interest .field--item {
+  padding: 4px 8px;
+  background-color: #efefef;
+  display: inline-block;
+  margin-right: .5em; }
+  .path-user .region-content article .field--name-field-tags .field--item:hover, .path-user .region-content article .field--name-field-tags .field--item:focus,
+  .path-user .region-content article .field--name-field-academic-interest .field--item:hover,
+  .path-user .region-content article .field--name-field-academic-interest .field--item:focus,
+  .path-user .region-content article .field--name-field-countries-acad-interest .field--item:hover,
+  .path-user .region-content article .field--name-field-countries-acad-interest .field--item:focus {
+    background-color: #efefef; }
 
 .logo-header {
   display: inline-block; }
@@ -6593,6 +6688,27 @@ a {
     width: 100%;
     text-align: center !important;
     margin-top: 1em; } }
+
+section.block-views h2.block-title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #000; }
+
+h3.views-field-title,
+h3.faculty-title {
+  font-size: 1.6em; }
+  h3.views-field-title a,
+  h3.faculty-title a {
+    color: #bf5700; }
+
+.view-eureka-taxonomy-term .projects-taxonomy-page-title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #000; }
+
+.view-eureka-taxonomy-term a.views-more-link {
+  color: #382F2D;
+  font-style: italic; }
+  .view-eureka-taxonomy-term a.views-more-link:after {
+    content: ' \00bb'; }
 
 ol, ul {
   padding-left: 1.5em; }
