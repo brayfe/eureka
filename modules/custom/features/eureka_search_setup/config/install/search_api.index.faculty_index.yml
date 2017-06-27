@@ -66,7 +66,7 @@ field_settings:
     datasource_id: 'entity:user'
     property_path: field_first_name
     type: text
-    boost: !!float 2
+    boost: !!float 5
     dependencies:
       config:
         - field.storage.user.field_first_name
@@ -85,7 +85,7 @@ field_settings:
     datasource_id: 'entity:user'
     property_path: field_last_name
     type: text
-    boost: !!float 2
+    boost: !!float 5
     dependencies:
       config:
         - field.storage.user.field_last_name
@@ -121,6 +121,61 @@ field_settings:
     dependencies:
       config:
         - field.storage.user.field_tags
+  regions_name:
+    label: 'Regions of Academic Interest » Name'
+    datasource_id: 'entity:user'
+    property_path: 'field_academic_interest:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.user.field_academic_interest
+      module:
+        - taxonomy
+  department_name:
+    label: 'Affiliated Departments » Name'
+    datasource_id: 'entity:user'
+    property_path: 'field_affiliated_departments:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.user.field_affiliated_departments
+      module:
+        - taxonomy
+  country_name:
+    label: 'Countries of Academic Interest » Name'
+    datasource_id: 'entity:user'
+    property_path: 'field_countries_acad_interest:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.user.field_countries_acad_interest
+      module:
+        - taxonomy
+  unit_name:
+    label: 'Research Units » Name'
+    datasource_id: 'entity:user'
+    property_path: 'field_research_units:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.user.field_research_units
+      module:
+        - taxonomy
+  tag_name:
+    label: 'Tags » Name'
+    datasource_id: 'entity:user'
+    property_path: 'field_tags:entity:name'
+    type: text
+    dependencies:
+      config:
+        - field.storage.user.field_tags
+      module:
+        - taxonomy
+  roles:
+    label: Roles
+    datasource_id: 'entity:user'
+    property_path: roles
+    type: string
 datasource_settings:
   'entity:user':
     languages:
@@ -133,7 +188,7 @@ processor_settings:
   entity_status: {  }
   highlight:
     highlight: always
-    highlight_partial: false
+    highlight_partial: true
     excerpt: true
     excerpt_length: 256
     exclude_fields: {  }
