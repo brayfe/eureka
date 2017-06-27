@@ -33,7 +33,6 @@ class Projects extends SqlBase {
       'website',
       'contact_name',
       'contact_email',
-      'contact_phone',
       'created',
       'modified',
     ]);
@@ -50,7 +49,6 @@ class Projects extends SqlBase {
     $query->groupBy('website');
     $query->groupBy('contact_name');
     $query->groupBy('contact_email');
-    $query->groupBy('contact_phone');
     $query->groupBy('created');
     $query->groupBy('modified');
 
@@ -74,7 +72,6 @@ class Projects extends SqlBase {
       'website' => $this->t('Project Website'),
       'contact_name' => $this->t('Contact Name'),
       'contact_email' => $this->t('Contact Email'),
-      'contact_phone' => $this->t('Contact Phone Number'),
       'created' => $this->t('Create Date'),
       'modified' => $this->t('Modified Date'),
     ];
