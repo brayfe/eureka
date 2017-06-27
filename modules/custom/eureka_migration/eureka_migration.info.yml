@@ -6,6 +6,7 @@ package: Migrate
 dependencies:
   - migrate
   - migrate_plus
+  - migrate_tools
   - eureka_faculty_profile_taxonomies
 
 config_devel:

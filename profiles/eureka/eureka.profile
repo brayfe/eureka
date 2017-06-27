@@ -87,6 +87,7 @@ function eureka_install_extensions(array &$install_state) {
     'eureka_faculty_profile_taxonomies',
     'eureka_profile_entity',
     'eureka_project_ct',
+    'eureka_search_setup',
     'simplify_global_settings',
     'url_aliases',
   ];
