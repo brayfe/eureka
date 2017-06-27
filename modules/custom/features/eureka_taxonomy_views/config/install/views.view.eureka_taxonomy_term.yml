@@ -448,7 +448,7 @@ display:
           exclude: false
           alter:
             alter_text: true
-            text: '{{ body }}    <a href="{{ path }}"><span class="views-more-link">read more</span></a>'
+            text: '{{ body }}    ...<a href="{{ path }}"><span class="views-more-link">read more</span></a>'
             make_link: false
             path: ''
             absolute: false
