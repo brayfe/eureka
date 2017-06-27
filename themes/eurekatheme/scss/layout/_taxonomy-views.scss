@@ -1,5 +1,6 @@
 // taxonomy-views pages
 
+// Faculty Results
 section.block-views {
 
   h2.block-title {
@@ -7,18 +8,44 @@ section.block-views {
     border-bottom:1px solid #000;
   }
 
-}
+  h3.faculty-title {
+    font-size: 1.6em;
 
+    a {
+      color: #bf5700;
+    }
+  }
 
-h3.views-field-title,
-h3.faculty-title {
-  font-size: 1.6em;
+  .views-field-field-affiliated-departments {
+    font-size: 1.2em;
 
-  a {
-    color: #bf5700;
+    .views-label {
+      font-weight: bold;
+    }
+
+    .field-content {
+      display: inline-block;
+    }
+  }
+
+  .views-field-field-research-interests {
+
+    .views-label {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    .field-content {
+      display: inline;
+
+      p {
+        display: inline;
+      }
+    }
   }
 }
 
+// Project results
 .view-eureka-taxonomy-term {
 
   .projects-taxonomy-page-title {
@@ -26,7 +53,48 @@ h3.faculty-title {
     border-bottom:1px solid #000;
   }
 
+  h3.views-field-title {
+    font-size: 1.6em;
+
+    a {
+      color: #bf5700;
+    }
+  }
+
+  .views-field-field-project-lead {
+    font-size: 1.2em;
+
+    .views-label {
+      font-weight: bold;
+    }
+
+    .field-content {
+      display: inline;
+
+      article {
+        display: inline;
+
+        .field--name-field-display-name {
+          display: inline;
+        }
+      }
+    }
+  }
+
   .views-field-body {
+
+    .views-label {
+      font-size: 1.2em;
+      font-weight: bold;
+    }
+
+    .field-content {
+      display: inline;
+
+      p {
+        display: inline;
+      }
+    }
 
     a {
       display: inline-block;

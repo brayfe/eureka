@@ -6693,16 +6693,55 @@ section.block-views h2.block-title {
   padding-bottom: 10px;
   border-bottom: 1px solid #000; }
 
-h3.views-field-title,
-h3.faculty-title {
+section.block-views h3.faculty-title {
   font-size: 1.6em; }
-  h3.views-field-title a,
-  h3.faculty-title a {
+  section.block-views h3.faculty-title a {
     color: #bf5700; }
+
+section.block-views .views-field-field-affiliated-departments {
+  font-size: 1.2em; }
+  section.block-views .views-field-field-affiliated-departments .views-label {
+    font-weight: bold; }
+  section.block-views .views-field-field-affiliated-departments .field-content {
+    display: inline-block; }
+
+section.block-views .views-field-field-research-interests .views-label {
+  font-size: 1.2em;
+  font-weight: bold; }
+
+section.block-views .views-field-field-research-interests .field-content {
+  display: inline; }
+  section.block-views .views-field-field-research-interests .field-content p {
+    display: inline; }
 
 .view-eureka-taxonomy-term .projects-taxonomy-page-title {
   padding-bottom: 10px;
   border-bottom: 1px solid #000; }
+
+.view-eureka-taxonomy-term h3.views-field-title {
+  font-size: 1.6em; }
+  .view-eureka-taxonomy-term h3.views-field-title a {
+    color: #bf5700; }
+
+.view-eureka-taxonomy-term .views-field-field-project-lead {
+  font-size: 1.2em; }
+  .view-eureka-taxonomy-term .views-field-field-project-lead .views-label {
+    font-weight: bold; }
+  .view-eureka-taxonomy-term .views-field-field-project-lead .field-content {
+    display: inline; }
+    .view-eureka-taxonomy-term .views-field-field-project-lead .field-content article {
+      display: inline; }
+      .view-eureka-taxonomy-term .views-field-field-project-lead .field-content article .field--name-field-display-name {
+        display: inline; }
+
+.view-eureka-taxonomy-term .views-field-body .views-label {
+  font-size: 1.2em;
+  font-weight: bold; }
+
+.view-eureka-taxonomy-term .views-field-body .field-content {
+  display: inline; }
+  .view-eureka-taxonomy-term .views-field-body .field-content p {
+    display: inline; }
 
 .view-eureka-taxonomy-term .views-field-body a {
   display: inline-block;
