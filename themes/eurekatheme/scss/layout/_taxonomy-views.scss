@@ -41,6 +41,24 @@ section.block-views {
       p {
         display: inline;
       }
+
+      .views-more-link {
+        display: inline-block;
+
+        a {
+          font-size: 17px;
+          color: #382F2D;
+          font-style: italic;
+          display: inline-block;
+
+          &:after {
+            content: ' \00bb';
+            color: #382F2D;
+            display: inline-block;
+            padding-left: 3px;
+          }
+        }
+      }
     }
   }
 }
