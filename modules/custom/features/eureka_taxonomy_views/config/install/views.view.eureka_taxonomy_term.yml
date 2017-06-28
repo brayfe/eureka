@@ -252,10 +252,21 @@ display:
           admin_label: ''
           empty: false
           tokenize: false
-          content: '<h2 class="projects-taxonomy-page-title"> Projects Results</h2>'
+          content: '<h2 class="projects-taxonomy-page-title"> Projects</h2>'
           plugin_id: text_custom
       footer: {  }
-      empty: {  }
+      empty:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content: "<h2 class=\"projects-taxonomy-page-title\"> Projects</h2>\n<p>There are no results.</p>"
+          plugin_id: text_custom
       relationships: {  }
       fields:
         title:
