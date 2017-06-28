@@ -40,7 +40,6 @@ process:
   field_project_website: website
   field_contact_name: contact_name
   field_contact_email: contact_email
-  field_contact_phone: contact_phone
   field_project_tags:
     -
       plugin: skip_on_empty

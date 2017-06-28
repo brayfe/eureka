@@ -39,7 +39,6 @@ function eureka_project_ct_form_alter(&$form, FormStateInterface $form_state, $f
     $fields = [
       'field_contact_name',
       'field_contact_email',
-      'field_contact_phone',
     ];
 
     foreach ($fields as $machine_name) {
