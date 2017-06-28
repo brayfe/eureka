@@ -4,6 +4,7 @@ type: module
 core: 8.x
 dependencies:
   - block
+  - datetime
   - eureka_faculty_profile_taxonomies
   - eureka_profile_entity
   - eureka_project_ct

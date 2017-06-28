@@ -41,24 +41,6 @@ section.block-views {
       p {
         display: inline;
       }
-
-      .views-more-link {
-        display: inline-block;
-
-        a {
-          font-size: 17px;
-          color: #382F2D;
-          font-style: italic;
-          display: inline-block;
-
-          &:after {
-            content: ' \00bb';
-            color: #382F2D;
-            display: inline-block;
-            padding-left: 3px;
-          }
-        }
-      }
     }
   }
 
@@ -129,28 +111,6 @@ section.block-views {
 
       p {
         display: inline;
-      }
-    }
-
-    a {
-      display: inline-block;
-      text-decoration: none;
-
-      .views-more-link {
-        color: #382F2D;
-        font-style: italic;
-        text-decoration: none;
-        display: inline-block;
-
-        &:hover,
-        &:focus {
-          text-decoration: underline;
-        }
-      }
-
-      &:after {
-        content: ' \00bb';
-        color: #382F2D;
       }
     }
   }
