@@ -61,6 +61,24 @@ section.block-views {
       }
     }
   }
+
+  .views-field-nothing {
+
+    a {
+      color: #bf5700;
+      padding: 4px 6px;
+      display: inline-block;
+      margin-top: 6px;
+      border: 1px solid #bf5700;
+
+      &:hover,
+      &:focus {
+        background-color: #bf5700;
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
 }
 
 // Project results

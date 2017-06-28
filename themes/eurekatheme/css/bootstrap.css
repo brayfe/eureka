@@ -6726,6 +6726,17 @@ section.block-views .views-field-field-research-interests .field-content {
         display: inline-block;
         padding-left: 3px; }
 
+section.block-views .views-field-nothing a {
+  color: #bf5700;
+  padding: 4px 6px;
+  display: inline-block;
+  margin-top: 6px;
+  border: 1px solid #bf5700; }
+  section.block-views .views-field-nothing a:hover, section.block-views .views-field-nothing a:focus {
+    background-color: #bf5700;
+    color: #fff;
+    text-decoration: none; }
+
 .view-eureka-taxonomy-term .projects-taxonomy-page-title {
   padding-bottom: 10px;
   border-bottom: 1px solid #000; }
