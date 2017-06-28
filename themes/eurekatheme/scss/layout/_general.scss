@@ -66,5 +66,10 @@ ul li {
 
 a {
   color: $burnt;
+
+  &:focus,
+  &:hover {
+    color: $burnt;
+  }
 }
 

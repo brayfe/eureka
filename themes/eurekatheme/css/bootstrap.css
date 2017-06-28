@@ -6522,6 +6522,8 @@ ul li {
 
 a {
   color: #BF5700; }
+  a:focus, a:hover {
+    color: #BF5700; }
 
 .logo-header {
   display: inline-block; }
