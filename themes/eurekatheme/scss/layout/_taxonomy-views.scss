@@ -12,7 +12,7 @@ section.block-views {
     font-size: 1.6em;
 
     a {
-      color: #bf5700;
+      color: $burnt;
     }
   }
 
@@ -47,15 +47,15 @@ section.block-views {
   .views-field-nothing {
 
     a {
-      color: #bf5700;
+      color: $burnt;
       padding: 4px 6px;
       display: inline-block;
       margin-top: 6px;
-      border: 1px solid #bf5700;
+      border: 1px solid $burnt;
 
       &:hover,
       &:focus {
-        background-color: #bf5700;
+        background-color: $burnt;
         color: #fff;
         text-decoration: none;
       }
@@ -75,7 +75,7 @@ section.block-views {
     font-size: 1.6em;
 
     a {
-      color: #bf5700;
+      color: $burnt;
     }
   }
 

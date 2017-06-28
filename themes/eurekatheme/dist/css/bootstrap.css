@@ -6616,7 +6616,7 @@ section.block-views h2.block-title {
 section.block-views h3.faculty-title {
   font-size: 1.6em; }
   section.block-views h3.faculty-title a {
-    color: #bf5700; }
+    color: #BF5700; }
 
 section.block-views .views-field-field-affiliated-departments {
   font-size: 1.2em; }
@@ -6635,13 +6635,13 @@ section.block-views .views-field-field-research-interests .field-content {
     display: inline; }
 
 section.block-views .views-field-nothing a {
-  color: #bf5700;
+  color: #BF5700;
   padding: 4px 6px;
   display: inline-block;
   margin-top: 6px;
-  border: 1px solid #bf5700; }
+  border: 1px solid #BF5700; }
   section.block-views .views-field-nothing a:hover, section.block-views .views-field-nothing a:focus {
-    background-color: #bf5700;
+    background-color: #BF5700;
     color: #fff;
     text-decoration: none; }
 
@@ -6652,7 +6652,7 @@ section.block-views .views-field-nothing a {
 .view-eureka-taxonomy-term h3.views-field-title {
   font-size: 1.6em; }
   .view-eureka-taxonomy-term h3.views-field-title a {
-    color: #bf5700; }
+    color: #BF5700; }
 
 .view-eureka-taxonomy-term .views-field-field-project-lead {
   font-size: 1.2em; }
