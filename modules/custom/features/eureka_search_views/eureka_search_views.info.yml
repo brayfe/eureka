@@ -1,0 +1,12 @@
+name: 'Search Views'
+description: 'The search portals for Faculty Profile and Project searches.'
+type: module
+core: 8.x
+dependencies:
+  - eureka_profile_entity
+  - eureka_project_ct
+  - eureka_search_setup
+  - search_api
+  - text
+  - views
+version: 8.x-1.0
