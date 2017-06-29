@@ -200,6 +200,46 @@ display:
             default_group_multiple: {  }
             group_items: {  }
           plugin_id: boolean
+        field_close_date_value_1:
+          id: field_close_date_value_1
+          table: node__field_close_date
+          field: field_close_date_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: empty
+          value:
+            min: ''
+            max: ''
+            value: ''
+            type: date
+          group: 2
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: datetime
         field_close_date_value:
           id: field_close_date_value
           table: node__field_close_date
@@ -211,9 +251,9 @@ display:
           value:
             min: ''
             max: ''
-            value: '+0'
+            value: now
             type: offset
-          group: 1
+          group: 2
           exposed: false
           expose:
             operator_id: ''
@@ -475,6 +515,11 @@ display:
       link_url: ''
       link_display: page_1
       title: Projects
+      filter_groups:
+        operator: AND
+        groups:
+          1: AND
+          2: OR
     cache_metadata:
       contexts:
         - 'languages:language_content'
