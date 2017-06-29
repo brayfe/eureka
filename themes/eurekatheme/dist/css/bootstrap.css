@@ -6114,7 +6114,8 @@ body {
 .pagination > li > a {
   color: #382F2D; }
   .pagination > li > a:focus, .pagination > li > a:hover {
-    text-decoration: underline; }
+    text-decoration: underline;
+    color: #382F2D; }
 
 .pagination > .active a {
   background-color: #333f48;
@@ -6609,38 +6610,41 @@ a {
     text-align: center !important;
     margin-top: 1em; } }
 
-section.block-views h2.block-title {
+section [class*="block-views-blockfaculty-taxonomies-block-"] h2.block-title {
   padding-bottom: 10px;
   border-bottom: 1px solid #000; }
 
-section.block-views h3.faculty-title {
-  font-size: 1.6em; }
-  section.block-views h3.faculty-title a {
+section [class*="block-views-blockfaculty-taxonomies-block-"] h3.faculty-title {
+  font-size: 1.6em;
+  margin-bottom: 5px; }
+  section [class*="block-views-blockfaculty-taxonomies-block-"] h3.faculty-title a {
     color: #BF5700; }
 
-section.block-views .views-field-field-affiliated-departments {
-  font-size: 1.2em; }
-  section.block-views .views-field-field-affiliated-departments .views-label {
+section [class*="block-views-blockfaculty-taxonomies-block-"] .views-field-field-affiliated-departments {
+  font-size: 1em; }
+  section [class*="block-views-blockfaculty-taxonomies-block-"] .views-field-field-affiliated-departments .views-label {
     font-weight: bold; }
-  section.block-views .views-field-field-affiliated-departments .field-content {
-    display: inline-block; }
-
-section.block-views .views-field-field-research-interests .views-label {
-  font-size: 1.2em;
-  font-weight: bold; }
-
-section.block-views .views-field-field-research-interests .field-content {
-  display: inline; }
-  section.block-views .views-field-field-research-interests .field-content p {
+  section [class*="block-views-blockfaculty-taxonomies-block-"] .views-field-field-affiliated-departments .field-content {
     display: inline; }
 
-section.block-views .views-field-nothing a {
+section [class*="block-views-blockfaculty-taxonomies-block-"] .views-field-field-research-interests .views-label {
+  font-size: 1em;
+  font-weight: bold; }
+
+section [class*="block-views-blockfaculty-taxonomies-block-"] .views-field-field-research-interests .field-content {
+  display: inline; }
+  section [class*="block-views-blockfaculty-taxonomies-block-"] .views-field-field-research-interests .field-content p {
+    display: inline;
+    font-size: 1em;
+    line-height: 1.4em; }
+
+section [class*="block-views-blockfaculty-taxonomies-block-"] .views-field-nothing a {
   color: #BF5700;
   padding: 4px 6px;
   display: inline-block;
   margin-top: 6px;
   border: 1px solid #BF5700; }
-  section.block-views .views-field-nothing a:hover, section.block-views .views-field-nothing a:focus {
+  section [class*="block-views-blockfaculty-taxonomies-block-"] .views-field-nothing a:hover, section [class*="block-views-blockfaculty-taxonomies-block-"] .views-field-nothing a:focus {
     background-color: #BF5700;
     color: #fff;
     text-decoration: none; }
