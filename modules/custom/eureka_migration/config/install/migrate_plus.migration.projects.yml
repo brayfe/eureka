@@ -37,7 +37,9 @@ process:
   field_qualifications: qualifications
   field_project_timeline: timeline
   field_duties: duties
-  field_project_website: website
+  field_project_website:
+    plugin: create_url
+    source: website
   field_contact_name: contact_name
   field_contact_email: contact_email
   field_project_tags:

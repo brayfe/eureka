@@ -12,7 +12,9 @@ destination:
 process:
   name: name
   description: description
-  field_website: website
+  field_website:
+    plugin: create_url
+    source: website
   vid:
     plugin: default_value
     default_value: research_units
