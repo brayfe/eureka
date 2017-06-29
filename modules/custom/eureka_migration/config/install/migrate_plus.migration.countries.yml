@@ -10,8 +10,8 @@ destination:
   plugin: entity:taxonomy_term
 
 process:
-  name: code
-  description: country_name
+  name: country_name
+  description: code
   vid:
     plugin: default_value
     default_value: countries_academic_interest
