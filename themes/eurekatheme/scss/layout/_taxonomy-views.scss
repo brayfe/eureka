@@ -9,7 +9,7 @@ section [class*="block-views-blockfaculty-taxonomies-block-"] {
   }
 
   h3.faculty-title {
-    font-size: 1.6em;
+    font-size: 1.4em;
     margin-bottom: 5px;
 
     a {
@@ -75,7 +75,8 @@ section [class*="block-views-blockfaculty-taxonomies-block-"] {
   }
 
   h3.views-field-title {
-    font-size: 1.6em;
+    font-size: 1.4em;
+    margin-bottom: 5px;
 
     a {
       color: $burnt;
@@ -83,7 +84,7 @@ section [class*="block-views-blockfaculty-taxonomies-block-"] {
   }
 
   .views-field-field-project-lead {
-    font-size: 1.2em;
+    font-size: 1em;
 
     .views-label {
       font-weight: bold;
@@ -105,7 +106,7 @@ section [class*="block-views-blockfaculty-taxonomies-block-"] {
   .views-field-body {
 
     .views-label {
-      font-size: 1.2em;
+      font-size: 1em;
       font-weight: bold;
     }
 
@@ -114,6 +115,8 @@ section [class*="block-views-blockfaculty-taxonomies-block-"] {
 
       p {
         display: inline;
+        font-size: 1em;
+        line-height: 1.4em;
       }
     }
   }

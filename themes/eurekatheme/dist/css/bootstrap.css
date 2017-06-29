@@ -6654,12 +6654,13 @@ section [class*="block-views-blockfaculty-taxonomies-block-"] .views-field-nothi
   border-bottom: 1px solid #000; }
 
 .view-eureka-taxonomy-term h3.views-field-title {
-  font-size: 1.6em; }
+  font-size: 1.6em;
+  margin-bottom: 5px; }
   .view-eureka-taxonomy-term h3.views-field-title a {
     color: #BF5700; }
 
 .view-eureka-taxonomy-term .views-field-field-project-lead {
-  font-size: 1.2em; }
+  font-size: 1em; }
   .view-eureka-taxonomy-term .views-field-field-project-lead .views-label {
     font-weight: bold; }
   .view-eureka-taxonomy-term .views-field-field-project-lead .field-content {
@@ -6670,13 +6671,15 @@ section [class*="block-views-blockfaculty-taxonomies-block-"] .views-field-nothi
         display: inline; }
 
 .view-eureka-taxonomy-term .views-field-body .views-label {
-  font-size: 1.2em;
+  font-size: 1em;
   font-weight: bold; }
 
 .view-eureka-taxonomy-term .views-field-body .field-content {
   display: inline; }
   .view-eureka-taxonomy-term .views-field-body .field-content p {
-    display: inline; }
+    display: inline;
+    font-size: 1em;
+    line-height: 1.4em; }
 
 ol, ul {
   padding-left: 1.5em; }
