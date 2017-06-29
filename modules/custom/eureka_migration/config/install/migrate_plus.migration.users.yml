@@ -20,7 +20,9 @@ process:
   field_first_name: first_name
   field_last_name: last_name
   field_research_interests: research_interests
-  field_lab_website: website
+  field_lab_website:
+    plugin: create_url
+    source: website
   field_is_active: is_active
   field_display_name:
     plugin: concat
