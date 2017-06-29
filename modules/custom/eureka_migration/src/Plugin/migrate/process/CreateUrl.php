@@ -44,7 +44,7 @@ class CreateUrl extends ProcessPluginBase {
    * @return bool
    *   Boolean indicating if $value has a valid url ending.
    */
-  public function checkEnding(string $value) {
+  public function checkEnding($value) {
     $valid_endings = [
       '.com',
       '.net',
