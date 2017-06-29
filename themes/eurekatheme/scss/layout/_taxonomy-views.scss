@@ -1,7 +1,7 @@
 // taxonomy-views pages
 
 // Faculty Results
-section.block-views {
+section [class*="block-views-blockfaculty-taxonomies-block-"] {
 
   h2.block-title {
     padding-bottom: 10px;
@@ -10,6 +10,7 @@ section.block-views {
 
   h3.faculty-title {
     font-size: 1.6em;
+    margin-bottom: 5px;
 
     a {
       color: $burnt;
@@ -17,21 +18,21 @@ section.block-views {
   }
 
   .views-field-field-affiliated-departments {
-    font-size: 1.2em;
+    font-size: 1em;
 
     .views-label {
       font-weight: bold;
     }
 
     .field-content {
-      display: inline-block;
+      display: inline;
     }
   }
 
   .views-field-field-research-interests {
 
     .views-label {
-      font-size: 1.2em;
+      font-size: 1em;
       font-weight: bold;
     }
 
@@ -40,6 +41,8 @@ section.block-views {
 
       p {
         display: inline;
+        font-size: 1em;
+        line-height: 1.4em;
       }
     }
   }
