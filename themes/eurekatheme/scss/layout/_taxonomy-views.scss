@@ -121,3 +121,8 @@ section [class*="block-views-blockfaculty-taxonomies-block-"] {
     }
   }
 }
+
+// size font in no results views
+.view-empty p {
+  font-size: 1em;
+}

@@ -6681,6 +6681,9 @@ section [class*="block-views-blockfaculty-taxonomies-block-"] .views-field-nothi
     font-size: 1em;
     line-height: 1.4em; }
 
+.view-empty p {
+  font-size: 1em; }
+
 ol, ul {
   padding-left: 1.5em; }
   .popover ol:last-child, .popover ul:last-child {
