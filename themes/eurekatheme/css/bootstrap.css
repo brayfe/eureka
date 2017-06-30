@@ -6610,41 +6610,41 @@ a {
     text-align: center !important;
     margin-top: 1em; } }
 
-section [class*="block-views-blockfaculty-taxonomies-block-"] h2.block-title {
+div [class*="view-display-id-page_"] h2.block-title {
   padding-bottom: 10px;
   border-bottom: 1px solid #000; }
 
-section [class*="block-views-blockfaculty-taxonomies-block-"] h3.faculty-title {
+div [class*="view-display-id-page_"] h3.faculty-title {
   font-size: 1.4em;
   margin-bottom: 5px; }
-  section [class*="block-views-blockfaculty-taxonomies-block-"] h3.faculty-title a {
+  div [class*="view-display-id-page_"] h3.faculty-title a {
     color: #BF5700; }
 
-section [class*="block-views-blockfaculty-taxonomies-block-"] .views-field-field-affiliated-departments {
+div [class*="view-display-id-page_"] .views-field-field-affiliated-departments {
   font-size: 1em; }
-  section [class*="block-views-blockfaculty-taxonomies-block-"] .views-field-field-affiliated-departments .views-label {
+  div [class*="view-display-id-page_"] .views-field-field-affiliated-departments .views-label {
     font-weight: bold; }
-  section [class*="block-views-blockfaculty-taxonomies-block-"] .views-field-field-affiliated-departments .field-content {
+  div [class*="view-display-id-page_"] .views-field-field-affiliated-departments .field-content {
     display: inline; }
 
-section [class*="block-views-blockfaculty-taxonomies-block-"] .views-field-field-research-interests .views-label {
+div [class*="view-display-id-page_"] .views-field-field-research-interests .views-label {
   font-size: 1em;
   font-weight: bold; }
 
-section [class*="block-views-blockfaculty-taxonomies-block-"] .views-field-field-research-interests .field-content {
+div [class*="view-display-id-page_"] .views-field-field-research-interests .field-content {
   display: inline; }
-  section [class*="block-views-blockfaculty-taxonomies-block-"] .views-field-field-research-interests .field-content p {
+  div [class*="view-display-id-page_"] .views-field-field-research-interests .field-content p {
     display: inline;
     font-size: 1em;
     line-height: 1.4em; }
 
-section [class*="block-views-blockfaculty-taxonomies-block-"] .views-field-nothing a {
+div [class*="view-display-id-page_"] .views-field-nothing a {
   color: #BF5700;
   padding: 4px 6px;
   display: inline-block;
   margin-top: 6px;
   border: 1px solid #BF5700; }
-  section [class*="block-views-blockfaculty-taxonomies-block-"] .views-field-nothing a:hover, section [class*="block-views-blockfaculty-taxonomies-block-"] .views-field-nothing a:focus {
+  div [class*="view-display-id-page_"] .views-field-nothing a:hover, div [class*="view-display-id-page_"] .views-field-nothing a:focus {
     background-color: #BF5700;
     color: #fff;
     text-decoration: none; }
