@@ -18,31 +18,9 @@ dependencies:
     - node.type.project
   module:
     - datetime
-    - field_group
     - link
     - path
     - text
-third_party_settings:
-  field_group:
-    group_optional_fields:
-      children:
-        - field_project_website
-        - field_qualifications
-        - field_project_timeline
-        - field_duties
-        - field_time_commitment
-        - field_length_commitment
-        - field_close_date
-        - field_project_tags
-      parent_name: ''
-      weight: 12
-      format_type: details
-      format_settings:
-        id: ''
-        classes: ''
-        open: false
-        required_fields: true
-      label: 'Optional Fields'
 id: node.project.default
 targetEntityType: node
 bundle: project
