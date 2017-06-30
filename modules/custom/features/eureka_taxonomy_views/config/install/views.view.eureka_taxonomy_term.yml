@@ -4,6 +4,7 @@ dependencies:
   config:
     - field.storage.node.body
     - field.storage.node.field_project_lead
+    - views.view.faculty_taxonomies
   module:
     - datetime
     - node
@@ -306,7 +307,73 @@ display:
           tokenize: true
           content: "<h1>Results for \"{{ arguments.tid }}\"</h1>\n<h2 class=\"projects-taxonomy-page-title\">Projects</h2>"
           plugin_id: text_custom
-      footer: {  }
+      footer:
+        view:
+          id: view
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          view_to_insert: 'faculty_taxonomies:block_1'
+          inherit_arguments: true
+          plugin_id: view
+        view_1:
+          id: view_1
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          view_to_insert: 'faculty_taxonomies:block_2'
+          inherit_arguments: true
+          plugin_id: view
+        view_2:
+          id: view_2
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          view_to_insert: 'faculty_taxonomies:block_3'
+          inherit_arguments: true
+          plugin_id: view
+        view_3:
+          id: view_3
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          view_to_insert: 'faculty_taxonomies:block_4'
+          inherit_arguments: true
+          plugin_id: view
+        view_4:
+          id: view_4
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          view_to_insert: 'faculty_taxonomies:block_5'
+          inherit_arguments: true
+          plugin_id: view
+        view_5:
+          id: view_5
+          table: views
+          field: view
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          view_to_insert: 'faculty_taxonomies:block_6'
+          inherit_arguments: true
+          plugin_id: view
       empty:
         area_text_custom:
           id: area_text_custom
