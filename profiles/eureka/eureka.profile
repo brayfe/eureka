@@ -109,6 +109,7 @@ function eureka_install_extensions(array &$install_state) {
     'eureka_search_views',
     'simplify_global_settings',
     'url_aliases',
+    'eureka_role_faculty',
     'eureka_taxonomy_views',
   ];
   foreach ($modules as $module) {
