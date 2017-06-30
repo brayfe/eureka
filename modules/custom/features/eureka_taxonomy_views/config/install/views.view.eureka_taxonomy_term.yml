@@ -303,19 +303,8 @@ display:
           group_type: group
           admin_label: ''
           empty: true
-          tokenize: false
-          content: '<h1>Results for "[view:title]"</h1>'
-          plugin_id: text_custom
-        area_text_custom_1:
-          id: area_text_custom_1
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: true
-          tokenize: false
-          content: '<h2 class="projects-taxonomy-page-title">Projects</h2>'
+          tokenize: true
+          content: "<h1>Results for \"{{ arguments.tid }}\"</h1>\n<h2 class=\"projects-taxonomy-page-title\">Projects</h2>"
           plugin_id: text_custom
       footer: {  }
       empty:
