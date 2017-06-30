@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.project_tags
+  module:
+    - facets
+  theme:
+    - eurekatheme
+id: projectfacettags
+theme: eurekatheme
+region: sidebar_second
+weight: -3
+provider: null
+plugin: 'facet_block:project_tags'
+settings:
+  id: 'facet_block:project_tags'
+  label: Tags
+  provider: facets
+  label_display: visible
+visibility: {  }

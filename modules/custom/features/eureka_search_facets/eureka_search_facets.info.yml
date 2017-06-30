@@ -1,0 +1,12 @@
+name: 'Search Facets'
+description: 'The facets used on the search views.'
+type: module
+core: 8.x
+dependencies:
+  - block
+  - eureka_search_setup
+  - eureka_search_views
+  - facets
+  - search_api
+  - system
+version: 8.x-1.0

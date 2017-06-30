@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.project_countries
+  module:
+    - facets
+  theme:
+    - eurekatheme
+id: projectfacetcountries
+theme: eurekatheme
+region: sidebar_second
+weight: -6
+provider: null
+plugin: 'facet_block:project_countries'
+settings:
+  id: 'facet_block:project_countries'
+  label: 'Countries of Interest'
+  provider: facets
+  label_display: visible
+visibility: {  }

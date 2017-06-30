@@ -184,7 +184,6 @@ datasource_settings:
 processor_settings:
   add_url: {  }
   aggregated_field: {  }
-  rendered_item: {  }
   entity_status: {  }
   highlight:
     highlight: always
@@ -227,6 +226,7 @@ processor_settings:
     weights:
       preprocess_index: -20
       preprocess_query: -20
+  rendered_item: {  }
   role_filter:
     default: false
     roles:
@@ -306,6 +306,11 @@ processor_settings:
     weights:
       preprocess_index: -6
       preprocess_query: -6
+  hierarchy:
+    fields:
+      field_affiliated_departments: taxonomy_term-parent
+    weights:
+      preprocess_index: -45
 tracker_settings:
   default: {  }
 options:

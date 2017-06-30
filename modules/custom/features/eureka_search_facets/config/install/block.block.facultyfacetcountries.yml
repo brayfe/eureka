@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.faculty_countries
+  module:
+    - facets
+  theme:
+    - eurekatheme
+id: facultyfacetcountries
+theme: eurekatheme
+region: sidebar_second
+weight: 1
+provider: null
+plugin: 'facet_block:faculty_countries'
+settings:
+  id: 'facet_block:faculty_countries'
+  label: 'Countries of Academic Interest'
+  provider: facets
+  label_display: visible
+visibility: {  }

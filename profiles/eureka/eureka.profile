@@ -36,7 +36,7 @@ function eureka_install_tasks_alter(array &$tasks, array $install_state) {
 }
 
 /**
- * Install task callback; Adds defualt terms to taxonomy.
+ * Install task callback; Adds default terms to taxonomy.
  *
  * @param array $install_state
  *   The current install state.
@@ -107,6 +107,7 @@ function eureka_install_extensions(array &$install_state) {
     'eureka_project_ct',
     'eureka_search_setup',
     'eureka_search_views',
+    'eureka_search_facets',
     'simplify_global_settings',
     'url_aliases',
     'eureka_role_faculty',
