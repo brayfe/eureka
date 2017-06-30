@@ -1,0 +1,63 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.user.compact
+    - field.field.user.user.field_academic_interest
+    - field.field.user.user.field_affiliated_departments
+    - field.field.user.user.field_authorized_users
+    - field.field.user.user.field_countries_acad_interest
+    - field.field.user.user.field_display_name
+    - field.field.user.user.field_external_projects
+    - field.field.user.user.field_first_name
+    - field.field.user.user.field_is_active
+    - field.field.user.user.field_job_title
+    - field.field.user.user.field_lab_contact
+    - field.field.user.user.field_lab_website
+    - field.field.user.user.field_last_name
+    - field.field.user.user.field_open_to_work_with
+    - field.field.user.user.field_projects
+    - field.field.user.user.field_research_interests
+    - field.field.user.user.field_research_units
+    - field.field.user.user.field_research_website
+    - field.field.user.user.field_responsibilities
+    - field.field.user.user.field_sa_notes
+    - field.field.user.user.field_student_assistant
+    - field.field.user.user.field_tags
+  module:
+    - user
+id: user.user.compact
+targetEntityType: user
+bundle: user
+mode: compact
+content:
+  field_display_name:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: true
+    third_party_settings: {  }
+    type: string
+    region: content
+hidden:
+  field_academic_interest: true
+  field_affiliated_departments: true
+  field_authorized_users: true
+  field_countries_acad_interest: true
+  field_external_projects: true
+  field_first_name: true
+  field_is_active: true
+  field_job_title: true
+  field_lab_contact: true
+  field_lab_website: true
+  field_last_name: true
+  field_open_to_work_with: true
+  field_projects: true
+  field_research_interests: true
+  field_research_units: true
+  field_research_website: true
+  field_responsibilities: true
+  field_sa_notes: true
+  field_student_assistant: true
+  field_tags: true
+  member_for: true

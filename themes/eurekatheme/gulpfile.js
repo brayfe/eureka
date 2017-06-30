@@ -60,8 +60,4 @@ gulp.task('copyjs', function() {
 });
 
 
-gulp.task('default', gulpSequence('clean', 'copyfonts', 'scripts', 'copyjs'));
-
-// gulp.task('default', ['clean', 'copyfonts', 'scripts', 'copyjs'], function() {
-
-// });
+gulp.task('default', gulpSequence('clean', 'copyfonts', 'scripts', 'copyjs', 'sass', 'copycss', 'autoprefixer'));

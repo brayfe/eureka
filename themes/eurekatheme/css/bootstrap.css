@@ -6111,6 +6111,20 @@ body {
 .node-preview-form-select {
   padding: 15px; }
 
+.pagination > li > a {
+  color: #382F2D; }
+  .pagination > li > a:focus, .pagination > li > a:hover {
+    text-decoration: underline;
+    color: #382F2D; }
+
+.pagination > .active a {
+  background-color: #333f48;
+  color: #fff;
+  border-color: #333f48; }
+  .pagination > .active a:hover, .pagination > .active a:focus {
+    color: #fff;
+    background-color: #333f48; }
+
 /**
  * Panel styling.
  */
@@ -6521,7 +6535,9 @@ ul li {
   font-family: "Open Sans", sans-serif; }
 
 a {
-  color: #005F86; }
+  color: #BF5700; }
+  a:focus, a:hover {
+    color: #BF5700; }
 
 .logo-header {
   display: inline-block; }
@@ -6593,6 +6609,80 @@ a {
     width: 100%;
     text-align: center !important;
     margin-top: 1em; } }
+
+div [class*="view-display-id-page_"] h2.block-title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #000; }
+
+div [class*="view-display-id-page_"] h3.faculty-title {
+  font-size: 1.4em;
+  margin-bottom: 5px; }
+  div [class*="view-display-id-page_"] h3.faculty-title a {
+    color: #BF5700; }
+
+div [class*="view-display-id-page_"] .views-field-field-affiliated-departments {
+  font-size: 1em; }
+  div [class*="view-display-id-page_"] .views-field-field-affiliated-departments .views-label {
+    font-weight: bold; }
+  div [class*="view-display-id-page_"] .views-field-field-affiliated-departments .field-content {
+    display: inline; }
+
+div [class*="view-display-id-page_"] .views-field-field-research-interests .views-label {
+  font-size: 1em;
+  font-weight: bold; }
+
+div [class*="view-display-id-page_"] .views-field-field-research-interests .field-content {
+  display: inline; }
+  div [class*="view-display-id-page_"] .views-field-field-research-interests .field-content p {
+    display: inline;
+    font-size: 1em;
+    line-height: 1.4em; }
+
+div [class*="view-display-id-page_"] .views-field-nothing a {
+  color: #BF5700;
+  padding: 4px 6px;
+  display: inline-block;
+  margin-top: 6px;
+  border: 1px solid #BF5700; }
+  div [class*="view-display-id-page_"] .views-field-nothing a:hover, div [class*="view-display-id-page_"] .views-field-nothing a:focus {
+    background-color: #BF5700;
+    color: #fff;
+    text-decoration: none; }
+
+.view-eureka-taxonomy-term .projects-taxonomy-page-title {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #000; }
+
+.view-eureka-taxonomy-term h3.views-field-title {
+  font-size: 1.4em;
+  margin-bottom: 5px; }
+  .view-eureka-taxonomy-term h3.views-field-title a {
+    color: #BF5700; }
+
+.view-eureka-taxonomy-term .views-field-field-project-lead {
+  font-size: 1em; }
+  .view-eureka-taxonomy-term .views-field-field-project-lead .views-label {
+    font-weight: bold; }
+  .view-eureka-taxonomy-term .views-field-field-project-lead .field-content {
+    display: inline; }
+    .view-eureka-taxonomy-term .views-field-field-project-lead .field-content article {
+      display: inline; }
+      .view-eureka-taxonomy-term .views-field-field-project-lead .field-content article .field--name-field-display-name {
+        display: inline; }
+
+.view-eureka-taxonomy-term .views-field-body .views-label {
+  font-size: 1em;
+  font-weight: bold; }
+
+.view-eureka-taxonomy-term .views-field-body .field-content {
+  display: inline; }
+  .view-eureka-taxonomy-term .views-field-body .field-content p {
+    display: inline;
+    font-size: 1em;
+    line-height: 1.4em; }
+
+.view-empty p {
+  font-size: 1em; }
 
 ol, ul {
   padding-left: 1.5em; }

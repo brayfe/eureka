@@ -1,0 +1,23 @@
+// pagination
+
+.pagination > li > a {
+  color: $darkgray;
+
+  &:focus,
+  &:hover {
+    text-decoration: underline;
+    color: $darkgray;
+  }
+}
+
+.pagination > .active a {
+  background-color: $gray;
+  color: #fff;
+  border-color: $gray;
+
+  &:hover,
+  &:focus {
+    color: #fff;
+    background-color: $gray;
+  }
+}

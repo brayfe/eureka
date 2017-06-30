@@ -1,0 +1,128 @@
+// taxonomy-views pages
+
+// Faculty Results
+div [class*="view-display-id-page_"] {
+
+  h2.block-title {
+    padding-bottom: 10px;
+    border-bottom:1px solid #000;
+  }
+
+  h3.faculty-title {
+    font-size: 1.4em;
+    margin-bottom: 5px;
+
+    a {
+      color: $burnt;
+    }
+  }
+
+  .views-field-field-affiliated-departments {
+    font-size: 1em;
+
+    .views-label {
+      font-weight: bold;
+    }
+
+    .field-content {
+      display: inline;
+    }
+  }
+
+  .views-field-field-research-interests {
+
+    .views-label {
+      font-size: 1em;
+      font-weight: bold;
+    }
+
+    .field-content {
+      display: inline;
+
+      p {
+        display: inline;
+        font-size: 1em;
+        line-height: 1.4em;
+      }
+    }
+  }
+
+  .views-field-nothing {
+
+    a {
+      color: $burnt;
+      padding: 4px 6px;
+      display: inline-block;
+      margin-top: 6px;
+      border: 1px solid $burnt;
+
+      &:hover,
+      &:focus {
+        background-color: $burnt;
+        color: #fff;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+// Project results
+.view-eureka-taxonomy-term {
+
+  .projects-taxonomy-page-title {
+    padding-bottom: 10px;
+    border-bottom:1px solid #000;
+  }
+
+  h3.views-field-title {
+    font-size: 1.4em;
+    margin-bottom: 5px;
+
+    a {
+      color: $burnt;
+    }
+  }
+
+  .views-field-field-project-lead {
+    font-size: 1em;
+
+    .views-label {
+      font-weight: bold;
+    }
+
+    .field-content {
+      display: inline;
+
+      article {
+        display: inline;
+
+        .field--name-field-display-name {
+          display: inline;
+        }
+      }
+    }
+  }
+
+  .views-field-body {
+
+    .views-label {
+      font-size: 1em;
+      font-weight: bold;
+    }
+
+    .field-content {
+      display: inline;
+
+      p {
+        display: inline;
+        font-size: 1em;
+        line-height: 1.4em;
+      }
+    }
+  }
+}
+
+// size font in no results views
+.view-empty p {
+  font-size: 1em;
+}

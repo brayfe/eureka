@@ -28,7 +28,6 @@ dependencies:
     - inline_entity_form
     - link
     - multiselect
-    - path
     - term_reference_tree
     - text
     - user

@@ -21,6 +21,10 @@ function eureka_install_tasks() {
       'display_name' => t('Install Terms'),
       'type' => 'normal',
     ],
+    'eureka_modify_configuration' => [
+      'display_name' => t('Modify Configuration'),
+      'type' => 'normal',
+    ],
   ];
 }
 
@@ -67,6 +71,20 @@ function eureka_install_terms(array &$install_state) {
 }
 
 /**
+ * Install task callback. Modifies core configuration.
+ *
+ * @param array $install_state
+ *   The current install state.
+ */
+function eureka_modify_configuration(array &$install_state) {
+  // Disable the default 'taxonomy_term' view.
+  \Drupal::entityTypeManager()->getStorage('view')
+    ->load('taxonomy_term')
+    ->setStatus(FALSE)
+    ->save();
+}
+
+/**
  * Install task callback; prepares a batch job to install Eureka extensions.
  *
  * @param array $install_state
@@ -91,6 +109,8 @@ function eureka_install_extensions(array &$install_state) {
     'eureka_search_views',
     'simplify_global_settings',
     'url_aliases',
+    'eureka_role_faculty',
+    'eureka_taxonomy_views',
   ];
   foreach ($modules as $module) {
     $batch['operations'][] = ['eureka_install_module', (array) $module];
