@@ -18,7 +18,7 @@ widget:
   type: checkbox
   config:
     show_numbers: true
-    soft_limit: 15
+    soft_limit: 10
 query_operator: or
 use_hierarchy: false
 expand_hierarchy: false
@@ -33,12 +33,6 @@ processor_configs:
       sort: -10
     settings:
       sort: ASC
-  count_widget_order:
-    processor_id: count_widget_order
-    weights:
-      sort: -10
-    settings:
-      sort: DESC
   display_value_widget_order:
     processor_id: display_value_widget_order
     weights:
