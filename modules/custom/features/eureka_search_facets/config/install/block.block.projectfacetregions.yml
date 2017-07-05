@@ -5,6 +5,7 @@ dependencies:
     - facets.facet.project_regions
   module:
     - facets
+    - system
   theme:
     - eurekatheme
 id: projectfacetregions
@@ -18,4 +19,9 @@ settings:
   label: 'Regions of Academic Interest'
   provider: facets
   label_display: visible
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '/search/project*'
+    negate: false
+    context_mapping: {  }

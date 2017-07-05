@@ -5,6 +5,7 @@ dependencies:
     - facets.facet.project_tags
   module:
     - facets
+    - system
   theme:
     - eurekatheme
 id: projectfacettags
@@ -18,4 +19,9 @@ settings:
   label: Tags
   provider: facets
   label_display: visible
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '/search/project*'
+    negate: false
+    context_mapping: {  }

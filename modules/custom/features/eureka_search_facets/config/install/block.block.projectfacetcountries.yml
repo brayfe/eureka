@@ -5,6 +5,7 @@ dependencies:
     - facets.facet.project_countries
   module:
     - facets
+    - system
   theme:
     - eurekatheme
 id: projectfacetcountries
@@ -18,4 +19,9 @@ settings:
   label: 'Countries of Interest'
   provider: facets
   label_display: visible
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '/search/project*'
+    negate: false
+    context_mapping: {  }

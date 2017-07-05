@@ -5,6 +5,7 @@ dependencies:
     - facets.facet.faculty_countries
   module:
     - facets
+    - system
   theme:
     - eurekatheme
 id: facultyfacetcountries
@@ -18,4 +19,9 @@ settings:
   label: 'Countries of Academic Interest'
   provider: facets
   label_display: visible
-visibility: {  }
+visibility:
+  request_path:
+    id: request_path
+    pages: '/search/faculty*'
+    negate: false
+    context_mapping: {  }
