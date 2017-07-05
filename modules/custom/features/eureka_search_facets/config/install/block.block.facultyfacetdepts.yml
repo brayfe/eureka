@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.faculty_depts
+  module:
+    - facets
+    - system
+  theme:
+    - eurekatheme
+id: facultyfacetdepts
+theme: eurekatheme
+region: sidebar_first
+weight: -1
+provider: null
+plugin: 'facet_block:faculty_depts'
+settings:
+  id: 'facet_block:faculty_depts'
+  label: 'Affiliated Departments'
+  provider: facets
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: '/search/faculty*'
+    negate: false
+    context_mapping: {  }

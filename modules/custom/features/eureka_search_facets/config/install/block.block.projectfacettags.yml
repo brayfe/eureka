@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.project_tags
+  module:
+    - facets
+    - system
+  theme:
+    - eurekatheme
+id: projectfacettags
+theme: eurekatheme
+region: sidebar_first
+weight: -3
+provider: null
+plugin: 'facet_block:project_tags'
+settings:
+  id: 'facet_block:project_tags'
+  label: Tags
+  provider: facets
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: '/search/project*'
+    negate: false
+    context_mapping: {  }

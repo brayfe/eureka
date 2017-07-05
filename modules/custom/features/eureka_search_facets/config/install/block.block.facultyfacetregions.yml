@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.faculty_regions
+  module:
+    - facets
+    - system
+  theme:
+    - eurekatheme
+id: facultyfacetregions
+theme: eurekatheme
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:faculty_regions'
+settings:
+  id: 'facet_block:faculty_regions'
+  label: 'Regions of Academic Interest'
+  provider: facets
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: '/search/faculty*'
+    negate: false
+    context_mapping: {  }

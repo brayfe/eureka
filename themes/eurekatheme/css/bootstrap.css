@@ -6684,6 +6684,72 @@ div [class*="view-display-id-page_"] .views-field-nothing a {
 .view-empty p {
   font-size: 1em; }
 
+.view-eureka-faculty-search .view-content {
+  font-size: 14px; }
+  .view-eureka-faculty-search .view-content .views-row {
+    padding: 1.2em; }
+    .view-eureka-faculty-search .view-content .views-row h3.views-field-title {
+      font-size: 1.4em;
+      margin-bottom: 5px;
+      margin-top: 0; }
+    .view-eureka-faculty-search .view-content .views-row > div {
+      line-height: 1.2em; }
+    .view-eureka-faculty-search .view-content .views-row p {
+      font-size: 1em;
+      display: inline; }
+  .view-eureka-faculty-search .view-content .views-row:nth-child(even) {
+    background-color: #efefef; }
+
+[class*="block-facet-blockfaculty-"] h2.block-title {
+  font-size: 1.6em; }
+
+[class*="block-facet-blockfaculty-"] ul {
+  padding-left: 0;
+  list-style-type: none; }
+  [class*="block-facet-blockfaculty-"] ul li .facets-checkbox {
+    margin: 6px 5px 0 0;
+    display: inline-block; }
+  [class*="block-facet-blockfaculty-"] ul li label {
+    font-weight: normal;
+    display: inline-block;
+    width: 80%;
+    vertical-align: top; }
+
+.view-eureka-project-search .view-content {
+  font-size: 14px; }
+  .view-eureka-project-search .view-content .views-row {
+    padding: 1em; }
+    .view-eureka-project-search .view-content .views-row h3.views-field-title {
+      font-size: 1.4em;
+      margin-bottom: 8px;
+      margin-top: 0; }
+    .view-eureka-project-search .view-content .views-row > div {
+      line-height: 1.2em;
+      margin-bottom: 3px; }
+    .view-eureka-project-search .view-content .views-row .views-label-field-proj-lead-display-name {
+      font-weight: bold; }
+    .view-eureka-project-search .view-content .views-row p {
+      font-size: 1em;
+      display: inline;
+      line-height: 1.25em; }
+  .view-eureka-project-search .view-content .views-row:nth-child(even) {
+    background-color: #efefef; }
+
+[class*="block-facet-blockproject-"] h2.block-title {
+  font-size: 1.6em; }
+
+[class*="block-facet-blockproject-"] ul {
+  padding-left: 0;
+  list-style-type: none; }
+  [class*="block-facet-blockproject-"] ul li .facets-checkbox {
+    margin: 6px 5px 0 0;
+    display: inline-block; }
+  [class*="block-facet-blockproject-"] ul li label {
+    font-weight: normal;
+    display: inline-block;
+    width: 80%;
+    vertical-align: top; }
+
 ol, ul {
   padding-left: 1.5em; }
   .popover ol:last-child, .popover ul:last-child {

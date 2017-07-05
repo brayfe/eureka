@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.faculty_units
+  module:
+    - facets
+    - system
+  theme:
+    - eurekatheme
+id: facultyfacetunits
+theme: eurekatheme
+region: sidebar_first
+weight: -2
+provider: null
+plugin: 'facet_block:faculty_units'
+settings:
+  id: 'facet_block:faculty_units'
+  label: 'Research Units'
+  provider: facets
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: '/search/faculty*'
+    negate: false
+    context_mapping: {  }
