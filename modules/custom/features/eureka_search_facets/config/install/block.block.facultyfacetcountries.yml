@@ -9,7 +9,7 @@ dependencies:
     - eurekatheme
 id: facultyfacetcountries
 theme: eurekatheme
-region: sidebar_second
+region: sidebar_first
 weight: 1
 provider: null
 plugin: 'facet_block:faculty_countries'

@@ -9,7 +9,7 @@ dependencies:
     - eurekatheme
 id: projectfacetcountries
 theme: eurekatheme
-region: sidebar_second
+region: sidebar_first
 weight: -6
 provider: null
 plugin: 'facet_block:project_countries'

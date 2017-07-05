@@ -9,7 +9,7 @@ dependencies:
     - eurekatheme
 id: projectfacettags
 theme: eurekatheme
-region: sidebar_second
+region: sidebar_first
 weight: -3
 provider: null
 plugin: 'facet_block:project_tags'
