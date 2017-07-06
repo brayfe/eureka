@@ -10,7 +10,7 @@ id: user.user.field_job_title
 field_name: field_job_title
 entity_type: user
 bundle: user
-label: 'Job Title *'
+label: 'Job Title'
 description: 'Start typing to autocomplete an existing job title (e.g. Associate Professor, Dean, Chair). You may list up to two titles.'
 required: false
 translatable: false

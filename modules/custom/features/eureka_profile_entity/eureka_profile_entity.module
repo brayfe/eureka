@@ -32,13 +32,18 @@ function eureka_profile_entity_form_alter(&$form, FormStateInterface $form_state
  * General purpose function for any validation on the user account form.
  */
 function _eureka_profile_entity_validate(&$form, FormStateInterface $form_state) {
+  $roles = array_values($form_state->getValue('roles'));
   $required_fields = [
-    'field_display_name' => 'text',
-    'field_first_name' => 'text',
-    'field_last_name' => 'text',
-    'field_job_title' => 'term',
     'mail' => 'text',
   ];
+  if (in_array('faculty', $roles)) {
+    $required_fields += [
+      'field_display_name' => 'text',
+      'field_first_name' => 'text',
+      'field_last_name' => 'text',
+      'field_job_title' => 'term',
+    ];
+  }
   foreach ($required_fields as $key => $type) {
     _eureka_profile_entity_check_required($key, $type, $form_state);
   }
