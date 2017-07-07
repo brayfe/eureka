@@ -7,7 +7,9 @@ dependencies:
   - eureka_project_ct
   - field
   - field_group
+  - field_layout
   - inline_entity_form
+  - layout_discovery
   - link
   - multiselect
   - node

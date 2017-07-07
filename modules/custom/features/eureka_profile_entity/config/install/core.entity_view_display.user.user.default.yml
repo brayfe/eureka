@@ -24,152 +24,54 @@ dependencies:
     - field.field.user.user.field_student_assistant
     - field.field.user.user.field_tags
   module:
+    - field_layout
+    - layout_discovery
     - link
     - text
     - user
+third_party_settings:
+  field_layout:
+    id: layout_twocol
+    settings: {  }
 id: user.user.default
 targetEntityType: user
 bundle: user
 mode: default
 content:
   field_academic_interest:
-    weight: 15
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_affiliated_departments:
-    weight: 6
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_authorized_users:
-    weight: 7
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_countries_acad_interest:
-    weight: 16
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_display_name:
-    weight: 1
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_external_projects:
-    weight: 9
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
-    region: content
-  field_first_name:
-    weight: 2
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_is_active:
-    weight: 19
-    label: above
-    settings:
-      format: default
-      format_custom_false: ''
-      format_custom_true: ''
-    third_party_settings: {  }
-    type: boolean
-    region: content
-  field_job_title:
-    weight: 4
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_lab_contact:
-    weight: 12
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_lab_website:
-    weight: 10
-    label: above
-    settings:
-      trim_length: 80
-      url_only: false
-      url_plain: false
-      rel: ''
-      target: ''
-    third_party_settings: {  }
-    type: link
-    region: content
-  field_last_name:
-    weight: 3
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_open_to_work_with:
-    weight: 21
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_projects:
     weight: 8
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
-  field_research_interests:
-    weight: 5
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_research_units:
-    weight: 17
+    region: left
+  field_affiliated_departments:
+    weight: 3
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
-  field_research_website:
-    weight: 18
+    region: left
+  field_countries_acad_interest:
+    weight: 9
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: left
+  field_display_name:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: top
+  field_external_projects:
+    weight: 5
     label: above
     settings:
       trim_length: 80
@@ -179,40 +81,110 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
-    region: content
-  field_responsibilities:
-    weight: 22
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_sa_notes:
-    weight: 14
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_student_assistant:
-    weight: 13
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_tags:
-    weight: 20
+    region: left
+  field_job_title:
+    weight: 1
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
-  member_for:
-    weight: 0
-    region: content
+    region: left
+  field_lab_contact:
+    weight: 15
+    label: above
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+    type: text_default
+    region: right
+  field_lab_website:
+    weight: 16
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: right
+  field_open_to_work_with:
+    weight: 13
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: left
+  field_projects:
+    weight: 4
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: left
+  field_research_interests:
+    weight: 2
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: left
+  field_research_units:
+    weight: 10
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: left
+  field_research_website:
+    weight: 11
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: left
+  field_responsibilities:
+    weight: 14
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: left
+  field_sa_notes:
+    weight: 7
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: left
+  field_student_assistant:
+    weight: 6
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: left
+  field_tags:
+    weight: 12
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: left
+hidden:
+  field_authorized_users: true
+  field_first_name: true
+  field_is_active: true
+  field_last_name: true
+  member_for: true

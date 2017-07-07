@@ -1,6 +1,8 @@
 langcode: en
 status: true
 dependencies:
+  module:
+    - ctools
   theme:
     - eurekatheme
 id: pagetitle
@@ -14,4 +16,11 @@ settings:
   label: 'Page title'
   provider: core
   label_display: '0'
-visibility: {  }
+visibility:
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      project: project
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'

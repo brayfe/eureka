@@ -11,11 +11,18 @@ use Drupal\Core\Form\FormStateInterface;
  * Implements hook_form_alter().
  */
 function eureka_profile_entity_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+    foreach ($form as $field => $values) {
+      if (!empty($values['#parents'])) {
+        $form[$field]['#group'] = $values['#parents'];
+      }
+    }
   if (in_array($form_id, array('user_form', 'user_register_form'))) {
+
     $form['#attached']['library'][] = 'eureka_profile_entity/user_form';
     $form['account']['name']['#weight'] = -10;
     $form['account']['mail']['#weight'] = -9;
     $form['account']['pass']['#weight'] = -8;
+    $form['account']['#group'] = 'group_account';
 
     // Suppress display of path setting for user accounts.
     $form['path']['#access'] = FALSE;
