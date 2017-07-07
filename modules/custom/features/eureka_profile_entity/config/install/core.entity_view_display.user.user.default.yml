@@ -142,7 +142,7 @@ content:
     region: left
   field_research_website:
     weight: 11
-    label: above
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
