@@ -74,9 +74,10 @@ content:
     weight: 9
     label: above
     settings:
-      link: true
+      view_mode: compact
+      link: false
     third_party_settings: {  }
-    type: entity_reference_label
+    type: entity_reference_entity_view
     region: content
   field_length_commitment:
     weight: 8
@@ -112,7 +113,7 @@ content:
     region: content
   field_project_website:
     weight: 3
-    label: inline
+    label: hidden
     settings:
       trim_length: 80
       url_only: false
