@@ -18,8 +18,14 @@ dependencies:
     - field.field.node.project.field_time_commitment
     - node.type.project
   module:
+    - field_layout
+    - layout_discovery
     - text
     - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 id: node.project.teaser
 targetEntityType: node
 bundle: project

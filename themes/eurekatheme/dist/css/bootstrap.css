@@ -6580,7 +6580,8 @@ a {
   padding: 4px 8px;
   background-color: #efefef;
   display: inline-block;
-  margin-right: .5em; }
+  margin-right: .5em;
+  margin-bottom: .5em; }
   .page-node-type-project .region-content article .field--name-field-project-tags .field--item:hover, .page-node-type-project .region-content article .field--name-field-project-tags .field--item:focus {
     background-color: #efefef; }
 
