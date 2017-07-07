@@ -6531,6 +6531,9 @@ h1, h2, h3, h4, h5 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+h1.page-header {
+  border: none; }
+
 ul li {
   font-family: "Open Sans", sans-serif; }
 
@@ -6539,76 +6542,97 @@ a {
   a:focus, a:hover {
     color: #BF5700; }
 
-.logo-header {
-  display: inline-block; }
+.page-node-type-project .region-content article .right-sidebar {
+  background-color: #efefef;
+  padding: 1em 1em 0 1em; }
 
-@media only screen and (max-width: 991px) {
-  header.full-width .container .navbar-collapse {
-    width: 100%; }
-    header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav {
-      text-align: center;
-      float: none; }
-      header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav li {
-        float: none;
-        display: inline-block; } }
+.page-node-type-project .region-content article div.field {
+  margin-bottom: 2em; }
 
-@media only screen and (max-width: 767px) {
-  header.full-width .container .navbar-collapse {
-    width: 100%; }
-    header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav {
-      text-align: center;
-      float: none; }
-      header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav li {
-        float: none;
-        display: block; } }
+.page-node-type-project .region-content article .field--label {
+  font-weight: bold;
+  font-size: 1.25em;
+  border-bottom: 1px solid #000;
+  margin-bottom: 10px; }
 
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-  background-color: transparent; }
+.page-node-type-project .region-content article a {
+  font-size: 1em; }
 
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-  background-color: transparent; }
+.page-node-type-project .region-content article time {
+  font-size: 1em; }
 
-.navbar-default .navbar-header {
-  float: right;
-  display: inline-block; }
-  .navbar-default .navbar-header .navbar-toggle {
-    padding: 5px;
-    border: 1px solid #fff; }
-    .navbar-default .navbar-header .navbar-toggle:hover, .navbar-default .navbar-header .navbar-toggle:focus {
-      background: transparent; }
-    .navbar-default .navbar-header .navbar-toggle .sr-only {
-      position: relative;
-      color: #fff;
-      font-size: 1em;
-      line-height: 12px;
-      display: block;
-      width: auto;
-      height: auto;
-      margin: auto;
-      padding: 0 0 8px 0;
-      overflow: visible;
-      clip: auto;
-      border: 0; }
-    .navbar-default .navbar-header .navbar-toggle .icon-bar {
-      display: block;
-      background: #fff;
-      width: 40px;
-      height: 2px;
-      margin-bottom: 7px; }
-      .navbar-default .navbar-header .navbar-toggle .icon-bar:last-child {
-        margin-bottom: 4px; }
+.page-node-type-project .region-content article p {
+  font-size: 1em; }
 
-@media only screen and (max-width: 991px) {
-  .footer-wrapper footer.footer .footer-left {
-    width: 100%;
-    text-align: center; }
-  .footer-wrapper footer.footer .footer-right {
-    width: 100%;
-    text-align: center !important;
-    margin-top: 1em; } }
+.page-node-type-project .region-content article .field--name-field-close-date {
+  padding: 1em;
+  background: #efefef;
+  margin-left: -1em; }
+  .page-node-type-project .region-content article .field--name-field-close-date .field--label {
+    border: none;
+    line-height: 1em; }
+
+.page-node-type-project .region-content article .field--name-field-contact-email .field--item a {
+  overflow-wrap: break-word;
+  word-wrap: break-word; }
+
+.page-node-type-project .region-content article .field--name-field-project-tags .field--item {
+  padding: 4px 8px;
+  background-color: #efefef;
+  display: inline-block;
+  margin-right: .5em; }
+  .page-node-type-project .region-content article .field--name-field-project-tags .field--item:hover, .page-node-type-project .region-content article .field--name-field-project-tags .field--item:focus {
+    background-color: #efefef; }
+
+.path-user .region-content article .col-sm-9 {
+  padding-left: 0; }
+
+.path-user .region-content article .right-sidebar {
+  background-color: #efefef;
+  padding: 1em 1em 0 1em; }
+
+.path-user .region-content article div.field {
+  margin-bottom: 2em; }
+
+.path-user .region-content article .field--label {
+  font-weight: bold;
+  font-size: 1.25em;
+  border-bottom: 1px solid #000;
+  margin-bottom: 10px; }
+
+.path-user .region-content article a {
+  font-size: 1em;
+  overflow-wrap: break-word;
+  word-wrap: break-word; }
+
+.path-user .region-content article div.field.field--name-field-display-name {
+  margin-bottom: 20px; }
+
+.path-user .region-content article .field--name-field-display-name {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+  margin-top: 0;
+  font-size: 36px; }
+
+.path-user .region-content article p {
+  font-size: 1em; }
+
+.path-user .region-content article .field--name-field-tags .field--item,
+.path-user .region-content article .field--name-field-academic-interest .field--item,
+.path-user .region-content article .field--name-field-countries-acad-interest .field--item {
+  padding: 4px 8px;
+  background-color: #efefef;
+  display: inline-block;
+  margin-right: .5em; }
+  .path-user .region-content article .field--name-field-tags .field--item:hover, .path-user .region-content article .field--name-field-tags .field--item:focus,
+  .path-user .region-content article .field--name-field-academic-interest .field--item:hover,
+  .path-user .region-content article .field--name-field-academic-interest .field--item:focus,
+  .path-user .region-content article .field--name-field-countries-acad-interest .field--item:hover,
+  .path-user .region-content article .field--name-field-countries-acad-interest .field--item:focus {
+    background-color: #efefef; }
 
 div [class*="view-display-id-page_"] h2.block-title {
   padding-bottom: 10px;
@@ -6749,6 +6773,77 @@ div [class*="view-display-id-page_"] .views-field-nothing a {
     display: inline-block;
     width: 80%;
     vertical-align: top; }
+
+.logo-header {
+  display: inline-block; }
+
+@media only screen and (max-width: 991px) {
+  header.full-width .container .navbar-collapse {
+    width: 100%; }
+    header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav {
+      text-align: center;
+      float: none; }
+      header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav li {
+        float: none;
+        display: inline-block; } }
+
+@media only screen and (max-width: 767px) {
+  header.full-width .container .navbar-collapse {
+    width: 100%; }
+    header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav {
+      text-align: center;
+      float: none; }
+      header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav li {
+        float: none;
+        display: block; } }
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: transparent; }
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  background-color: transparent; }
+
+.navbar-default .navbar-header {
+  float: right;
+  display: inline-block; }
+  .navbar-default .navbar-header .navbar-toggle {
+    padding: 5px;
+    border: 1px solid #fff; }
+    .navbar-default .navbar-header .navbar-toggle:hover, .navbar-default .navbar-header .navbar-toggle:focus {
+      background: transparent; }
+    .navbar-default .navbar-header .navbar-toggle .sr-only {
+      position: relative;
+      color: #fff;
+      font-size: 1em;
+      line-height: 12px;
+      display: block;
+      width: auto;
+      height: auto;
+      margin: auto;
+      padding: 0 0 8px 0;
+      overflow: visible;
+      clip: auto;
+      border: 0; }
+    .navbar-default .navbar-header .navbar-toggle .icon-bar {
+      display: block;
+      background: #fff;
+      width: 40px;
+      height: 2px;
+      margin-bottom: 7px; }
+      .navbar-default .navbar-header .navbar-toggle .icon-bar:last-child {
+        margin-bottom: 4px; }
+
+@media only screen and (max-width: 991px) {
+  .footer-wrapper footer.footer .footer-left {
+    width: 100%;
+    text-align: center; }
+  .footer-wrapper footer.footer .footer-right {
+    width: 100%;
+    text-align: center !important;
+    margin-top: 1em; } }
 
 ol, ul {
   padding-left: 1.5em; }
