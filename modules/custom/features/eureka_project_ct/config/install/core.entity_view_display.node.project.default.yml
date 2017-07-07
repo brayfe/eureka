@@ -44,9 +44,9 @@ content:
     label: inline
     settings:
       timezone_override: America/Chicago
-      format_type: medium
+      date_format: 'F n, Y'
     third_party_settings: {  }
-    type: datetime_default
+    type: datetime_custom
     region: content
   field_contact_email:
     weight: 11
