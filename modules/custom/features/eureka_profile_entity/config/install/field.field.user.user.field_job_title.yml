@@ -12,7 +12,7 @@ entity_type: user
 bundle: user
 label: 'Job Title'
 description: 'Start typing to autocomplete an existing job title (e.g. Associate Professor, Dean, Chair). You may list up to two titles.'
-required: true
+required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
