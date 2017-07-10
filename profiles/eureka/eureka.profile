@@ -112,6 +112,7 @@ function eureka_install_extensions(array &$install_state) {
     'url_aliases',
     'eureka_role_faculty',
     'eureka_taxonomy_views',
+    'utexas_flipcard_block',
   ];
   foreach ($modules as $module) {
     $batch['operations'][] = ['eureka_install_module', (array) $module];
