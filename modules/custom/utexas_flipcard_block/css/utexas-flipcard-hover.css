@@ -1,4 +1,4 @@
-.sb-container .card:hover {
+.sb-container.flip-on-hover .card:hover {
   -webkit-transform: rotateY(180deg);
   -moz-transform: rotateY(180deg);
   -o-transform: rotateY(180deg);

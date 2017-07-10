@@ -158,6 +158,7 @@ class FlipCardBlock extends BlockBase {
       '#back_color' => $back_color,
       '#attached' => ['library' => $library],
       '#id' => $this->getDerivativeId(),
+      '#behavior' => $this->configuration['flip_behavior'],
     ];
   }
 

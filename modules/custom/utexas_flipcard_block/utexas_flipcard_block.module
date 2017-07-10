@@ -35,6 +35,7 @@ function utexas_flipcard_block_theme($existing, $type, $theme, $path) {
         'back_text' => NULL,
         'back_color' => NULL,
         'id' => NULL,
+        'behavior' => NULL,
       ],
       'template' => 'utexas-flipcard-block',
     ],
