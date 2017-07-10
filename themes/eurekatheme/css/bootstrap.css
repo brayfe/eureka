@@ -6702,6 +6702,12 @@ div [class*="view-display-id-page_"] .views-field-nothing a {
     font-size: 1.1em;
     padding: 5px 10px; }
 
+.view-eureka-faculty-search .view-header {
+  margin-bottom: 2em;
+  font-weight: bold;
+  margin-top: 19px;
+  font-size: 1.4em; }
+
 .view-eureka-faculty-search .view-content {
   font-size: 14px; }
   .view-eureka-faculty-search .view-content .views-row {
@@ -6732,6 +6738,12 @@ div [class*="view-display-id-page_"] .views-field-nothing a {
     display: inline-block;
     width: 80%;
     vertical-align: top; }
+
+.view-eureka-project-search .view-header {
+  margin-bottom: 2em;
+  font-weight: bold;
+  margin-top: 19px;
+  font-size: 1.4em; }
 
 .view-eureka-project-search .view-content {
   font-size: 14px; }
