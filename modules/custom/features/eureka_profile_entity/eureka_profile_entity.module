@@ -11,15 +11,10 @@ use Drupal\Core\Form\FormStateInterface;
  * Implements hook_form_alter().
  */
 function eureka_profile_entity_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-    foreach ($form as $field => $values) {
-      if (!empty($values['#parents'])) {
-        $form[$field]['#group'] = $values['#parents'];
-      }
-    }
   if (in_array($form_id, array('user_form', 'user_register_form'))) {
     foreach ($form as $field => $values) {
       if (!empty($values['#parents'])) {
-        $form[$field]['#group'] = $values['#parents'];
+        $form[$field]['#group'] = key($values['#parents']);
       }
     }
     $form['#attached']['library'][] = 'eureka_profile_entity/user_form';
