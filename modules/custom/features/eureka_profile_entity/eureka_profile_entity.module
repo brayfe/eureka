@@ -17,7 +17,11 @@ function eureka_profile_entity_form_alter(&$form, FormStateInterface $form_state
       }
     }
   if (in_array($form_id, array('user_form', 'user_register_form'))) {
-
+    foreach ($form as $field => $values) {
+      if (!empty($values['#parents'])) {
+        $form[$field]['#group'] = $values['#parents'];
+      }
+    }
     $form['#attached']['library'][] = 'eureka_profile_entity/user_form';
     // Set name & mail to non-required to override HTML5 validation.
     $form['account']['name']['#weight'] = -10;
