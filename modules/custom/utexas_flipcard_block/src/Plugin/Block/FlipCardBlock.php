@@ -21,8 +21,8 @@ class FlipCardBlock extends BlockBase {
    */
   public function defaultConfiguration() {
     return [
-      'card_front' => '',
-      'card_back' => '',
+      'card_front' => ['value' => ''],
+      'card_back' => ['value' => ''],
       'front_color' => '333f48',
       'back_color' => '382f2d',
       'flip_behavior' => 'flip-on-hover',
