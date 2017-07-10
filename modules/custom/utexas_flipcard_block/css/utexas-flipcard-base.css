@@ -1,0 +1,93 @@
+ /**
+ + * @file
+ + * Visual styles for UTexas Flipcard Block.
+ + */
+.sb-container {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  border: 1px solid #ccc;
+  -webkit-perspective: 800px;
+  -moz-perspective: 800px;
+  -o-perspective: 800px;
+  perspective: 800px;
+}
+.sb-container .card {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-transition: -webkit-transform 1s;
+  -moz-transition: -moz-transform 1s;
+  -o-transition: -o-transform 1s;
+  transition: transform 1s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  -webkit-transform-origin: 50% 50%;
+}
+.sb-container .card div.color-382f2d {
+  background: #382F2D;
+}
+.sb-container .card div.color-333f48 {
+  background: #333f48;
+}
+.sb-container .card .front {
+  background: #382F2D;
+  padding: 1em;
+  display: block;
+  height: 100%;
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.sb-container .card .front .frontcover {
+  line-height: 26px;
+  font-size: 20px;
+  left: 12px;
+}
+.sb-container .card .back {
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding: 1em;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background: #333f48;
+  -webkit-transform: rotateY(180deg);
+  -moz-transform: rotateY(180deg);
+  -o-transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
+.sb-container .card .back .backcover {
+  position: relative;
+  top: 20px;
+  line-height: 20px;
+  font-size: 16px;
+}
+.sb-container .card .back .backcover p {
+  line-height: 1.8em;
+}
+.sb-container .card .back .backcover p a {
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: underline;
+  position: relative;
+  font-weight: bold;
+  color: #fff;
+}
+.sb-container .card .back .backcover p a:focus, .sb-container .card .back .backcover p a:hover {
+  text-decoration: none;
+}

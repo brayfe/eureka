@@ -1,0 +1,18 @@
+utexas-flipcard-block.flip-on-click:
+  version: 1.x
+  css:
+    theme:
+      css/utexas-flipcard-click.css: {}
+      css/utexas-flipcard-base.css: {}
+  js:
+    js/flip-on-click.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+
+utexas-flipcard-block.flip-on-hover:
+  version: 1.x
+  css:
+    theme:
+      css/utexas-flipcard-hover.css: {}
+      css/utexas-flipcard-base.css: {}
