@@ -483,6 +483,17 @@ display:
           plugin_id: search_api
       title: 'Eureka Project Search'
       header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content: '<h3 class="views-field-title">Projects Search Results</h3>'
+          plugin_id: text_custom
         result:
           id: result
           table: views

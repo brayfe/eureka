@@ -50,7 +50,7 @@ display:
       pager:
         type: full
         options:
-          items_per_page: 10
+          items_per_page: 25
           offset: 0
           id: 0
           total_pages: null
@@ -219,7 +219,7 @@ display:
           label: 'Research Interests'
           exclude: false
           alter:
-            alter_text: false
+            alter_text: true
             text: ''
             make_link: false
             path: ''
@@ -235,14 +235,14 @@ display:
             suffix: ''
             target: ''
             nl2br: false
-            max_length: 0
+            max_length: 250
             word_boundary: true
             ellipsis: true
             more_link: false
             more_link_text: ''
             more_link_path: ''
             strip_tags: false
-            trim: false
+            trim: true
             preserve_tags: ''
             html: false
           element_type: ''
@@ -605,6 +605,17 @@ display:
           plugin_id: search_api
       title: 'Eureka Faculty Search'
       header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content: '<h3 class="views-field-title">Faculty Search Results</h3>'
+          plugin_id: text_custom
         result:
           id: result
           table: views

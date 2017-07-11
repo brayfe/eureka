@@ -16,14 +16,30 @@
   }
 }
 
+// global styling
+// search highlights in the results
+.views-field-search-api-excerpt {
+  margin-top: 8px;
+}
+
+// facets
+.facet-item {
+  font-size: .9em;
+}
+
 // faculty results
 .view-eureka-faculty-search {
 
   .view-header {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     font-weight: bold;
     margin-top: 19px;
     font-size: 1.4em;
+
+    h3.views-field-title {
+      margin-top: 18px;
+      margin-bottom: 1em;
+    }
   }
 
   .view-content {
@@ -89,10 +105,15 @@
 .view-eureka-project-search {
 
   .view-header {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
     font-weight: bold;
-    margin-top: 19px;
+    // margin-top: 19px;
     font-size: 1.4em;
+
+    h3.views-field-title {
+      margin-top: 18px;
+      margin-bottom: 1em;
+    }
   }
 
   .view-content {
