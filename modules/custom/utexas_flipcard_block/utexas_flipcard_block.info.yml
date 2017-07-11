@@ -1,0 +1,5 @@
+name: UTexas FlipCard Block
+type: module
+description: Define a placeable block that has flipcard functionality
+core: 8.x
+package: UTexas

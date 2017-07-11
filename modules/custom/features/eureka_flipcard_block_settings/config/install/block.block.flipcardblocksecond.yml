@@ -1,0 +1,34 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+    - utexas_flipcard_block
+  theme:
+    - eurekatheme
+id: flipcardblocksecond
+theme: eurekatheme
+region: content
+weight: 0
+provider: null
+plugin: 'flip_card_block:utexas_flipcard_block_second'
+settings:
+  id: 'flip_card_block:utexas_flipcard_block_second'
+  label: 'Flipcard Block: Second'
+  provider: utexas_flipcard_block
+  label_display: ''
+  card_front:
+    value: "<a href=\"/search/faculty\" class=\"btn btn-default\">Search Faculty</a><p>4,000+ educators</p>"
+    format: filtered_html
+  card_back:
+    value: "<a href=\"/search/faculty\" class=\"btn btn-default\">Search Faculty</a><p>Filter by department, tags, & internship</p>"
+    format: filtered_html
+  front_color: 382f2d
+  back_color: 333f48
+  flip_behavior: flip-on-hover
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
