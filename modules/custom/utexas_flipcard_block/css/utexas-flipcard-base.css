@@ -2,6 +2,11 @@
  + * @file
  + * Visual styles for UTexas Flipcard Block.
  + */
+
+section#block-flipcardblockfirst,
+section#block-flipcardblocksecond {
+  display:inline-block;
+}
 .sb-container {
   width: 200px;
   height: 200px;
@@ -48,9 +53,10 @@
   backface-visibility: hidden;
 }
 .sb-container .card .front .frontcover {
-  line-height: 26px;
+  position: relative;
+  top: 20px;
+  line-height: 20px;
   font-size: 20px;
-  left: 12px;
 }
 .sb-container .card .back {
   display: block;

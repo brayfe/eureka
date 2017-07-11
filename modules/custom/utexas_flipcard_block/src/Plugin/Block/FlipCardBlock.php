@@ -103,7 +103,7 @@ class FlipCardBlock extends BlockBase {
       '#title' => $this->t('Card front: text'),
       '#description' => $this->t('Text to display when the card is initially displayed'),
       '#default_value' => $this->configuration['card_front']['value'],
-      '#format' => isset($this->configuration['card_front']['format']) ? $this->configuration['card_front']['format'] : 'plain_text',
+      '#format' => isset($this->configuration['card_front']['format']) ? $this->configuration['card_front']['format'] : 'filtered_html',
       '#weight' => '2',
     ];
 
@@ -122,7 +122,7 @@ class FlipCardBlock extends BlockBase {
       '#title' => $this->t('Card back: text'),
       '#description' => $this->t('Text to display when the card is flipped'),
       '#default_value' => $this->configuration['card_back']['value'],
-      '#format' => isset($this->configuration['card_back']['format']) ? $this->configuration['card_front']['format'] : 'plain_text',
+      '#format' => isset($this->configuration['card_back']['format']) ? $this->configuration['card_front']['format'] : 'filtered_html',
       '#weight' => '4',
     ];
     return $form;
