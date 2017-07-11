@@ -99,6 +99,7 @@ function eureka_install_extensions(array &$install_state) {
     'features',
     'config_update',
     'settings_eurekatheme',
+    'eureka_filtered_html_format',
     'eureka_footer_content',
     'eureka_footer_block_settings',
     'eureka_main_nav_menu_settings',
@@ -112,7 +113,7 @@ function eureka_install_extensions(array &$install_state) {
     'url_aliases',
     'eureka_role_faculty',
     'eureka_taxonomy_views',
-    'utexas_flipcard_block',
+    'eureka_flipcard_block_settings',
   ];
   foreach ($modules as $module) {
     $batch['operations'][] = ['eureka_install_module', (array) $module];
