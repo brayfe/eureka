@@ -302,7 +302,7 @@ processor_settings:
       - field_responsibilities
     spaces: ''
     overlap_cjk: 1
-    minimum_word_size: '3'
+    minimum_word_size: '2'
     weights:
       preprocess_index: -6
       preprocess_query: -6
