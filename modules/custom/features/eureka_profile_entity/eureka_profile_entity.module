@@ -40,7 +40,7 @@ function eureka_profile_entity_form_alter(&$form, FormStateInterface $form_state
 function _eureka_profile_entity_validate(&$form, FormStateInterface $form_state) {
   $roles = array_values($form_state->getValue('roles'));
   $required_fields = [
-    'mail' => 'text',
+    'mail' => 'value',
   ];
   if (in_array('faculty', $roles)) {
     $required_fields += [
@@ -69,6 +69,10 @@ function _eureka_profile_entity_check_required($key, $type, FormStateInterface $
   $name = str_replace('field_', '', $key);
   $field = $form_state->getValue($key);
   switch ($type) {
+    case 'value':
+      $content = $field;
+      break;
+
     case 'text':
       // Note: this will only require the *first* instance of the field.
       $content = $field[0]['value'];
