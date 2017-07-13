@@ -53,7 +53,7 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: basic_string
+    type: email_mailto
     region: right
   field_contact_name:
     weight: 11
