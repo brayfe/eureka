@@ -6629,7 +6629,8 @@ a {
   padding: 4px 8px;
   background-color: #efefef;
   display: inline-block;
-  margin-right: .5em; }
+  margin-right: .5em;
+  margin-bottom: .5em; }
   .path-user .region-content article .field--name-field-tags .field--item:hover, .path-user .region-content article .field--name-field-tags .field--item:focus,
   .path-user .region-content article .field--name-field-academic-interest .field--item:hover,
   .path-user .region-content article .field--name-field-academic-interest .field--item:focus,
