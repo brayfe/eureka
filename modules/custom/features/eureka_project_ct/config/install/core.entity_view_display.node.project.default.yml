@@ -18,7 +18,6 @@ dependencies:
     - node.type.project
   module:
     - datetime
-    - eurekatheme
     - field_layout
     - layout_discovery
     - link

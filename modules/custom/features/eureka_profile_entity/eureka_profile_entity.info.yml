@@ -5,7 +5,6 @@ core: 8.x
 dependencies:
   - eureka_faculty_profile_taxonomies
   - eureka_project_ct
-  - eurekatheme
   - field
   - field_group
   - field_layout

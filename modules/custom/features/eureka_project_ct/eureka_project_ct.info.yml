@@ -7,7 +7,6 @@ dependencies:
   - ctools
   - datetime
   - eureka_profile_entity
-  - eurekatheme
   - field
   - field_group
   - field_layout

@@ -5,8 +5,14 @@ dependencies:
     - field.field.taxonomy_term.research_units.field_website
     - taxonomy.vocabulary.research_units
   module:
+    - field_layout
+    - layout_discovery
     - link
     - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 id: taxonomy_term.research_units.default
 targetEntityType: taxonomy_term
 bundle: research_units

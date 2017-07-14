@@ -24,8 +24,6 @@ dependencies:
     - field.field.user.user.field_student_assistant
     - field.field.user.user.field_tags
   module:
-    - eurekatheme
-    - field_group
     - field_layout
     - layout_discovery
     - link
@@ -35,32 +33,6 @@ third_party_settings:
   field_layout:
     id: layout_twocol
     settings: {  }
-  field_group:
-    group_research_details:
-      children: {  }
-      parent_name: ''
-      weight: 20
-      format_type: fieldset
-      format_settings:
-        id: ''
-        classes: research-details-wrapper
-        description: ''
-      label: 'Research Details'
-    group_lab_information:
-      children: {  }
-      parent_name: ''
-      weight: 20
-      format_type: html_element
-      format_settings:
-        id: ''
-        classes: lab-info-wrapper
-        element: div
-        show_label: true
-        label_element: h3
-        attributes: ''
-        effect: none
-        speed: fast
-      label: 'Lab Information'
 id: user.user.default
 targetEntityType: user
 bundle: user
@@ -73,7 +45,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: leftmiddle
+    region: left
   field_affiliated_departments:
     weight: 3
     label: above
@@ -89,7 +61,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: leftmiddle
+    region: left
   field_display_name:
     weight: 0
     label: hidden
@@ -167,7 +139,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: leftmiddle
+    region: left
   field_research_website:
     weight: 10
     label: above
@@ -179,7 +151,7 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
-    region: leftmiddle
+    region: left
   field_responsibilities:
     weight: 14
     label: above
