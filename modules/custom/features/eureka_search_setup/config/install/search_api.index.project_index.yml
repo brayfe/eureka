@@ -231,7 +231,7 @@ processor_settings:
       - and
       - any
       - are
-      - "aren't"
+      - 'aren''t'
       - as
       - at
       - be
@@ -244,17 +244,17 @@ processor_settings:
       - both
       - but
       - by
-      - "can't"
+      - 'can''t'
       - cannot
       - could
-      - "couldn't"
+      - 'couldn''t'
       - did
-      - "didn't"
+      - 'didn''t'
       - do
       - does
-      - "doesn't"
+      - 'doesn''t'
       - doing
-      - "don't"
+      - 'don''t'
       - down
       - during
       - each
@@ -263,53 +263,53 @@ processor_settings:
       - from
       - further
       - had
-      - "hadn't"
+      - 'hadn''t'
       - has
-      - "hasn't"
+      - 'hasn''t'
       - have
-      - "haven't"
+      - 'haven''t'
       - having
       - he
-      - "he'd"
-      - "he'll"
-      - "he's"
+      - 'he''d'
+      - 'he''ll'
+      - 'he''s'
       - her
       - here
-      - "here's"
+      - 'here''s'
       - hers
       - herself
       - him
       - himself
       - his
       - how
-      - how's
+      - 'how''s'
       - i
-      - "i'd"
-      - "i'll"
-      - "i'm"
-      - "i've"
+      - 'i''d'
+      - 'i''ll'
+      - 'i''m'
+      - 'i''ve'
       - if
       - in
       - into
       - is
-      - "isn't"
+      - 'isn''t'
       - it
-      - "it's"
+      - 'it''s'
       - its
       - itself
-      - "let's"
+      - 'let''s'
       - me
       - more
       - most
-      - "mustn't"
+      - 'mustn''t'
       - my
       - myself
-      - no
+      - 'no'
       - nor
       - not
       - of
-      - off
-      - on
+      - 'off'
+      - 'on'
       - once
       - only
       - or
@@ -323,20 +323,20 @@ processor_settings:
       - own
       - s
       - same
-      - "shan't"
+      - 'shan''t'
       - she
-      - "she'd"
-      - "she'll"
-      - "she's"
+      - 'she''d'
+      - 'she''ll'
+      - 'she''s'
       - should
-      - "shouldn't"
+      - 'shouldn''t'
       - so
       - some
       - such
       - t
       - than
       - that
-      - "that's"
+      - 'that''s'
       - the
       - their
       - theirs
@@ -347,10 +347,10 @@ processor_settings:
       - "there's"
       - these
       - they
-      - "they'd"
-      - "they'll"
-      - "they're"
-      - "they've"
+      - 'they''d'
+      - 'they''ll'
+      - 'they''re'
+      - 'they''ve'
       - this
       - those
       - through
@@ -361,37 +361,37 @@ processor_settings:
       - up
       - very
       - was
-      - "wasn't"
+      - 'wasn''t'
       - we
-      - "we'd"
-      - "we'll"
-      - "we're"
-      - "we've"
+      - 'we''d'
+      - 'we''ll'
+      - 'we''re'
+      - 'we''ve'
       - were
-      - "weren't"
+      - 'weren''t'
       - what
-      - "what's"
+      - 'what''s'
       - when
-      - "when's"
+      - 'when''s'
       - where
-      - "where's"
+      - 'where''s'
       - which
       - while
       - who
-      - "who's"
+      - 'who''s'
       - whom
       - why
-      - "why's"
+      - 'why''s'
       - will
       - with
-      - "won't"
+      - 'won''t'
       - would
-      - "wouldn't"
+      - 'wouldn''t'
       - you
-      - "you'd"
-      - "you'll"
-      - "you're"
-      - "you've"
+      - 'you''d'
+      - 'you''ll'
+      - 'you''re'
+      - 'you''ve'
       - your
       - yours
       - yourself
