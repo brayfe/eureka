@@ -24,11 +24,21 @@ set classes = [
       </div>
     {% endif %}
 
-    {% if content.left %}
-      <div class="main col-sm-9">
+    <div class="main col-sm-9">
+      {% if content.left %}
         {{ content.left }}
-      </div>
-    {% endif %}
+      {% endif %}
+
+      {% if content.leftmiddle %}
+        <h3 class="heading-leftmiddle">Research Details</h3>
+        {{ content.leftmiddle }}
+      {% endif %}
+
+      {% if content.leftbottom %}
+        <h3 class="heading-leftbottom">Lab and Internship Details</h3>
+        {{ content.leftbottom }}
+      {% endif %}
+    </div>
 
     {% if content.right %}
       <div class="right-sidebar col-sm-3">
