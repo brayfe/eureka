@@ -110,13 +110,13 @@ content:
     type: link
     region: right
   field_open_to_work_with:
+    type: entity_reference_label
     weight: 13
+    region: left
     label: above
     settings:
       link: true
     third_party_settings: {  }
-    type: entity_reference_label
-    region: leftbottom
   field_projects:
     weight: 4
     label: above
@@ -153,27 +153,27 @@ content:
     type: link
     region: left
   field_responsibilities:
+    type: string
     weight: 14
+    region: left
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
-    type: string
-    region: leftbottom
   field_sa_notes:
+    type: text_default
     weight: 12
+    region: left
     label: above
     settings: {  }
     third_party_settings: {  }
-    type: text_default
-    region: leftbottom
   field_student_assistant:
     weight: 11
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: leftbottom
+    region: left
   field_tags:
     weight: 6
     label: above
