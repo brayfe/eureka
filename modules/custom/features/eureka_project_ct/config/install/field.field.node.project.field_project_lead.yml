@@ -17,8 +17,14 @@ default_value_callback: ''
 settings:
   handler: views
   handler_settings:
-    view:
-      view_name: users_entity_reference
-      display_name: entity_reference_1
-      arguments: {  }
+    include_anonymous: true
+    filter:
+      type: role
+      role:
+        faculty: faculty
+    target_bundles: null
+    sort:
+      field: field_display_name
+      direction: ASC
+    auto_create: false
 field_type: entity_reference
