@@ -6359,7 +6359,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
     font-size: 20px;
     margin: 5px 0; }
     .brand-bar .container .ugs-brand a {
-      color: #BF5700;
+      color: #a04400;
       font-family: CharisSIL-r, serif;
       font-weight: normal;
       font-size: .8em; }
@@ -6538,9 +6538,9 @@ ul li {
   font-family: "Open Sans", sans-serif; }
 
 a {
-  color: #BF5700; }
+  color: #a04400; }
   a:focus, a:hover {
-    color: #BF5700; }
+    color: #a04400; }
 
 .page-node-type-project .region-content article .right-sidebar {
   background-color: #efefef;
@@ -6646,7 +6646,7 @@ div [class*="view-display-id-page_"] h3.faculty-title {
   font-size: 1.4em;
   margin-bottom: 5px; }
   div [class*="view-display-id-page_"] h3.faculty-title a {
-    color: #BF5700; }
+    color: #a04400; }
 
 div [class*="view-display-id-page_"] .views-field-field-affiliated-departments {
   font-size: 1em; }
@@ -6667,13 +6667,13 @@ div [class*="view-display-id-page_"] .views-field-field-research-interests .fiel
     line-height: 1.4em; }
 
 div [class*="view-display-id-page_"] .views-field-nothing a {
-  color: #BF5700;
+  color: #a04400;
   padding: 4px 6px;
   display: inline-block;
   margin-top: 6px;
-  border: 1px solid #BF5700; }
+  border: 1px solid #a04400; }
   div [class*="view-display-id-page_"] .views-field-nothing a:hover, div [class*="view-display-id-page_"] .views-field-nothing a:focus {
-    background-color: #BF5700;
+    background-color: #a04400;
     color: #fff;
     text-decoration: none; }
 
@@ -6685,7 +6685,7 @@ div [class*="view-display-id-page_"] .views-field-nothing a {
   font-size: 1.4em;
   margin-bottom: 5px; }
   .view-eureka-taxonomy-term h3.views-field-title a {
-    color: #BF5700; }
+    color: #a04400; }
 
 .view-eureka-taxonomy-term .views-field-field-project-lead {
   font-size: 1em; }
