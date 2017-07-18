@@ -6799,7 +6799,9 @@ div [class*="view-display-id-page_"] .views-field-nothing a {
       float: none; }
       header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav li {
         float: none;
-        display: block; } }
+        display: block; }
+  .right-sidebar.col-sm-3 {
+    width: 100%; } }
 
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
