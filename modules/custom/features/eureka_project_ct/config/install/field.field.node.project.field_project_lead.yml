@@ -15,16 +15,16 @@ translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  handler: views
+  handler: 'default:user'
   handler_settings:
-    include_anonymous: true
+    include_anonymous: false
     filter:
       type: role
       role:
         faculty: faculty
     target_bundles: null
     sort:
-      field: field_display_name
+      field: uid
       direction: ASC
     auto_create: false
 field_type: entity_reference
