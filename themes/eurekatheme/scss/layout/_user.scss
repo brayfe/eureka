@@ -13,7 +13,7 @@
       }
 
       .right-sidebar {
-        background-color: #efefef;
+        background-color: $lightgray;
         padding: 1em 1em 0 1em;
       }
 
@@ -58,14 +58,14 @@
 
         .field--item {
           padding: 4px 8px;
-          background-color: #efefef;
+          background-color: $lightgray;
           display: inline-block;
           margin-right: .5em;
           margin-bottom: .5em;
 
           &:hover,
           &:focus {
-            background-color: #efefef;
+            background-color: $lightgray;
           }
         }
       }

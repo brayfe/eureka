@@ -6543,7 +6543,7 @@ a {
     color: #a04400; }
 
 .page-node-type-project .region-content article .right-sidebar {
-  background-color: #efefef;
+  background-color: #f6f6f6;
   padding: 1em 1em 0 1em; }
 
 .page-node-type-project .region-content article div.field {
@@ -6566,7 +6566,7 @@ a {
 
 .page-node-type-project .region-content article .field--name-field-close-date {
   padding: 1em;
-  background: #efefef; }
+  background: #f6f6f6; }
   .page-node-type-project .region-content article .field--name-field-close-date .field--label {
     border: none;
     line-height: 1em; }
@@ -6577,12 +6577,12 @@ a {
 
 .page-node-type-project .region-content article .field--name-field-project-tags .field--item {
   padding: 4px 8px;
-  background-color: #efefef;
+  background-color: #f6f6f6;
   display: inline-block;
   margin-right: .5em;
   margin-bottom: .5em; }
   .page-node-type-project .region-content article .field--name-field-project-tags .field--item:hover, .page-node-type-project .region-content article .field--name-field-project-tags .field--item:focus {
-    background-color: #efefef; }
+    background-color: #f6f6f6; }
 
 .page-node-type-project .region-content article div.field--name-field-display-name {
   margin-bottom: .5em; }
@@ -6591,7 +6591,7 @@ a {
   padding-left: 0; }
 
 .path-user .region-content article .right-sidebar {
-  background-color: #efefef;
+  background-color: #f6f6f6;
   padding: 1em 1em 0 1em; }
 
 .path-user .region-content article div.field {
@@ -6627,7 +6627,7 @@ a {
 .path-user .region-content article .field--name-field-academic-interest .field--item,
 .path-user .region-content article .field--name-field-countries-acad-interest .field--item {
   padding: 4px 8px;
-  background-color: #efefef;
+  background-color: #f6f6f6;
   display: inline-block;
   margin-right: .5em;
   margin-bottom: .5em; }
@@ -6636,7 +6636,7 @@ a {
   .path-user .region-content article .field--name-field-academic-interest .field--item:focus,
   .path-user .region-content article .field--name-field-countries-acad-interest .field--item:hover,
   .path-user .region-content article .field--name-field-countries-acad-interest .field--item:focus {
-    background-color: #efefef; }
+    background-color: #f6f6f6; }
 
 div [class*="view-display-id-page_"] h2.block-title {
   padding-bottom: 10px;

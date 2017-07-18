@@ -15,7 +15,7 @@
       }
 
       .right-sidebar {
-        background-color: #efefef;
+        background-color: $lightgray;
         padding: 1em 1em 0 1em;
       }
 
@@ -44,7 +44,7 @@
 
       .field--name-field-close-date {
         padding: 1em;
-        background: #efefef;
+        background: $lightgray;
 
         .field--label {
           border: none;
@@ -61,14 +61,14 @@
 
         .field--item {
           padding: 4px 8px;
-          background-color: #efefef;
+          background-color: $lightgray;
           display: inline-block;
           margin-right: .5em;
           margin-bottom: .5em;
 
           &:hover,
           &:focus {
-            background-color: #efefef;
+            background-color: $lightgray;
           }
         }
       }
