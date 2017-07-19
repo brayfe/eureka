@@ -43,7 +43,7 @@ function _eureka_profile_entity_validate(&$form, FormStateInterface $form_state)
     'mail' => 'value',
   ];
   if (in_array('faculty', $roles)) {
-    $required_fields  = [
+    $required_fields = [
       'field_display_name' => 'text',
       'field_first_name' => 'text',
       'field_last_name' => 'text',
@@ -89,26 +89,24 @@ function _eureka_profile_entity_check_required($key, $type, FormStateInterface $
   }
 }
 
-
 /**
-* Implements hook_page_attachments_alter().
-*
-* Print user display name as the page title.
-*/
+ * Implements hook_page_attachments_alter().
+ *
+ * Print user display name as the page title.
+ */
 function eureka_profile_entity_page_attachments_alter(array &$page) {
- $user = \Drupal::routeMatch()->getParameter('user');
- if ($user) {
-   $config = \Drupal::config('system.site');
-   $name = $user->get('field_display_name')->getString();
-   if ($name && $name != ' ') {
-     $page['#attached']['html_head'][] = [
-         [
-           '#tag' => 'title',
-           '#value' => $name . ' | ' . $config->get('name'),
-         ],
-       'title',
-     ];
-   }
- }
-
+  $user = \Drupal::routeMatch()->getParameter('user');
+  if ($user) {
+    $config = \Drupal::config('system.site');
+    $name = $user->get('field_display_name')->getString();
+    if ($name && $name != ' ') {
+      $page['#attached']['html_head'][] = [
+        [
+          '#tag' => 'title',
+          '#value' => $name . ' | ' . $config->get('name'),
+        ],
+        'title',
+      ];
+    }
+  }
 }

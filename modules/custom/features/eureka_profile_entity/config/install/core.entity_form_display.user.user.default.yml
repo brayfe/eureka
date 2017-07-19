@@ -25,11 +25,10 @@ dependencies:
     - field.field.user.user.field_tags
   module:
     - field_group
-    - field_layout
     - inline_entity_form
-    - layout_discovery
     - link
     - multiselect
+    - path
     - term_reference_tree
     - text
     - user
@@ -52,7 +51,6 @@ third_party_settings:
     group_account:
       children:
         - account
-        - field_is_active
       parent_name: group_faculty_user_form
       weight: 8
       format_type: tab
@@ -66,6 +64,7 @@ third_party_settings:
       label: Account
     group_faculty_information:
       children:
+        - field_is_active
         - field_display_name
         - field_first_name
         - field_last_name
@@ -95,7 +94,7 @@ third_party_settings:
         - field_open_to_work_with
         - field_responsibilities
       parent_name: group_faculty_information
-      weight: 13
+      weight: 9
       format_type: details
       format_settings:
         label: 'Lab and Internship Details'
@@ -111,7 +110,7 @@ third_party_settings:
         - field_research_units
         - field_research_website
       parent_name: group_faculty_information
-      weight: 11
+      weight: 8
       format_type: details
       format_settings:
         label: 'Research Details'
@@ -148,9 +147,6 @@ third_party_settings:
         description: ''
         required_fields: false
       label: Projects
-  field_layout:
-    id: layout_onecol
-    settings: {  }
 id: user.user.default
 targetEntityType: user
 bundle: user
@@ -168,7 +164,7 @@ content:
     type: multiselect
     region: content
   field_affiliated_departments:
-    weight: 9
+    weight: 7
     settings: {  }
     third_party_settings: {  }
     type: term_reference_tree
@@ -189,7 +185,7 @@ content:
     type: multiselect
     region: content
   field_display_name:
-    weight: 3
+    weight: 2
     settings:
       size: 60
       placeholder: ''
@@ -205,7 +201,7 @@ content:
     type: link_default
     region: content
   field_first_name:
-    weight: 4
+    weight: 3
     settings:
       size: 60
       placeholder: ''
@@ -220,7 +216,7 @@ content:
     type: boolean_checkbox
     region: content
   field_job_title:
-    weight: 6
+    weight: 5
     settings:
       match_operator: CONTAINS
       size: 60
@@ -245,7 +241,7 @@ content:
     type: link_default
     region: content
   field_last_name:
-    weight: 5
+    weight: 4
     settings:
       size: 60
       placeholder: ''
@@ -272,7 +268,7 @@ content:
     type: inline_entity_form_complex
     region: content
   field_research_interests:
-    weight: 7
+    weight: 6
     settings:
       rows: 5
       placeholder: ''
@@ -321,7 +317,7 @@ content:
     type: text_textarea
     region: content
   field_tags:
-    weight: 16
+    weight: 10
     settings:
       match_operator: CONTAINS
       size: 60
