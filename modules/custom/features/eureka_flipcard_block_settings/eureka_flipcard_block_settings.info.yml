@@ -1,0 +1,8 @@
+name: eureka_flipcard_block_settings
+type: module
+core: 8.x
+dependencies:
+  - block
+  - system
+  - utexas_flipcard_block
+version: 8.x-1.0

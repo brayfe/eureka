@@ -6638,6 +6638,11 @@ a {
   .path-user .region-content article .field--name-field-countries-acad-interest .field--item:focus {
     background-color: #f6f6f6; }
 
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    width: auto;
+    padding: 0 20px; } }
+
 div [class*="view-display-id-page_"] h2.block-title {
   padding-bottom: 10px;
   border-bottom: 1px solid #000; }
@@ -6712,6 +6717,34 @@ div [class*="view-display-id-page_"] .views-field-nothing a {
 .view-empty p {
   font-size: 1em; }
 
+#edit-submit-eureka-faculty-search,
+#edit-submit-eureka-project-search {
+  background: #333f48;
+  outline: 0;
+  font-weight: bold;
+  font-size: 1em;
+  border: 1px solid #000; }
+  #edit-submit-eureka-faculty-search:hover, #edit-submit-eureka-faculty-search:focus,
+  #edit-submit-eureka-project-search:hover,
+  #edit-submit-eureka-project-search:focus {
+    font-size: 1.1em;
+    padding: 5px 10px; }
+
+.views-field-search-api-excerpt {
+  margin-top: 8px; }
+
+.facet-item {
+  font-size: .9em; }
+
+.view-eureka-faculty-search .view-header {
+  margin-bottom: 1em;
+  font-weight: bold;
+  margin-top: 19px;
+  font-size: 1.4em; }
+  .view-eureka-faculty-search .view-header h3.views-field-title {
+    margin-top: 18px;
+    margin-bottom: 1em; }
+
 .view-eureka-faculty-search .view-content {
   font-size: 14px; }
   .view-eureka-faculty-search .view-content .views-row {
@@ -6743,6 +6776,14 @@ div [class*="view-display-id-page_"] .views-field-nothing a {
     width: 80%;
     vertical-align: top; }
 
+.view-eureka-project-search .view-header {
+  margin-bottom: 1em;
+  font-weight: bold;
+  font-size: 1.4em; }
+  .view-eureka-project-search .view-header h3.views-field-title {
+    margin-top: 18px;
+    margin-bottom: 1em; }
+
 .view-eureka-project-search .view-content {
   font-size: 14px; }
   .view-eureka-project-search .view-content .views-row {
@@ -6754,7 +6795,7 @@ div [class*="view-display-id-page_"] .views-field-nothing a {
     .view-eureka-project-search .view-content .views-row > div {
       line-height: 1.2em;
       margin-bottom: 3px; }
-    .view-eureka-project-search .view-content .views-row .views-label-field-proj-lead-display-name {
+    .view-eureka-project-search .view-content .views-row .views-field-field-proj-lead-display-name {
       font-weight: bold; }
     .view-eureka-project-search .view-content .views-row p {
       font-size: 1em;

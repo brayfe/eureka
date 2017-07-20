@@ -1,0 +1,6 @@
+name: eureka_filtered_html_format
+type: module
+core: 8.x
+dependencies:
+  - filter
+version: 8.x-1.0
