@@ -25,7 +25,13 @@ dependencies:
     - field.field.user.user.field_student_assistant
     - field.field.user.user.field_tags
   module:
+    - field_layout
+    - layout_discovery
     - user
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 id: user.user.compact
 targetEntityType: user
 bundle: user

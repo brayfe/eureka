@@ -3,10 +3,14 @@ description: 'The Project content type and field definitions.'
 type: module
 core: 8.x
 dependencies:
+  - block
+  - ctools
   - datetime
   - eureka_profile_entity
   - field
   - field_group
+  - field_layout
+  - layout_discovery
   - link
   - menu_ui
   - node

@@ -1,0 +1,74 @@
+// user styling
+
+// user pages styling
+
+.path-user {
+
+  .region-content {
+
+    article {
+
+      .col-sm-9 {
+        padding-left: 0;
+      }
+
+      .right-sidebar {
+        background-color: $lightgray;
+        padding: 1em 1em 0 1em;
+      }
+
+      div.field {
+        margin-bottom: 2em;
+      }
+
+      .field--label {
+        font-weight: bold;
+        font-size: 1.25em;
+        border-bottom: 1px solid #000;
+        margin-bottom: 10px;
+      }
+
+      a {
+        font-size: 1em;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+      }
+
+      div.field.field--name-field-display-name {
+        margin-bottom: 20px;
+      }
+
+      .field--name-field-display-name {
+        padding-bottom: 9px;
+        margin: 40px 0 20px;
+        font-family: "Open Sans", sans-serif;
+        font-weight: 700;
+        -webkit-font-smoothing: antialiased;
+        margin-top: 0;
+        font-size: 36px;
+      }
+
+      p {
+        font-size: 1em;
+      }
+
+      .field--name-field-tags,
+      .field--name-field-academic-interest,
+      .field--name-field-countries-acad-interest {
+
+        .field--item {
+          padding: 4px 8px;
+          background-color: $lightgray;
+          display: inline-block;
+          margin-right: .5em;
+          margin-bottom: .5em;
+
+          &:hover,
+          &:focus {
+            background-color: $lightgray;
+          }
+        }
+      }
+    }
+  }
+}

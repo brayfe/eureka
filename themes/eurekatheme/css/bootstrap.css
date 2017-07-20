@@ -6359,7 +6359,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
     font-size: 20px;
     margin: 5px 0; }
     .brand-bar .container .ugs-brand a {
-      color: #BF5700;
+      color: #a04400;
       font-family: CharisSIL-r, serif;
       font-weight: normal;
       font-size: .8em; }
@@ -6531,84 +6531,112 @@ h1, h2, h3, h4, h5 {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
 
+h1.page-header {
+  border: none; }
+
 ul li {
   font-family: "Open Sans", sans-serif; }
 
 a {
-  color: #BF5700; }
+  color: #a04400; }
   a:focus, a:hover {
-    color: #BF5700; }
+    color: #a04400; }
 
-.logo-header {
-  display: inline-block; }
+.page-node-type-project .region-content article .right-sidebar {
+  background-color: #f6f6f6;
+  padding: 1em 1em 0 1em; }
 
-@media only screen and (max-width: 991px) {
-  header.full-width .container .navbar-collapse {
-    width: 100%; }
-    header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav {
-      text-align: center;
-      float: none; }
-      header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav li {
-        float: none;
-        display: inline-block; } }
+.page-node-type-project .region-content article div.field {
+  margin-bottom: 2em; }
 
-@media only screen and (max-width: 767px) {
-  header.full-width .container .navbar-collapse {
-    width: 100%; }
-    header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav {
-      text-align: center;
-      float: none; }
-      header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav li {
-        float: none;
-        display: block; } }
+.page-node-type-project .region-content article .field--label {
+  font-weight: bold;
+  font-size: 1.25em;
+  border-bottom: 1px solid #000;
+  margin-bottom: 10px; }
 
-.navbar-default .navbar-toggle:hover,
-.navbar-default .navbar-toggle:focus {
-  background-color: transparent; }
+.page-node-type-project .region-content article a {
+  font-size: 1em; }
 
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .active > a:hover,
-.navbar-default .navbar-nav > .active > a:focus {
-  background-color: transparent; }
+.page-node-type-project .region-content article time {
+  font-size: 1em; }
 
-.navbar-default .navbar-header {
-  float: right;
-  display: inline-block; }
-  .navbar-default .navbar-header .navbar-toggle {
-    padding: 5px;
-    border: 1px solid #fff; }
-    .navbar-default .navbar-header .navbar-toggle:hover, .navbar-default .navbar-header .navbar-toggle:focus {
-      background: transparent; }
-    .navbar-default .navbar-header .navbar-toggle .sr-only {
-      position: relative;
-      color: #fff;
-      font-size: 1em;
-      line-height: 12px;
-      display: block;
-      width: auto;
-      height: auto;
-      margin: auto;
-      padding: 0 0 8px 0;
-      overflow: visible;
-      clip: auto;
-      border: 0; }
-    .navbar-default .navbar-header .navbar-toggle .icon-bar {
-      display: block;
-      background: #fff;
-      width: 40px;
-      height: 2px;
-      margin-bottom: 7px; }
-      .navbar-default .navbar-header .navbar-toggle .icon-bar:last-child {
-        margin-bottom: 4px; }
+.page-node-type-project .region-content article p {
+  font-size: 1em; }
 
-@media only screen and (max-width: 991px) {
-  .footer-wrapper footer.footer .footer-left {
-    width: 100%;
-    text-align: center; }
-  .footer-wrapper footer.footer .footer-right {
-    width: 100%;
-    text-align: center !important;
-    margin-top: 1em; } }
+.page-node-type-project .region-content article .field--name-field-close-date {
+  padding: 1em;
+  background: #f6f6f6; }
+  .page-node-type-project .region-content article .field--name-field-close-date .field--label {
+    border: none;
+    line-height: 1em; }
+
+.page-node-type-project .region-content article .field--name-field-contact-email .field--item a {
+  overflow-wrap: break-word;
+  word-wrap: break-word; }
+
+.page-node-type-project .region-content article .field--name-field-project-tags .field--item {
+  padding: 4px 8px;
+  background-color: #f6f6f6;
+  display: inline-block;
+  margin-right: .5em;
+  margin-bottom: .5em; }
+  .page-node-type-project .region-content article .field--name-field-project-tags .field--item:hover, .page-node-type-project .region-content article .field--name-field-project-tags .field--item:focus {
+    background-color: #f6f6f6; }
+
+.page-node-type-project .region-content article div.field--name-field-display-name {
+  margin-bottom: .5em; }
+
+.path-user .region-content article .col-sm-9 {
+  padding-left: 0; }
+
+.path-user .region-content article .right-sidebar {
+  background-color: #f6f6f6;
+  padding: 1em 1em 0 1em; }
+
+.path-user .region-content article div.field {
+  margin-bottom: 2em; }
+
+.path-user .region-content article .field--label {
+  font-weight: bold;
+  font-size: 1.25em;
+  border-bottom: 1px solid #000;
+  margin-bottom: 10px; }
+
+.path-user .region-content article a {
+  font-size: 1em;
+  overflow-wrap: break-word;
+  word-wrap: break-word; }
+
+.path-user .region-content article div.field.field--name-field-display-name {
+  margin-bottom: 20px; }
+
+.path-user .region-content article .field--name-field-display-name {
+  padding-bottom: 9px;
+  margin: 40px 0 20px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
+  -webkit-font-smoothing: antialiased;
+  margin-top: 0;
+  font-size: 36px; }
+
+.path-user .region-content article p {
+  font-size: 1em; }
+
+.path-user .region-content article .field--name-field-tags .field--item,
+.path-user .region-content article .field--name-field-academic-interest .field--item,
+.path-user .region-content article .field--name-field-countries-acad-interest .field--item {
+  padding: 4px 8px;
+  background-color: #f6f6f6;
+  display: inline-block;
+  margin-right: .5em;
+  margin-bottom: .5em; }
+  .path-user .region-content article .field--name-field-tags .field--item:hover, .path-user .region-content article .field--name-field-tags .field--item:focus,
+  .path-user .region-content article .field--name-field-academic-interest .field--item:hover,
+  .path-user .region-content article .field--name-field-academic-interest .field--item:focus,
+  .path-user .region-content article .field--name-field-countries-acad-interest .field--item:hover,
+  .path-user .region-content article .field--name-field-countries-acad-interest .field--item:focus {
+    background-color: #f6f6f6; }
 
 @media (min-width: 768px) and (max-width: 991px) {
   .container {
@@ -6623,7 +6651,7 @@ div [class*="view-display-id-page_"] h3.faculty-title {
   font-size: 1.4em;
   margin-bottom: 5px; }
   div [class*="view-display-id-page_"] h3.faculty-title a {
-    color: #BF5700; }
+    color: #a04400; }
 
 div [class*="view-display-id-page_"] .views-field-field-affiliated-departments {
   font-size: 1em; }
@@ -6644,13 +6672,13 @@ div [class*="view-display-id-page_"] .views-field-field-research-interests .fiel
     line-height: 1.4em; }
 
 div [class*="view-display-id-page_"] .views-field-nothing a {
-  color: #BF5700;
+  color: #a04400;
   padding: 4px 6px;
   display: inline-block;
   margin-top: 6px;
-  border: 1px solid #BF5700; }
+  border: 1px solid #a04400; }
   div [class*="view-display-id-page_"] .views-field-nothing a:hover, div [class*="view-display-id-page_"] .views-field-nothing a:focus {
-    background-color: #BF5700;
+    background-color: #a04400;
     color: #fff;
     text-decoration: none; }
 
@@ -6662,7 +6690,7 @@ div [class*="view-display-id-page_"] .views-field-nothing a {
   font-size: 1.4em;
   margin-bottom: 5px; }
   .view-eureka-taxonomy-term h3.views-field-title a {
-    color: #BF5700; }
+    color: #a04400; }
 
 .view-eureka-taxonomy-term .views-field-field-project-lead {
   font-size: 1em; }
@@ -6790,6 +6818,79 @@ div [class*="view-display-id-page_"] .views-field-nothing a {
     display: inline-block;
     width: 80%;
     vertical-align: top; }
+
+.logo-header {
+  display: inline-block; }
+
+@media only screen and (max-width: 991px) {
+  header.full-width .container .navbar-collapse {
+    width: 100%; }
+    header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav {
+      text-align: center;
+      float: none; }
+      header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav li {
+        float: none;
+        display: inline-block; } }
+
+@media only screen and (max-width: 767px) {
+  header.full-width .container .navbar-collapse {
+    width: 100%; }
+    header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav {
+      text-align: center;
+      float: none; }
+      header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav li {
+        float: none;
+        display: block; }
+  .right-sidebar.col-sm-3 {
+    width: 100%; } }
+
+.navbar-default .navbar-toggle:hover,
+.navbar-default .navbar-toggle:focus {
+  background-color: transparent; }
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  background-color: transparent; }
+
+.navbar-default .navbar-header {
+  float: right;
+  display: inline-block; }
+  .navbar-default .navbar-header .navbar-toggle {
+    padding: 5px;
+    border: 1px solid #fff; }
+    .navbar-default .navbar-header .navbar-toggle:hover, .navbar-default .navbar-header .navbar-toggle:focus {
+      background: transparent; }
+    .navbar-default .navbar-header .navbar-toggle .sr-only {
+      position: relative;
+      color: #fff;
+      font-size: 1em;
+      line-height: 12px;
+      display: block;
+      width: auto;
+      height: auto;
+      margin: auto;
+      padding: 0 0 8px 0;
+      overflow: visible;
+      clip: auto;
+      border: 0; }
+    .navbar-default .navbar-header .navbar-toggle .icon-bar {
+      display: block;
+      background: #fff;
+      width: 40px;
+      height: 2px;
+      margin-bottom: 7px; }
+      .navbar-default .navbar-header .navbar-toggle .icon-bar:last-child {
+        margin-bottom: 4px; }
+
+@media only screen and (max-width: 991px) {
+  .footer-wrapper footer.footer .footer-left {
+    width: 100%;
+    text-align: center; }
+  .footer-wrapper footer.footer .footer-right {
+    width: 100%;
+    text-align: center !important;
+    margin-top: 1em; } }
 
 ol, ul {
   padding-left: 1.5em; }

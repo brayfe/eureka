@@ -18,9 +18,15 @@ dependencies:
     - node.type.project
   module:
     - datetime
+    - field_layout
+    - layout_discovery
     - link
     - text
     - user
+third_party_settings:
+  field_layout:
+    id: layout_twocol
+    settings: {  }
 id: node.project.default
 targetEntityType: node
 bundle: project
@@ -29,82 +35,84 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 2
+    weight: 1
     settings: {  }
     third_party_settings: {  }
-    region: content
+    region: left
   field_close_date:
-    weight: 13
-    label: above
+    weight: 0
+    label: inline
     settings:
-      format_type: medium
-      timezone_override: ''
+      timezone_override: America/Chicago
+      date_format: 'F n, Y'
     third_party_settings: {  }
-    type: datetime_default
-    region: content
+    type: datetime_custom
+    region: left
   field_contact_email:
-    weight: 6
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: basic_string
-    region: content
-  field_contact_name:
-    weight: 5
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: content
-  field_duties:
-    weight: 10
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: content
-  field_faculty_collaborators:
-    weight: 4
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_length_commitment:
     weight: 12
     label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: email_mailto
+    region: right
+  field_contact_name:
+    weight: 11
+    label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
-  field_project_lead:
-    weight: 1
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_project_tags:
-    weight: 14
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
-    region: content
-  field_project_timeline:
-    weight: 9
+    region: right
+  field_duties:
+    weight: 5
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
+    region: left
+  field_faculty_collaborators:
+    weight: 10
+    label: above
+    settings:
+      view_mode: compact
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: right
+  field_length_commitment:
+    weight: 7
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: left
+  field_project_lead:
+    weight: 9
+    label: above
+    settings:
+      view_mode: compact
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: right
+  field_project_tags:
+    weight: 8
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: left
+  field_project_timeline:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+    region: left
   field_project_website:
-    weight: 3
+    weight: 2
     label: above
     settings:
       trim_length: 80
@@ -114,25 +122,21 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
-    region: content
+    region: left
   field_qualifications:
-    weight: 8
+    weight: 3
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
-    region: content
+    region: left
   field_time_commitment:
-    weight: 11
+    weight: 6
     label: above
     settings:
       link_to_entity: false
     third_party_settings: {  }
     type: string
-    region: content
-  links:
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-hidden: {  }
+    region: left
+hidden:
+  links: true

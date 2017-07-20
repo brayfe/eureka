@@ -12,6 +12,11 @@ use Drupal\Core\Form\FormStateInterface;
  */
 function eureka_profile_entity_form_alter(&$form, FormStateInterface $form_state, $form_id) {
   if (in_array($form_id, array('user_form', 'user_register_form'))) {
+    foreach ($form as $field => $values) {
+      if (!empty($values['#parents'])) {
+        $form[$field]['#group'] = key($values['#parents']);
+      }
+    }
     $form['#attached']['library'][] = 'eureka_profile_entity/user_form';
     // Set name & mail to non-required to override HTML5 validation.
     $form['account']['name']['#weight'] = -10;
@@ -21,6 +26,7 @@ function eureka_profile_entity_form_alter(&$form, FormStateInterface $form_state
     $form['account']['mail']['#required'] = FALSE;
     $form['account']['mail']['#title'] .= ' *';
     $form['account']['pass']['#weight'] = -8;
+    $form['account']['#group'] = 'group_account';
 
     // Suppress display of path setting for user accounts.
     $form['path']['#access'] = FALSE;
@@ -33,11 +39,8 @@ function eureka_profile_entity_form_alter(&$form, FormStateInterface $form_state
  */
 function _eureka_profile_entity_validate(&$form, FormStateInterface $form_state) {
   $roles = array_values($form_state->getValue('roles'));
-  $required_fields = [
-    'mail' => 'text',
-  ];
   if (in_array('faculty', $roles)) {
-    $required_fields += [
+    $required_fields = [
       'field_display_name' => 'text',
       'field_first_name' => 'text',
       'field_last_name' => 'text',
@@ -63,6 +66,7 @@ function _eureka_profile_entity_check_required($key, $type, FormStateInterface $
   $name = str_replace('field_', '', $key);
   $field = $form_state->getValue($key);
   switch ($type) {
+
     case 'text':
       // Note: this will only require the *first* instance of the field.
       $content = $field[0]['value'];
@@ -76,5 +80,27 @@ function _eureka_profile_entity_check_required($key, $type, FormStateInterface $
 
   if ($content == '') {
     $form_state->setErrorByName($key, t('The %name field is required.', ['%name' => $name]));
+  }
+}
+
+/**
+ * Implements hook_page_attachments_alter().
+ *
+ * Print user display name as the page title.
+ */
+function eureka_profile_entity_page_attachments_alter(array &$page) {
+  $user = \Drupal::routeMatch()->getParameter('user');
+  if ($user) {
+    $config = \Drupal::config('system.site');
+    $name = $user->get('field_display_name')->getString();
+    if ($name && $name != ' ') {
+      $page['#attached']['html_head'][] = [
+        [
+          '#tag' => 'title',
+          '#value' => $name . ' | ' . $config->get('name'),
+        ],
+        'title',
+      ];
+    }
   }
 }

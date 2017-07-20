@@ -18,9 +18,15 @@ dependencies:
     - node.type.project
   module:
     - datetime
+    - field_layout
+    - layout_discovery
     - link
     - path
     - text
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
 id: node.project.default
 targetEntityType: node
 bundle: project

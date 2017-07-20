@@ -1,0 +1,56 @@
+{#
+/**
+ * @file
+ * Default theme implementation to display a two-column layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+set classes = [
+'layout--twocol',
+]
+%}
+{% if content %}
+  <div{{ attributes.addClass(classes) }}>
+
+    {% if content.top %}
+      <div class="layout-region layout-region--fullwidth">
+        {{ content.top }}
+      </div>
+    {% endif %}
+
+    <div class="main col-sm-9">
+      {% if content.left %}
+        {{ content.left }}
+      {% endif %}
+
+      {% if content.leftmiddle %}
+        <h3 class="heading-leftmiddle">Research Details</h3>
+        {{ content.leftmiddle }}
+      {% endif %}
+
+      {% if content.leftbottom %}
+        <h3 class="heading-leftbottom">Lab and Internship Details</h3>
+        {{ content.leftbottom }}
+      {% endif %}
+    </div>
+
+    {% if content.right %}
+      <div class="right-sidebar col-sm-3">
+        {{ content.right }}
+      </div>
+    {% endif %}
+
+    {% if content.bottom %}
+      <div class="layout-region layout-region--fullwidth">
+        {{ content.bottom }}
+      </div>
+    {% endif %}
+
+  </div>
+{% endif %}

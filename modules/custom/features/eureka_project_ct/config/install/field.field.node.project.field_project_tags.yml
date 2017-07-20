@@ -9,7 +9,7 @@ id: node.project.field_project_tags
 field_name: field_project_tags
 entity_type: node
 bundle: project
-label: 'Project-related Tags'
+label: Tags
 description: 'Start typing to find an existing tag in the system.'
 required: false
 translatable: false
