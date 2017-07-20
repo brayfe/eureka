@@ -1,3 +1,6 @@
-name: 'Settings Eurekatheme'
+name: 'Eureka Theme Settings'
 type: module
 core: 8.x
+dependencies:
+  - block
+  - ctools
