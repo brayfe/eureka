@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
+    - field.field.node.page.field_body
     - node.type.page
   module:
     - field_layout
@@ -20,4 +21,5 @@ content:
   links:
     weight: 100
     region: content
-hidden: {  }
+hidden:
+  field_body: true
