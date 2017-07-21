@@ -77,3 +77,22 @@ a {
   }
 }
 
+// override Bootstrap button styling
+.btn-primary {
+  background-color: $darkgray;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &:focus:active {
+    background-color: $gray;
+    outline: 0;
+    border-color: $gray;
+  }
+}
+
+// login form styling
+.user-login-form {
+  max-width: 250px;
+}
+
