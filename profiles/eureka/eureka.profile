@@ -41,6 +41,44 @@ function eureka_install_tasks_alter(array &$tasks, array $install_state) {
 }
 
 /**
+ * Install task callback; prepares a batch job to install Eureka extensions.
+ *
+ * @param array $install_state
+ *   The current install state.
+ *
+ * @return array
+ *   The batch job definition.
+ */
+function eureka_install_extensions(array &$install_state) {
+  $batch = [];
+  $modules = [
+    'features',
+    'config_update',
+    'settings_eurekatheme',
+    'eureka_filtered_html_format',
+    'eureka_page_content_type',
+    'eureka_footer_content',
+    'eureka_footer_block_settings',
+    'eureka_main_nav_menu_settings',
+    'eureka_faculty_profile_taxonomies',
+    'eureka_profile_entity',
+    'eureka_project_ct',
+    'eureka_search_setup',
+    'eureka_search_views',
+    'eureka_search_facets',
+    'simplify_global_settings',
+    'url_aliases',
+    'eureka_role_faculty',
+    'eureka_taxonomy_views',
+    'eureka_flipcard_block_settings',
+  ];
+  foreach ($modules as $module) {
+    $batch['operations'][] = ['eureka_install_module', (array) $module];
+  }
+  return $batch;
+}
+
+/**
  * Install task callback; Adds default terms to taxonomy.
  *
  * @param array $install_state
@@ -109,44 +147,6 @@ Eureka was originally created by Connexus: Connections in Undergraduate Studies,
 
 For more information about EUREKA, please contact the <a href="https://ugs.utexas.edu/about/contact">Office of Undergraduate Research</a>.';
 
-}
-
-/**
- * Install task callback; prepares a batch job to install Eureka extensions.
- *
- * @param array $install_state
- *   The current install state.
- *
- * @return array
- *   The batch job definition.
- */
-function eureka_install_extensions(array &$install_state) {
-  $batch = [];
-  $modules = [
-    'features',
-    'config_update',
-    'settings_eurekatheme',
-    'eureka_filtered_html_format',
-    'eureka_page_content_type',
-    'eureka_footer_content',
-    'eureka_footer_block_settings',
-    'eureka_main_nav_menu_settings',
-    'eureka_faculty_profile_taxonomies',
-    'eureka_profile_entity',
-    'eureka_project_ct',
-    'eureka_search_setup',
-    'eureka_search_views',
-    'eureka_search_facets',
-    'simplify_global_settings',
-    'url_aliases',
-    'eureka_role_faculty',
-    'eureka_taxonomy_views',
-    'eureka_flipcard_block_settings',
-  ];
-  foreach ($modules as $module) {
-    $batch['operations'][] = ['eureka_install_module', (array) $module];
-  }
-  return $batch;
 }
 
 /**
