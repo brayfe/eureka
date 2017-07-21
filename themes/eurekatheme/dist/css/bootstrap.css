@@ -6542,6 +6542,9 @@ a {
   a:focus, a:hover {
     color: #a04400; }
 
+.page-node-type-project .region-content article .col-sm-9 {
+  padding-left: 0; }
+
 .page-node-type-project .region-content article .right-sidebar {
   background-color: #f6f6f6;
   padding: 1em 1em 0 1em; }
@@ -6552,7 +6555,7 @@ a {
 .page-node-type-project .region-content article .field--label {
   font-weight: bold;
   font-size: 1.25em;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #ccc;
   margin-bottom: 10px; }
 
 .page-node-type-project .region-content article a {
@@ -6580,7 +6583,9 @@ a {
   background-color: #f6f6f6;
   display: inline-block;
   margin-right: .5em;
-  margin-bottom: .5em; }
+  margin-bottom: .5em;
+  border: 1px solid #ddd;
+  border-radius: 0px; }
   .page-node-type-project .region-content article .field--name-field-project-tags .field--item:hover, .page-node-type-project .region-content article .field--name-field-project-tags .field--item:focus {
     background-color: #f6f6f6; }
 
@@ -6600,7 +6605,7 @@ a {
 .path-user .region-content article .field--label {
   font-weight: bold;
   font-size: 1.25em;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #ccc;
   margin-bottom: 10px; }
 
 .path-user .region-content article a {
@@ -6627,21 +6632,14 @@ a {
 .path-user .region-content article .field--name-field-academic-interest .field--item,
 .path-user .region-content article .field--name-field-countries-acad-interest .field--item {
   padding: 4px 8px;
-  background-color: #f6f6f6;
   display: inline-block;
   margin-right: .5em;
   margin-bottom: .5em; }
-  .path-user .region-content article .field--name-field-tags .field--item:hover, .path-user .region-content article .field--name-field-tags .field--item:focus,
-  .path-user .region-content article .field--name-field-academic-interest .field--item:hover,
-  .path-user .region-content article .field--name-field-academic-interest .field--item:focus,
-  .path-user .region-content article .field--name-field-countries-acad-interest .field--item:hover,
-  .path-user .region-content article .field--name-field-countries-acad-interest .field--item:focus {
-    background-color: #f6f6f6; }
 
-@media (min-width: 768px) and (max-width: 991px) {
-  .container {
-    width: auto;
-    padding: 0 20px; } }
+.path-user .region-content article .field--name-field-tags .field--item {
+  background-color: #f6f6f6;
+  border: 1px solid #ddd;
+  border-radius: 0px; }
 
 div [class*="view-display-id-page_"] h2.block-title {
   padding-bottom: 10px;
@@ -6841,6 +6839,8 @@ div [class*="view-display-id-page_"] .views-field-nothing a {
       header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav li {
         float: none;
         display: block; }
+  .main.col-sm-9 {
+    padding-right: 0; }
   .right-sidebar.col-sm-3 {
     width: 100%; } }
 
@@ -6891,6 +6891,11 @@ div [class*="view-display-id-page_"] .views-field-nothing a {
     width: 100%;
     text-align: center !important;
     margin-top: 1em; } }
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .container {
+    width: auto;
+    padding: 0 20px; } }
 
 ol, ul {
   padding-left: 1.5em; }
