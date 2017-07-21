@@ -92,7 +92,7 @@ section#block-flipcardblocksecond {
   text-decoration: underline;
   position: relative;
   font-weight: bold;
-  color: #fff;
+  color: #333;
 }
 .sb-container .card .back .backcover p a:focus, .sb-container .card .back .backcover p a:hover {
   text-decoration: none;
