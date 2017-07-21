@@ -5,7 +5,7 @@
  * Defines the Eureka Profile install screen by modifying the install form.
  */
 
-use \Drupal\node\Entity\Node;
+use Drupal\node\Entity\Node;
 use Drupal\taxonomy\Entity\Term;
 
 /**
@@ -109,6 +109,24 @@ function eureka_install_terms(array &$install_state) {
       'name' => $term,
       'vid' => $vid,
       'weight' => $weight,
+    ])->save();
+  }
+
+  $vid = 'close_date';
+  $terms = [
+    'Ongoing' => 'This is an ongoing project.',
+    'Closed' => 'This project is closed.',
+    'Future' => 'This project closes on',
+  ];
+
+  foreach ($terms as $term => $desc) {
+    $tid = Term::create([
+      'name' => $term,
+      'vid' => $vid,
+      'description' => [
+        'value' => $desc,
+        'format' => 'plain_text',
+      ],
     ])->save();
   }
 }
