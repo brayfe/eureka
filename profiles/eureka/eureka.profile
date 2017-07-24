@@ -71,6 +71,7 @@ function eureka_install_extensions(array &$install_state) {
     'eureka_role_faculty',
     'eureka_taxonomy_views',
     'eureka_flipcard_block_settings',
+    'eureka_role_anonymous',
   ];
   foreach ($modules as $module) {
     $batch['operations'][] = ['eureka_install_module', (array) $module];
@@ -189,7 +190,18 @@ function eureka_modify_configuration(array &$install_state) {
     ->load('taxonomy_term')
     ->setStatus(FALSE)
     ->save();
-  \Drupal::service('config.factory')->getEditable('system.site')->set('page.front', '/homepage')->save();
+
+  // Set Homepage.
+  \Drupal::service('config.factory')
+    ->getEditable('system.site')
+    ->set('page.front', '/homepage')
+    ->save();
+
+  // Set the Site Name.
+  \Drupal::configFactory()
+    ->getEditable('system.site')
+    ->set('name', 'Eureka')
+    ->save(TRUE);
 }
 
 /**

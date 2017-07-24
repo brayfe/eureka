@@ -1,3 +1,28 @@
 .multiselect-wrapper {
   display:flow-root;
 }
+
+/* accessibility fixes on form */
+.adminimal thead th {
+  color: #000 !important;
+}
+
+.form-item .description {
+  color: #000 !important;
+}
+
+.adminimal input.form-autocomplete,
+.adminimal input.form-text {
+  color: #000 !important;
+}
+
+.entity-meta {
+  background-color: #fcfcfa !important;
+  color: #000 !important;
+}
+
+.entity-meta details > summary {
+  text-shadow: none !important;
+  color: #000 !important;
+}
+

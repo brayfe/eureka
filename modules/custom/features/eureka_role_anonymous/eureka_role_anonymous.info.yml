@@ -1,0 +1,6 @@
+name: 'User Permissions'
+type: module
+core: 8.x
+dependencies:
+  - user
+version: 8.x-1.0

@@ -6542,6 +6542,16 @@ a {
   a:focus, a:hover {
     color: #a04400; }
 
+.btn-primary {
+  background-color: #382F2D; }
+  .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary:focus:active {
+    background-color: #333f48;
+    outline: 0;
+    border-color: #333f48; }
+
+.user-login-form {
+  max-width: 250px; }
+
 .page-node-type-project .region-content article #close-message.ongoing {
   background-color: #f6f6f6;
   padding: 12px 10px;
@@ -6576,7 +6586,7 @@ a {
 .page-node-type-project .region-content article .field--label {
   font-weight: bold;
   font-size: 1.25em;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #ccc;
   margin-bottom: 10px; }
 
 .page-node-type-project .region-content article a {
@@ -6604,7 +6614,9 @@ a {
   background-color: #f6f6f6;
   display: inline-block;
   margin-right: .5em;
-  margin-bottom: .5em; }
+  margin-bottom: .5em;
+  border: 1px solid #ddd;
+  border-radius: 0px; }
   .page-node-type-project .region-content article .field--name-field-project-tags .field--item:hover, .page-node-type-project .region-content article .field--name-field-project-tags .field--item:focus {
     background-color: #f6f6f6; }
 
@@ -6624,7 +6636,7 @@ a {
 .path-user .region-content article .field--label {
   font-weight: bold;
   font-size: 1.25em;
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid #ccc;
   margin-bottom: 10px; }
 
 .path-user .region-content article a {
@@ -6651,16 +6663,14 @@ a {
 .path-user .region-content article .field--name-field-academic-interest .field--item,
 .path-user .region-content article .field--name-field-countries-acad-interest .field--item {
   padding: 4px 8px;
-  background-color: #f6f6f6;
   display: inline-block;
   margin-right: .5em;
   margin-bottom: .5em; }
-  .path-user .region-content article .field--name-field-tags .field--item:hover, .path-user .region-content article .field--name-field-tags .field--item:focus,
-  .path-user .region-content article .field--name-field-academic-interest .field--item:hover,
-  .path-user .region-content article .field--name-field-academic-interest .field--item:focus,
-  .path-user .region-content article .field--name-field-countries-acad-interest .field--item:hover,
-  .path-user .region-content article .field--name-field-countries-acad-interest .field--item:focus {
-    background-color: #f6f6f6; }
+
+.path-user .region-content article .field--name-field-tags .field--item {
+  background-color: #f6f6f6;
+  border: 1px solid #ddd;
+  border-radius: 0px; }
 
 div [class*="view-display-id-page_"] h2.block-title {
   padding-bottom: 10px;
@@ -6860,6 +6870,8 @@ div [class*="view-display-id-page_"] .views-field-nothing a {
       header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav li {
         float: none;
         display: block; }
+  .main.col-sm-9 {
+    padding-right: 0; }
   .right-sidebar.col-sm-3 {
     width: 100%; } }
 
