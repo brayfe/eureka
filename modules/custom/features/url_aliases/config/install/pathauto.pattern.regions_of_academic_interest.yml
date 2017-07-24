@@ -7,7 +7,7 @@ dependencies:
 id: regions_of_academic_interest
 label: 'Regions of Academic Interest'
 type: 'canonical_entities:taxonomy_term'
-pattern: '[term:vocabulary:name]/[term:name]'
+pattern: 'region/[term:name]'
 selection_criteria:
   e1d9b745-3588-4b58-a479-94825ba154ec:
     id: 'entity_bundle:taxonomy_term'

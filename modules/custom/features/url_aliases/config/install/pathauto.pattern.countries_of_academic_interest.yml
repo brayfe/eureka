@@ -7,7 +7,7 @@ dependencies:
 id: countries_of_academic_interest
 label: 'Countries of Academic Interest'
 type: 'canonical_entities:taxonomy_term'
-pattern: '[term:vocabulary:name]/[term:description]'
+pattern: 'country/[term:description]'
 selection_criteria:
   5d9a3f8a-bcaf-466b-b5ff-021667b725c9:
     id: 'entity_bundle:taxonomy_term'
