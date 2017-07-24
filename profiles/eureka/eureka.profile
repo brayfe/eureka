@@ -116,7 +116,7 @@ function eureka_install_terms(array &$install_state) {
   $terms = [
     'Ongoing' => 'This is an ongoing project.',
     'Closed' => 'This project is closed.',
-    'Future' => 'This project closes on',
+    'Future' => 'This project closes on [F j, Y].',
   ];
 
   foreach ($terms as $term => $desc) {

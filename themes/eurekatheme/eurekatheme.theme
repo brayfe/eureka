@@ -38,14 +38,25 @@ function eurekatheme_preprocess_node(array &$variables) {
       }
     }
 
-    // Set a template variable to appropriate message.
+    // Get user defined message from taxonomy.
     $message = get_term_by_name($closing);
-    if ($closing == 'Future') {
-      $message .= ' ' . date('F j, Y', strtotime($date));
-    }
-    $variables['close_date_message'] = $message;
-  }
 
+    // Ensure message exists and there is a close date value.
+    if (!empty($message) && $closing != 'Ongoing') {
+      // Check if date token exists.
+      if (strpos($message, '[')) {
+        // Find token, and extract date format.
+        preg_match("/\[([^\]]*)\]/", $message, $format);
+        $date_format = $format[1];
+        // Replace token with formatted date.
+        $message = preg_replace("/\[([^\]]*)\]/", date($date_format, strtotime($date)), $message);
+      }
+    }
+
+    // Assign template variables with message and css class.
+    $variables['close_date_message'] = $message;
+    $variables['close_date_class'] = strtolower($closing);
+  }
 }
 
 /**
