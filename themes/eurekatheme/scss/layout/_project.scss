@@ -6,6 +6,30 @@
 
     article {
 
+      #close-message.ongoing {
+        background-color: $lightgray;
+        padding: 12px 10px;
+        font-weight: bold;
+        margin-bottom: 2em;
+        border: 1px solid #e4e4e4;
+      }
+
+      #close-message.closed {
+        background-color: $lightgray;
+        padding: 12px 10px;
+        font-weight: bold;
+        margin-bottom: 2em;
+        border: 1px solid #e4e4e4;
+      }
+
+      #close-message.future {
+        background-color: $lightgray;
+        padding: 12px 10px;
+        font-weight: bold;
+        margin-bottom: 2em;
+        border: 1px solid #e4e4e4;
+      }
+
       .col-sm-9 {
         padding-left: 0;
       }
