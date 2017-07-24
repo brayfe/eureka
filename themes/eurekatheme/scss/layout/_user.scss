@@ -24,7 +24,7 @@
       .field--label {
         font-weight: bold;
         font-size: 1.25em;
-        border-bottom: 1px solid #000;
+        border-bottom: 1px solid #ccc;
         margin-bottom: 10px;
       }
 
@@ -58,15 +58,23 @@
 
         .field--item {
           padding: 4px 8px;
-          background-color: $lightgray;
           display: inline-block;
           margin-right: .5em;
           margin-bottom: .5em;
 
           &:hover,
           &:focus {
-            background-color: $lightgray;
+            // background-color: $lightgray;
           }
+        }
+      }
+
+      .field--name-field-tags {
+
+        .field--item {
+          background-color: $lightgray;
+          border: 1px solid #ddd;
+          border-radius: 0px;
         }
       }
     }

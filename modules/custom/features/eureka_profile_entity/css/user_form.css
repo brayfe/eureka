@@ -16,3 +16,12 @@ input[id^="edit-field-research-website"][id*="title"] {
 .multiselect-wrapper {
   display:flow-root;
 }
+
+/* fix accessibility issues */
+.horizontal-tabs-list a {
+  color: #000 !important;
+}
+h4.label,
+.adminimal thead th {
+  color: #000 !important;
+}
