@@ -17,7 +17,6 @@ dependencies:
     - field.field.node.project.field_time_commitment
     - node.type.project
   module:
-    - datetime
     - field_layout
     - layout_discovery
     - link
@@ -35,28 +34,19 @@ content:
   body:
     label: hidden
     type: text_default
-    weight: 1
+    weight: 0
     settings: {  }
     third_party_settings: {  }
     region: left
-  field_close_date:
-    weight: 0
-    label: inline
-    settings:
-      timezone_override: America/Chicago
-      date_format: 'F n, Y'
-    third_party_settings: {  }
-    type: datetime_custom
-    region: left
   field_contact_email:
-    weight: 12
+    weight: 11
     label: above
     settings: {  }
     third_party_settings: {  }
     type: email_mailto
     region: right
   field_contact_name:
-    weight: 11
+    weight: 10
     label: above
     settings:
       link_to_entity: false
@@ -64,30 +54,13 @@ content:
     type: string
     region: right
   field_duties:
-    weight: 5
+    weight: 4
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: left
   field_faculty_collaborators:
-    weight: 10
-    label: above
-    settings:
-      view_mode: compact
-      link: false
-    third_party_settings: {  }
-    type: entity_reference_entity_view
-    region: right
-  field_length_commitment:
-    weight: 7
-    label: above
-    settings:
-      link_to_entity: false
-    third_party_settings: {  }
-    type: string
-    region: left
-  field_project_lead:
     weight: 9
     label: above
     settings:
@@ -96,8 +69,25 @@ content:
     third_party_settings: {  }
     type: entity_reference_entity_view
     region: right
-  field_project_tags:
+  field_length_commitment:
+    weight: 6
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+    region: left
+  field_project_lead:
     weight: 8
+    label: above
+    settings:
+      view_mode: compact
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+    region: right
+  field_project_tags:
+    weight: 7
     label: above
     settings:
       link: true
@@ -105,14 +95,14 @@ content:
     type: entity_reference_label
     region: left
   field_project_timeline:
-    weight: 4
+    weight: 3
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: left
   field_project_website:
-    weight: 2
+    weight: 1
     label: above
     settings:
       trim_length: 80
@@ -124,14 +114,14 @@ content:
     type: link
     region: left
   field_qualifications:
-    weight: 3
+    weight: 2
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: left
   field_time_commitment:
-    weight: 6
+    weight: 5
     label: above
     settings:
       link_to_entity: false
@@ -139,4 +129,5 @@ content:
     type: string
     region: left
 hidden:
+  field_close_date: true
   links: true

@@ -1,7 +1,85 @@
 <?php
+
 /**
  * @file
  * Bootstrap sub-theme.
  *
  * Place your custom PHP code in this file.
  */
+
+ /**
+  * Prepares variables for node templates.
+  *
+  * Default template: node.html.twig.
+  *
+  * @param array $variables
+  *   An associative array containing:
+  *   - elements: An array of elements to display in view mode.
+  *   - node: The node object.
+  *   - view_mode: View mode; e.g., 'full', 'teaser', etc.
+  */
+function eurekatheme_preprocess_node(array &$variables) {
+  $node = $variables['elements']['#node'];
+  if ($node->getType() == 'project') {
+    // Set default value for when close date field is NULL.
+    $closing = 'Ongoing';
+    // Close Date field is not NULL.
+    if ($node->hasField('field_close_date') && !$node->field_close_date->isEmpty()) {
+      // Grab the close date field's value.
+      $date = $node->field_close_date->value;
+      $today = date("Y-m-d");
+      // Date in the past.
+      if ($date < $today) {
+        $closing = 'Closed';
+      }
+      // Date in the future.
+      else {
+        $closing = 'Future';
+      }
+    }
+
+    // Get user defined message from taxonomy.
+    $message = get_term_by_name($closing);
+
+    // Ensure message exists and there is a close date value.
+    if (!empty($message) && $closing != 'Ongoing') {
+      // Check if date token exists.
+      if (strpos($message, '[')) {
+        // Find token, and extract date format.
+        preg_match("/\[([^\]]*)\]/", $message, $format);
+        $date_format = $format[1];
+        // Replace token with formatted date.
+        $message = preg_replace("/\[([^\]]*)\]/", date($date_format, strtotime($date)), $message);
+      }
+    }
+
+    // Assign template variables with message and css class.
+    $variables['close_date_message'] = $message;
+    $variables['close_date_class'] = strtolower($closing);
+  }
+}
+
+/**
+ * Utility: find term by name and vid.
+ *
+ * @param null $name
+ *   Term name.
+ * @param null $vid
+ *   Term vid.
+ *
+ * @return int
+ *   Term id or 0 if none.
+ */
+function get_term_by_name($name = NULL, $vid = NULL) {
+  $properties = [];
+  if (!empty($name)) {
+    $properties['name'] = $name;
+  }
+  if (!empty($vid)) {
+    $properties['vid'] = $vid;
+  }
+  $terms = \Drupal::entityManager()->getStorage('taxonomy_term')->loadByProperties($properties);
+  $term = reset($terms);
+
+  return !empty($term) ? $term->getDescription() : 0;
+}

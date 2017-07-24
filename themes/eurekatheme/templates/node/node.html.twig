@@ -85,6 +85,10 @@
   {% endif %}
   {{ title_suffix }}
 
+  {% if close_date_message %}
+    <div id='close-message' class="{{ close_date_class }}">{{ close_date_message }}</div>
+  {% endif %}
+
   {% if display_submitted %}
     <footer>
       {{ author_picture }}
