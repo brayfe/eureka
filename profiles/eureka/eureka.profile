@@ -171,7 +171,18 @@ function eureka_modify_configuration(array &$install_state) {
     ->load('taxonomy_term')
     ->setStatus(FALSE)
     ->save();
-  \Drupal::service('config.factory')->getEditable('system.site')->set('page.front', '/homepage')->save();
+
+  // Set Homepage.
+  \Drupal::service('config.factory')
+    ->getEditable('system.site')
+    ->set('page.front', '/homepage')
+    ->save();
+
+  // Set the Site Name.
+  \Drupal::configFactory()
+    ->getEditable('system.site')
+    ->set('name', 'Eureka')
+    ->save(TRUE);
 }
 
 /**
