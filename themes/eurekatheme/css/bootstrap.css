@@ -6542,6 +6542,16 @@ a {
   a:focus, a:hover {
     color: #a04400; }
 
+.btn-primary {
+  background-color: #382F2D; }
+  .btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary:focus:active {
+    background-color: #333f48;
+    outline: 0;
+    border-color: #333f48; }
+
+.user-login-form {
+  max-width: 250px; }
+
 .page-node-type-project .region-content article .col-sm-9 {
   padding-left: 0; }
 
