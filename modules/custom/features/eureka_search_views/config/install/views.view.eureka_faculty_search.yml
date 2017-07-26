@@ -50,7 +50,7 @@ display:
       pager:
         type: full
         options:
-          items_per_page: 25
+          items_per_page: 10
           offset: 0
           id: 0
           total_pages: null
@@ -241,7 +241,7 @@ display:
             more_link: false
             more_link_text: ''
             more_link_path: ''
-            strip_tags: false
+            strip_tags: true
             trim: true
             preserve_tags: ''
             html: false
@@ -477,7 +477,7 @@ display:
             more_link: false
             more_link_text: ''
             more_link_path: ''
-            strip_tags: false
+            strip_tags: true
             trim: false
             preserve_tags: ''
             html: false
@@ -595,6 +595,18 @@ display:
           id: field_last_name
           table: search_api_index_faculty_index
           field: field_last_name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: search_api
+        field_first_name:
+          id: field_first_name
+          table: search_api_index_faculty_index
+          field: field_first_name
           relationship: none
           group_type: group
           admin_label: ''
