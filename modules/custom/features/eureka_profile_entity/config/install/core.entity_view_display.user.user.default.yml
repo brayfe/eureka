@@ -39,7 +39,7 @@ bundle: user
 mode: default
 content:
   field_academic_interest:
-    weight: 7
+    weight: 9
     label: above
     settings:
       link: true
@@ -47,7 +47,7 @@ content:
     type: entity_reference_label
     region: left
   field_affiliated_departments:
-    weight: 3
+    weight: 13
     label: above
     settings:
       link: true
@@ -55,7 +55,7 @@ content:
     type: entity_reference_label
     region: left
   field_countries_acad_interest:
-    weight: 8
+    weight: 10
     label: above
     settings:
       link: true
@@ -71,7 +71,7 @@ content:
     type: string
     region: top
   field_external_projects:
-    weight: 5
+    weight: 4
     label: above
     settings:
       trim_length: 80
@@ -111,14 +111,14 @@ content:
     region: right
   field_open_to_work_with:
     type: entity_reference_label
-    weight: 13
+    weight: 5
     region: left
     label: above
     settings:
       link: true
     third_party_settings: {  }
   field_projects:
-    weight: 4
+    weight: 3
     label: above
     settings:
       link: true
@@ -133,7 +133,7 @@ content:
     type: text_default
     region: left
   field_research_units:
-    weight: 9
+    weight: 11
     label: above
     settings:
       link: true
@@ -141,7 +141,7 @@ content:
     type: entity_reference_label
     region: left
   field_research_website:
-    weight: 10
+    weight: 12
     label: above
     settings:
       trim_length: 80
@@ -154,7 +154,7 @@ content:
     region: left
   field_responsibilities:
     type: string
-    weight: 14
+    weight: 6
     region: left
     label: above
     settings:
@@ -162,20 +162,20 @@ content:
     third_party_settings: {  }
   field_sa_notes:
     type: text_default
-    weight: 12
+    weight: 8
     region: left
     label: above
     settings: {  }
     third_party_settings: {  }
   field_student_assistant:
-    weight: 11
+    weight: 7
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: left
   field_tags:
-    weight: 6
+    weight: 14
     label: above
     settings:
       link: true
