@@ -54,6 +54,10 @@
         margin-top: 0;
       }
 
+      .views-label {
+        font-weight: bold;
+      }
+
       > div {
         line-height: 1.2em;
       }
@@ -107,13 +111,13 @@
   .view-header {
     margin-bottom: 1em;
     font-weight: bold;
-    // margin-top: 19px;
     font-size: 1.4em;
 
     h3.views-field-title {
       margin-top: 18px;
       margin-bottom: 1em;
     }
+
   }
 
   .view-content {
@@ -134,6 +138,10 @@
       }
 
       .views-field-field-proj-lead-display-name {
+        font-weight: bold;
+      }
+
+      .views-label {
         font-weight: bold;
       }
 

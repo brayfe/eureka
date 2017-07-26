@@ -6782,6 +6782,8 @@ div [class*="view-display-id-page_"] .views-field-nothing a {
       font-size: 1.4em;
       margin-bottom: 5px;
       margin-top: 0; }
+    .view-eureka-faculty-search .view-content .views-row .views-label {
+      font-weight: bold; }
     .view-eureka-faculty-search .view-content .views-row > div {
       line-height: 1.2em; }
     .view-eureka-faculty-search .view-content .views-row p {
@@ -6825,6 +6827,8 @@ div [class*="view-display-id-page_"] .views-field-nothing a {
       line-height: 1.2em;
       margin-bottom: 3px; }
     .view-eureka-project-search .view-content .views-row .views-field-field-proj-lead-display-name {
+      font-weight: bold; }
+    .view-eureka-project-search .view-content .views-row .views-label {
       font-weight: bold; }
     .view-eureka-project-search .view-content .views-row p {
       font-size: 1em;
