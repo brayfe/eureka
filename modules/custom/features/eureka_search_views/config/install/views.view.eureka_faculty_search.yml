@@ -603,6 +603,18 @@ display:
           expose:
             label: ''
           plugin_id: search_api
+        field_first_name:
+          id: field_first_name
+          table: search_api_index_faculty_index
+          field: field_first_name
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: search_api
       title: 'Eureka Faculty Search'
       header:
         area_text_custom:
