@@ -10,7 +10,7 @@ id: faculty_countries
 name: 'Faculty Facet - Countries'
 url_alias: countries
 weight: 0
-min_count: 2
+min_count: 1
 show_only_one_result: false
 field_identifier: field_countries_acad_interest
 facet_source_id: 'search_api:views_page__eureka_faculty_search__page_1'

@@ -10,7 +10,7 @@ id: faculty_tags
 name: 'Faculty Facet - Tags'
 url_alias: tags
 weight: 0
-min_count: 2
+min_count: 1
 show_only_one_result: false
 field_identifier: field_tags
 facet_source_id: 'search_api:views_page__eureka_faculty_search__page_1'
