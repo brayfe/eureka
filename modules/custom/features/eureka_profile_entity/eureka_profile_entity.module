@@ -8,6 +8,7 @@
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\node\Entity\Node;
+use Drupal\search_api\Entity\Index;
 
 /**
  * Implements hook_form_alter().
@@ -110,13 +111,18 @@ function eureka_profile_entity_page_attachments_alter(array &$page) {
 /**
  * Implements hook_ENTITY_TYPE_update().
  *
- * Queue all projects for reindexing for user.
+ * Queue all projects for reindexing when user is updated.
  */
 function eureka_profile_entity_user_update(EntityInterface $entity) {
   $projects = $entity->field_projects->getValue();
   if ($projects) {
     foreach ($projects as $project) {
-      Node::load($project['target_id'])->save();
+      // Load the project node.
+      $node = Node::load($project['target_id']);
+      // Set the changed value so it isn't updated by save.
+      $node->changed->value = $node->changed->value;
+      // Save the project to mark it for reindexing.
+      $node->save();
     }
   }
 }
