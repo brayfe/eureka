@@ -9,7 +9,7 @@ id: user.user.field_responsibilities
 field_name: field_responsibilities
 entity_type: user
 bundle: user
-label: 'Typical Responsibilities'
+label: 'Typical student contributions to my research'
 description: 'What research tasks might your research assistants or mentees typically engage in?'
 required: false
 translatable: false
