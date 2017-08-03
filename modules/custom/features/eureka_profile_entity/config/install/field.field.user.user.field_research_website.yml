@@ -10,7 +10,7 @@ id: user.user.field_research_website
 field_name: field_research_website
 entity_type: user
 bundle: user
-label: 'Research Website'
+label: 'Where to download my research'
 description: 'Links to websites hosting your research (e.g. ResearchGate, Academia.edu, Google Scholar).'
 required: false
 translatable: false
