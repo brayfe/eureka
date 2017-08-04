@@ -18,7 +18,7 @@ widget:
   type: checkbox
   config:
     show_numbers: true
-    soft_limit: 10
+    soft_limit: 5
 query_operator: or
 use_hierarchy: false
 expand_hierarchy: false
