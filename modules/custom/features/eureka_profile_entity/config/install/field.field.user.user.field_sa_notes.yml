@@ -10,7 +10,7 @@ id: user.user.field_sa_notes
 field_name: field_sa_notes
 entity_type: user
 bundle: user
-label: 'Notes on Previous Student Assistants'
+label: 'Comments about previous experiences working with students'
 description: 'If you''d like, you can provide other useful info about your previous experiences working with student researchers (including quotes from previous students).'
 required: false
 translatable: false
