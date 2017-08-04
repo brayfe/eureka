@@ -66,7 +66,6 @@ function eureka_install_extensions(array &$install_state) {
     'eureka_search_setup',
     'eureka_search_views',
     'eureka_search_facets',
-    'eureka_secondary_pages_menu',
     'simplify_global_settings',
     'url_aliases',
     'eureka_role_faculty',

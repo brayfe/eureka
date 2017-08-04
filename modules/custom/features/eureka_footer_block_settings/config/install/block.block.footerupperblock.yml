@@ -8,7 +8,7 @@ dependencies:
 id: footerupperblock
 theme: eurekatheme
 region: footer_upper
-weight: 0
+weight: -1
 provider: null
 plugin: footer_upper_block
 settings:

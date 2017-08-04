@@ -10,7 +10,7 @@ dependencies:
 id: footerpages
 theme: eurekatheme
 region: footer_upper
-weight: -6
+weight: 3
 provider: null
 plugin: 'system_menu_block:footer-pages'
 settings:

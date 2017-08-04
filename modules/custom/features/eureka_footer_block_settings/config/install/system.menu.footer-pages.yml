@@ -3,5 +3,5 @@ status: true
 dependencies: {  }
 id: footer-pages
 label: 'Footer Pages'
-description: ''
+description: 'Footer links to pages.'
 locked: false
