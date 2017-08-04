@@ -11,7 +11,7 @@ dependencies:
 id: facultyfacetcountries
 theme: eurekatheme
 region: sidebar_first
-weight: 1
+weight: -2
 provider: null
 plugin: 'facet_block:faculty_countries'
 settings:

@@ -11,7 +11,7 @@ dependencies:
 id: facultyfacetdepts
 theme: eurekatheme
 region: sidebar_first
-weight: -1
+weight: -5
 provider: null
 plugin: 'facet_block:faculty_depts'
 settings:
