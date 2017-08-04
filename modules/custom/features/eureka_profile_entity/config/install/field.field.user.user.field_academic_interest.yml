@@ -11,7 +11,7 @@ field_name: field_academic_interest
 entity_type: user
 bundle: user
 label: 'Regions of Academic Interest'
-description: ''
+description: 'Contact <a href="mailto:uresearch@austin.utexas.edu">uresearch@austin.utexas.edu</a> if you need to add a new option.'
 required: false
 translatable: false
 default_value: {  }
