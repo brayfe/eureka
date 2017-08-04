@@ -13,6 +13,7 @@ dependencies:
     - field.storage.node.field_project_tags
     - field.storage.user.field_academic_interest
     - field.storage.user.field_countries_acad_interest
+    - field.storage.user.field_is_active
     - search_api.server.eureka_search_server
   module:
     - user
@@ -139,6 +140,17 @@ field_settings:
       config:
         - field.storage.node.field_project_lead
         - field.storage.user.field_countries_acad_interest
+      module:
+        - user
+  field_is_active:
+    label: 'Project Lead » Active'
+    datasource_id: 'entity:node'
+    property_path: 'field_project_lead:entity:field_is_active'
+    type: boolean
+    dependencies:
+      config:
+        - field.storage.node.field_project_lead
+        - field.storage.user.field_is_active
       module:
         - user
 datasource_settings:
@@ -344,7 +356,7 @@ processor_settings:
       - themselves
       - then
       - there
-      - "there's"
+      - 'there''s'
       - these
       - they
       - 'they''d'
