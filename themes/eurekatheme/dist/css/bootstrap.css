@@ -6730,6 +6730,8 @@ div [class*="view-display-id-page_"] .views-field-nothing a {
     display: inline; }
     .view-eureka-taxonomy-term .views-field-field-project-lead .field-content article {
       display: inline; }
+      .view-eureka-taxonomy-term .views-field-field-project-lead .field-content article .layout--onecol {
+        display: inline-block; }
       .view-eureka-taxonomy-term .views-field-field-project-lead .field-content article .field--name-field-display-name {
         display: inline; }
 
