@@ -10,8 +10,8 @@ id: user.user.field_lab_website
 field_name: field_lab_website
 entity_type: user
 bundle: user
-label: 'Lab Website'
-description: ''
+label: 'Where to learn more'
+description: 'Add a link to the web page for your lab, your home page, or your department profile page.'
 required: false
 translatable: false
 default_value: {  }
