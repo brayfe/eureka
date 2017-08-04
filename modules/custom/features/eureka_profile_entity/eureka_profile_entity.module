@@ -119,10 +119,10 @@ function eureka_profile_entity_user_update(EntityInterface $entity) {
     foreach ($projects as $project) {
       // Load the project node.
       $node = Node::load($project['target_id']);
-      // Set the changed value so it isn't updated by save.
-      $node->changed->value = $node->changed->value;
-      // Save the project to mark it for reindexing.
-      $node->save();
+      // hook_entity_update expects a $node->original value to exist.
+      // We supply the same node since the node itself isn't changing.
+      $node->original = $node;
+      search_api_entity_update($node);
     }
   }
 }
