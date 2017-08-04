@@ -21,7 +21,6 @@ dependencies:
     - field.field.user.user.field_research_website
     - field.field.user.user.field_responsibilities
     - field.field.user.user.field_sa_notes
-    - field.field.user.user.field_student_assistant
     - field.field.user.user.field_tags
   module:
     - field_layout
@@ -167,13 +166,6 @@ content:
     label: above
     settings: {  }
     third_party_settings: {  }
-  field_student_assistant:
-    weight: 7
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
-    region: left
   field_tags:
     weight: 14
     label: above
