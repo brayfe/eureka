@@ -13,7 +13,7 @@ use Drupal\node\Entity\Node;
  * Implements hook_form_alter().
  */
 function eureka_profile_entity_form_alter(&$form, FormStateInterface $form_state, $form_id) {
-  if (in_array($form_id, array('user_form', 'user_register_form'))) {
+  if (in_array($form_id, ['user_form', 'user_register_form'])) {
     foreach ($form as $field => $values) {
       if (!empty($values['#parents'])) {
         $form[$field]['#group'] = key($values['#parents']);
@@ -58,10 +58,10 @@ function _eureka_profile_entity_validate(&$form, FormStateInterface $form_state)
  * Custom form validation logic for required fields.
  *
  * @param string $key
- *    The field's name (without field_).
+ *   The field's name (without field_).
  * @param string $type
  *   The field type.
- * @param FormStateInterface $form_state
+ * @param Drupal\Core\Form\FormStateInterface $form_state
  *   The form_state.
  */
 function _eureka_profile_entity_check_required($key, $type, FormStateInterface $form_state) {
