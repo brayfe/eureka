@@ -1,0 +1,8 @@
+name: 'Eureka Secondary Pages Menu'
+description: 'This is the menu that appears in the footer under the Wordmark and main menu links.'
+type: module
+core: 8.x
+dependencies:
+  - block
+  - system
+version: 8.x-1.0
