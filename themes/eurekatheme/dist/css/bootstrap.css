@@ -6453,7 +6453,8 @@ header.full-width {
 
 .footer-wrapper {
   background-color: #333f48;
-  margin-top: 3em; }
+  margin-top: 3em;
+  border-top: 5px solid #bf5700; }
   .footer-wrapper footer.footer {
     border-top: 1px solid #999;
     margin-top: 1.5em; }
