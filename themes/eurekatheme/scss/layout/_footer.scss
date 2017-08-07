@@ -15,7 +15,8 @@
   }
 
   #block-mainnavigation,
-  #block-mainnavigation-2 {
+  #block-mainnavigation-2,
+  #block-footerpages {
 
     ul {
       width: 90%;
@@ -39,6 +40,10 @@
         }
       }
     }
+  }
+
+  #block-mainnavigation-2 ul li a {
+    font-size: 1.2em;
   }
 }
 
