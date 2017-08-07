@@ -3,6 +3,7 @@ description: 'The fields and definitions added to the built-in user entity.'
 type: module
 core: 8.x
 dependencies:
+  - eureka_blocks
   - eureka_faculty_profile_taxonomies
   - eureka_project_ct
   - field

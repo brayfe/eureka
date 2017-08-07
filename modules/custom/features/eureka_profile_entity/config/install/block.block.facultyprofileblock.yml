@@ -1,0 +1,28 @@
+langcode: en
+status: false
+dependencies:
+  module:
+    - eureka_blocks
+    - system
+  theme:
+    - eurekatheme
+id: facultyprofileblock
+theme: eurekatheme
+region: sidebar_second
+weight: 0
+provider: null
+plugin: faculty_profile_block
+settings:
+  id: faculty_profile_block
+  label: 'WHAT SHOULD I DO NEXT?'
+  provider: eureka_blocks
+  label_display: visible
+  body:
+    value: 'Before reaching out about your research interests, the Office of Undergraduate Research recommends you attend an info session [https://ugs.utexas.edu/our/find/sessions] or advising for tips on contacting faculty members.'
+    format: plain_text
+visibility:
+  request_path:
+    id: request_path
+    pages: '/faculty*'
+    negate: false
+    context_mapping: {  }
