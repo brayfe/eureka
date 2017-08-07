@@ -1,0 +1,14 @@
+{
+  "name": "drupal/eureka_blocks",
+  "type": "drupal-module",
+  "description": "Module for defining custom blocks in Eureka",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/eureka_blocks",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "http://drupal.org/project/issues/eureka_blocks",
+    "source": "http://cgit.drupalcode.org/eureka_blocks"
+  },
+  "require": { }
+}
