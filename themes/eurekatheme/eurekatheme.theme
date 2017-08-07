@@ -98,10 +98,17 @@ function get_term_by_name($name = NULL, $vid = NULL) {
  *   - view_mode: View mode; e.g., 'full', 'teaser', etc.
  */
 function eureka_preprocess_layout__twocol(array &$variables) {
-  // Load block created by eureka_profile_entity.
-  $block = Block::load('facultyprofileblock');
-  // Assign the rendered block to a template variable.
-  $variables['profile_block'] = \Drupal::entityTypeManager()
-    ->getViewBuilder('block')
-    ->view($block);
+  // Determine if we're viewing a faculty profile.
+  $current_path = \Drupal::service('path.current')->getPath();
+  $alias_path = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
+
+  // If so, display faculty profile block.
+  if (strpos($alias_path, 'faculty')) {
+    // Load block created by eureka_profile_entity.
+    $block = Block::load('facultyprofileblock');
+    // Assign the rendered block to a template variable.
+    $variables['profile_block'] = \Drupal::entityTypeManager()
+      ->getViewBuilder('block')
+      ->view($block);
+  }
 }

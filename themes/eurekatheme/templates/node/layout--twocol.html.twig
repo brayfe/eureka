@@ -43,7 +43,9 @@ set classes = [
     {% if content.right %}
       <div class="right-sidebar col-sm-3">
         {{ content.right }}
-        {{ profile_block }}
+        {% if profile_block %}
+          {{ profile_block }}
+        {% endif %}
       </div>
     {% endif %}
 
