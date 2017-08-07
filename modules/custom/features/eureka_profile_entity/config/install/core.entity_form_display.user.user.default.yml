@@ -90,7 +90,6 @@ third_party_settings:
       children:
         - field_lab_contact
         - field_lab_website
-        - field_student_assistant
         - field_sa_notes
         - field_open_to_work_with
         - field_responsibilities
