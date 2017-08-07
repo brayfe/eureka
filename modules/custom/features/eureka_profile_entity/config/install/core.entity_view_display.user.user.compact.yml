@@ -22,7 +22,6 @@ dependencies:
     - field.field.user.user.field_research_website
     - field.field.user.user.field_responsibilities
     - field.field.user.user.field_sa_notes
-    - field.field.user.user.field_student_assistant
     - field.field.user.user.field_tags
   module:
     - field_layout
@@ -64,6 +63,5 @@ hidden:
   field_research_website: true
   field_responsibilities: true
   field_sa_notes: true
-  field_student_assistant: true
   field_tags: true
   member_for: true

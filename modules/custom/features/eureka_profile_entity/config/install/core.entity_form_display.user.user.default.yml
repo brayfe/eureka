@@ -21,7 +21,6 @@ dependencies:
     - field.field.user.user.field_research_website
     - field.field.user.user.field_responsibilities
     - field.field.user.user.field_sa_notes
-    - field.field.user.user.field_student_assistant
     - field.field.user.user.field_tags
   module:
     - field_group
@@ -91,7 +90,6 @@ third_party_settings:
       children:
         - field_lab_contact
         - field_lab_website
-        - field_student_assistant
         - field_sa_notes
         - field_open_to_work_with
         - field_responsibilities
@@ -307,14 +305,6 @@ content:
     region: content
   field_sa_notes:
     weight: 16
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textarea
-    region: content
-  field_student_assistant:
-    weight: 15
     settings:
       rows: 5
       placeholder: ''
