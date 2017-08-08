@@ -64,7 +64,6 @@ third_party_settings:
       label: Account
     group_faculty_information:
       children:
-        - field_is_active
         - field_display_name
         - field_first_name
         - field_last_name
