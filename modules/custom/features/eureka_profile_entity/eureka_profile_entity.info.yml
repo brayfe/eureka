@@ -3,6 +3,7 @@ description: 'The fields and definitions added to the built-in user entity.'
 type: module
 core: 8.x
 dependencies:
+  - block
   - eureka_blocks
   - eureka_faculty_profile_taxonomies
   - eureka_project_ct
@@ -15,6 +16,7 @@ dependencies:
   - multiselect
   - node
   - path
+  - system
   - taxonomy
   - term_reference_tree
   - text

@@ -9,7 +9,6 @@ dependencies:
     - field.field.user.user.field_display_name
     - field.field.user.user.field_external_projects
     - field.field.user.user.field_first_name
-    - field.field.user.user.field_is_active
     - field.field.user.user.field_job_title
     - field.field.user.user.field_lab_contact
     - field.field.user.user.field_lab_website
@@ -177,6 +176,5 @@ content:
 hidden:
   field_authorized_users: true
   field_first_name: true
-  field_is_active: true
   field_last_name: true
   member_for: true
