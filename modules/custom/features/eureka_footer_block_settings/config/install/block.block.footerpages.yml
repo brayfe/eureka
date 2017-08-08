@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-pages
+  module:
+    - system
+  theme:
+    - eurekatheme
+id: footerpages
+theme: eurekatheme
+region: footer_upper
+weight: 3
+provider: null
+plugin: 'system_menu_block:footer-pages'
+settings:
+  id: 'system_menu_block:footer-pages'
+  label: 'Footer Pages'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

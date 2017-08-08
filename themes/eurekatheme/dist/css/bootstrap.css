@@ -6432,24 +6432,31 @@ header.full-width {
       font-family: "GT-Sectra-Regular";
       letter-spacing: 2px; }
   .footer-upper #block-mainnavigation ul,
-  .footer-upper #block-mainnavigation-2 ul {
+  .footer-upper #block-mainnavigation-2 ul,
+  .footer-upper #block-footerpages ul {
     width: 90%;
     text-align: center;
     float: none;
     margin: 0 auto; }
     .footer-upper #block-mainnavigation ul li,
-    .footer-upper #block-mainnavigation-2 ul li {
+    .footer-upper #block-mainnavigation-2 ul li,
+    .footer-upper #block-footerpages ul li {
       float: none;
       display: inline-block;
       text-align: center; }
       .footer-upper #block-mainnavigation ul li a,
-      .footer-upper #block-mainnavigation-2 ul li a {
+      .footer-upper #block-mainnavigation-2 ul li a,
+      .footer-upper #block-footerpages ul li a {
         color: #fff; }
         .footer-upper #block-mainnavigation ul li a:hover, .footer-upper #block-mainnavigation ul li a:focus,
         .footer-upper #block-mainnavigation-2 ul li a:hover,
-        .footer-upper #block-mainnavigation-2 ul li a:focus {
+        .footer-upper #block-mainnavigation-2 ul li a:focus,
+        .footer-upper #block-footerpages ul li a:hover,
+        .footer-upper #block-footerpages ul li a:focus {
           background-color: transparent;
           text-decoration: underline; }
+  .footer-upper #block-mainnavigation-2 ul li a {
+    font-size: 1.2em; }
 
 .footer-wrapper {
   background-color: #333f48;

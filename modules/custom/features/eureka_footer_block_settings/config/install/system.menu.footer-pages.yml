@@ -1,0 +1,7 @@
+langcode: en
+status: true
+dependencies: {  }
+id: footer-pages
+label: 'Footer Secondary Pages Menu'
+description: 'Footer links to secondary pages'
+locked: false
