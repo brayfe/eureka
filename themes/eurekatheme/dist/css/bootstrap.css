@@ -6800,7 +6800,7 @@ div [class*="view-display-id-page_"] .views-field-nothing a {
   padding-left: 0;
   list-style-type: none; }
   [class*="block-facet-blockfaculty-"] ul li .facets-checkbox {
-    margin: 6px 5px 0 0;
+    margin: 2px 8px 0 0;
     display: inline-block; }
   [class*="block-facet-blockfaculty-"] ul li label {
     font-weight: normal;
@@ -6845,7 +6845,7 @@ div [class*="view-display-id-page_"] .views-field-nothing a {
   padding-left: 0;
   list-style-type: none; }
   [class*="block-facet-blockproject-"] ul li .facets-checkbox {
-    margin: 6px 5px 0 0;
+    margin: 2px 8px 0 0;
     display: inline-block; }
   [class*="block-facet-blockproject-"] ul li label {
     font-weight: normal;
