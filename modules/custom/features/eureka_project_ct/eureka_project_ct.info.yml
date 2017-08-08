@@ -6,6 +6,7 @@ dependencies:
   - block
   - ctools
   - datetime
+  - eureka_blocks
   - eureka_profile_entity
   - field
   - field_group
