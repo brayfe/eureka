@@ -23,7 +23,6 @@ process:
   field_lab_website:
     plugin: create_url
     source: website
-  field_is_active: is_active
   field_display_name:
     plugin: concat
     source:
