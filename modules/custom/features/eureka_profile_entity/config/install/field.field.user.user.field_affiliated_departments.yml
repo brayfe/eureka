@@ -11,7 +11,7 @@ field_name: field_affiliated_departments
 entity_type: user
 bundle: user
 label: 'Affiliated Departments'
-description: ''
+description: 'Contact <a href="mailto:uresearch@austin.utexas.edu">uresearch@austin.utexas.edu</a> if you need to add a new option.'
 required: false
 translatable: false
 default_value: {  }

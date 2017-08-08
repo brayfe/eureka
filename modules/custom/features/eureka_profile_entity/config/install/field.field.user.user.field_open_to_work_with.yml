@@ -11,7 +11,7 @@ field_name: field_open_to_work_with
 entity_type: user
 bundle: user
 label: 'Open to Working With'
-description: 'Please indicate any student populations you are particularly interested in working with.'
+description: 'Please indicate any student populations you are particularly interested in working with. Contact <a href="mailto:uresearch@austin.utexas.edu">uresearch@austin.utexas.edu</a> if you need to add a new option.'
 required: false
 translatable: false
 default_value: {  }
