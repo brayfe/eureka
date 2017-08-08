@@ -7,17 +7,19 @@
  * Place your custom PHP code in this file.
  */
 
- /**
-  * Prepares variables for node templates.
-  *
-  * Default template: node.html.twig.
-  *
-  * @param array $variables
-  *   An associative array containing:
-  *   - elements: An array of elements to display in view mode.
-  *   - node: The node object.
-  *   - view_mode: View mode; e.g., 'full', 'teaser', etc.
-  */
+use Drupal\block\Entity\Block;
+
+/**
+ * Prepares variables for node templates.
+ *
+ * Default template: node.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An array of elements to display in view mode.
+ *   - node: The node object.
+ *   - view_mode: View mode; e.g., 'full', 'teaser', etc.
+ */
 function eurekatheme_preprocess_node(array &$variables) {
   $node = $variables['elements']['#node'];
   if ($node->getType() == 'project') {
@@ -82,4 +84,31 @@ function get_term_by_name($name = NULL, $vid = NULL) {
   $term = reset($terms);
 
   return !empty($term) ? $term->getDescription() : 0;
+}
+
+/**
+ * Prepares variables for user templates.
+ *
+ * Default template: user.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An array of elements to display in view mode.
+ *   - node: The node object.
+ *   - view_mode: View mode; e.g., 'full', 'teaser', etc.
+ */
+function eureka_preprocess_layout__twocol(array &$variables) {
+  // Determine if we're viewing a faculty profile.
+  $current_path = \Drupal::service('path.current')->getPath();
+  $alias_path = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
+
+  // If so, display faculty profile block.
+  if (strpos($alias_path, 'faculty')) {
+    // Load block created by eureka_profile_entity.
+    $block = Block::load('facultyprofileblock');
+    // Assign the rendered block to a template variable.
+    $variables['profile_block'] = \Drupal::entityTypeManager()
+      ->getViewBuilder('block')
+      ->view($block);
+  }
 }
