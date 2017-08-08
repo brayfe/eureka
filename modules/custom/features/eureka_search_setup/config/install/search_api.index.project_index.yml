@@ -20,7 +20,7 @@ dependencies:
     - search_api
     - node
 id: project_index
-name: 'Project'
+name: Project
 description: ''
 read_only: false
 field_settings:
@@ -139,6 +139,16 @@ field_settings:
       config:
         - field.storage.node.field_project_lead
         - field.storage.user.field_countries_acad_interest
+      module:
+        - user
+  status:
+    label: 'Project Lead » User » Status'
+    datasource_id: 'entity:node'
+    property_path: 'field_project_lead:entity:status'
+    type: boolean
+    dependencies:
+      config:
+        - field.storage.node.field_project_lead
       module:
         - user
 datasource_settings:
