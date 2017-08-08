@@ -58,6 +58,13 @@ function eurekatheme_preprocess_node(array &$variables) {
     // Assign template variables with message and css class.
     $variables['close_date_message'] = $message;
     $variables['close_date_class'] = strtolower($closing);
+
+    // Load block created by eureka_project_ct.
+    $block = Block::load('projectblock');
+    // Assign the rendered block to a template variable.
+    $variables['project_block'] = \Drupal::entityTypeManager()
+      ->getViewBuilder('block')
+      ->view($block);
   }
 }
 
