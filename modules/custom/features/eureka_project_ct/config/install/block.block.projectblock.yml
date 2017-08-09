@@ -1,0 +1,30 @@
+langcode: en
+status: false
+dependencies:
+  module:
+    - eureka_blocks
+    - system
+  theme:
+    - eurekatheme
+id: projectblock
+theme: eurekatheme
+region: content
+weight: 10
+provider: null
+plugin: project_block
+settings:
+  id: project_block
+  label: 'I''M INTERESTED IN THIS PROJECT. WHAT SHOULD I DO NEXT?'
+  provider: eureka_blocks
+  label_display: visible
+  body:
+    value: 'The Office of Undergraduate Research recommends that you attend an info session [https://ugs.utexas.edu/our/find/sessions] or advising before contacting faculty members or project contacts about research opportunities. We''ll cover the steps to getting involved, tips for contacting faculty, funding possibilities, and options for course credit. Once you have attended an Office of undergraduate Research info session or spoken to an advisor, you can use the "Who to contact" details for this project to get in touch with the project leader and express your interest in getting involved.'
+    format: plain_text
+visibility:
+ 'entity_bundle:node':
+    id: 'entity_bundle:node'
+    bundles:
+      project: project
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
