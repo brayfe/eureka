@@ -37,7 +37,7 @@ bundle: user
 mode: default
 content:
   field_academic_interest:
-    weight: 9
+    weight: 8
     label: above
     settings:
       link: true
@@ -45,7 +45,7 @@ content:
     type: entity_reference_label
     region: left
   field_affiliated_departments:
-    weight: 13
+    weight: 12
     label: above
     settings:
       link: true
@@ -53,7 +53,7 @@ content:
     type: entity_reference_label
     region: left
   field_countries_acad_interest:
-    weight: 10
+    weight: 9
     label: above
     settings:
       link: true
@@ -131,7 +131,7 @@ content:
     type: text_default
     region: left
   field_research_units:
-    weight: 11
+    weight: 10
     label: above
     settings:
       link: true
@@ -139,7 +139,7 @@ content:
     type: entity_reference_label
     region: left
   field_research_website:
-    weight: 12
+    weight: 11
     label: above
     settings:
       trim_length: 80
@@ -160,19 +160,24 @@ content:
     third_party_settings: {  }
   field_sa_notes:
     type: text_default
-    weight: 8
+    weight: 7
     region: left
     label: above
     settings: {  }
     third_party_settings: {  }
   field_tags:
-    weight: 14
+    weight: 13
     label: above
     settings:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
     region: left
+  flag_profile_flag:
+    weight: 14
+    region: right
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   field_authorized_users: true
   field_first_name: true

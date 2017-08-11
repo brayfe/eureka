@@ -28,7 +28,6 @@ dependencies:
     - layout_discovery
     - link
     - multiselect
-    - path
     - term_reference_tree
     - text
     - user
