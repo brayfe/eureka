@@ -39,14 +39,14 @@ content:
     third_party_settings: {  }
     region: left
   field_contact_email:
-    weight: 11
+    weight: 12
     label: above
     settings: {  }
     third_party_settings: {  }
     type: email_mailto
     region: right
   field_contact_name:
-    weight: 10
+    weight: 11
     label: above
     settings:
       link_to_entity: false
@@ -61,7 +61,7 @@ content:
     type: text_default
     region: left
   field_faculty_collaborators:
-    weight: 9
+    weight: 10
     label: above
     settings:
       view_mode: compact
@@ -78,7 +78,7 @@ content:
     type: string
     region: left
   field_project_lead:
-    weight: 8
+    weight: 9
     label: above
     settings:
       view_mode: compact
@@ -128,6 +128,11 @@ content:
     third_party_settings: {  }
     type: string
     region: left
+  flag_project_flag:
+    weight: 8
+    region: right
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   field_close_date: true
   links: true

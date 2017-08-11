@@ -1,0 +1,9 @@
+name: 'Bookmark Settings'
+description: 'The initial configuration for both bookmark schemae'
+type: module
+core: 8.x
+dependencies:
+  - flag
+  - system
+  - user
+version: 8.x-1.0

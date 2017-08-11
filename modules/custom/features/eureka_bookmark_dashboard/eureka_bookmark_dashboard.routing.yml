@@ -1,0 +1,8 @@
+eureka_bookmark_dashboard.content:
+  path: '/my-bookmarks'
+  defaults:
+    _controller: '\Drupal\eureka_bookmark_dashboard\Controller\DashboardController::content'
+    _title: 'My Bookmarks'
+  requirements:
+    _permission: 'access content'
+    _user_is_logged_in: 'TRUE'
