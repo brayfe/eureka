@@ -5,3 +5,4 @@ eureka_bookmark_dashboard.content:
     _title: 'My Bookmarks'
   requirements:
     _permission: 'access content'
+    _user_is_logged_in: 'TRUE'
