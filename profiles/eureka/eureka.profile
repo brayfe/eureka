@@ -72,6 +72,7 @@ function eureka_install_extensions(array &$install_state) {
     'eureka_taxonomy_views',
     'eureka_flipcard_block_settings',
     'eureka_role_anonymous',
+    'eureka_bookmark_dashboard',
   ];
   foreach ($modules as $module) {
     $batch['operations'][] = ['eureka_install_module', (array) $module];
@@ -149,6 +150,20 @@ function eureka_install_content(array &$install_state) {
     ],
   ]);
   $node->save();
+
+  // Create Default Bookmark Dashboard.
+  $bookmark_node = Node::create([
+    'type'        => 'page',
+    'title'       => 'My Bookmarks',
+    'field_body' => [
+      'value' => '',
+      'format' => 'filtered_html',
+    ],
+  ]);
+  $bookmark_node->save();
+
+  // Set path for Bookmark Dashboard.
+  \Drupal::service('path.alias_storage')->save("/node/" . $bookmark_node->id(), "/my-bookmarks", "en");
 }
 
 /**
