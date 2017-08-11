@@ -6,8 +6,8 @@ dependencies:
   - flag
 package: Testing
 
-# Information added by Drupal.org packaging script on 2017-05-11
-version: '8.x-4.0-alpha2'
+# Information added by Drupal.org packaging script on 2017-07-30
+version: '8.x-4.0-alpha2+21-dev'
 core: '8.x'
 project: 'flag'
-datestamp: 1494517390
+datestamp: 1501374846
