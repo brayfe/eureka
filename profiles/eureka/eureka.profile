@@ -150,20 +150,6 @@ function eureka_install_content(array &$install_state) {
     ],
   ]);
   $node->save();
-
-  // Create Default Bookmark Dashboard.
-  $bookmark_node = Node::create([
-    'type'        => 'page',
-    'title'       => 'My Bookmarks',
-    'field_body' => [
-      'value' => '',
-      'format' => 'filtered_html',
-    ],
-  ]);
-  $bookmark_node->save();
-
-  // Set path for Bookmark Dashboard.
-  \Drupal::service('path.alias_storage')->save("/node/" . $bookmark_node->id(), "/my-bookmarks", "en");
 }
 
 /**
