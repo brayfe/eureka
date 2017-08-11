@@ -1,0 +1,17 @@
+name: 'Bookmark Dashboard'
+description: 'The dashboard to review bookmarked Faculty Profiles and Projects.'
+type: module
+core: 8.x
+dependencies:
+  - block
+  - datetime
+  - eureka_bookmark_settings
+  - eureka_profile_entity
+  - eureka_project_ct
+  - flag
+  - node
+  - system
+  - text
+  - user
+  - views
+version: 8.x-1.0

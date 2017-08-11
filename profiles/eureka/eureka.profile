@@ -72,6 +72,7 @@ function eureka_install_extensions(array &$install_state) {
     'eureka_taxonomy_views',
     'eureka_flipcard_block_settings',
     'eureka_role_anonymous',
+    'eureka_bookmark_dashboard',
   ];
   foreach ($modules as $module) {
     $batch['operations'][] = ['eureka_install_module', (array) $module];
