@@ -14,7 +14,7 @@ use Drupal\flag\FlagServiceInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
- * Provides a controller to flag and unflag when routed from a normal link.
+ * Provides a controller to generate a link to mark/unmark "Contacted status".
  */
 class ActionLinkController implements ContainerInjectionInterface {
 
@@ -110,6 +110,17 @@ class ActionLinkController implements ContainerInjectionInterface {
     return $this->generateResponse($entity_id, $request, TRUE);
   }
 
+  /**
+   * Main workhorse for creating an AJAX link.
+   *
+   * @param string $entity_id
+   *    The user ID associated with this flagging.
+   * @param string $status
+   *    Optional way to specify contacted/not contacted without a DB query.
+   *
+   * @return array|string
+   *    The link, as a render array.
+   */
   public static function buildLink($entity_id, $status = '') {
     $flag = \Drupal::entityTypeManager()->getStorage('flag')->load('profile_flag');
     $link_type_plugin = $flag->getLinkTypePlugin();
@@ -155,6 +166,17 @@ class ActionLinkController implements ContainerInjectionInterface {
 
   }
 
+  /**
+   * Wrapper for building a URL from route. Only used in buildLink().
+   *
+   * @param string $status
+   *    Optional way to specify contacted/not contacted without a DB query.
+   * @param string $entity_id
+   *    The user ID associated with this flagging.
+   *
+   * @return string
+   *    A built URL.
+   */
   public static function getContactedUrl($status, $entity_id) {
     $route = 'eureka_contacted_faculty.action_link_contacted';
     if ($status == FALSE) {
