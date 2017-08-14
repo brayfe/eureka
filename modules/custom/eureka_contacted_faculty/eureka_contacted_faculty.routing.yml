@@ -1,0 +1,13 @@
+eureka_contacted_faculty.action_link_contacted:
+  path: '/flag/contacted/{flag}/{entity_id}'
+  defaults:
+    _controller: '\Drupal\eureka_contacted_faculty\Controller\ActionLinkController::contacted'
+  requirements:
+    _csrf_token: 'TRUE'
+
+eureka_contacted_faculty.action_link_uncontacted:
+  path: '/flag/uncontacted/{flag}/{entity_id}'
+  defaults:
+    _controller: '\Drupal\eureka_contacted_faculty\Controller\ActionLinkController::uncontacted'
+  requirements:
+    _csrf_token: 'TRUE'

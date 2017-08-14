@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains eureka_contacted_faculty.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function eureka_contacted_faculty_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the eureka_contacted_faculty module.
+    case 'help.page.eureka_contacted_faculty':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Defines logic to log whether a student has contacted a faculty member') . '</p>';
+      return $output;
+
+    default:
+  }
+}
