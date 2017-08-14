@@ -6,6 +6,7 @@ dependencies:
   - block
   - datetime
   - eureka_bookmark_settings
+  - eureka_contacted_faculty
   - eureka_profile_entity
   - eureka_project_ct
   - flag

@@ -3,7 +3,11 @@ description: 'The initial configuration for both bookmark schemae'
 type: module
 core: 8.x
 dependencies:
+  - field
+  - field_layout
   - flag
+  - layout_discovery
+  - node
   - system
   - user
 version: 8.x-1.0

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.flagging.field_contacted_faculty
+    - flag.flag.profile_flag
+id: flagging.profile_flag.field_contacted_faculty
+field_name: field_contacted_faculty
+entity_type: flagging
+bundle: profile_flag
+label: contacted_faculty
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean
