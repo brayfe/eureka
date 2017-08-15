@@ -1,0 +1,17 @@
+<?php
+
+/**
+ * @file
+ * Module file for eureka_contacted_faculty.
+ */
+
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function eureka_contacted_faculty_views_pre_render(ViewExecutable $view) {
+  if (isset($view) && ($view->storage->id() == 'profile_flag_block')) {
+    $view->element['#attached']['library'][] = 'eureka_contacted_faculty/eureka-contacted-faculty';
+  }
+}

@@ -1,0 +1,5 @@
+eureka-contacted-faculty:
+  version: 1.x
+  css:
+    theme:
+      css/eureka-contacted-faculty.css: {}

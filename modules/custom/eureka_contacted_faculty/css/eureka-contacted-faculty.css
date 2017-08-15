@@ -1,0 +1,34 @@
+.views-field-contacted-faculty a {
+  border:1px solid #333f48;
+  color:#333f48;
+}
+
+.views-field-contacted-faculty a,
+.views-field-contacted-faculty a:hover,
+.views-field-contacted-faculty a:focus {
+  border-radius:4px;
+  display:inline-block;
+  padding:3px;
+  text-decoration:none;
+  text-align:center;
+}
+
+.views-field-contacted-faculty a:hover,
+.views-field-contacted-faculty a:focus {
+  border:1px solid #b5f700;
+  background-color:#333f48;
+  color:#fff;
+}
+.views-field-contacted-faculty a.contacted {
+  border:1px solid #382f2d;
+  background-color:#333f48;
+  text-decoration:none;
+  color:#fff;
+}
+
+.views-field-contacted-faculty a.contacted:hover,
+.views-field-contacted-faculty a.contacted:hover {
+  border:1px solid #b5f700;
+  background-color:#fff;
+  color:#333f48;
+}
