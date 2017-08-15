@@ -37,3 +37,12 @@
 td.views-field.views-field-contacted-faculty {
   text-align:center;
 }
+
+table ul {
+  padding-left:0em;
+}
+
+table ul li {
+  list-style:none;
+  padding-bottom:0.5em;
+}
