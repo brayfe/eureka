@@ -1,4 +1,5 @@
 .views-field-contacted-faculty a {
+  background-color:#D3D3D3;
   border:1px solid #333f48;
   color:#333f48;
 }
@@ -16,12 +17,12 @@
 .views-field-contacted-faculty a:hover,
 .views-field-contacted-faculty a:focus {
   border:1px solid #b5f700;
-  background-color:#333f48;
+  background-color:#007a29;
   color:#fff;
 }
 .views-field-contacted-faculty a.contacted {
   border:1px solid #382f2d;
-  background-color:#333f48;
+  background-color:#007a29;
   text-decoration:none;
   color:#fff;
 }
@@ -31,4 +32,8 @@
   border:1px solid #b5f700;
   background-color:#fff;
   color:#333f48;
+}
+
+td.views-field.views-field-contacted-faculty {
+  text-align:center;
 }
