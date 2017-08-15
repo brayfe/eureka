@@ -1,0 +1,7 @@
+eureka_bookmark_dashboard.dashboard:
+  title: 'My Dashboard'
+  parent: system.menu.main
+  description: 'Visit bookmarks dashboard'
+  route_name: eureka_bookmark_dashboard.content
+  weight: 100
+  menu_name: main
