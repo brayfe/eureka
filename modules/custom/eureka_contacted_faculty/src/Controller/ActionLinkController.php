@@ -138,6 +138,7 @@ class ActionLinkController implements ContainerInjectionInterface {
     if ($id) {
       $flagging = \Drupal::entityTypeManager()->getStorage('flagging')->load(key($id));
       $renderable['#title'] = "Mark as not Contacted";
+      $renderable['#attributes']['class'][] = 'contacted';
       if ($status === FALSE) {
         $renderable['#title'] = "Mark as not Contacted";
         $renderable['#attributes']['class'][] = 'contacted';
@@ -150,6 +151,7 @@ class ActionLinkController implements ContainerInjectionInterface {
         $actual_status = $flagging->field_contacted_faculty->getString();
         if ($actual_status == FALSE) {
           $renderable['#title'] = "Mark as Contacted";
+          $renderable['#attributes']['class'][] = 'uncontacted';
           $status = TRUE;
         }
         else {
