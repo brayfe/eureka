@@ -66,7 +66,7 @@ class TermReferenceTree extends WidgetBase {
 
           // If the element is leaves only and select parents is on, then automatically
           // add all the parents of each selected value.
-          if ($element['#select_parents'] && $element['#leaves_only']) {
+          if (!empty($element['#select_parents']) && !empty($element['#leaves_only'])) {
             foreach ($child['#parent_values'] as $parent_tid) {
               if (!in_array(array($element['#value_key'] => $parent_tid), $value)) {
                 array_push($value, array($element['#value_key'] => $parent_tid));
