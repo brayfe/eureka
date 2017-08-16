@@ -24,6 +24,6 @@ flagTypeConfig:
   show_on_form: false
   show_contextual_link: false
   extra_permissions:
-    owner: '0'
+    owner: owner
   show_on_profile: true
 linkTypeConfig: {  }
