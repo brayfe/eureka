@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.flagging.profile_flag.field_contacted_faculty
+    - flag.flag.profile_flag
+  module:
+    - field_layout
+    - layout_discovery
+third_party_settings:
+  field_layout:
+    id: layout_onecol
+    settings: {  }
+id: flagging.profile_flag.default
+targetEntityType: flagging
+bundle: profile_flag
+mode: default
+content:
+  field_contacted_faculty:
+    weight: 0
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+    region: content
+hidden: {  }

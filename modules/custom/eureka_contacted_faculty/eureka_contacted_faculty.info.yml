@@ -1,0 +1,5 @@
+name: Eureka : Contacted Faculty
+type: module
+description: Defines logic to log whether a student has contacted a faculty member
+core: 8.x
+package: Custom

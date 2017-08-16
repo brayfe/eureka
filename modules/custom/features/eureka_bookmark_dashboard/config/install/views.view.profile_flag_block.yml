@@ -9,6 +9,7 @@ dependencies:
     - field.storage.user.field_research_units
     - flag.flag.profile_flag
   module:
+    - eureka_contacted_faculty
     - flag
     - user
 id: profile_flag_block
@@ -58,6 +59,75 @@ display:
           offset: 0
       style:
         type: table
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          override: true
+          sticky: false
+          caption: ''
+          summary: ''
+          description: ''
+          columns:
+            field_display_name: field_display_name
+            field_affiliated_departments: field_affiliated_departments
+            field_research_units: field_research_units
+            field_academic_interest: field_academic_interest
+            field_open_to_work_with: field_open_to_work_with
+            created: created
+            contacted_faculty: contacted_faculty
+            link_flag: link_flag
+          info:
+            field_display_name:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_affiliated_departments:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_research_units:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_academic_interest:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            field_open_to_work_with:
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            created:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            contacted_faculty:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+            link_flag:
+              sortable: false
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          default: '-1'
+          empty_table: false
       row:
         type: fields
       fields:
@@ -68,7 +138,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: 'Faculty Member'
+          label: Name
           exclude: false
           alter:
             alter_text: false
@@ -427,7 +497,7 @@ display:
           click_sort_column: value
           type: timestamp_ago
           settings:
-            granularity: 2
+            granularity: 1
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -441,6 +511,56 @@ display:
           entity_type: flagging
           entity_field: created
           plugin_id: field
+        contacted_faculty:
+          id: contacted_faculty
+          table: flagging
+          field: contacted_faculty
+          relationship: flag_relationship
+          group_type: group
+          admin_label: ''
+          label: 'Contacted?'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          entity_type: flagging
+          plugin_id: contacted_faculty
         link_flag:
           id: link_flag
           table: flagging
@@ -448,7 +568,7 @@ display:
           relationship: flag_relationship
           group_type: group
           admin_label: ''
-          label: Manage
+          label: Remove
           exclude: false
           alter:
             alter_text: false
@@ -478,9 +598,9 @@ display:
             preserve_tags: ''
             html: false
           element_type: ''
-          element_class: 'btn btn-primary'
+          element_class: ''
           element_label_type: ''
-          element_label_class: ''
+          element_label_class: remove-bookmark
           element_label_colon: true
           element_wrapper_type: ''
           element_wrapper_class: ''
@@ -504,7 +624,7 @@ display:
             operator: ''
           group: 1
       sorts: {  }
-      title: 'Bookmarked Profiles'
+      title: 'Bookmarked Faculty'
       header: {  }
       footer: {  }
       empty:
@@ -538,6 +658,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url.query_args
         - user.permissions
       tags:
         - 'config:field.storage.user.field_academic_interest'
@@ -560,6 +681,7 @@ display:
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
+        - url.query_args
         - user.permissions
       tags:
         - 'config:field.storage.user.field_academic_interest'
