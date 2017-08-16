@@ -182,6 +182,11 @@ datasource_settings:
       default: true
       selected: {  }
 processor_settings:
+  hierarchy:
+    fields:
+      field_affiliated_departments: taxonomy_term-parent
+    weights:
+      preprocess_index: -45
   add_url: {  }
   aggregated_field: {  }
   entity_status: {  }
@@ -447,11 +452,6 @@ processor_settings:
     weights:
       preprocess_index: -6
       preprocess_query: -6
-  hierarchy:
-    fields:
-      field_affiliated_departments: taxonomy_term-parent
-    weights:
-      preprocess_index: -45
 tracker_settings:
   default: {  }
 options:
