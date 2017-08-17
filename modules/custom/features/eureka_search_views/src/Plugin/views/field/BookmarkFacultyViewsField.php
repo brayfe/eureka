@@ -54,7 +54,7 @@ class BookmarkFacultyViewsField extends FieldPluginBase {
     if (\Drupal::currentUser()->isAnonymous()) {
       // @todo: when we switch to SAML, this link will need to be updated.
       $content['#markup'] = '<a href="/user/login?destination=search/faculty" class="btn btn-info btn-primary">
-          <span class="glyphicon glyphicon-bookmark"></span> Bookmark
+          <span class="glyphicon glyphicon-star-empty"></span> Bookmark
         </a>';
     }
     else {
@@ -63,8 +63,7 @@ class BookmarkFacultyViewsField extends FieldPluginBase {
       $flag = \Drupal::entityTypeManager()->getStorage('flag')->load('profile_flag');
       $link_type_plugin = $flag->getLinkTypePlugin();
       $link = $link_type_plugin->getAsFlagLink($flag, $entity);
-      $content['#markup'] = '<span class="btn btn-info btn-primary">
-        <span class="glyphicon glyphicon-bookmark">' . render($link) . '</span>';
+      $content = $link;
     }
 
     return $content;
