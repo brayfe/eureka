@@ -2,13 +2,26 @@
 
 /**
  * @file
+ * Module file for eureka_contacted_faculty.
+ */
+
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_views_pre_render().
+ *
  * Defines custom behavior for Dashboard page.
  */
+function eureka_bookmark_dashboard_views_pre_render(ViewExecutable $view) {
+  if (isset($view) && ($view->storage->id() == 'project_flag_block')) {
+    $view->element['#attached']['library'][] = 'eureka_bookmark_dashboard/eureka-bookmark-dashboard';
+  }
+}
 
 /**
  * Implements hook_user_login().
  */
-function eureka_bookmark_dashboard_user_login($account)  {
+function eureka_bookmark_dashboard_user_login($account) {
   // If the user is determined to be a student,
   // redirect to /dashboard upon login.
   // @todo: we will need to update this to also check for the absence of the
