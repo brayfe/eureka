@@ -10,6 +10,45 @@
 use Drupal\block\Entity\Block;
 
 /**
+ * Implements template_preprocess_page_title().
+ */
+function eurekatheme_preprocess_page_title(array &$variables) {
+  $suppress = FALSE;
+  // Conditionally suppress page titles.
+  // Note: this will not affect the <title> metatag.
+  // /user/<uid> pages.
+  $route = \Drupal::routeMatch();
+  $routes = $route->getParameters()->all();
+  if (in_array('user', array_keys($routes))) {
+    $suppress = TRUE;
+  }
+  elseif (in_array('view_id', array_keys($routes))) {
+    // Specific Views.
+    $views = [
+      'eureka_faculty_search',
+      'eureka_project_search',
+      'eureka_taxonomy_term',
+    ];
+    if (in_array($routes['view_id'], $views)) {
+      $suppress = TRUE;
+    }
+  }
+  else {
+    // Homepage.
+    $current_path = \Drupal::service('path.current')->getPath();
+    $result = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
+    $frontpage = \Drupal::config('system.site')->get('page.front');
+    if ($result == $frontpage) {
+      $suppress = TRUE;
+    }
+  }
+
+  if ($suppress) {
+    $variables['title'] = '';
+  }
+}
+
+/**
  * Prepares variables for node templates.
  *
  * Default template: node.html.twig.
@@ -71,9 +110,9 @@ function eurekatheme_preprocess_node(array &$variables) {
 /**
  * Utility: find term by name and vid.
  *
- * @param null $name
+ * @param string $name
  *   Term name.
- * @param null $vid
+ * @param string $vid
  *   Term vid.
  *
  * @return int
