@@ -11,5 +11,8 @@ permissions:
   - 'create project content'
   - 'delete own project content'
   - 'edit own project content'
+  - userprotect.account.edit
+  - userprotect.mail.edit
+  - userprotect.pass.edit
   - 'view own unpublished content'
   - 'view the administration theme'
