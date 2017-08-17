@@ -1,0 +1,15 @@
+.bookmark-link {
+  float: right;
+  display: inline;
+}
+
+span.glyphicon.glyphicon-bookmark div, span.glyphicon.glyphicon-bookmark div div {
+  display: inline;
+}
+
+span.glyphicon.glyphicon-bookmark div a {
+  color: #fff;
+  text-decoration: none;
+  font-family: "Open Sans",sans-serif;
+  vertical-align: text-top;
+}

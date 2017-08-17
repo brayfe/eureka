@@ -1,0 +1,21 @@
+<?php
+
+/**
+ * @file
+ * Module file for eureka_search_views.
+ */
+
+use Drupal\views\ViewExecutable;
+
+/**
+ * Implements hook_views_pre_render().
+ */
+function eureka_search_views_views_pre_render(ViewExecutable $view) {
+  $views = [
+    'eureka_faculty_search',
+    'eureka_project_search',
+  ];
+  if (isset($view) && (in_array($view->storage->id(), $views))) {
+    $view->element['#attached']['library'][] = 'eureka_search_views/eureka-search-views';
+  }
+}
