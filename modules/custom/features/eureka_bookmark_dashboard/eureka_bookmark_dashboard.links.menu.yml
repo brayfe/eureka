@@ -3,5 +3,21 @@ eureka_bookmark_dashboard.dashboard:
   parent: system.menu.main
   description: 'Visit bookmarks dashboard'
   route_name: eureka_bookmark_dashboard.content
+  weight: 99
+  menu_name: main
+
+eureka_bookmark_dashboard.sign_in:
+  title: 'Sign in'
+  parent: system.menu.main
+  description: 'Sign in'
+  route_name: user.login
+  weight: 100
+  menu_name: main
+
+eureka_bookmark_dashboard.sign_out:
+  title: 'Sign out'
+  parent: system.menu.main
+  description: 'Sign out'
+  route_name: user.logout
   weight: 100
   menu_name: main

@@ -68,10 +68,11 @@ function eureka_install_extensions(array &$install_state) {
     'eureka_search_facets',
     'simplify_global_settings',
     'url_aliases',
+    'eureka_role_anonymous',
+    'eureka_role_authenticated',
     'eureka_role_faculty',
     'eureka_taxonomy_views',
     'eureka_flipcard_block_settings',
-    'eureka_role_anonymous',
     'eureka_bookmark_dashboard',
   ];
   foreach ($modules as $module) {

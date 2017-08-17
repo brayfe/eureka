@@ -30,7 +30,7 @@ display:
       access:
         type: perm
         options:
-          perm: 'flag profile_flag'
+          perm: 'flag profile_flag other user accounts'
       cache:
         type: tag
         options: {  }
