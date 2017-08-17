@@ -1,0 +1,5 @@
+eureka-bookmark-dashboard:
+  version: 1.x
+  css:
+    theme:
+      css/eureka-bookmark-dashboard.css: {}
