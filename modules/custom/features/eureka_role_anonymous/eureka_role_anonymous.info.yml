@@ -1,4 +1,4 @@
-name: 'User Permissions'
+name: 'Eureka Role : Anonymous'
 type: module
 core: 8.x
 dependencies:

@@ -41,6 +41,7 @@ function eureka_profile_entity_form_alter(&$form, FormStateInterface $form_state
  */
 function _eureka_profile_entity_validate(&$form, FormStateInterface $form_state) {
   $roles = array_values($form_state->getValue('roles'));
+  $required_fields = [];
   if (in_array('faculty', $roles)) {
     $required_fields = [
       'field_display_name' => 'text',

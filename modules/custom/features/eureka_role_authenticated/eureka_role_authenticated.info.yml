@@ -1,0 +1,7 @@
+name: 'Eureka Role : Authenticated'
+type: module
+core: 8.x
+dependencies:
+  - user
+  - userprotect
+version: 8.x-1.0

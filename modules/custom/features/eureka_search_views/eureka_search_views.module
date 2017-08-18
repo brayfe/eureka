@@ -6,9 +6,12 @@
  */
 
 use Drupal\views\ViewExecutable;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Implements hook_views_pre_render().
+ *
+ * Provide customizations/optimizations to Search API views.
  */
 function eureka_search_views_views_pre_render(ViewExecutable $view) {
   $views = [
@@ -17,5 +20,41 @@ function eureka_search_views_views_pre_render(ViewExecutable $view) {
   ];
   if (isset($view) && (in_array($view->storage->id(), $views))) {
     $view->element['#attached']['library'][] = 'eureka_search_views/eureka-search-views';
+  }
+}
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function eureka_search_views_form_views_exposed_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+
+  // SITUATION: Search forms with facet filters and keywords search.
+  // PROBLEM: When searching for a keyword after using a facet filter, the
+  // facet filter is ignored by Views.
+  // SOLUTION: Add facet filters as hidden form fields to Views exposed forms.
+  $views = [
+    'eureka_faculty_search' => 'f_facet',
+    'eureka_project_search' => 'p_facet',
+  ];
+  $id = $form_state->get('view')->id();
+  // Only apply for search views.
+  if (!in_array($id, array_keys($views))) {
+    return;
+  }
+  $parameter = $views[$id];
+  // Only apply if any facet query parameters are provided.
+  $facet_query = \Drupal::request()->query->filter($parameter);
+  if (empty($facet_query)) {
+    return;
+  }
+
+  // Iterate through facet query parameters.
+  foreach ($facet_query as $key => $value) {
+    // Add hidden form field for facet parameter.
+    $form[$parameter . '[' . $key . ']'] = array(
+      '#type' => 'hidden',
+      '#value' => $value,
+      '#weight' => -1,
+    );
   }
 }
