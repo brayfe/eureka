@@ -8,6 +8,7 @@
  */
 
 use Drupal\block\Entity\Block;
+use Drupal\eureka_bookmark_dashboard\BookmarkLink;
 
 /**
  * Implements template_preprocess_page_title().
@@ -157,4 +158,20 @@ function eureka_preprocess_layout__twocol(array &$variables) {
       ->getViewBuilder('block')
       ->view($block);
   }
+
+  $node = \Drupal::routeMatch()->getParameter('node');
+  if ($node) {
+    $id = $node->id();
+    $type = 'project_flag';
+  }
+  else {
+    $user = \Drupal::routeMatch()->getParameter('user');
+    $id = $user->id();
+    $type = 'profile_flag';
+  }
+
+  if ($id && is_numeric($id)) {
+    $variables['bookmark_link'] = BookmarkLink::getLink($type, $id);
+  }
+
 }

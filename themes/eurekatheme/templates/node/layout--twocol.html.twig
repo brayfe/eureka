@@ -42,7 +42,12 @@ set classes = [
 
     {% if content.right %}
       <div class="right-sidebar col-sm-3">
+        {% if bookmark_link %}
+          <div class="bookmark">{{ bookmark_link }}</div>
+        {% endif %}
+
         {{ content.right }}
+
         {% if profile_block %}
           {{ profile_block }}
         {% endif %}
