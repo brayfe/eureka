@@ -22,12 +22,16 @@ function eureka_bookmark_dashboard_views_pre_render(ViewExecutable $view) {
  * Implements hook_user_login().
  */
 function eureka_bookmark_dashboard_user_login($account) {
-  // If the user is determined to be a student,
-  // redirect to /dashboard upon login.
-  // @todo: we will need to update this to also check for the absence of the
-  // "Authorized staff" role, once that has been created.
-  $roles = $account->getRoles();
-  if (!in_array('faculty', $roles) && $account->id() != 1) {
-    \Drupal::service('request_stack')->getCurrentRequest()->query->set('destination', \Drupal::url('eureka_bookmark_dashboard.content'));
+  $param = \Drupal::request()->query->all();
+  // First check that we're not trying to redirect to a project/profile.
+  if (!$param || !isset($param['destination'])) {
+    // If the user is determined to be a student,
+    // redirect to /dashboard upon login.
+    // @todo: we will need to update this to also check for the absence of the
+    // "Authorized staff" role, once that has been created.
+    $roles = $account->getRoles();
+    if (!in_array('faculty', $roles) && $account->id() != 1) {
+      \Drupal::service('request_stack')->getCurrentRequest()->query->set('destination', \Drupal::url('eureka_bookmark_dashboard.content'));
+    }
   }
 }
