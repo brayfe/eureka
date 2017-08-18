@@ -1,0 +1,32 @@
+.bookmark-link {
+  float: right;
+  display: inline;
+}
+
+div.flag.action-unflag a {
+  background-color:#007a29;
+}
+div.flag.action-unflag a::before {
+  content: '\2606  ';
+  font-size:1.2em;
+}
+div.flag a {
+  display: inline;
+  color: #fff;
+  text-decoration: none;
+  font-family: "Open Sans",sans-serif;
+  vertical-align: text-top;
+  background-color: #333f48;
+  outline: 0;
+  border-color: #333f48;
+  outline: 0;
+  font-size: 0.9em;
+  border: 1px solid #000;
+  border-radius: 4px;
+  white-space: nowrap;
+  padding: 6px 12px;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+}
+

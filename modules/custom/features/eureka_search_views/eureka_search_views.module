@@ -2,10 +2,26 @@
 
 /**
  * @file
- * Provide customizations/optimizations to Search API views.
+ * Module file for eureka_search_views.
  */
 
-use \Drupal\Core\Form\FormStateInterface;
+use Drupal\views\ViewExecutable;
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_views_pre_render().
+ *
+ * Provide customizations/optimizations to Search API views.
+ */
+function eureka_search_views_views_pre_render(ViewExecutable $view) {
+  $views = [
+    'eureka_faculty_search',
+    'eureka_project_search',
+  ];
+  if (isset($view) && (in_array($view->storage->id(), $views))) {
+    $view->element['#attached']['library'][] = 'eureka_search_views/eureka-search-views';
+  }
+}
 
 /**
  * Implements hook_form_FORM_ID_alter().

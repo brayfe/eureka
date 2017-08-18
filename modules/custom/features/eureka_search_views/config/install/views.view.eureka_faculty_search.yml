@@ -9,6 +9,7 @@ dependencies:
     - search_api.index.faculty_index
     - system.menu.main
   module:
+    - eureka_search_views
     - search_api
     - text
 id: eureka_faculty_search
@@ -73,6 +74,55 @@ display:
       row:
         type: fields
       fields:
+        bookmark_faculty_views_field:
+          id: bookmark_faculty_views_field
+          table: search_api_index_faculty_index
+          field: bookmark_faculty_views_field
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: ''
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: bookmark-link
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: false
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: false
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: false
+          plugin_id: bookmark_faculty_views_field
         field_display_name:
           id: field_display_name
           table: search_api_index_faculty_index

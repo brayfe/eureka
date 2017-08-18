@@ -6,6 +6,7 @@ dependencies:
   - eureka_profile_entity
   - eureka_project_ct
   - eureka_search_setup
+  - eureka_search_views
   - search_api
   - text
   - views

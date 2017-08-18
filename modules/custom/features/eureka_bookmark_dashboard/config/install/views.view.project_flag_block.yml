@@ -573,6 +573,17 @@ display:
           empty: true
           title: 'No Bookmarked Projects'
           plugin_id: title
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: true
+          tokenize: false
+          content: 'To bookmark projects, use the <a href="/search/projects">project search</a>.'
+          plugin_id: text_custom
       relationships:
         flag_relationship:
           id: flag_relationship
