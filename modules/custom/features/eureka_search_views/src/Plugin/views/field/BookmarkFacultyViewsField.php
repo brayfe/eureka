@@ -50,15 +50,16 @@ class BookmarkFacultyViewsField extends FieldPluginBase {
    * {@inheritdoc}
    */
   public function render(ResultRow $values) {
+    $user = $values->_object->toArray();
+    $alias = \Drupal::service('path.alias_manager')->getAliasByPath('/user/' . $user['uid'][0]['value']);
     // Redirect anonymous users to the login page.
     if (\Drupal::currentUser()->isAnonymous()) {
       // @todo: when we switch to SAML, this link will need to be updated.
-      $content['#markup'] = '<a href="/user/login?destination=search/faculty" class="btn btn-info btn-primary">
+      $content['#markup'] = '<a href="/user/login?destination=' . $alias . '" class="btn btn-info btn-primary">
           <span class="glyphicon glyphicon-star-empty"></span> Bookmark
         </a>';
     }
     else {
-      $user = $values->_object->toArray();
       $entity = \Drupal::entityTypeManager()->getStorage('user')->load($user['uid'][0]['value']);
       $flag = \Drupal::entityTypeManager()->getStorage('flag')->load('profile_flag');
       $link_type_plugin = $flag->getLinkTypePlugin();
