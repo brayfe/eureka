@@ -1,0 +1,4 @@
+services:
+  eureka_bookmark_dashboard.link:
+    class: Drupal\eureka_bookmark_dashboard\BookmarkLink
+    arguments: []

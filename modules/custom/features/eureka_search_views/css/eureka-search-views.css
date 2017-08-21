@@ -11,7 +11,7 @@ div.flag.action-unflag a::before {
   font-size:1.2em;
 }
 div.flag a {
-  display: inline;
+  display: block;
   color: #fff;
   text-decoration: none;
   font-family: "Open Sans",sans-serif;
@@ -28,5 +28,10 @@ div.flag a {
   text-align: center;
   vertical-align: middle;
   touch-action: manipulation;
+  margin: 0px 5px 10px;
 }
 
+div.bookmark a {
+  display: block;
+  margin: 0px 5px 10px;
+}
