@@ -25,7 +25,7 @@ flagTypeConfig:
     search_index: search_index
     search_result: search_result
     teaser: teaser
-  show_as_field: true
+  show_as_field: false
   show_on_form: false
   show_contextual_link: false
   extra_permissions:
