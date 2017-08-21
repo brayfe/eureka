@@ -57,7 +57,7 @@ class BookmarkProjectViewsField extends FieldPluginBase {
     if (\Drupal::currentUser()->isAnonymous()) {
       // @todo: when we switch to SAML, this link will need to be updated.
       $content['#markup'] = '<a href="/user/login?destination=' . $alias . '" class="btn btn-info btn-primary">
-          <span class="glyphicon glyphicon-star-empty"></span> Login to Bookmark
+          <span class="glyphicon glyphicon-star-empty"></span> Sign in to Bookmark
         </a>';
     }
     else {
