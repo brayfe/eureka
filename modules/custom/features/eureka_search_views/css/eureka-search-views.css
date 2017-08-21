@@ -7,7 +7,7 @@ div.flag.action-unflag a {
   background-color:#007a29;
 }
 div.flag.action-unflag a::before {
-  content: '\2606  ';
+  content: '\2605  ';
   font-size:1.2em;
 }
 div.flag a {
@@ -29,6 +29,11 @@ div.flag a {
   vertical-align: middle;
   touch-action: manipulation;
   margin: 0px 5px 10px;
+}
+
+div.flag a::before {
+  content: '\2606  ';
+  font-size:1.2em;
 }
 
 div.bookmark a {
