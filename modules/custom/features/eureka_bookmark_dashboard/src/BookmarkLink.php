@@ -36,7 +36,7 @@ class BookmarkLink {
       $link = $link_type_plugin->getAsFlagLink($flag, $entity);
     }
 
-    $link['#attached']['library'][] = 'eureka_search_views/eureka-search-views';
+    $link['#attached']['library'][] = 'eureka_bookmark_dashboard/eureka-bookmark-link';
 
     return $link;
   }
