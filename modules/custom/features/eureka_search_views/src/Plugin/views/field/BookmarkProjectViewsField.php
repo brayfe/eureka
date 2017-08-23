@@ -3,6 +3,7 @@
 namespace Drupal\eureka_search_views\Plugin\views\field;
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\eureka_bookmark_dashboard\BookmarkLink;
 use Drupal\views\Plugin\views\field\FieldPluginBase;
 use Drupal\views\ResultRow;
 
@@ -50,25 +51,8 @@ class BookmarkProjectViewsField extends FieldPluginBase {
    * {@inheritdoc}
    */
   public function render(ResultRow $values) {
-
     $node = $values->_object->toArray();
-    $alias = \Drupal::service('path.alias_manager')->getAliasByPath('/node/' . $node['nid'][0]['value']);
-    // Redirect anonymous users to the login page.
-    if (\Drupal::currentUser()->isAnonymous()) {
-      // @todo: when we switch to SAML, this link will need to be updated.
-      $content['#markup'] = '<a href="/user/login?destination=' . $alias . '" class="btn btn-info btn-primary">
-          <span class="glyphicon glyphicon-star-empty"></span> Sign in to Bookmark
-        </a>';
-    }
-    else {
-      $entity = \Drupal::entityTypeManager()->getStorage('node')->load($node['nid'][0]['value']);
-      $flag = \Drupal::entityTypeManager()->getStorage('flag')->load('project_flag');
-      $link_type_plugin = $flag->getLinkTypePlugin();
-      $link = $link_type_plugin->getAsFlagLink($flag, $entity);
-      $content = $link;
-    }
-
-    return $content;
+    return BookmarkLink::getLink('project_flag', $node['nid'][0]['value']);
   }
 
 }
