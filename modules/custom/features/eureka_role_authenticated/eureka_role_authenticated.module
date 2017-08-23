@@ -1,0 +1,33 @@
+<?php
+
+/**
+ * @file
+ * Contains eureka_role_authenticated.module.
+ */
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+function eureka_role_authenticated_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $new_validation = 'eureka_role_authenticated_user_login_form_validate';
+  array_splice($form['#validate'], 3, 0, $new_validation);
+}
+
+/**
+ * Custom form validation callback.
+ */
+function eureka_role_authenticated_user_login_form_validate(array &$form, FormStateInterface $form_state) {
+  $errors = $form_state->getErrors();
+  if (!empty($errors['name'])) {
+    $string_error = $errors['name']->__tostring();
+    if (strpos($string_error, 'Unrecognized username or password') !== FALSE) {
+      $name_value = $form_state->getValue('name');
+      $form_state->clearErrors();
+      $form_state->setErrorByName('name', t('Login did not succeed for EID ":eid". If you feel this is a site error, Please contact <a href="mailto:uresearch@austin.utexas.edu">uresearch@austin.utexas.edu</a>.', [
+        ':eid' => $name_value,
+      ]));
+    }
+  }
+}

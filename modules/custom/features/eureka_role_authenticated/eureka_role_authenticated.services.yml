@@ -1,0 +1,5 @@
+services:
+  eureka_role_authenticated.route_subscriber:
+    class: Drupal\eureka_role_authenticated\Routing\RouteSubscriber
+    tags:
+      - { name: event_subscriber }
