@@ -9,7 +9,7 @@ dependencies:
     - better_exposed_filters
     - user
 id: user_dashboard
-label: 'User Dashboard'
+label: 'Faculty Dashboard'
 module: views
 description: ''
 tag: ''
@@ -639,7 +639,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: admin/dashboard/users
+      path: admin/dashboard/faculty
     cache_metadata:
       max-age: 0
       contexts:
