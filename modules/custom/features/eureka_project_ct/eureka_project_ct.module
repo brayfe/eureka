@@ -8,6 +8,7 @@
 use Drupal\Core\Render\Element;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
+use Drupal\user\Entity\User;
 
 /**
  * Implements hook_form_alter().
@@ -47,6 +48,11 @@ function eureka_project_ct_form_alter(&$form, FormStateInterface $form_state, $f
     }
 
     $form['#attached']['library'][] = 'eureka_project_ct/project_form';
+
+    // Add Custom Submit Handler for adding Project to Project Lead.
+    if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+      $form['actions'][$action]['#submit'][] = 'eureka_project_ct_node_form_submit';
+    }
 
   }
 }
@@ -95,4 +101,56 @@ function eureka_project_ct_preprocess_field_multiple_value_form(&$variables) {
       }
     }
   }
+}
+
+/**
+ * Custom Submit Handler for Project nodes.
+ *
+ * Append Project to Project Lead's known projects. Remove from previous
+ * Project Lead's profile if updating Project Lead.
+ */
+function eureka_project_ct_node_form_submit($form, FormStateInterface $form_state) {
+  // Grab Project and User information from saved form.
+  $project_id = $form_state->getValue('nid');
+  $new_lead_id = $form_state->getValue('field_project_lead')[0]['target_id'];
+
+  // Check if any other users are listed as Project Lead.
+  $query = \Drupal::entityQuery('user')
+    ->condition('roles', 'faculty')
+    ->condition('field_projects', $project_id);
+  $uids = $query->execute();
+
+  // New Project if no query results.
+  if ($uids) {
+    // Grab exisiting lead's uid; should only ever be one.
+    $existing_lead_id = reset($uids);
+    // Check if Project Lead has changed.
+    if ($existing_lead_id != $new_lead_id) {
+      // Remove project from old Project Lead.
+      $user = User::load($existing_lead_id);
+      $projects = array_column($user->get('field_projects')->getValue(), 'target_id');
+      unset($user->field_projects[array_search($project_id, $projects)]);
+      // Do I need to reindex the array?
+      // $user->field_projects = array_values($user->field_projects);
+      $user->save();
+
+      // Add Project to new Project Lead.
+      add_user_to_project($new_lead_id, $project_id);
+    }
+  }
+  else {
+    // Add Project to Project lead's profile.
+    add_user_to_project($new_lead_id, $project_id);
+  }
+}
+
+/**
+ * Add Project to User Profile.
+ *
+ * Given a Project ID and User ID, add Project to User's Project list.
+ */
+function add_user_to_project($uid, $proj_id) {
+  $user = User::load($uid);
+  $user->field_projects[] = $proj_id;
+  $user->save();
 }
