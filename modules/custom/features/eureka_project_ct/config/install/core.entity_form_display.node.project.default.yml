@@ -10,6 +10,7 @@ dependencies:
     - field.field.node.project.field_faculty_collaborators
     - field.field.node.project.field_length_commitment
     - field.field.node.project.field_project_lead
+    - field.field.node.project.field_project_lead_notified
     - field.field.node.project.field_project_tags
     - field.field.node.project.field_project_timeline
     - field.field.node.project.field_project_website
@@ -181,4 +182,5 @@ content:
       placeholder: ''
     region: content
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_project_lead_notified: true

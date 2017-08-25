@@ -9,6 +9,7 @@ dependencies:
     - field.field.user.user.field_countries_acad_interest
     - field.field.user.user.field_display_name
     - field.field.user.user.field_external_projects
+    - field.field.user.user.field_faculty_notified
     - field.field.user.user.field_first_name
     - field.field.user.user.field_job_title
     - field.field.user.user.field_lab_contact
@@ -49,6 +50,7 @@ hidden:
   field_authorized_users: true
   field_countries_acad_interest: true
   field_external_projects: true
+  field_faculty_notified: true
   field_first_name: true
   field_job_title: true
   field_lab_contact: true
