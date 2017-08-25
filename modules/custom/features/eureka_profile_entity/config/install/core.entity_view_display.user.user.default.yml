@@ -8,6 +8,7 @@ dependencies:
     - field.field.user.user.field_countries_acad_interest
     - field.field.user.user.field_display_name
     - field.field.user.user.field_external_projects
+    - field.field.user.user.field_faculty_notified
     - field.field.user.user.field_first_name
     - field.field.user.user.field_job_title
     - field.field.user.user.field_lab_contact
@@ -89,14 +90,14 @@ content:
     type: entity_reference_label
     region: left
   field_lab_contact:
-    weight: 15
+    weight: 14
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
     region: right
   field_lab_website:
-    weight: 16
+    weight: 15
     label: above
     settings:
       trim_length: 80
@@ -180,6 +181,7 @@ content:
     third_party_settings: {  }
 hidden:
   field_authorized_users: true
+  field_faculty_notified: true
   field_first_name: true
   field_last_name: true
   member_for: true

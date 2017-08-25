@@ -22,6 +22,14 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
 include __DIR__ . "/settings.pantheon.php";
 
 /**
+ * If there is a site settings file, then include it.
+ */
+$site_settings = __DIR__ . "/settings.site.php";
+if (file_exists($site_settings)) {
+  include $site_settings;
+}
+
+/**
  * If there is a local settings file, then include it.
  */
 $local_settings = __DIR__ . "/settings.local.php";

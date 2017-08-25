@@ -3,3 +3,8 @@ eureka-bookmark-dashboard:
   css:
     theme:
       css/eureka-bookmark-dashboard.css: {}
+eureka-bookmark-link:
+  version: 1.x
+  css:
+    theme:
+      css/eureka-bookmark-link.css: {}
