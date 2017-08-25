@@ -67,7 +67,7 @@ function _eureka_notifications_stagnant_faculty($settings) {
     // the above if statement.
     // A DB update is used here to prevent updating the node "changed" status.
     db_update('user__field_faculty_notified')
-      ->key(array('entity_id' => $uid))
+      ->condition('entity_id', $uid, '=')
       ->fields(array(
         'field_faculty_notified_value' => time(),
       ))
