@@ -1,0 +1,10 @@
+name: 'Eureka Reporting Views'
+type: module
+core: 8.x
+dependencies:
+  - better_exposed_filters
+  - eureka_profile_entity
+  - eureka_role_faculty
+  - user
+  - views
+version: 8.x-1.0
