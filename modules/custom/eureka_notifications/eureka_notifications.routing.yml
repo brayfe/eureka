@@ -1,0 +1,7 @@
+eureka_notifications.settings:
+  path: '/admin/config/content/eureka'
+  defaults:
+    _form: '\Drupal\eureka_notifications\Form\SettingsForm'
+    _title: 'Eureka Settings'
+  requirements:
+    _permission: 'administer site configuration'

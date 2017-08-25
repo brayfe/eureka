@@ -1,0 +1,8 @@
+name: Eureka Notifications
+type: module
+description: Defines logic to notify user accounts automatically based on various criteria
+core: 8.x
+package: Eureka
+dependencies:
+  - eureka_project_ct
+  - eureka_profile_entity

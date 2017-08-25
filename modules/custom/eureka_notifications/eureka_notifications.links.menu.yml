@@ -1,0 +1,6 @@
+eureka_notifications.settings:
+  title: "Notification settings"
+  description: "When and how frequently to send notifications"
+  route_name: eureka_notifications.settings
+  parent: system.admin_config_system
+  weight: -100
