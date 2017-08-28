@@ -13,7 +13,7 @@ dependencies:
     - taxonomy
     - user
 id: user_dashboard
-label: 'Faculty Dashboard'
+label: 'Reporting : Faculty'
 module: views
 description: ''
 tag: ''

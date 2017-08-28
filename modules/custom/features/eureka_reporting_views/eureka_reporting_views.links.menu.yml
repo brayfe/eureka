@@ -1,0 +1,7 @@
+eureka_reporting_views.reports:
+  title: 'Reports'
+  parent: system.menu.main
+  description: 'Reports'
+  route_name: view.user_dashboard.page_1
+  weight: 97
+  menu_name: main
