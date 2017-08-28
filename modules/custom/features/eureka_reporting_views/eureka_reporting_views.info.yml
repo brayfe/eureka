@@ -3,8 +3,14 @@ type: module
 core: 8.x
 dependencies:
   - better_exposed_filters
+  - eureka_bookmark_settings
+  - eureka_faculty_profile_taxonomies
   - eureka_profile_entity
+  - eureka_project_ct
   - eureka_role_faculty
+  - flag
+  - node
+  - taxonomy
   - user
   - views
 version: 8.x-1.0
