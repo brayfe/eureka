@@ -11,9 +11,9 @@ use Drupal\views\ResultRow;
  *
  * @ingroup views_field_handlers
  *
- * @ViewsField("bookmarked_faculty")
+ * @ViewsField("bookmarked_projects")
  */
-class BookmarkedFaculty extends FieldPluginBase {
+class BookmarkedProjects extends FieldPluginBase {
 
   /**
    * {@inheritdoc}
@@ -50,20 +50,20 @@ class BookmarkedFaculty extends FieldPluginBase {
    * {@inheritdoc}
    */
   public function render(ResultRow $values) {
-    $display_names = [];
-    $faculty = $this->getFacultyFlags($values->uid);
-    foreach ($faculty as $key => $f) {
-      $display_names[$f->entity_id] = $this->getDisplayName($f->entity_id);
+    $project_names = [];
+    $projects = $this->getProjectFlags($values->uid);
+    foreach ($projects as $key => $p) {
+      $project_names[$p->entity_id] = $this->getProjectTitle($p->entity_id);
     }
-    if (!empty($display_names)) {
-      $total = count($display_names);
-      return $total . ': ' . implode(', ', $display_names);
+    if (!empty($project_names)) {
+      $total = count($project_names);
+      return $total . ': ' . implode(', ', $project_names);
     }
     return '';
   }
 
   /**
-   * Custom query to retrieve faculty flagged by a specific user.
+   * Custom query to retrieve projects flagged by a specific user.
    *
    * @param string $uid
    *    The user uid.
@@ -71,27 +71,27 @@ class BookmarkedFaculty extends FieldPluginBase {
    * @return string
    *    The user's display name.
    */
-  public function getFacultyFlags($uid) {
+  public function getProjectFlags($uid) {
     $query = \Drupal::database()->select('flagging', 'f');
     $query->addField('f', 'entity_id');
     $query->condition('f.uid', $uid);
-    $query->condition('f.entity_type', 'user');
+    $query->condition('f.entity_type', 'node');
     return $query->execute()->fetchAllAssoc('entity_id');
   }
 
   /**
-   * Custom query to retrieve user display_name.
+   * Custom query to retrieve project title.
    *
-   * @param string $uid
-   *    The user uid.
+   * @param string $nid
+   *    The project nid.
    *
    * @return string
-   *    The user's display name.
+   *    The project title.
    */
-  public function getDisplayName($uid) {
-    $query = \Drupal::database()->select('user__field_display_name', 'u');
-    $query->addField('u', 'field_display_name_value');
-    $query->condition('u.entity_id', $uid);
+  public function getprojectTitle($nid) {
+    $query = \Drupal::database()->select('node_field_data', 'n');
+    $query->addField('n', 'title');
+    $query->condition('n.nid', $nid);
     $query->range(0, 1);
     return $query->execute()->fetchField();
   }

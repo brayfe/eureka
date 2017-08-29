@@ -11,9 +11,9 @@ use Drupal\views\ResultRow;
  *
  * @ingroup views_field_handlers
  *
- * @ViewsField("bookmarked_faculty")
+ * @ViewsField("using_contacted")
  */
-class BookmarkedFaculty extends FieldPluginBase {
+class UsingContacted extends FieldPluginBase {
 
   /**
    * {@inheritdoc}
@@ -50,16 +50,20 @@ class BookmarkedFaculty extends FieldPluginBase {
    * {@inheritdoc}
    */
   public function render(ResultRow $values) {
+    $count = 0;
     $display_names = [];
     $faculty = $this->getFacultyFlags($values->uid);
     foreach ($faculty as $key => $f) {
-      $display_names[$f->entity_id] = $this->getDisplayName($f->entity_id);
+      $contacted[] = $this->getContactedStatus($f->id);
     }
-    if (!empty($display_names)) {
-      $total = count($display_names);
-      return $total . ': ' . implode(', ', $display_names);
+    if (!empty($contacted)) {
+      foreach ($contacted as $key => $value) {
+        if ($value == 1) {
+          $count++;
+        }
+      }
     }
-    return '';
+    return $count;
   }
 
   /**
@@ -73,25 +77,25 @@ class BookmarkedFaculty extends FieldPluginBase {
    */
   public function getFacultyFlags($uid) {
     $query = \Drupal::database()->select('flagging', 'f');
-    $query->addField('f', 'entity_id');
+    $query->addField('f', 'id');
     $query->condition('f.uid', $uid);
     $query->condition('f.entity_type', 'user');
-    return $query->execute()->fetchAllAssoc('entity_id');
+    return $query->execute()->fetchAllAssoc('id');
   }
 
   /**
    * Custom query to retrieve user display_name.
    *
-   * @param string $uid
+   * @param string $id
    *    The user uid.
    *
    * @return string
    *    The user's display name.
    */
-  public function getDisplayName($uid) {
-    $query = \Drupal::database()->select('user__field_display_name', 'u');
-    $query->addField('u', 'field_display_name_value');
-    $query->condition('u.entity_id', $uid);
+  public function getContactedStatus($id) {
+    $query = \Drupal::database()->select('flagging__field_contacted_faculty', 'u');
+    $query->addField('u', 'field_contacted_faculty_value');
+    $query->condition('u.entity_id', $id);
     $query->range(0, 1);
     return $query->execute()->fetchField();
   }
