@@ -74,6 +74,8 @@ function eureka_install_extensions(array &$install_state) {
     'eureka_taxonomy_views',
     'eureka_flipcard_block_settings',
     'eureka_bookmark_dashboard',
+    'eureka_notifications',
+    'eureka_reporting_views',
   ];
   foreach ($modules as $module) {
     $batch['operations'][] = ['eureka_install_module', (array) $module];

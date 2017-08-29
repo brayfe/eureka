@@ -1,0 +1,234 @@
+<?php
+
+/**
+ * @file
+ * Contains eureka_notifications.module.
+ */
+
+/**
+ * Implements hook_cron().
+ */
+function eureka_notifications_cron() {
+  $settings = \Drupal::configFactory()->getEditable('eureka_general.settings');
+  if ($settings->get('notifications_on')) {
+    // This defines how frequently the checker should run (not how long before a
+    // profile/project is considered stale. For testing, set this to "1").
+    // Currently, this is set to once a week.
+    $interval = 3600 * 24 * 7;
+
+    $next_execution = \Drupal::state()->get('eureka_notifications.next_execution');
+    $next_execution = !empty($next_execution) ? $next_execution : 0;
+    if (REQUEST_TIME >= $next_execution) {
+      // Notify faculty whose profiles have not been updated.
+      _eureka_notifications_stagnant_faculty($settings);
+      // Notify project leads whose projects have not been updated.
+      _eureka_notifications_stagnant_projects($settings);
+      \Drupal::state()->set('eureka_notifications.next_execution', REQUEST_TIME + $interval);
+    }
+  }
+}
+
+/**
+ * Cron callback. Email project leads when projects haven't been updated.
+ */
+function _eureka_notifications_stagnant_faculty($settings) {
+  // Retrieve user-defined frequency.
+  $stale = $settings->get('faculty_profile_stale');
+  $frequency = $settings->get('faculty_notification_frequency');
+  $stale_cutoff = strtotime('now -' . $stale . ' days');
+  $notification_cutoff = strtotime('now -' . $frequency . ' days');
+
+  // Emails will be sent to faculty if the following conditions are met:
+  // 1. They have the role "faculty"
+  // 2. Their Drupal account is "active"
+  // 3. The user "login" timestamp is > $stale_cutoff
+  // 4. The user account "changed" timestamp is > $stale_cutoff
+  // 5. The "field_faculty_notified" timestamp is > $notification_cutoff
+  // Note: the "field_faculty_notified" value defaults to account created time.
+  $query = \Drupal::entityQuery('user');
+  $result = $query
+    ->condition('roles', 'faculty')
+    ->condition('status', 1)
+    ->condition('login', $stale_cutoff, '<')
+    ->condition('changed', $stale_cutoff, '<')
+    ->condition('field_faculty_notified.value', $notification_cutoff, '<')
+    ->execute();
+
+  $count = 0;
+  $faculty_notified = [];
+  // Update the notified timestamp and send an email.
+  foreach ($result as $key => $uid) {
+    $user = user_load($uid);
+    if (_eureka_notifications_email_faculty($user, $settings)) {
+      $faculty_notified[] = $user->getUsername();
+    }
+    // Currently, regardless of whether the email was successful, we update the
+    // "notified" timestamp. This could be modified by placing the below within
+    // the above if statement.
+    // A DB update is used here to prevent updating the node "changed" status.
+    db_update('user__field_faculty_notified')
+      ->key(array('entity_id' => $uid))
+      ->fields(array(
+        'field_faculty_notified_value' => time(),
+      ))
+      ->execute();
+    $count++;
+  }
+
+  if ($count == 0) {
+    $log = 'No faculty profiles were identified as being stale.';
+  }
+  else {
+    $log = t(':count faculty with stagnant profiles identified. The following :notified were emailed: :list', [
+      ':count' => $count,
+      ':notified' => count($faculty_notified),
+      ':list' => implode(', ', $faculty_notified),
+    ]);
+  }
+  // If devel is enabled, go ahead and print the response that would be sent.
+  $moduleHandler = \Drupal::service('module_handler');
+  if ($moduleHandler->moduleExists('devel')) {
+    echo $log;
+  }
+}
+
+/**
+ * Cron callback. Email faculty whose profiles haven't been updated.
+ */
+function _eureka_notifications_stagnant_projects($settings) {
+  // Retrieve user-defined frequency.
+  $stale = $settings->get('project_stale');
+  $notification_frequency = $settings->get('project_notification_frequency');
+  $stale_cutoff = strtotime('now -' . $stale . ' days');
+  $notification_cutoff = strtotime('now -' . $notification_frequency . ' days');
+
+  // Emails will be sent to project leads if the following conditions are met:
+  // 0. The node is a "project"
+  // 1. The project is "published"
+  // 2. The node "changed" timestamp is > $stale_cutoff
+  // 3. The "field_project_lead_notified" timestamp is > $notification_cutoff
+  // Note: the "field_project_lead_notified" defaults to node created time.
+  $query = \Drupal::entityQuery('node');
+  $result = $query
+    ->condition('status', 1)
+    ->condition('type', 'project')
+    ->condition('changed', $stale_cutoff, '<')
+    ->condition('field_project_lead_notified.value', $notification_cutoff, '<')
+    ->execute();
+
+  $project_leads_notified = [];
+  // Update the notified timestamp and send an email.
+  foreach ($result as $key => $nid) {
+    if ($node = node_load($nid)) {
+      $lead = $node->get('field_project_lead')->getValue();
+      if (isset($lead[0]['target_id'])) {
+        $user = user_load($lead[0]['target_id']);
+        if (_eureka_notifications_email_project_lead($user, $settings)) {
+          $project_leads_notified[] = $user->getUsername();
+        }
+        // Currently, regardless of whether the email was successful, we update
+        // the "notified" timestamp. This could be modified by placing the below
+        // within the above if statement.
+        // A DB update is used here to prevent updating the "changed" status.
+        db_update('node__field_project_lead_notified')
+          ->condition('entity_id', $nid, '=')
+          ->fields(array(
+            'field_project_lead_notified_value' => time(),
+          ))
+          ->execute();
+        db_update('node_revision__field_project_lead_notified')
+          ->condition('entity_id', $nid, '=')
+          ->fields(array(
+            'field_project_lead_notified_value' => time(),
+          ))
+          ->execute();
+      }
+    }
+  }
+
+  if (count($result) == 0) {
+    $log = 'No projects were identified as being stale.';
+  }
+  else {
+    $log = t(':count leads with stagnant projects identified. The following :notified were emailed: :list', [
+      ':count' => count($result),
+      ':notified' => count($project_leads_notified),
+      ':list' => implode(', ', $project_leads_notified),
+    ]);
+  }
+  // If devel is enabled, go ahead and print the response that would be sent.
+  $moduleHandler = \Drupal::service('module_handler');
+  if ($moduleHandler->moduleExists('devel')) {
+    echo $log;
+  }
+}
+
+/**
+ * Emailer for stale projects.
+ *
+ * @param $user
+ *    The user object.
+ *
+ * @return bool
+ *    Whether or not the email message was successful.
+ */
+function _eureka_notifications_email_faculty($user, $settings) {
+  $mailManager = \Drupal::service('plugin.manager.mail');
+  $module = 'eureka_notifications';
+  $key = 'stagnant';
+  $to = $user->getEmail();
+  $params['message'] = $settings->get('profile_notification_message');
+  $params['eid'] = $user->name;
+  $langcode = $user->getPreferredLangcode();
+  $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, TRUE);
+  if ($result['result'] !== TRUE) {
+    return FALSE;
+  }
+  return TRUE;
+}
+
+/**
+ * Emailer for stale projects.
+ *
+ * @param $user
+ *    The user object.
+ *
+ * @return bool
+ *    Whether or not the email message was successful.
+ */
+function _eureka_notifications_email_project_lead($user, $settings) {
+  $mailManager = \Drupal::service('plugin.manager.mail');
+  $module = 'eureka_notifications';
+  $key = 'stagnant';
+  $to = $user->getEmail();
+  $params['message'] = $settings->get('project_notification_message');;
+  $params['eid'] = $user->name;
+  $langcode = $user->getPreferredLangcode();
+  $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, TRUE);
+  if ($result['result'] !== TRUE) {
+    return FALSE;
+  }
+  return TRUE;
+}
+
+/**
+ * Implements hook_mail().
+ */
+function eureka_notifications_mail($key, &$message, $params) {
+  $options = array(
+    'langcode' => $message['langcode'],
+  );
+  switch ($key) {
+    case 'stagnant':
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['reply-to'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = 'Reminder: Update your faculty profile';
+      $message['body'][] = $params['message'];
+
+      $moduleHandler = \Drupal::service('module_handler');
+      if ($moduleHandler->moduleExists('devel')) {
+        echo (implode(' ', $message['body']));
+      }
+      break;
+  }
+}
