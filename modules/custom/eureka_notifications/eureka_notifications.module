@@ -37,7 +37,7 @@ function eureka_notifications_cron() {
     $interval = 3600 * 24 * $frequency;
     $next_execution = \Drupal::state()->get('eureka_notifications.next_student_execution');
     $next_execution = !empty($next_execution) ? $next_execution : 0;
-    if (REQUEST_TIME >= $next_execution) {
+    if (REQUEST_TIME >= $next_execution or TRUE) {
       _eureka_notifications_students($settings);
       \Drupal::state()->set('eureka_notifications.next_student_execution', REQUEST_TIME + $interval);
     }
@@ -154,12 +154,14 @@ function _eureka_notifications_students($settings) {
   $to_be_notified = $eureka_notify->loadMultiple();
   foreach ($to_be_notified as $key => $record) {
     $type = $record->get('type')->getString();
-    $name = $record->get('name')->getString();
+    $faculty_name = $record->get('faculty_name')->getString();
+    $project_title = $record->get('project_title')->getString();
     $url = $record->get('url')->getString();
     $student_id = $record->get('uid')->getString();
     $entity_id = $record->get('entity_id')->getString();
     $students[$student_id][$type][$entity_id] = [
-      'name' => $name,
+      'faculty_name' => $faculty_name,
+      'project_title' => $project_title,
       'url' => $url,
     ];
     // Remove record from system.
