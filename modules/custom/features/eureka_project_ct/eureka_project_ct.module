@@ -138,21 +138,8 @@ function eureka_project_ct_node_form_submit($form, FormStateInterface $form_stat
       // Check if Project Lead has changed.
       if ($existing_lead_id != $new_lead_id) {
         // Situation 3.
-        $situation = 'three';
-      }
-      else {
-        // Situation 2.
-        $situation = 'two';
-      }
-
-      switch ($situation) {
-        case 'three':
-          remove_project_user($existing_lead_id, $project_id);
-          add_project_user($new_lead_id, $project_id);
-          break;
-
-        case 'two':
-          break;
+        remove_project_user($existing_lead_id, $project_id);
+        add_project_user($new_lead_id, $project_id);
       }
     }
   }
