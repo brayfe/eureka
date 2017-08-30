@@ -1,8 +1,3 @@
-# My Personal Paths
-modules/contrib/devel
-modules/contrib/admin_toolbar
-modules/contrib/devel
-
 # Ignore paths that contain user-generated content.
 sites/*/files
 sites/*/private
