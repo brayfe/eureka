@@ -5,6 +5,7 @@
  * Contains eureka_project_ct.module..
  */
 
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Render\Element;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
@@ -168,6 +169,7 @@ function add_project_user($uid, $proj_id) {
       'field_projects_target_id' => $proj_id,
     ])
     ->execute();
+  Cache::invalidateTags(['user_values']);
 }
 
 /**
@@ -180,4 +182,5 @@ function remove_project_user($uid, $proj_id) {
     ->condition('entity_id', $uid)
     ->condition('field_projects_target_id', $proj_id)
     ->execute();
+  Cache::invalidateTags(['user_values']);
 }
