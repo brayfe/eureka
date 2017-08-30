@@ -131,7 +131,7 @@ function eureka_project_ct_node_form_submit($form, FormStateInterface $form_stat
   // New Project if no query results.
   if (!$uids) {
     // Situation 1.
-    add_project_user($new_lead_id, $project_id);
+    _eureka_project_ct_add_project_user($new_lead_id, $project_id);
   }
   else {
     // Current Project.
@@ -139,8 +139,8 @@ function eureka_project_ct_node_form_submit($form, FormStateInterface $form_stat
       // Check if Project Lead has changed.
       if ($existing_lead_id != $new_lead_id) {
         // Situation 3.
-        remove_project_user($existing_lead_id, $project_id);
-        add_project_user($new_lead_id, $project_id);
+        _eureka_project_ct_remove_project_user($existing_lead_id, $project_id);
+        _eureka_project_ct_add_project_user($new_lead_id, $project_id);
       }
     }
   }
@@ -151,7 +151,7 @@ function eureka_project_ct_node_form_submit($form, FormStateInterface $form_stat
  *
  * Given a Project ID and User ID, add Project to User's Project list.
  */
-function add_project_user($uid, $proj_id) {
+function _eureka_project_ct_add_project_user($uid, $proj_id) {
   $next_delta = db_select('user__field_projects', 'fp')
     ->fields('fp', ['delta'])
     ->condition('entity_id', $uid)
@@ -177,7 +177,7 @@ function add_project_user($uid, $proj_id) {
  *
  * Given a Project ID and User ID, remove Project from User's Project list.
  */
-function remove_project_user($uid, $proj_id) {
+function _eureka_project_ct_remove_project_user($uid, $proj_id) {
   db_delete('user__field_projects')
     ->condition('entity_id', $uid)
     ->condition('field_projects_target_id', $proj_id)
