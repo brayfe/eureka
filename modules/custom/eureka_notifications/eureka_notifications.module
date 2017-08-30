@@ -33,7 +33,8 @@ function eureka_notifications_cron() {
   }
 
   if ($settings->get('student_notifications_on')) {
-    $interval = $settings->get('student_notification_frequency');
+    $frequency = $settings->get('student_notification_frequency');
+    $interval = 3600 * 24 * $frequency;
     $next_execution = \Drupal::state()->get('eureka_notifications.next_student_execution');
     $next_execution = !empty($next_execution) ? $next_execution : 0;
     if (REQUEST_TIME >= $next_execution) {
@@ -156,6 +157,8 @@ function _eureka_notifications_students($settings) {
       'name' => $name,
       'url' => $url,
     ];
+    // Remove record from system.
+    $record->delete();
   }
   if (!empty($students)) {
     $message_new_project = $settings->get('student_project_notification_message');
@@ -176,7 +179,7 @@ function _eureka_notifications_students($settings) {
           $replace = [
             $parameters['name'],
             'https://eureka.utexas.edu' . $parameters['url'],
-            'foo',
+            '[faculty]',
           ];
           $message = str_ireplace($find, $replace, $message_new_project);
           _eureka_notifications_email_student($user, $message);
