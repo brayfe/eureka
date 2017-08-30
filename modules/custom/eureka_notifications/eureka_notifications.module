@@ -37,7 +37,7 @@ function eureka_notifications_cron() {
     $interval = 3600 * 24 * $frequency;
     $next_execution = \Drupal::state()->get('eureka_notifications.next_student_execution');
     $next_execution = !empty($next_execution) ? $next_execution : 0;
-    if (REQUEST_TIME >= $next_execution or TRUE) {
+    if (REQUEST_TIME >= $next_execution) {
       _eureka_notifications_students($settings);
       \Drupal::state()->set('eureka_notifications.next_student_execution', REQUEST_TIME + $interval);
     }
