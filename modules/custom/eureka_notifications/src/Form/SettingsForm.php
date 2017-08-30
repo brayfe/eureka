@@ -89,7 +89,7 @@ class SettingsForm extends ConfigFormBase {
     $form['student_notifications_on'] = array(
       '#type' => 'checkbox',
       '#title' => $this->t('Enable sending of student notifications'),
-      '#default_value' => $config->get('notifications_on'),
+      '#default_value' => $config->get('student_notifications_on'),
       '#description' => $this->t('On/Off for student notifications, below, to be sent.'),
     );
 

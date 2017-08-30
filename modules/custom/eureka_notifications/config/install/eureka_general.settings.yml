@@ -1,4 +1,4 @@
-notifications_on: 0
+notifications_on: 1
 faculty_profile_stale: 365
 faculty_notification_frequency: 30
 project_stale: 365
