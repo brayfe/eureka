@@ -40,7 +40,7 @@ class SettingsForm extends ConfigFormBase {
 
     $form['notifications_on'] = array(
       '#type' => 'checkbox',
-      '#title' => $this->t('Enable sending of notifications'),
+      '#title' => $this->t('Enable sending of faculty reminder notifications'),
       '#default_value' => $config->get('notifications_on'),
       '#description' => $this->t('On/Off for notifications, below, to be sent.'),
     );
@@ -57,7 +57,7 @@ class SettingsForm extends ConfigFormBase {
       '#title' => $this->t('Faculty notification frequency'),
       '#default_value' => $config->get('faculty_notification_frequency'),
       '#description' => $this->t('How frequently should faculty be notified (in days)
-        if their profile has not been updated?'),
+        if their stagant profile has not been updated?'),
     );
 
     $form['project_stale'] = array(
@@ -72,7 +72,7 @@ class SettingsForm extends ConfigFormBase {
       '#title' => $this->t('Project Lead notification frequency'),
       '#default_value' => $config->get('project_notification_frequency'),
       '#description' => $this->t('How frequently should project leads be
-        notified (in days) if a project has not been updated?'),
+        notified (in days) if a stagnant project has not been updated?'),
     );
     $form['project_notification_message'] = array(
       '#type' => 'textarea',
@@ -84,6 +84,35 @@ class SettingsForm extends ConfigFormBase {
       '#title' => $this->t('Email to update a faculty profile'),
       '#default_value' => $config->get('profile_notification_message'),
     );
+
+    // Relates to sending emails to students about updated content.
+    $form['student_notifications_on'] = array(
+      '#type' => 'checkbox',
+      '#title' => $this->t('Enable sending of student notifications'),
+      '#default_value' => $config->get('notifications_on'),
+      '#description' => $this->t('On/Off for student notifications, below, to be sent.'),
+    );
+
+    $form['student_notification_frequency'] = array(
+      '#type' => 'number',
+      '#title' => $this->t('Student notification frequency'),
+      '#default_value' => $config->get('student_notification_frequency'),
+      '#description' => $this->t('How frequently should students be
+        notified (in days) if a bookmarked faculty member has updated his/her profile or created a new project?'),
+    );
+    $form['student_project_notification_message'] = array(
+      '#type' => 'textarea',
+      '#title' => $this->t('Email text when a new project is created whose project lead is bookmarked'),
+      '#default_value' => $config->get('student_project_notification_message'),
+      '#description' => 'Use the shortcode [faculty] to represent a faculty member name. Use the shortcode [project] to represent a project title. Use [project-url] to represent a direct link to the project.',
+    );
+    $form['student_profile_notification_message'] = array(
+      '#type' => 'textarea',
+      '#title' => $this->t('Email text when a bookmarked faculty member profile is updated'),
+      '#default_value' => $config->get('student_profile_notification_message'),
+      '#description' => 'Use the shortcode [faculty] to represent a faculty member name. Use [faculty-url] to represent a direct link to the faculty member.',
+    );
+
     return parent::buildForm($form, $form_state);
   }
 
@@ -101,6 +130,10 @@ class SettingsForm extends ConfigFormBase {
       ->set('project_notification_frequency', $values['project_notification_frequency'])
       ->set('project_notification_message', $values['project_notification_message'])
       ->set('profile_notification_message', $values['profile_notification_message'])
+      ->set('student_notifications_on', $values['student_notifications_on'])
+      ->set('student_notification_frequency', $values['student_notification_frequency'])
+      ->set('student_profile_notification_message', $values['student_profile_notification_message'])
+      ->set('student_project_notification_message', $values['student_project_notification_message'])
 
       ->save();
 
