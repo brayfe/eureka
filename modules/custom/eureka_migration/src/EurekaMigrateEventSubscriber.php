@@ -51,45 +51,49 @@ class EurekaMigrateEventSubscriber implements EventSubscriberInterface {
     if (in_array($migration, $migrations)) {
       // Row object containing the specific item just imported.
       $row = $event->getRow();
+      // The unique destination ID of the item just imported.
+      $destinationId = $event->getDestinationIdValues();
 
+      // Only run if user is a faculty member.
       if ($migration == 'users') {
-        // Only run if user is a faculty member.
         if ($row->getSourceProperty('faculty_id')) {
-          // Project Redirect Defaults.
-          $defaults = [
+          // Faculty Redirect settings.
+          $settings = [
             'path' => 'faculty/view',
             'query' => ['faculty_id' => $row->getSourceProperty('faculty_id')],
             'status_code' => 301,
             'language' => 'und',
             'type' => 'user',
           ];
-        }
-        else {
-          // Non-faculty user.
-          return;
+
+          $this->createRedirect($settings, $destinationId[0]);
         }
       }
+      else {
+        // Project Redirect settings.
+        $settings = [
+          'path' => 'project/view',
+          'query' => ['project_id' => $row->getSourceProperty('project_id')],
+          'status_code' => 301,
+          'language' => 'und',
+          'type' => 'node',
+        ];
 
-      // The unique destination ID of the item just imported.
-      $destinationId = $event->getDestinationIdValues();
-
-      // Project Redirect Defaults.
-      $defaults = [
-        'path' => 'project/view',
-        'query' => ['project_id' => $row->getSourceProperty('project_id')],
-        'status_code' => 301,
-        'language' => 'und',
-        'type' => 'node',
-      ];
-
-      $redirect = $this->entityManager->getStorage('redirect')->create();
-      $redirect->setSource($defaults['path'], $defaults['query']);
-      $redirect->setRedirect($defaults['type'] . '/' . $destinationId[0]);
-      $redirect->setStatusCode($defaults['status_code']);
-      $redirect->setLanguage($defaults['language']);
-      $redirect->save();
+        $this->createRedirect($settings, $destinationId[0]);
+      }
     }
+  }
 
+  /**
+   * Create entity redirect based on given settings.
+   */
+  private function createRedirect($settings, $id) {
+    $redirect = $this->entityManager->getStorage('redirect')->create();
+    $redirect->setSource($settings['path'], $settings['query']);
+    $redirect->setRedirect($settings['type'] . '/' . $id);
+    $redirect->setStatusCode($settings['status_code']);
+    $redirect->setLanguage($settings['language']);
+    $redirect->save();
   }
 
 }
