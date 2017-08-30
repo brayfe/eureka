@@ -113,27 +113,32 @@ function _eureka_notifications_get_flags($entity_id, $type) {
  */
 function _eureka_notifications_create($uid, $entity_id, $type) {
   $url = '';
-  $name = '';
+  $faculty_name = '';
+  $project_title = '';
   switch ($type) {
     case 'faculty':
       $user = User::load($entity_id);
-      $name = $user->get('field_display_name')->getString();
+      $faculty_name = $user->get('field_display_name')->getString();
       $url_obj = Url::fromRoute('entity.user.canonical', ['user' => $entity_id], []);
       $url = $url_obj->toString();
       break;
 
     case 'project':
       $project = Node::load($entity_id);
+      $project_lead = $project->get('field_project_lead')->getString();
+      $faculty = User::load($project_lead);
+      $faculty_name = $faculty->get('field_display_name')->getString();
       $url_obj = Url::fromRoute('entity.node.canonical', ['node' => $entity_id], []);
       $url = $url_obj->toString();
-      $name = $project->title;
+      $project_title = $project->title;
       break;
   }
   $eureka_notify = entity_create('eureka_notify', array(
     'uid' => $uid,
     'entity_id' => $entity_id,
     'type' => $type,
-    'name' => $name,
+    'faculty_name' => $faculty_name,
+    'project_title' => $project_title,
     'url' => $url,
   ));
   $eureka_notify->save();
@@ -143,7 +148,7 @@ function _eureka_notifications_create($uid, $entity_id, $type) {
  * Cron callback. Email students who have bookmarked faculty w/ updated data.
  */
 function _eureka_notifications_students($settings) {
-  $log = 'No students were notified of updated projects.';
+  $log = 'No students were notified of updated projects/profiles.';
   $students = [];
   $eureka_notify = \Drupal::entityManager()->getStorage('eureka_notify');
   $to_be_notified = $eureka_notify->loadMultiple();
@@ -168,7 +173,7 @@ function _eureka_notifications_students($settings) {
       if (isset($values['faculty'])) {
         $find = ['[faculty]', '[faculty-url]'];
         foreach ($values['faculty'] as $fid => $parameters) {
-          $replace = [$parameters['name'], 'https://eureka.utexas.edu' . $parameters['url']];
+          $replace = [$parameters['faculty_name'], 'https://eureka.utexas.edu' . $parameters['url']];
           $message = str_ireplace($find, $replace, $message_upd_faculty);
           _eureka_notifications_email_student($user, $message);
         }
@@ -177,9 +182,9 @@ function _eureka_notifications_students($settings) {
         $find = ['[project]', '[project-url]', '[faculty]'];
         foreach ($values['project'] as $pid => $parameters) {
           $replace = [
-            $parameters['name'],
+            $parameters['project_title'],
             'https://eureka.utexas.edu' . $parameters['url'],
-            '[faculty]',
+            $parameters['faculty_name'],
           ];
           $message = str_ireplace($find, $replace, $message_new_project);
           _eureka_notifications_email_student($user, $message);

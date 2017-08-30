@@ -57,9 +57,13 @@ class Notify extends ContentEntityBase implements ContentEntityInterface {
       ->setDescription(t('The entity ID that has been updated/created'))
       ->setReadOnly(TRUE);
 
-    $fields['name'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('name'))
-      ->setDescription(t('The faculty name or project title'))
+    $fields['faculty_name'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Faculty Name'))
+      ->setDescription(t('The faculty name'))
+      ->setReadOnly(TRUE);
+    $fields['project_title'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Project Title'))
+      ->setDescription(t('The project title'))
       ->setReadOnly(TRUE);
 
     $fields['url'] = BaseFieldDefinition::create('string')
