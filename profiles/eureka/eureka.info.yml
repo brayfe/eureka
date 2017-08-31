@@ -35,6 +35,8 @@ dependencies:
   - text
   - toolbar
   - views
+  #contrib
+  - redirect
 
 themes:
   - adminimal_theme
