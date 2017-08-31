@@ -8,4 +8,4 @@ profile_notification_message: 'Your University of Texas Eureka profile has not b
 student_notifications_on: 1
 student_notification_frequency: 1
 student_project_notification_message: 'A new project has been added by one of your bookmarked faculty members. [faculty] added the project "[project]." Visit [project-url] to see details.'
-student_profile_notification_message: 'One of your bookmarked faculty members, [faculty] has recently updated their information. Visit [faculty-url] to view the changes.'
+student_profile_notification_message: 'One of your bookmarked faculty members, [faculty] has recently updated profile information. Visit [faculty-url] to view the changes.'
