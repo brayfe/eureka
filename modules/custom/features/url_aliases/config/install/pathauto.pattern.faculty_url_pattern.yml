@@ -6,7 +6,7 @@ dependencies:
 id: faculty_url_pattern
 label: 'Faculty URL Pattern'
 type: 'canonical_entities:user'
-pattern: 'faculty/[user:field_display_name:value]'
+pattern: '[user:roles:last]/[user:field_display_name:value]'
 selection_criteria: {  }
 selection_logic: and
 weight: 0
