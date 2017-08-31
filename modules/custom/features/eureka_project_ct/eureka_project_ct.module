@@ -5,6 +5,7 @@
  * Contains eureka_project_ct.module..
  */
 
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Render\Element;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Field\FieldStorageDefinitionInterface;
@@ -47,6 +48,13 @@ function eureka_project_ct_form_alter(&$form, FormStateInterface $form_state, $f
     }
 
     $form['#attached']['library'][] = 'eureka_project_ct/project_form';
+
+    // Add Custom Submit Handler for adding Project to Project Lead.
+    foreach (array_keys($form['actions']) as $action) {
+      if ($action != 'preview' && isset($form['actions'][$action]['#type']) && $form['actions'][$action]['#type'] === 'submit') {
+        $form['actions'][$action]['#submit'][] = 'eureka_project_ct_node_form_submit';
+      }
+    }
 
   }
 }
@@ -95,4 +103,84 @@ function eureka_project_ct_preprocess_field_multiple_value_form(&$variables) {
       }
     }
   }
+}
+
+/**
+ * Custom Submit Handler for Project nodes.
+ *
+ * Append Project to Project Lead's known projects. Remove from previous
+ * Project Lead's profile if updating Project Lead.
+ *
+ * 3 situations exist:
+ * 1. New project - result: Add project id to lead's profile.
+ * 2. Current Project/Same Lead - result: Do Nothing.
+ * 3. Current Project/New Lead - result: Remove project id from old lead's
+ *    profile, then add add project id to new lead's profile.
+ */
+function eureka_project_ct_node_form_submit($form, FormStateInterface $form_state) {
+  // Grab Project and User information from saved form.
+  $project_id = $form_state->getValue('nid');
+  $new_lead_id = $form_state->getValue('field_project_lead')[0]['target_id'];
+
+  // Check if any other users are listed as Project Lead.
+  $query = \Drupal::entityQuery('user')
+    ->condition('roles', 'faculty')
+    ->condition('field_projects', $project_id);
+  $uids = $query->execute();
+
+  // New Project if no query results.
+  if (!$uids) {
+    // Situation 1.
+    _eureka_project_ct_add_project_user($new_lead_id, $project_id);
+  }
+  else {
+    // Current Project.
+    foreach ($uids as $existing_lead_id) {
+      // Check if Project Lead has changed.
+      if ($existing_lead_id != $new_lead_id) {
+        // Situation 3.
+        _eureka_project_ct_remove_project_user($existing_lead_id, $project_id);
+        _eureka_project_ct_add_project_user($new_lead_id, $project_id);
+      }
+    }
+  }
+}
+
+/**
+ * Add Project to User Profile.
+ *
+ * Given a Project ID and User ID, add Project to User's Project list.
+ */
+function _eureka_project_ct_add_project_user($uid, $proj_id) {
+  $next_delta = db_select('user__field_projects', 'fp')
+    ->fields('fp', ['delta'])
+    ->condition('entity_id', $uid)
+    ->orderBy('fp.delta', 'DESC')
+    ->range(0, 1)
+    ->execute()->fetchField() + 1;
+
+  db_insert('user__field_projects')
+    ->fields([
+      'bundle' => 'user',
+      'entity_id' => $uid,
+      'revision_id' => $uid,
+      'langcode' => 'en',
+      'delta' => $next_delta,
+      'field_projects_target_id' => $proj_id,
+    ])
+    ->execute();
+  Cache::invalidateTags(['user_values']);
+}
+
+/**
+ * Remove Project from User Profile.
+ *
+ * Given a Project ID and User ID, remove Project from User's Project list.
+ */
+function _eureka_project_ct_remove_project_user($uid, $proj_id) {
+  db_delete('user__field_projects')
+    ->condition('entity_id', $uid)
+    ->condition('field_projects_target_id', $proj_id)
+    ->execute();
+  Cache::invalidateTags(['user_values']);
 }
