@@ -97,12 +97,11 @@ class SettingsForm extends ConfigFormBase {
       '#type' => 'number',
       '#title' => $this->t('Student notification frequency'),
       '#default_value' => $config->get('student_notification_frequency'),
-      '#description' => $this->t('How frequently should students be
-        notified (in days) if a bookmarked faculty member has updated his/her profile or created a new project?'),
+      '#description' => $this->t('Number of days before notifying students if a faculty member they bookmarked has updated their profile or created a new project.'),
     );
     $form['student_project_notification_message'] = array(
       '#type' => 'textarea',
-      '#title' => $this->t('Email text when a new project is created whose project lead is bookmarked'),
+      '#title' => $this->t('Notification email text when bookmarked faculty member adds a new project.'),
       '#default_value' => $config->get('student_project_notification_message'),
       '#description' => 'Use the shortcode [faculty] to represent a faculty member name. Use the shortcode [project] to represent a project title. Use [project-url] to represent a direct link to the project.',
     );
