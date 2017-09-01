@@ -1,27 +1,34 @@
-// footer upper and footer left and footer right styles
+// footer upper and lower styles
+.footer-wrapper.container-fluid {
+  padding: 0;
+  background-color: $gray;
+  border-top: 4px solid #BF5700;
+}
 
 .footer-upper {
   text-align: center;
+  background-color: $gray;
+  padding-top: 1em;
 
   #block-eurekawordmark {
     color: #fff;
     margin-top: 1em;
 
     p {
-      font-size: 40px;
+      font-size: 35px;
       font-family: $gtspectra;
       letter-spacing: 2px;
     }
   }
 
   #block-mainnavigation,
-  #block-mainnavigation-2,
-  #block-footerpages {
+  #block-mainnavigation-2 {
 
     ul {
       width: 90%;
       text-align: center;
       float: none;
+      font-size: 1.25em;
       margin: 0 auto;
 
       li {
@@ -42,55 +49,86 @@
     }
   }
 
-  #block-mainnavigation-2 ul li a {
-    font-size: 1.2em;
+  #block-footerpages {
+
+    ul.menu {
+      margin: 1em 0;
+      width: 90%;
+      text-align: center;
+      float: none;
+      font-size: 1em;
+      margin: 0 auto;
+
+      li {
+        float: none;
+        display: inline-block;
+        text-align: center;
+
+        a {
+          color: #fff;
+
+          &:hover,
+          &:focus {
+            background-color: transparent;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
   }
 }
 
-// for footer left and footer right
-.footer-wrapper {
-  background-color: $gray;
-  margin-top: 3em;
-  border-top: 5px solid #bf5700;
+.footer-lower {
+  text-align: center;
+  margin-top: 1em;
 
-  footer.footer {
+  .block-footer-lower-block {
     border-top: 1px solid #999;
-    margin-top: 1.5em;
+    padding: 2em 0;
+  }
 
-    .footer-left {
-      width: 49%;
-      display: inline-block;
+  img {
+    width: 75%;
+    max-width: 300px;
+  }
 
-      // #block-footerugslogo {
 
-        img {
-          max-width: 60%;
-        }
-      //}
+  p {
+    color:#fff;
+    margin-top: 10px;
+
+    a {
+      color: #fff;
+
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
     }
+  }
 
-    .footer-right {
-      width: 49%;
-      float: right;
-      text-align: right !important;
-      display: inline-block;
+  .footer-lower-wordmark {
+    margin-bottom: 1.75em;
+  }
 
-      //#block-footercreditsandlinks {
+  .footer-lower-links {
 
-        p {
-          color:#fff;
-          margin-top: 10px;
+    ul {
+      margin: 0 1.5rem 0 0;
 
-          a {
-            color: #fff;
+      li {
+        display: inline-block;
+        margin: 0 1.5rem 0 0;
+        color: #fff;
 
-            &:hover,
-            &:focus {
-              text-decoration: underline;
-            }
-          }
+        a {
+          color: #fff;
         }
-      //}
+      }
+
+      li:last-child {
+        margin-right: 0;
+      }
     }
   }
 }

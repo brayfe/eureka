@@ -3,7 +3,7 @@
 // branding
 .brand-bar {
   background-color: transparent;
-  height: 30px;
+  height: 35px;
   padding: 0;
   width: 100%;
   margin-bottom: 2px;
@@ -55,7 +55,7 @@ header.full-width {
   background-color: #382f2d;
   border: none;
   border-radius: 0;
-  padding: 1em 0;
+  padding: 1.8em 0;
   margin-bottom: 2em;
 
   .container {
@@ -65,7 +65,8 @@ header.full-width {
       padding-left: 0;
 
       .logo-text {
-        font-size: 40px;
+        font-size: 50px;
+        line-height: 50px;
         letter-spacing: 2px;
         color: #fff;
 
@@ -104,14 +105,14 @@ header.full-width {
           li {
 
             a {
-              font-size: 1.25em;
+              font-size: 1.5em;
               color: #fff;
               line-height: 27px;
 
               &:hover,
               &:focus {
                 background-color: transparent;
-                text-decoration: underline;
+                text-decoration: none;
               }
 
             }

@@ -9,23 +9,19 @@
  * Implements hook_theme().
  */
 function eureka_footer_content_theme() {
-  $theme['footer_left'] = [
+  $theme['footer_lower'] = [
     'variables' => [
       'ugslogourl' => NULL,
       'ugslogosrc' => NULL,
       'ugslogoalt' => NULL,
-    ],
-    'template' => 'footer-left',
-  ];
-  $theme['footer_right'] = [
-    'variables' => [
       'year' => NULL,
       'policy_link' => NULL,
       'accessibility_link' => NULL,
       'privacy_link' => NULL,
     ],
-    'template' => 'footer-right',
+    'template' => 'footer-lower',
   ];
+
   $theme['footer_upper'] = [
     'variables' => ['name' => NULL, 'year' => NULL],
     'template' => 'footer-upper',

@@ -199,22 +199,10 @@
       {{ page.footer_upper }}
     </div>
   </section>
-  <footer class="footer {{ container }}" role="contentinfo">
-     {% if page.footer_left %}
-       {% block footer_left %}
-        <div class="footer-left">
-          {{ page.footer_left }}
-        </div>
-       {% endblock %}
-     {% endif %}
-
-      {% if page.footer_right %}
-       {% block footer_right %}
-        <div class="footer-right">
-          {{ page.footer_right }}
-        </div>
-       {% endblock %}
-     {% endif %}
-  </footer>
+  <section class="footer-lower">
+    <div class="container">
+      {{ page.footer_lower }}
+    </div>
+  </section>
 </div>
 
