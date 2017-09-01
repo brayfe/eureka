@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - eureka_footer_content
+  theme:
+    - eurekatheme
+id: footerlowerblock
+theme: eurekatheme
+region: footer_lower
+weight: 0
+provider: null
+plugin: footer_lower_block
+settings:
+  id: footer_lower_block
+  label: 'Footer Lower Block'
+  provider: eureka_footer_content
+  label_display: '0'
+visibility: {  }

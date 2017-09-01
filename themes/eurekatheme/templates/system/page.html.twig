@@ -194,15 +194,20 @@
 
 
 <div class="footer-wrapper container-fluid">
-  <section class="footer-upper">
-    <div class="container">
-      {{ page.footer_upper }}
-    </div>
-  </section>
-  <section class="footer-lower">
-    <div class="container">
-      {{ page.footer_lower }}
-    </div>
-  </section>
+  {% if page.footer_upper %}
+    <section class="footer-upper">
+      <div class="container">
+        {{ page.footer_upper }}
+      </div>
+    </section>
+  {% endif %}
+
+  {% if page.footer_lower %}
+    <section class="footer-lower">
+      <div class="container">
+        {{ page.footer_lower }}
+      </div>
+    </section>
+  {% endif %}
 </div>
 
