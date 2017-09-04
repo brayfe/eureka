@@ -22,7 +22,7 @@ class DashboardController extends ControllerBase {
     $user = User::load(\Drupal::currentUser()->id());
     $roles = $user->getRoles();
     if (!in_array('faculty', $roles)) {
-      if ($user->get('field_terms_of_service')->value == FALSE) {
+      if ($user->get('field_terms_of_ser')->value == FALSE) {
         $text = $this->notification_button();
         $build['tos']['#markup'] = render($text);
         $build['#attached']['library'][] = 'eureka_notifications/tos';

@@ -79,7 +79,7 @@ class AcknowledgementForm extends FormBase {
     if ($values['submit'] == 'I agree') {
       $uid = $this->currentUser->id();
       $user = user_load($uid);
-      $user->field_terms_of_service->value = TRUE;
+      $user->field_terms_of_ser->value = TRUE;
       $user->save();
     }
 
