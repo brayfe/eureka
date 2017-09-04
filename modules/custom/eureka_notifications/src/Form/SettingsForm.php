@@ -38,6 +38,12 @@ class SettingsForm extends ConfigFormBase {
       '#markup' => 'General configuration options for the site.',
     ];
 
+    $form['tos_text'] = array(
+      '#type' => 'textarea',
+      '#title' => $this->t('Text displayed in the site terms of service'),
+      '#default_value' => $config->get('tos_text'),
+    );
+
     $form['notifications_on'] = array(
       '#type' => 'checkbox',
       '#title' => $this->t('Enable sending of notifications'),
@@ -101,6 +107,7 @@ class SettingsForm extends ConfigFormBase {
       ->set('project_notification_frequency', $values['project_notification_frequency'])
       ->set('project_notification_message', $values['project_notification_message'])
       ->set('profile_notification_message', $values['profile_notification_message'])
+      ->set('tos_text', $values['tos_text'])
 
       ->save();
 

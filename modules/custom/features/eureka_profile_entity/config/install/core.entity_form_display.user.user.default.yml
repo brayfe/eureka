@@ -22,6 +22,7 @@ dependencies:
     - field.field.user.user.field_responsibilities
     - field.field.user.user.field_sa_notes
     - field.field.user.user.field_tags
+    - field.field.user.user.field_terms_of_service
   module:
     - field_group
     - field_layout
@@ -29,6 +30,7 @@ dependencies:
     - layout_discovery
     - link
     - multiselect
+    - path
     - term_reference_tree
     - text
     - user
@@ -329,3 +331,4 @@ content:
     third_party_settings: {  }
 hidden:
   field_faculty_notified: true
+  field_terms_of_service: true
