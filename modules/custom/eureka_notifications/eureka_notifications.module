@@ -170,12 +170,13 @@ function _eureka_notifications_students($settings) {
   if (!empty($students)) {
     $message_new_project = $settings->get('student_project_notification_message');
     $message_upd_faculty = $settings->get('student_profile_notification_message');
+    $base_url = \Drupal::request()->getSchemeAndHttpHost();
     foreach ($students as $id => $values) {
       $user = User::load($id);
       if (isset($values['faculty'])) {
         $find = ['[faculty]', '[faculty-url]'];
         foreach ($values['faculty'] as $fid => $parameters) {
-          $replace = [$parameters['faculty_name'], 'https://eureka.utexas.edu' . $parameters['url']];
+          $replace = [$parameters['faculty_name'], $base_url . $parameters['url']];
           $message = str_ireplace($find, $replace, $message_upd_faculty);
           _eureka_notifications_email_student($user, $message);
         }
@@ -185,7 +186,7 @@ function _eureka_notifications_students($settings) {
         foreach ($values['project'] as $pid => $parameters) {
           $replace = [
             $parameters['project_title'],
-            'https://eureka.utexas.edu' . $parameters['url'],
+            $base_url . $parameters['url'],
             $parameters['faculty_name'],
           ];
           $message = str_ireplace($find, $replace, $message_new_project);
