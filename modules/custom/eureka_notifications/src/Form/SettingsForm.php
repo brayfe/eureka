@@ -56,8 +56,7 @@ class SettingsForm extends ConfigFormBase {
       '#type' => 'number',
       '#title' => $this->t('Faculty notification frequency'),
       '#default_value' => $config->get('faculty_notification_frequency'),
-      '#description' => $this->t('How frequently should faculty be notified (in days)
-        if their stagant profile has not been updated?'),
+      '#description' => $this->t('How frequently should faculty be notified (in days) if their stagnant profile has not been updated?'),
     );
 
     $form['project_stale'] = array(
