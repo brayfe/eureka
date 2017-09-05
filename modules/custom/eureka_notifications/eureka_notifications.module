@@ -178,7 +178,11 @@ function _eureka_notifications_students($settings) {
         foreach ($values['faculty'] as $fid => $parameters) {
           $replace = [$parameters['faculty_name'], $base_url . $parameters['url']];
           $message = str_ireplace($find, $replace, $message_upd_faculty);
-          _eureka_notifications_email_student($user, $message);
+          if (!_eureka_notifications_email_student($user, $message)) {
+            // The email has failed to send; add the record to be re-sent.
+            _eureka_notifications_create($id, $fid, 'faculty');
+            // @todo: Send an email to the administrator?
+          }
         }
       }
       if (isset($values['project'])) {
@@ -190,13 +194,17 @@ function _eureka_notifications_students($settings) {
             $parameters['faculty_name'],
           ];
           $message = str_ireplace($find, $replace, $message_new_project);
-          _eureka_notifications_email_student($user, $message);
+          if (!_eureka_notifications_email_student($user, $message)) {
+            // The email has failed to send; add the record to be re-sent.
+            _eureka_notifications_create($id, $pid, 'project');
+            // @todo: Send an email to the administrator?
+          }
         }
       }
     }
     $log = count($students) . ' students emailed of new projects/updated faculty';
   }
-
+  \Drupal::logger('eureka_notifications')->notice($log);
   // If devel is enabled, go ahead and print the response that would be sent.
   $moduleHandler = \Drupal::service('module_handler');
   if ($moduleHandler->moduleExists('devel')) {
@@ -261,6 +269,7 @@ function _eureka_notifications_stagnant_faculty($settings) {
       ':list' => implode(', ', $faculty_notified),
     ]);
   }
+  \Drupal::logger('eureka_notifications')->notice($log);
   // If devel is enabled, go ahead and print the response that would be sent.
   $moduleHandler = \Drupal::service('module_handler');
   if ($moduleHandler->moduleExists('devel')) {
@@ -332,6 +341,7 @@ function _eureka_notifications_stagnant_projects($settings) {
       ':list' => implode(', ', $project_leads_notified),
     ]);
   }
+  \Drupal::logger('eureka_notifications')->notice($log);
   // If devel is enabled, go ahead and print the response that would be sent.
   $moduleHandler = \Drupal::service('module_handler');
   if ($moduleHandler->moduleExists('devel')) {
