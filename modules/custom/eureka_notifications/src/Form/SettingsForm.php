@@ -133,7 +133,6 @@ class SettingsForm extends ConfigFormBase {
       ->set('student_notification_frequency', $values['student_notification_frequency'])
       ->set('student_profile_notification_message', $values['student_profile_notification_message'])
       ->set('student_project_notification_message', $values['student_project_notification_message'])
-
       ->save();
 
     parent::submitForm($form, $form_state);

@@ -34,12 +34,12 @@ class Notify extends ContentEntityBase implements ContentEntityInterface {
 
     $fields['id'] = BaseFieldDefinition::create('integer')
       ->setLabel(t('ID'))
-      ->setDescription(t('The ID of the Layout entity.'))
+      ->setDescription(t('The ID of the eureka_notify entity.'))
       ->setReadOnly(TRUE);
 
     $fields['uuid'] = BaseFieldDefinition::create('uuid')
       ->setLabel(t('UUID'))
-      ->setDescription(t('The UUID of the Layout entity.'))
+      ->setDescription(t('The UUID of the eureka_notify entity.'))
       ->setReadOnly(TRUE);
 
     $fields['type'] = BaseFieldDefinition::create('string')
@@ -61,6 +61,7 @@ class Notify extends ContentEntityBase implements ContentEntityInterface {
       ->setLabel(t('Faculty Name'))
       ->setDescription(t('The faculty name'))
       ->setReadOnly(TRUE);
+
     $fields['project_title'] = BaseFieldDefinition::create('string')
       ->setLabel(t('Project Title'))
       ->setDescription(t('The project title'))
