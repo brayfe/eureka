@@ -94,11 +94,13 @@ class SettingsForm extends ConfigFormBase {
       '#type' => 'textarea',
       '#title' => $this->t('Email to update a project'),
       '#default_value' => $config->get('project_notification_message'),
+      '#description' => $this->t('This field does not allow any HTML.'),
     );
     $form['faculty']['profile_notification_message'] = array(
       '#type' => 'textarea',
       '#title' => $this->t('Email to update a faculty profile'),
       '#default_value' => $config->get('profile_notification_message'),
+      '#description' => $this->t('This field does not allow any HTML.'),
     );
 
     $form['students'] = array(
@@ -125,12 +127,14 @@ class SettingsForm extends ConfigFormBase {
       '#title' => $this->t('Notification email text when bookmarked faculty member adds a new project.'),
       '#default_value' => $config->get('student_project_notification_message'),
       '#description' => 'Use the shortcode [faculty] to represent a faculty member name. Use the shortcode [project] to represent a project title. Use [project-url] to represent a direct link to the project.',
+      '#description' => $this->t('This field does not allow any HTML.'),
     );
     $form['students']['student_profile_notification_message'] = array(
       '#type' => 'textarea',
       '#title' => $this->t('Email text when a bookmarked faculty member profile is updated'),
       '#default_value' => $config->get('student_profile_notification_message'),
       '#description' => 'Use the shortcode [faculty] to represent a faculty member name. Use [faculty-url] to represent a direct link to the faculty member.',
+      '#description' => $this->t('This field does not allow any HTML.'),
     );
 
     return parent::buildForm($form, $form_state);
