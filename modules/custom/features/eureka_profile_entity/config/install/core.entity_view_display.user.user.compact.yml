@@ -23,6 +23,7 @@ dependencies:
     - field.field.user.user.field_responsibilities
     - field.field.user.user.field_sa_notes
     - field.field.user.user.field_tags
+    - field.field.user.user.field_terms_of_ser
   module:
     - field_layout
     - layout_discovery
@@ -64,4 +65,5 @@ hidden:
   field_responsibilities: true
   field_sa_notes: true
   field_tags: true
+  field_terms_of_ser: true
   member_for: true
