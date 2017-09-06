@@ -5,6 +5,11 @@
  * Contains eureka_notifications.module.
  */
 
+use Drupal\Core\Url;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\Entity\Node;
+use Drupal\user\Entity\User;
+
 /**
  * Implements hook_cron().
  */
@@ -25,6 +30,185 @@ function eureka_notifications_cron() {
       _eureka_notifications_stagnant_projects($settings);
       \Drupal::state()->set('eureka_notifications.next_execution', REQUEST_TIME + $interval);
     }
+  }
+
+  if ($settings->get('student_notifications_on')) {
+    $frequency = $settings->get('student_notification_frequency');
+    $interval = 3600 * 24 * $frequency;
+    $next_execution = \Drupal::state()->get('eureka_notifications.next_student_execution');
+    $next_execution = !empty($next_execution) ? $next_execution : 0;
+    if (REQUEST_TIME >= $next_execution) {
+      _eureka_notifications_students($settings);
+      \Drupal::state()->set('eureka_notifications.next_student_execution', REQUEST_TIME + $interval);
+    }
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_update().
+ *
+ * Whenever faculty data is updated, create a eureka_notify record for any
+ * students who have bookmarked this faculty.
+ */
+function eureka_notifications_user_update(User $entity) {
+  // 1. Do a flagging EFQ to see if users have bookmarked this faculty member
+  // 2. Loop through any results & save a new eureka_notify entity.
+  $student_uids = _eureka_notifications_get_flags($entity->id(), 'user');
+  foreach ($student_uids as $student) {
+    _eureka_notifications_create($student, $entity->id(), 'faculty');
+  }
+
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_insert().
+ *
+ * When a new project is created, get the project lead UID and check for any
+ * bookmarked faculty records, then create a eureka_notify record for this.
+ */
+function eureka_notifications_node_insert(EntityInterface $entity) {
+  if ($entity->getType() == 'project') {
+    // 1. Get the project lead UID.
+    // 2. Do an EFQ to see if any users have bookmarked this faculty member.
+    // 3. Loop through any results & save a new eureka_notify entity.
+    $project_lead_uid = $entity->get('field_project_lead')->getString();
+    $student_uids = _eureka_notifications_get_flags($project_lead_uid, 'user');
+    foreach ($student_uids as $student) {
+      _eureka_notifications_create($student, $entity->id(), 'project');
+    }
+  }
+}
+
+/**
+ * Custom query to retrieve any flags (bookmarks) with the given parameters.
+ *
+ * @param string $entity_id
+ *    The user uid.
+ *
+ * @return array
+ *    The user's display name.
+ */
+function _eureka_notifications_get_flags($entity_id, $type) {
+  $users = [];
+  $query = \Drupal::database()->select('flagging', 'f');
+  $query->addField('f', 'uid');
+  $query->condition('f.entity_id', $entity_id);
+  $query->condition('f.entity_type', $type);
+  $result = $query->execute()->fetchAllAssoc('uid');
+  foreach ($result as $key => $f) {
+    $users[] = $f->uid;
+  }
+  return $users;
+}
+
+/**
+ * Helper function to write records to the eureka_notify entity.
+ *
+ * @param string $uid
+ *   The student UID.
+ * @param string $entity_id
+ *   The project or faculty entity ID.
+ * @param string $type
+ *   Whether this is a project or a faculty.
+ */
+function _eureka_notifications_create($uid, $entity_id, $type) {
+  $url = '';
+  $faculty_name = '';
+  $project_title = '';
+  switch ($type) {
+    case 'faculty':
+      $user = User::load($entity_id);
+      $faculty_name = $user->get('field_display_name')->getString();
+      $url_obj = Url::fromRoute('entity.user.canonical', ['user' => $entity_id], []);
+      $url = $url_obj->toString();
+      break;
+
+    case 'project':
+      $project = Node::load($entity_id);
+      $project_lead = $project->get('field_project_lead')->getString();
+      $faculty = User::load($project_lead);
+      $faculty_name = $faculty->get('field_display_name')->getString();
+      $url_obj = Url::fromRoute('entity.node.canonical', ['node' => $entity_id], []);
+      $url = $url_obj->toString();
+      $project_title = $project->title;
+      break;
+  }
+  $eureka_notify = entity_create('eureka_notify', array(
+    'uid' => $uid,
+    'entity_id' => $entity_id,
+    'type' => $type,
+    'faculty_name' => $faculty_name,
+    'project_title' => $project_title,
+    'url' => $url,
+  ));
+  $eureka_notify->save();
+}
+
+/**
+ * Cron callback. Email students who have bookmarked faculty w/ updated data.
+ */
+function _eureka_notifications_students($settings) {
+  $log = 'No students were notified of updated projects/profiles.';
+  $students = [];
+  $eureka_notify = \Drupal::entityManager()->getStorage('eureka_notify');
+  $to_be_notified = $eureka_notify->loadMultiple();
+  foreach ($to_be_notified as $key => $record) {
+    $type = $record->get('type')->getString();
+    $faculty_name = $record->get('faculty_name')->getString();
+    $project_title = $record->get('project_title')->getString();
+    $url = $record->get('url')->getString();
+    $student_id = $record->get('uid')->getString();
+    $entity_id = $record->get('entity_id')->getString();
+    $students[$student_id][$type][$entity_id] = [
+      'faculty_name' => $faculty_name,
+      'project_title' => $project_title,
+      'url' => $url,
+    ];
+    // Remove record from system.
+    $record->delete();
+  }
+  if (!empty($students)) {
+    $message_new_project = $settings->get('student_project_notification_message');
+    $message_upd_faculty = $settings->get('student_profile_notification_message');
+    $base_url = \Drupal::request()->getSchemeAndHttpHost();
+    foreach ($students as $id => $values) {
+      $user = User::load($id);
+      if (isset($values['faculty'])) {
+        $find = ['[faculty]', '[faculty-url]'];
+        foreach ($values['faculty'] as $fid => $parameters) {
+          $replace = [$parameters['faculty_name'], $base_url . $parameters['url']];
+          $message = str_ireplace($find, $replace, $message_upd_faculty);
+          if (!_eureka_notifications_email_student($user, $message)) {
+            // The email has failed to send; add the record to be re-sent.
+            _eureka_notifications_create($id, $fid, 'faculty');
+            // @todo: Send an email to the administrator?
+          }
+        }
+      }
+      if (isset($values['project'])) {
+        $find = ['[project]', '[project-url]', '[faculty]'];
+        foreach ($values['project'] as $pid => $parameters) {
+          $replace = [
+            $parameters['project_title'],
+            $base_url . $parameters['url'],
+            $parameters['faculty_name'],
+          ];
+          $message = str_ireplace($find, $replace, $message_new_project);
+          if (!_eureka_notifications_email_student($user, $message)) {
+            // The email has failed to send; add the record to be re-sent.
+            _eureka_notifications_create($id, $pid, 'project');
+            // @todo: Send an email to the administrator?
+          }
+        }
+      }
+    }
+    $log = count($students) . ' students emailed of new projects/updated faculty';
+  }
+  \Drupal::logger('eureka_notifications')->notice($log);
+  // If devel is enabled, go ahead and print the response that would be sent.
+  $moduleHandler = \Drupal::service('module_handler');
+  if ($moduleHandler->moduleExists('devel')) {
+    echo $log;
   }
 }
 
@@ -85,6 +269,7 @@ function _eureka_notifications_stagnant_faculty($settings) {
       ':list' => implode(', ', $faculty_notified),
     ]);
   }
+  \Drupal::logger('eureka_notifications')->notice($log);
   // If devel is enabled, go ahead and print the response that would be sent.
   $moduleHandler = \Drupal::service('module_handler');
   if ($moduleHandler->moduleExists('devel')) {
@@ -156,11 +341,38 @@ function _eureka_notifications_stagnant_projects($settings) {
       ':list' => implode(', ', $project_leads_notified),
     ]);
   }
+  \Drupal::logger('eureka_notifications')->notice($log);
   // If devel is enabled, go ahead and print the response that would be sent.
   $moduleHandler = \Drupal::service('module_handler');
   if ($moduleHandler->moduleExists('devel')) {
     echo $log;
   }
+}
+
+/**
+ * Emailer for students.
+ *
+ * @param $user
+ *    The student.
+ * @param string $message
+ *    The message.
+ *
+ * @return bool
+ *    Whether or not the email message was successful.
+ */
+function _eureka_notifications_email_student($user, $message) {
+  $mailManager = \Drupal::service('plugin.manager.mail');
+  $module = 'eureka_notifications';
+  $key = 'student';
+  $to = $user->getEmail();
+  $params['message'] = $message;
+  $params['eid'] = $user->name;
+  $langcode = $user->getPreferredLangcode();
+  $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, TRUE);
+  if ($result['result'] !== TRUE) {
+    return FALSE;
+  }
+  return TRUE;
 }
 
 /**
@@ -225,6 +437,17 @@ function eureka_notifications_mail($key, &$message, $params) {
       $message['subject'] = 'Reminder: Update your faculty profile';
       $message['body'][] = $params['message'];
 
+      $moduleHandler = \Drupal::service('module_handler');
+      if ($moduleHandler->moduleExists('devel')) {
+        echo (implode(' ', $message['body']));
+      }
+      break;
+
+    case 'student':
+      $message['from'] = \Drupal::config('system.site')->get('mail');
+      $message['reply-to'] = \Drupal::config('system.site')->get('mail');
+      $message['subject'] = 'Eureka: new information on faculty member you bookmarked';
+      $message['body'][] = $params['message'];
       $moduleHandler = \Drupal::service('module_handler');
       if ($moduleHandler->moduleExists('devel')) {
         echo (implode(' ', $message['body']));
