@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: user
+label: User
+tags:
+  description: '[user:field_research_interests:value]'
+  title: '[user:field_display_name:value] | [site:name]'
+  og_title: '[user:field_display_name:value]'
