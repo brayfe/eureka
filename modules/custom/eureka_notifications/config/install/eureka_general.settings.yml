@@ -5,4 +5,4 @@ project_stale: 365
 project_notification_frequency: 30
 project_notification_message: 'A University of Texas Eureka project on which you are listed as lead has not been updated recently. Please sign in at https://eureka.utexas.edu/saml_login and verify that the project information is still current. If nothing needs to be updated, simply save the project to reset this notification system.'
 profile_notification_message: 'Your University of Texas Eureka profile has not been updated recently. Please sign in at https://eureka.utexas.edu/saml_login and verify that your information is still current.'
-tos_text: 'You agree to the following terms.'
+tos_text: '<p>Bookmarking faculty with the Eureka interface is a way for students to keep track of which faculty they’re interested in contacting. You will also receive email notifications when bookmarked faculty update their Eureka profiles.</p><p>Professors do not see which students have bookmarked them. The Office of Undergraduate Research uses bookmarking data for tracking, assessment, and research purposes; all student data is kept confidential.</p>'
