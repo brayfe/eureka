@@ -1,9 +1,4 @@
 cdn_provider: ''
-favicon:
-  mimetype: image/vnd.microsoft.icon
-  path: ''
-  url: 'http://eureka.utexas.local/themes/eurekatheme/favicon.ico'
-  use_default: true
 logo:
   path: ''
   url: ''
