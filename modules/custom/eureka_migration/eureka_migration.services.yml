@@ -1,0 +1,6 @@
+services:
+  eureka_migration.event_subscriber:
+    class: 'Drupal\eureka_migration\EurekaMigrateEventSubscriber'
+    arguments: ['@entity.manager']
+    tags:
+      - {name: event_subscriber}

@@ -4,6 +4,7 @@ description: Migration from Eureka legacy site into Drupal.
 core: 8.x
 package: Migrate
 dependencies:
+  - redirect
   - migrate
   - migrate_plus
   - migrate_tools

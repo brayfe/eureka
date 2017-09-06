@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.user.field_terms_of_ser
+  module:
+    - user
+id: user.user.field_terms_of_ser
+field_name: field_terms_of_ser
+entity_type: user
+bundle: user
+label: 'Terms of Service'
+description: ''
+required: false
+translatable: false
+default_value:
+  -
+    value: 0
+default_value_callback: ''
+settings:
+  on_label: 'On'
+  off_label: 'Off'
+field_type: boolean

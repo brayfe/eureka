@@ -38,6 +38,12 @@ class SettingsForm extends ConfigFormBase {
       '#markup' => 'General configuration options for the site.',
     ];
 
+    $form['tos_text'] = array(
+      '#type' => 'textarea',
+      '#title' => $this->t('Text displayed in the site terms of service'),
+      '#default_value' => $config->get('tos_text'),
+    );
+
     $form['notifications_on'] = array(
       '#type' => 'checkbox',
       '#title' => $this->t('Enable sending of faculty reminder notifications'),
@@ -132,6 +138,8 @@ class SettingsForm extends ConfigFormBase {
       ->set('student_notification_frequency', $values['student_notification_frequency'])
       ->set('student_profile_notification_message', $values['student_profile_notification_message'])
       ->set('student_project_notification_message', $values['student_project_notification_message'])
+      ->set('tos_text', $values['tos_text'])
+
       ->save();
 
     parent::submitForm($form, $form_state);

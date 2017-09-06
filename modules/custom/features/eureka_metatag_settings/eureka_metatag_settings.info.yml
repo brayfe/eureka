@@ -1,0 +1,7 @@
+name: 'Eureka Metatag Settings'
+type: module
+core: 8.x
+dependencies:
+  - metatag
+  - metatag_open_graph
+version: 8.x-1.0

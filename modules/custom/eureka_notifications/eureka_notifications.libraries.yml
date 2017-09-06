@@ -1,0 +1,8 @@
+tos:
+  js:
+    js/tos.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once
+    - core/jquery.ui.dialog
+    - core/drupal.ajax

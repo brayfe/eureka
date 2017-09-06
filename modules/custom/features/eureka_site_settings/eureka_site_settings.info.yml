@@ -1,0 +1,6 @@
+name: 'Eureka Site Settings'
+type: module
+core: 8.x
+version: 8.x-1.0
+dependencies:
+  - google_analytics
