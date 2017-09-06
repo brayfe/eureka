@@ -62,7 +62,7 @@ class AcknowledgementForm extends FormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->configFactory->get('eureka_general.settings');
-    $form['text']['#markup'] = '<div class="panel">' . $config->get('tos_text') . '</div>';
+    $form['text']['#markup'] = '<div class="panel">' . strip_tags($config->get('tos_text'), '<p> <strong> <em> <br> <a>') . '</div>';
     $form['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('I agree'),

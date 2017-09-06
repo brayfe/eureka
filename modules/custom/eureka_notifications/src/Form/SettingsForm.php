@@ -141,6 +141,40 @@ class SettingsForm extends ConfigFormBase {
   }
 
   /**
+   * Implements form validation.
+   *
+   * The validateForm method is the default method called to validate input on
+   * a form.
+   *
+   * @param array $form
+   *   The render array of the currently built form.
+   * @param FormStateInterface $form_state
+   *   Object describing the current state of the form.
+   */
+  public function validateForm(array &$form, FormStateInterface $form_state) {
+    $values = $form_state->getValues();
+
+    $plaintext_fields = [
+      'project_notification_message',
+      'profile_notification_message',
+      'student_profile_notification_message',
+      'student_project_notification_message',
+    ];
+    foreach ($plaintext_fields as $field) {
+      $sanitized = strip_tags($values[$field]);
+      if ($sanitized !== $values[$field]) {
+        $form_state->setErrorByName($field, $this->t('The highlighted field below may not contain HTML.'));
+      }
+    }
+
+    $tos = strip_tags($values['tos_text'], '<p> <strong> <em> <br> <a>');
+    if ($tos !== $values['tos_text']) {
+      $form_state->setErrorByName('tos_text', $this->t('The Terms of Service text may only contain the following tags: @tags', ['@tags' => '<p> <strong> <em> <br> <a>']));
+    }
+
+  }
+
+  /**
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
