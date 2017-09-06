@@ -5,3 +5,13 @@ eureka_notifications.settings:
     _title: 'Eureka Settings'
   requirements:
     _permission: 'administer site configuration'
+
+
+eureka_notifications.acknowledgement_form:
+  path: '/eureka_notifications/form/acknowledge'
+  defaults:
+    _form: '\Drupal\eureka_notifications\Form\AcknowledgementForm'
+    _title: 'Terms of Service'
+  requirements:
+    _access: 'TRUE'
+

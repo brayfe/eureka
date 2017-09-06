@@ -1,13 +1,4 @@
 cdn_provider: ''
-favicon:
-  mimetype: image/vnd.microsoft.icon
-  path: ''
-  use_default: true
-features:
-  comment_user_picture: true
-  comment_user_verification: true
-  favicon: true
-  node_user_picture: true
 logo:
   path: ''
   url: ''
@@ -15,3 +6,25 @@ logo:
 schemas:
   bootstrap: 8000
   eurekatheme: 8000
+region_wells:
+  navigation: ''
+  navigation_collapsible: ''
+  header: ''
+  highlighted: ''
+  help: ''
+  breadcrumbs: ''
+  content: ''
+  sidebar_first: ''
+  sidebar_second: ''
+  footer_upper: ''
+  footer_left: ''
+  footer_right: ''
+table_responsive: '-1'
+popover_enabled: 0
+table: ''
+modal_enabled: 1
+features:
+  comment_user_picture: true
+  comment_user_verification: true
+  favicon: true
+  node_user_picture: true

@@ -5,3 +5,4 @@ project_stale: 365
 project_notification_frequency: 30
 project_notification_message: 'A University of Texas Eureka project on which you are listed as lead has not been updated recently. Please sign in at https://eureka.utexas.edu/saml_login and verify that the project information is still current. If nothing needs to be updated, simply save the project to reset this notification system.'
 profile_notification_message: 'Your University of Texas Eureka profile has not been updated recently. Please sign in at https://eureka.utexas.edu/saml_login and verify that your information is still current.'
+tos_text: 'You agree to the following terms.'

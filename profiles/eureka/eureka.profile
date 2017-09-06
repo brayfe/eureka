@@ -77,6 +77,7 @@ function eureka_install_extensions(array &$install_state) {
     'eureka_notifications',
     'eureka_reporting_views',
     'eureka_metatag_settings',
+    'eureka_site_settings',
   ];
   foreach ($modules as $module) {
     $batch['operations'][] = ['eureka_install_module', (array) $module];
