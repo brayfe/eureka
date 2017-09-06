@@ -599,7 +599,7 @@ display:
           plugin_id: flag_relationship
       arguments: {  }
       display_extenders: {  }
-      use_ajax: true
+      use_ajax: false
     cache_metadata:
       max-age: 0
       contexts:
