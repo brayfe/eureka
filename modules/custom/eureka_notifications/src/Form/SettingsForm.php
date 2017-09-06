@@ -165,7 +165,7 @@ class SettingsForm extends ConfigFormBase {
 
     $tos = strip_tags($values['tos_text'], '<p> <strong> <em> <br> <a>');
     if ($tos !== $values['tos_text']) {
-      $form_state->setErrorByName($field, $this->t('The Terms of Service text may only contain the following tags: @tags', ['@tags' => '<p> <strong> <em> <br> <a>']));
+      $form_state->setErrorByName('tos_text', $this->t('The Terms of Service text may only contain the following tags: @tags', ['@tags' => '<p> <strong> <em> <br> <a>']));
     }
 
   }
