@@ -70,6 +70,7 @@ function eureka_install_extensions(array &$install_state) {
     'url_aliases',
     'eureka_role_anonymous',
     'eureka_role_authenticated',
+    'eureka_role_authorized',
     'eureka_role_faculty',
     'eureka_taxonomy_views',
     'eureka_flipcard_block_settings',
