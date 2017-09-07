@@ -257,7 +257,7 @@ content:
       label_singular: project
       label_plural: projects
       allow_new: true
-      allow_existing: true
+      allow_existing: false
       match_operator: CONTAINS
     third_party_settings: {  }
     type: inline_entity_form_complex
