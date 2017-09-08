@@ -71,6 +71,7 @@ function eureka_install_extensions(array &$install_state) {
     'eureka_role_anonymous',
     'eureka_role_authenticated',
     'eureka_role_faculty',
+    'eureka_role_staff',
     'eureka_taxonomy_views',
     'eureka_flipcard_block_settings',
     'eureka_bookmark_dashboard',

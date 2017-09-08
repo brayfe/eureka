@@ -1,0 +1,7 @@
+name: 'Eureka Role : Staff'
+description: 'Defines role and permissions for Eureka Staff'
+type: module
+core: 8.x
+dependencies:
+  - user
+version: 8.x-1.0
