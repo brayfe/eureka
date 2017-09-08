@@ -38,7 +38,7 @@ display:
         type: views_query
         options:
           disable_sql_rewrite: false
-          distinct: false
+          distinct: true
           replica: false
           query_comment: ''
           query_tags: {  }
@@ -776,6 +776,7 @@ display:
         operator: AND
         groups:
           1: AND
+      group_by: true
     cache_metadata:
       max-age: 0
       contexts:
