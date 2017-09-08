@@ -1,0 +1,9 @@
+name: 'Eureka Role : Authorized'
+type: module
+core: 8.x
+dependencies:
+  - user
+version: 8.x-1.0
+
+config_devel:
+  - user.role.authorized
