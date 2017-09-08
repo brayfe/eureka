@@ -1,0 +1,42 @@
+langcode: en
+status: true
+dependencies: {  }
+id: site_manager
+label: 'Eureka Site Manager'
+weight: 5
+is_admin: false
+permissions:
+  - 'access administration pages'
+  - 'access content'
+  - 'access content overview'
+  - 'access in-place editing'
+  - 'access site in maintenance mode'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'administer filters'
+  - 'administer google analytics'
+  - 'administer menu'
+  - 'administer meta tags'
+  - 'administer nodes'
+  - 'administer shortcuts'
+  - 'administer taxonomy'
+  - 'administer url aliases'
+  - 'administer users'
+  - 'create page content'
+  - 'create project content'
+  - 'customize shortcut links'
+  - 'delete any page content'
+  - 'delete any project content'
+  - 'delete own page content'
+  - 'delete own project content'
+  - 'edit any page content'
+  - 'edit any project content'
+  - 'edit own page content'
+  - 'edit own project content'
+  - 'opt-in or out of google analytics tracking'
+  - 'use text format filtered_html'
+  - userprotect.account.edit
+  - userprotect.mail.edit
+  - userprotect.pass.edit
+  - 'view own unpublished content'
+  - 'view the administration theme'
