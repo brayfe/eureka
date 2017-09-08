@@ -413,7 +413,7 @@ function _eureka_notifications_email_project_lead($user, $settings) {
   $module = 'eureka_notifications';
   $key = 'stagnant';
   $to = $user->getEmail();
-  $params['message'] = $settings->get('project_notification_message');;
+  $params['message'] = $settings->get('project_notification_message');
   $params['eid'] = $user->name;
   $langcode = $user->getPreferredLangcode();
   $result = $mailManager->mail($module, $key, $to, $langcode, $params, NULL, TRUE);
@@ -430,13 +430,13 @@ function eureka_notifications_mail($key, &$message, $params) {
   $options = array(
     'langcode' => $message['langcode'],
   );
-  $message = strip_tags($params['message']);
+  $body = strip_tags($params['message']);
   switch ($key) {
     case 'stagnant':
       $message['from'] = \Drupal::config('system.site')->get('mail');
       $message['reply-to'] = \Drupal::config('system.site')->get('mail');
       $message['subject'] = 'Reminder: Update your faculty profile';
-      $message['body'][] = $message;
+      $message['body'][] = $body;
 
       $moduleHandler = \Drupal::service('module_handler');
       if ($moduleHandler->moduleExists('devel')) {
@@ -448,7 +448,7 @@ function eureka_notifications_mail($key, &$message, $params) {
       $message['from'] = \Drupal::config('system.site')->get('mail');
       $message['reply-to'] = \Drupal::config('system.site')->get('mail');
       $message['subject'] = 'Eureka: new information on faculty member you bookmarked';
-      $message['body'][] = $message;
+      $message['body'][] = $body;
       $moduleHandler = \Drupal::service('module_handler');
       if ($moduleHandler->moduleExists('devel')) {
         echo (implode(' ', $message['body']));
