@@ -13,6 +13,7 @@ permissions:
   - 'access site in maintenance mode'
   - 'access toolbar'
   - 'access user profiles'
+  - 'administer account settings'
   - 'administer meta tags'
   - 'administer nodes'
   - 'administer taxonomy'
