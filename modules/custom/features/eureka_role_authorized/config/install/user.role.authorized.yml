@@ -1,0 +1,19 @@
+langcode: en
+status: true
+dependencies: {  }
+id: authorized
+label: 'Authorized user'
+weight: 2
+is_admin: false
+permissions:
+  - 'access content'
+  - 'access in-place editing'
+  - 'access toolbar'
+  - 'access user profiles'
+  - 'administer users'
+  - 'create project content'
+  - 'delete own project content'
+  - 'edit any project content'
+  - 'edit own project content'
+  - 'view own unpublished content'
+  - 'view the administration theme'
