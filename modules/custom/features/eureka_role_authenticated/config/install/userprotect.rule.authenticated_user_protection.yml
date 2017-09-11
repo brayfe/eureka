@@ -14,10 +14,6 @@ protections:
     id: user_delete
     provider: userprotect
     status: true
-  user_edit:
-    id: user_edit
-    provider: userprotect
-    status: true
   user_mail:
     id: user_mail
     provider: userprotect
