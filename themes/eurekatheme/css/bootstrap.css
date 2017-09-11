@@ -6350,7 +6350,7 @@ body.toolbar-fixed.toolbar-vertical.toolbar-tray-open.toolbar-fixed {
 
 .brand-bar {
   background-color: transparent;
-  height: 30px;
+  height: 35px;
   padding: 0;
   width: 100%;
   margin-bottom: 2px; }
@@ -6384,13 +6384,14 @@ header.full-width {
   background-color: #382f2d;
   border: none;
   border-radius: 0;
-  padding: 1em 0;
+  padding: 1.8em 0;
   margin-bottom: 2em; }
   header.full-width .container .logo-header.col-md-3 {
     margin-bottom: 0;
     padding-left: 0; }
     header.full-width .container .logo-header.col-md-3 .logo-text {
-      font-size: 40px;
+      font-size: 50px;
+      line-height: 50px;
       letter-spacing: 2px;
       color: #fff; }
       header.full-width .container .logo-header.col-md-3 .logo-text a {
@@ -6413,75 +6414,96 @@ header.full-width {
       float: right; }
       header.full-width .container .navbar-collapse #block-eurekatheme-main-menu ul.navbar-nav li a,
       header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav li a {
-        font-size: 1.25em;
+        font-size: 1.5em;
         color: #fff;
         line-height: 27px; }
         header.full-width .container .navbar-collapse #block-eurekatheme-main-menu ul.navbar-nav li a:hover, header.full-width .container .navbar-collapse #block-eurekatheme-main-menu ul.navbar-nav li a:focus,
         header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav li a:hover,
         header.full-width .container .navbar-collapse #block-mainnavigation ul.navbar-nav li a:focus {
           background-color: transparent;
-          text-decoration: underline; }
+          text-decoration: none; }
+
+.footer-wrapper.container-fluid {
+  padding: 0;
+  background-color: #333f48;
+  border-top: 4px solid #BF5700; }
 
 .footer-upper {
-  text-align: center; }
+  text-align: center;
+  background-color: #333f48;
+  padding-top: 1em; }
   .footer-upper #block-eurekawordmark {
     color: #fff;
     margin-top: 1em; }
     .footer-upper #block-eurekawordmark p {
-      font-size: 40px;
+      font-size: 35px;
       font-family: "GT-Sectra-Regular";
       letter-spacing: 2px; }
   .footer-upper #block-mainnavigation ul,
-  .footer-upper #block-mainnavigation-2 ul,
-  .footer-upper #block-footerpages ul {
+  .footer-upper #block-mainnavigation-2 ul {
     width: 90%;
     text-align: center;
     float: none;
+    font-size: 1.25em;
     margin: 0 auto; }
     .footer-upper #block-mainnavigation ul li,
-    .footer-upper #block-mainnavigation-2 ul li,
-    .footer-upper #block-footerpages ul li {
+    .footer-upper #block-mainnavigation-2 ul li {
       float: none;
       display: inline-block;
       text-align: center; }
       .footer-upper #block-mainnavigation ul li a,
-      .footer-upper #block-mainnavigation-2 ul li a,
-      .footer-upper #block-footerpages ul li a {
+      .footer-upper #block-mainnavigation-2 ul li a {
         color: #fff; }
         .footer-upper #block-mainnavigation ul li a:hover, .footer-upper #block-mainnavigation ul li a:focus,
         .footer-upper #block-mainnavigation-2 ul li a:hover,
-        .footer-upper #block-mainnavigation-2 ul li a:focus,
-        .footer-upper #block-footerpages ul li a:hover,
-        .footer-upper #block-footerpages ul li a:focus {
+        .footer-upper #block-mainnavigation-2 ul li a:focus {
           background-color: transparent;
           text-decoration: underline; }
-  .footer-upper #block-mainnavigation-2 ul li a {
-    font-size: 1.2em; }
+  .footer-upper #block-footerpages ul.menu {
+    margin: 1em 0;
+    width: 90%;
+    text-align: center;
+    float: none;
+    font-size: 1em;
+    margin: 0 auto; }
+    .footer-upper #block-footerpages ul.menu li {
+      float: none;
+      display: inline-block;
+      text-align: center; }
+      .footer-upper #block-footerpages ul.menu li a {
+        color: #fff; }
+        .footer-upper #block-footerpages ul.menu li a:hover, .footer-upper #block-footerpages ul.menu li a:focus {
+          background-color: transparent;
+          text-decoration: underline; }
 
-.footer-wrapper {
-  background-color: #333f48;
-  margin-top: 3em;
-  border-top: 5px solid #bf5700; }
-  .footer-wrapper footer.footer {
+.footer-lower {
+  text-align: center;
+  margin-top: 1em; }
+  .footer-lower .block-footer-lower-block {
     border-top: 1px solid #999;
-    margin-top: 1.5em; }
-    .footer-wrapper footer.footer .footer-left {
-      width: 49%;
-      display: inline-block; }
-      .footer-wrapper footer.footer .footer-left img {
-        max-width: 60%; }
-    .footer-wrapper footer.footer .footer-right {
-      width: 49%;
-      float: right;
-      text-align: right !important;
-      display: inline-block; }
-      .footer-wrapper footer.footer .footer-right p {
-        color: #fff;
-        margin-top: 10px; }
-        .footer-wrapper footer.footer .footer-right p a {
-          color: #fff; }
-          .footer-wrapper footer.footer .footer-right p a:hover, .footer-wrapper footer.footer .footer-right p a:focus {
-            text-decoration: underline; }
+    padding: 2em 0; }
+  .footer-lower img {
+    width: 75%;
+    max-width: 300px; }
+  .footer-lower p {
+    color: #fff;
+    margin-top: 10px; }
+    .footer-lower p a {
+      color: #fff; }
+      .footer-lower p a:hover, .footer-lower p a:focus {
+        text-decoration: underline; }
+  .footer-lower .footer-lower-wordmark {
+    margin-bottom: 1.75em; }
+  .footer-lower .footer-lower-links ul {
+    margin: 0 1.5rem 0 0; }
+    .footer-lower .footer-lower-links ul li {
+      display: inline-block;
+      margin: 0 1.5rem 0 0;
+      color: #fff; }
+      .footer-lower .footer-lower-links ul li a {
+        color: #fff; }
+    .footer-lower .footer-lower-links ul li:last-child {
+      margin-right: 0; }
 
 .mydiv {
   column-count: 3; }
@@ -6523,7 +6545,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
   body .main-container {
-    min-height: 275px; }
+    min-height: 275px;
+    margin-bottom: 3em; }
     body .main-container .name.navbar-brand {
       display: none; }
 

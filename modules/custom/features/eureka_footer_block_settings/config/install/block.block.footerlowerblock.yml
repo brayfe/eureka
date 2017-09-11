@@ -5,15 +5,15 @@ dependencies:
     - eureka_footer_content
   theme:
     - eurekatheme
-id: footerrightblock
+id: footerlowerblock
 theme: eurekatheme
-region: footer_right
-weight: -2
+region: footer_lower
+weight: 0
 provider: null
-plugin: footer_right_block
+plugin: footer_lower_block
 settings:
-  id: footer_right_block
-  label: 'Footer Right Block'
+  id: footer_lower_block
+  label: 'Footer Lower Block'
   provider: eureka_footer_content
   label_display: '0'
 visibility: {  }

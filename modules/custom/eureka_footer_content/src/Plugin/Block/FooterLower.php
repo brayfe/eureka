@@ -10,11 +10,11 @@ use Drupal\Core\Url;
  * Provides a Footer Block.
  *
  * @Block(
- *   id = "footer_right_block",
- *   admin_label = @Translation("Footer Right Block"),
+ *   id = "footer_lower_block",
+ *   admin_label = @Translation("Footer Lower Block"),
  * )
  */
-class FooterRight extends BlockBase {
+class FooterLower extends BlockBase {
 
   /**
    * {@inheritdoc}
@@ -28,10 +28,13 @@ class FooterRight extends BlockBase {
     $privacy_link = Link::fromTextAndUrl('Web Privacy Policy', $privacy_url);
 
     return [
-      '#theme' => 'footer_right',
       '#year' => date('Y'),
       '#accessibility_link' => $access_link,
       '#privacy_link' => $privacy_link,
+      '#ugslogourl' => Url::fromUri('https://ugs.utexas.edu/'),
+      '#ugslogosrc' => '/themes/eurekatheme/images/logo-reversed.svg',
+      '#ugslogoalt' => t('University of Texas School of Undergraduate Studies'),
+      '#theme' => 'footer_lower',
     ];
   }
 

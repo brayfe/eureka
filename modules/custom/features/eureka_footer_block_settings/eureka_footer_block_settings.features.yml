@@ -1,1 +1,4 @@
+excluded:
+  - block.block.footerleftblock
+  - block.block.footerrightblock
 required: true
